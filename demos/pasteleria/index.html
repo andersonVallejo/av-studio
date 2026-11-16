@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Trigal Dorado — Panadería &amp; Pastelería (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de panadería y pastelería artesanal en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Trigal Dorado — Panadería &amp; Pastelería (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Obrador artesanal ficticio en Cuenca con vitrina por categorías en USD y cotizador de tortas por encargo."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/pasteleria.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Pastelería ficticia en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="t-header">
+      <div class="container t-header__inner">
+        <a href="#inicio" class="t-brand">Trigal Dorado</a>
+        <nav class="t-nav" aria-label="Navegación de la pastelería">
+          <a class="t-nav__link" href="#inicio">Inicio</a>
+          <a class="t-nav__link" href="#vitrina">Vitrina</a>
+          <a class="t-nav__link" href="#obrador">Obrador</a>
+          <a class="t-nav__link" href="#encargos">Pedidos especiales</a>
+        </nav>
+        <div class="t-header__actions">
+          <a href="#encargos" class="t-btn t-btn--choco t-header__cta">Cotizar torta</a>
+          <button
+            type="button"
+            class="t-mobile-toggle"
+            id="t-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="t-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="t-mobile-drawer" id="t-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#vitrina">Vitrina</a>
+        <a href="#obrador">Obrador</a>
+        <a href="#encargos">Pedidos especiales</a>
+        <a href="../../index.html" class="t-mobile-drawer__back">
+          &larr; Volver a AV·STUDIO
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="t-hero" id="inicio">
+        <div class="container t-hero__grid">
+          <div>
+            <span class="t-eyebrow">Obrador artesanal · Sector Puertas del Sol, Cuenca</span>
+            <h1 class="t-title">Pan de masa madre y pastelería fina horneada cada mañana.</h1>
+            <p class="t-hero__lead">
+              Trigal Dorado es una pastelería ficticia de demostración creada por AV·STUDIO para
+              mostrar cómo tu negocio puede exhibir vitrina en USD, postres de temporada y cotizar
+              tortas personalizadas sin depender de mensajes desordenados.
+            </p>
+            <div class="t-btn-row">
+              <a href="#vitrina" class="t-btn t-btn--choco">Explorar vitrina en USD</a>
+              <a href="#encargos" class="t-btn t-btn--rose">Cotizar torta por encargo</a>
+            </div>
+          </div>
+
+          <div class="t-hero__media">
+            <picture>
+              <source srcset="./images/hero.webp" type="image/webp" />
+              <img
+                src="./images/hero.jpg"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+                alt="Mostrador de pastelería artesanal con croissants, pan de masa madre y torta de cacao con frutos rojos"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="t-section t-section--white" id="vitrina">
+        <div class="container">
+          <span class="t-eyebrow">Catálogo demostrativo</span>
+          <h2 class="t-title">Vitrina de panadería y pastelería</h2>
+
+          <div class="t-tabs" role="group" aria-label="Filtrar vitrina de pastelería">
+            <button type="button" class="t-tab is-active" data-bakery-filter="Todos">Todos</button>
+            <button type="button" class="t-tab" data-bakery-filter="Panadería">Panadería</button>
+            <button type="button" class="t-tab" data-bakery-filter="Pasteles enteros">Pasteles enteros</button>
+            <button type="button" class="t-tab" data-bakery-filter="Postres individuales">Postres individuales</button>
+            <button type="button" class="t-tab" data-bakery-filter="Temporada">Temporada</button>
+          </div>
+
+          <div class="t-catalog-grid" id="t-catalog-grid"></div>
+        </div>
+      </section>
+
+      <section class="t-section t-section--spotlight" id="obrador">
+        <div class="container t-spotlight-grid">
+          <div class="t-spotlight__media">
+            <picture>
+              <source srcset="./images/vitrina.webp" type="image/webp" />
+              <img
+                src="./images/vitrina.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                alt="Vitrina luminosa de pastelería artesanal con tartaletas de frutos rojos, milhojas y panes recién horneados"
+              />
+            </picture>
+          </div>
+          <div>
+            <span class="t-eyebrow">Horneado diario &amp; entregas</span>
+            <h2 class="t-title">Vitrina de temporada y mesa dulce para eventos</h2>
+            <p class="t-spotlight__copy">
+              Presenta tus ediciones limitadas de fin de semana, cajas degustación o pasteles
+              bajo pedido con fotografía real del producto y tiempos claros de anticipación.
+            </p>
+            <ul class="t-spotlight__list">
+              <li>Fermentación lenta en masa madre y cacao ecuatoriano de aroma fino.</li>
+              <li>Porciones transparentes en USD para celebraciones de 12, 20 o 35 personas.</li>
+              <li>Reserva directa por fecha sin intermediarios ni comisiones externas.</li>
+            </ul>
+            <a href="#encargos" class="t-btn t-btn--choco">Configurar pedido especial</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="t-section" id="encargos">
+        <div class="container t-order-grid">
+          <div>
+            <span class="t-eyebrow">Pedidos personalizados</span>
+            <h2 class="t-title">Cotiza tu torta o mesa dulce de ejemplo.</h2>
+            <p class="t-order__copy">
+              Este formulario valida sabor, porciones y fecha de entrega para generar un mensaje
+              claro dirigido al WhatsApp de Anderson Vallejo (AV·STUDIO).
+            </p>
+            <p class="t-order__note">
+              <strong>Horarios de ejemplo:</strong> Lunes a sábado 07:30 – 19:30 · Domingos 08:00 – 14:00 (24h).<br />
+              <strong>Referencia:</strong> Sector Puertas del Sol, Cuenca, Ecuador.
+            </p>
+          </div>
+
+          <form class="t-form-card" id="t-order-form" novalidate>
+            <h3 class="t-form-card__title">
+              Cotización demostrativa por encargo
+            </h3>
+            <div class="t-form-fields">
+              <div class="t-field">
+                <label for="t-name">Tu nombre *</label>
+                <input id="t-name" type="text" placeholder="Ej. Sofía Ordóñez" />
+                <span class="t-err" id="t-err-name"></span>
+              </div>
+              <div class="t-field">
+                <label for="t-phone">WhatsApp *</label>
+                <input id="t-phone" type="tel" placeholder="+593 9..." />
+                <span class="t-err" id="t-err-phone"></span>
+              </div>
+              <div class="t-field">
+                <label for="t-flavor">Sabor base *</label>
+                <select id="t-flavor">
+                  <option value="">Selecciona un sabor</option>
+                  <option value="Cacao y frutos rojos">Cacao y frutos rojos</option>
+                  <option value="Tres leches de maracuyá">Tres leches de maracuyá</option>
+                  <option value="Vainilla y amapola">Vainilla y amapola</option>
+                  <option value="Zanahoria, nuez y queso">Zanahoria, nuez y queso</option>
+                </select>
+                <span class="t-err" id="t-err-flavor"></span>
+              </div>
+              <div class="t-field">
+                <label for="t-portions">Porciones *</label>
+                <select id="t-portions">
+                  <option value="">Elige tamaño</option>
+                  <option value="12 porciones">12 porciones</option>
+                  <option value="20 porciones">20 porciones</option>
+                  <option value="35 porciones">35 porciones</option>
+                </select>
+                <span class="t-err" id="t-err-portions"></span>
+              </div>
+              <div class="t-field">
+                <label for="t-date">Fecha requerida *</label>
+                <input id="t-date" type="date" />
+                <span class="t-err" id="t-err-date"></span>
+              </div>
+              <div class="t-field">
+                <label for="t-notes">Dedicatoria o nota (opcional)</label>
+                <input id="t-notes" type="text" placeholder="Ej. Sin nueces, tono pastel" />
+              </div>
+            </div>
+            <div style="margin-top: 1rem;">
+              <button type="submit" class="t-btn t-btn--choco">Preparar cotización en WhatsApp</button>
+            </div>
+            <div class="t-prepared" id="t-prepared" hidden>
+              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+                <strong>Cotización demostrativa lista.</strong> Abre el mensaje preparado hacia AV·STUDIO:
+              </p>
+              <a
+                id="t-prepared-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="t-btn t-btn--rose"
+              >
+                Enviar por WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="t-footer">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <strong style="font-family: var(--t-font-display); font-size: 1.4rem;">Trigal Dorado · Pastelería</strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.82;">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#vitrina">Vitrina</a>
+            <a href="#encargos">Pedidos especiales</a>
+            <a href="../../index.html" style="color: #f4c6bf; font-weight: 600;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="t-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Creamos sitios web personalizados para panaderías y pastelerías.
+            </p>
+            <p style="margin: 0; opacity: 0.88;">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=pasteleria#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mi pastelería &rarr;
+          </a>
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="t-btn t-btn--rose"
+          >
+            Solicitar página personalizada
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

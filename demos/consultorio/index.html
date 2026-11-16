@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Centro Médico Tomebamba — Consultorio (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de consultorio médico en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Centro Médico Tomebamba — Consultorio (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Sitio web demostrativo de consultorio médico en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/consultorio.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Lora:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Consultorio ficticio en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="m-header">
+      <div class="container m-header__inner">
+        <a href="#inicio" class="m-brand">CENTRO MÉDICO TOMEBAMBA</a>
+        <nav class="m-nav" aria-label="Navegación médica">
+          <a class="m-nav__link" href="#inicio">Inicio</a>
+          <a class="m-nav__link" href="#especialidades">Especialidades</a>
+          <a class="m-nav__link" href="#espacios">Instalaciones</a>
+          <a class="m-nav__link" href="#equipo">Equipo</a>
+          <a class="m-nav__link" href="#citas">Solicitar cita</a>
+        </nav>
+        <div class="m-header__actions">
+          <a href="#citas" class="m-btn m-btn--blue m-header__cta">Agendar consulta</a>
+          <button
+            type="button"
+            class="m-mobile-toggle"
+            id="m-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="m-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="m-mobile-drawer" id="m-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#espacios">Instalaciones</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#citas">Solicitar cita</a>
+        <a href="../../index.html" class="m-drawer-back">
+          &larr; Volver a AV·STUDIO
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="m-hero" id="inicio">
+        <div class="container m-hero__grid">
+          <div>
+            <span class="m-eyebrow">Atención médica ordenada · Av. 12 de Abril, Cuenca</span>
+            <h1 class="m-title">Información médica clara, horarios visibles y citas sin esperas.</h1>
+            <p style="color: var(--m-muted); max-width: 56ch; margin: 0 0 1.5rem;">
+              Centro Médico Tomebamba es un consultorio ficticio creado como demostración por AV·STUDIO. Ilustra cómo presentar especialidades, horarios en formato 24h y solicitud
+              responsable de citas sin diagnósticos automatizados ni promesas engañosas.
+            </p>
+            <div class="m-hero__actions">
+              <a href="#citas" class="m-btn m-btn--blue">Solicitar cita de ejemplo</a>
+              <a href="#especialidades" class="m-btn m-btn--outline">Ver especialidades</a>
+            </div>
+          </div>
+
+          <div class="m-hero__media">
+            <picture>
+              <source srcset="./images/hero.webp" type="image/webp" />
+              <img
+                src="./images/hero.jpg"
+                alt="Consultorio médico luminoso y sereno con escritorio de madera, estetoscopio y luz natural"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="m-section" id="especialidades">
+        <div class="container">
+          <span class="m-eyebrow">Cartera de servicios médicos</span>
+          <h2 class="m-title">Explora nuestras especialidades de ejemplo</h2>
+
+          <div class="m-spec-grid">
+            <div class="m-spec-tabs" role="group" aria-label="Especialidades médicas">
+              <button type="button" class="m-spec-tab is-active" data-med-spec="general" aria-pressed="true">
+                Medicina General y Preventiva
+              </button>
+              <button type="button" class="m-spec-tab" data-med-spec="pediatria" aria-pressed="false">
+                Pediatría y Control Infantil
+              </button>
+              <button type="button" class="m-spec-tab" data-med-spec="cardiologia" aria-pressed="false">
+                Cardiología Preventiva
+              </button>
+              <button type="button" class="m-spec-tab" data-med-spec="nutricion" aria-pressed="false">
+                Nutrición Clínica
+              </button>
+            </div>
+
+            <article class="m-spec-panel" aria-live="polite">
+              <h3 id="m-spec-title" style="margin: 0 0 0.35rem; color: var(--m-blue-dark); font-size: 1.4rem;"></h3>
+              <p id="m-spec-sched" style="font-family: var(--m-font-mono); font-size: 0.82rem; color: var(--m-blue); margin: 0 0 0.9rem;"></p>
+              <p id="m-spec-desc" style="color: var(--m-muted); margin: 0 0 0.9rem;"></p>
+              <ul id="m-spec-notes" style="list-style: none; padding: 0; margin: 0; font-size: 0.92rem;"></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="m-section m-section--sky" id="espacios">
+        <div class="container m-spaces-grid">
+          <div class="m-spaces__media">
+            <picture>
+              <source srcset="./images/consulta.webp" type="image/webp" />
+              <img
+                src="./images/consulta.jpg"
+                alt="Sala de consulta clínica privada con escritorio, iluminación cálida y ambiente ordenado en Cuenca"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </div>
+          <div>
+            <span class="m-eyebrow">Instalaciones y privacidad</span>
+            <h2 class="m-title">Consultorios pensados para una entrevista médica tranquila.</h2>
+            <p class="m-muted-copy">
+              Mostrar fotografías reales de la sala de valoración y la recepción ayuda a reducir la
+              incertidumbre del paciente antes de asistir por primera vez.
+            </p>
+            <ul class="m-spaces-list">
+              <li><strong>Recepción puntual:</strong> Confirmación previa de turno en horario 24h.</li>
+              <li><strong>Accesibilidad en Cuenca:</strong> Zona de fácil acceso sobre la Av. 12 de Abril.</li>
+              <li><strong>Información clara:</strong> Requisitos previos y duración estimada por consulta.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="m-section" id="equipo">
+        <div class="container">
+          <span class="m-eyebrow">Cuerpo médico (Perfiles ficticios de ejemplo)</span>
+          <h2 class="m-title">Profesionales de referencia</h2>
+          <div class="m-doctors-grid">
+            <article class="m-doctor-card">
+              <span class="m-eyebrow" style="margin-bottom: 0.25rem;">Ejemplo ficticio</span>
+              <h3 style="margin: 0 0 0.25rem;">Dr. Esteban Alvarado</h3>
+              <p style="margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--m-blue); font-weight: 600;">
+                Medicina General · Horario 08:00 – 16:00
+              </p>
+              <p style="margin: 0; font-size: 0.88rem; color: var(--m-muted);">
+                Espacio destinado a detallar formación real, número de registro profesional e idiomas.
+              </p>
+            </article>
+            <article class="m-doctor-card">
+              <span class="m-eyebrow" style="margin-bottom: 0.25rem;">Ejemplo ficticio</span>
+              <h3 style="margin: 0 0 0.25rem;">Dra. Gabriela Monsalve</h3>
+              <p style="margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--m-blue); font-weight: 600;">
+                Pediatría · Horario 09:00 – 17:30
+              </p>
+              <p style="margin: 0; font-size: 0.88rem; color: var(--m-muted);">
+                Espacio configurable para indicar edad de atención, convenios o aseguradoras aceptadas.
+              </p>
+            </article>
+            <article class="m-doctor-card">
+              <span class="m-eyebrow" style="margin-bottom: 0.25rem;">Ejemplo ficticio</span>
+              <h3 style="margin: 0 0 0.25rem;">Lic. Paulina Andrade</h3>
+              <p style="margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--m-blue); font-weight: 600;">
+                Nutrición Clínica · Horario 08:30 – 16:30
+              </p>
+              <p style="margin: 0; font-size: 0.88rem; color: var(--m-muted);">
+                Espacio para detallar modalidad presencial en Cuenca o teleconsulta previa cita.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="m-section" id="citas">
+        <div class="container m-appt-grid">
+          <div>
+            <span class="m-eyebrow">Agendamiento y ubicación</span>
+            <h2 class="m-title">Solicita tu cita demostrativa</h2>
+            <p style="color: var(--m-muted);">
+              <strong>Referencia en Cuenca:</strong> Av. 12 de Abril y Fray Vicente Solano.<br />
+              <strong>Horarios de ejemplo (24h):</strong> Lunes a viernes 08:00 – 18:00 · Sábados 08:30 – 12:30.
+            </p>
+            <p style="font-size: 0.88rem; color: var(--m-muted);">
+              Este formulario no almacena historias clínicas ni confirma turnos médicos reales;
+              prepara un mensaje validado hacia WhatsApp para comprobar la experiencia de usuario.
+            </p>
+          </div>
+
+          <form class="m-form-card" id="m-appt-form" novalidate>
+            <h3 style="margin: 0 0 1rem; color: var(--m-blue-dark);">Formulario de solicitud de cita</h3>
+            <div class="m-form-fields">
+              <div class="m-field">
+                <label for="m-name">Nombre del paciente *</label>
+                <input id="m-name" type="text" placeholder="Ej. Diego Sarmiento" />
+                <span class="m-err" id="m-err-name"></span>
+              </div>
+              <div class="m-field">
+                <label for="m-phone">WhatsApp o teléfono *</label>
+                <input id="m-phone" type="tel" placeholder="+593 9..." />
+                <span class="m-err" id="m-err-phone"></span>
+              </div>
+              <div class="m-field">
+                <label for="m-specialty">Especialidad *</label>
+                <select id="m-specialty">
+                  <option value="">Selecciona una opción</option>
+                  <option value="Medicina General">Medicina General</option>
+                  <option value="Pediatría">Pediatría</option>
+                  <option value="Cardiología Preventiva">Cardiología Preventiva</option>
+                  <option value="Nutrición Clínica">Nutrición Clínica</option>
+                </select>
+                <span class="m-err" id="m-err-specialty"></span>
+              </div>
+              <div class="m-field">
+                <label for="m-date">Fecha tentativa *</label>
+                <input id="m-date" type="date" />
+                <span class="m-err" id="m-err-date"></span>
+              </div>
+              <div class="m-field">
+                <label for="m-time">Horario (24h) *</label>
+                <select id="m-time">
+                  <option value="">Selecciona una hora</option>
+                  <option value="09:00">09:00</option>
+                  <option value="11:30">11:30</option>
+                  <option value="15:00">15:00</option>
+                  <option value="17:00">17:00</option>
+                </select>
+                <span class="m-err" id="m-err-time"></span>
+              </div>
+              <div class="m-field">
+                <label for="m-reason">Motivo breve (opcional)</label>
+                <input id="m-reason" type="text" placeholder="Ej. Chequeo anual" />
+              </div>
+            </div>
+            <div style="margin-top: 1rem;">
+              <button type="submit" class="m-btn m-btn--blue">Preparar solicitud por WhatsApp</button>
+            </div>
+            <div id="m-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: #ffffff; border: 1px solid var(--m-border); border-radius: 6px;">
+              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+                <strong>Solicitud validada.</strong> Abre la consulta demostrativa dirigida a AV·STUDIO:
+              </p>
+              <a
+                id="m-prepared-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="m-btn m-btn--blue"
+              >
+                Enviar por WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="m-footer">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <strong style="font-size: 1.15rem;">CENTRO MÉDICO TOMEBAMBA</strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; color: #cfe4fa;">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#especialidades">Especialidades</a>
+            <a href="#citas">Citas</a>
+            <a href="../../index.html" style="color: #cfe4fa; font-weight: 700;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="m-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Creamos sitios claros y confiables para médicos y clínicas.
+            </p>
+            <p style="margin: 0; color: #dbeafa;">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=consultorio#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mi consultorio &rarr;
+          </a>
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="m-btn"
+            style="background: #ffffff; color: var(--m-blue-dark);"
+          >
+            Solicitar sitio personalizado
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

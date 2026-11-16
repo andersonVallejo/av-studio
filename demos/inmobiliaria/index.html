@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Andes Hogar — Inmobiliaria Cuenca (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de inmobiliaria y bienes raíces en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Andes Hogar — Inmobiliaria Cuenca (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Portafolio inmobiliario de ejemplo con filtros por sector, tipo de inmueble y ficha interactiva en Cuenca."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/inmobiliaria.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Inmobiliaria ficticia en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="i-header">
+      <div class="container i-header__inner">
+        <a href="#inicio" class="i-brand">ANDES HOGAR</a>
+        <nav class="i-nav" aria-label="Navegación inmobiliaria">
+          <a class="i-nav__link" href="#inicio">Inicio</a>
+          <a class="i-nav__link" href="#propiedades">Propiedades</a>
+          <a class="i-nav__link" href="#contacto">Asesoría</a>
+        </nav>
+        <div class="i-header__actions">
+          <a href="#propiedades" class="i-btn i-btn--navy i-header__cta">Buscar inmueble</a>
+          <button
+            type="button"
+            class="i-mobile-toggle"
+            id="i-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="i-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="i-mobile-drawer" id="i-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#propiedades">Propiedades</a>
+        <a href="#contacto">Asesoría</a>
+        <a href="../../index.html" class="i-mobile-drawer__back">
+          &larr; Volver a AV·STUDIO
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="i-hero" id="inicio">
+        <div class="container i-hero__grid">
+          <div>
+            <span class="i-eyebrow i-eyebrow--hero">Bienes raíces de ejemplo · Cuenca, Azuay</span>
+            <h1 class="i-title i-title--hero">
+              Propiedades seleccionadas con filtros claros y precios transparentes en USD.
+            </h1>
+            <p class="i-hero__lead">
+              Andes Hogar es una inmobiliaria ficticia diseñada por AV·STUDIO para demostrar cómo tu
+              portafolio inmobiliario puede ofrecer búsqueda por sector, tipo, habitaciones y
+              consulta directa por propiedad.
+            </p>
+            <div class="i-btn-row">
+              <a href="#propiedades" class="i-btn i-btn--gold">Explorar propiedades</a>
+              <a href="#contacto" class="i-btn i-btn--outline-light">Solicitar asesoría</a>
+            </div>
+          </div>
+
+          <div class="i-hero__media">
+            <picture>
+              <source srcset="./images/inmobiliaria.webp" type="image/webp" />
+              <img
+                src="./images/inmobiliaria.jpg"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+                alt="Arquitectura residencial contemporánea con piedra y ventanales hacia los Andes"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="i-section i-section--stone" id="propiedades">
+        <div class="container">
+          <span class="i-eyebrow">Catálogo filtrable (Datos de ejemplo)</span>
+          <h2 class="i-title">Propiedades disponibles en Cuenca</h2>
+
+          <div class="i-filter-bar" role="region" aria-label="Filtros de propiedades">
+            <div class="i-filter-group">
+              <label for="i-f-op">Operación</label>
+              <select id="i-f-op">
+                <option value="Todos">Todas</option>
+                <option value="Venta">Venta</option>
+                <option value="Alquiler">Alquiler</option>
+              </select>
+            </div>
+            <div class="i-filter-group">
+              <label for="i-f-type">Tipo de inmueble</label>
+              <select id="i-f-type">
+                <option value="Todos">Todos</option>
+                <option value="Casa">Casa</option>
+                <option value="Departamento">Departamento</option>
+                <option value="Terreno">Terreno</option>
+              </select>
+            </div>
+            <div class="i-filter-group">
+              <label for="i-f-sector">Sector en Cuenca</label>
+              <select id="i-f-sector">
+                <option value="Todos">Todos los sectores</option>
+                <option value="El Vergel">El Vergel</option>
+                <option value="Puertas del Sol">Puertas del Sol</option>
+                <option value="Yanuncay">Yanuncay</option>
+                <option value="Ricaurte">Ricaurte</option>
+              </select>
+            </div>
+            <div class="i-filter-group">
+              <label for="i-f-rooms">Habitaciones</label>
+              <select id="i-f-rooms">
+                <option value="0">Cualquiera</option>
+                <option value="2">2+ habitaciones</option>
+                <option value="3">3+ habitaciones</option>
+              </select>
+            </div>
+          </div>
+
+          <p id="i-props-count" class="i-props-count" aria-live="polite"></p>
+
+          <div class="i-props-grid" id="i-props-grid"></div>
+        </div>
+      </section>
+
+      <section class="i-section" id="contacto">
+        <div class="container i-cta-band">
+          <div>
+            <span class="i-eyebrow">Asesoría inmobiliaria digital</span>
+            <h2 class="i-title">¿Necesitas un portal inmobiliario personalizado?</h2>
+            <p class="i-cta-band__text">
+              Podemos adaptar estos filtros a tus sectores reales, incorporar mapas, fichas con
+              múltiples fotografías y conectar cada inmueble directamente con tu equipo por WhatsApp.
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="i-btn i-btn--navy"
+          >
+            Cotizar web inmobiliaria
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="i-dialog" id="i-prop-dialog" aria-labelledby="i-d-title">
+      <div class="i-dialog__media">
+        <picture>
+          <source id="i-d-webp" srcset="./images/prop-casa-vergel.webp" type="image/webp" />
+          <img
+            id="i-d-img"
+            src="./images/prop-casa-vergel.jpg"
+            width="800"
+            height="600"
+            decoding="async"
+            alt="Fotografía referencial de propiedad seleccionada"
+          />
+        </picture>
+      </div>
+      <span id="i-d-meta" class="i-eyebrow"></span>
+      <h3 id="i-d-title" class="i-dialog__title"></h3>
+      <div id="i-d-price" class="i-dialog__price"></div>
+      <p id="i-d-specs" class="i-dialog__specs"></p>
+      <p id="i-d-summary" class="i-dialog__summary"></p>
+      <div class="i-btn-row">
+        <a
+          id="i-d-wa"
+          href="https://wa.me/593979290747"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="i-btn i-btn--gold"
+        >
+          Consultar propiedad por WhatsApp
+        </a>
+        <button type="button" id="i-d-close" class="i-btn i-btn--outline">Cerrar</button>
+      </div>
+    </dialog>
+
+    <footer class="i-footer">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <strong style="font-family: var(--i-font-display); font-size: 1.3rem;">ANDES HOGAR · Bienes Raíces</strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.82;">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#propiedades">Propiedades</a>
+            <a href="#contacto">Asesoría</a>
+            <a href="../../index.html" style="color: #e4c486; font-weight: 700;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="i-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Creamos plataformas a medida para inmobiliarias y constructoras.
+            </p>
+            <p style="margin: 0; opacity: 0.88;">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=inmobiliaria#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mi inmobiliaria &rarr;
+          </a>
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="i-btn i-btn--gold"
+          >
+            Solicitar sitio personalizado
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

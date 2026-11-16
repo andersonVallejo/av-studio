@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Kallpa — Restaurante Andino (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de restaurante ficticio en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Kallpa — Restaurante Andino (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Sitio web demostrativo de restaurante ficticio en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/restaurante.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Negocio ficticio en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="k-header">
+      <div class="container k-header__inner">
+        <a href="#inicio" class="k-brand">KALLPA</a>
+        <nav class="k-nav" aria-label="Menú del restaurante">
+          <a class="k-nav__link" href="#inicio">Inicio</a>
+          <a class="k-nav__link" href="#historia">Historia</a>
+          <a class="k-nav__link" href="#menu">Menú</a>
+          <a class="k-nav__link" href="#especialidades">Especialidades</a>
+          <a class="k-nav__link" href="#galeria">Galería</a>
+          <a class="k-nav__link" href="#ubicacion">Ubicación</a>
+          <a class="k-nav__link" href="#contacto">Contacto</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <a href="#contacto" class="k-btn k-btn--primary k-header__cta">Reservar mesa</a>
+          <button
+            type="button"
+            class="k-mobile-toggle"
+            id="k-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="k-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="k-mobile-drawer" id="k-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#historia">Historia</a>
+        <a href="#menu">Menú</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#galeria">Galería</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+        <a href="../../index.html" style="color: var(--k-terracotta-text); font-weight: 700;">&larr; Volver a AV·STUDIO</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="k-hero" id="inicio">
+        <div class="container k-hero__grid">
+          <div class="k-hero__copy">
+            <span class="k-eyebrow">Cocina andina de autor · El Vergel, Cuenca</span>
+            <h1 class="k-hero__title">Sabores de la sierra ecuatoriana en clave contemporánea.</h1>
+            <p class="k-hero__lead">
+              Kallpa es un restaurante ficticio de demostración creado para mostrar cómo tu local
+              gastronómico puede presentar su historia, carta digital y reservas en línea.
+            </p>
+            <div class="k-hero__actions">
+              <a href="#menu" class="k-btn k-btn--olive">Explorar el menú</a>
+              <a href="#contacto" class="k-btn k-btn--outline" style="color: var(--k-cream); border-color: rgba(246,239,230,0.4);">
+                Solicitar reserva de ejemplo
+              </a>
+            </div>
+          </div>
+          <div class="k-hero__media">
+            <picture>
+              <source srcset="./images/salon-cuenca.webp" type="image/webp" />
+              <img
+                src="./images/salon-cuenca.jpg"
+                alt="Salón nocturno del restaurante ficticio Kallpa en Cuenca con luz cálida y mesas de madera"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="k-section" id="historia">
+        <div class="container k-story">
+          <div class="k-story__img">
+            <picture>
+              <source srcset="./images/mesa-andina.webp" type="image/webp" />
+              <img
+                src="./images/mesa-andina.jpg"
+                alt="Mesa servida con cerámica artesanal y gastronomía andina contemporánea"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </div>
+          <div>
+            <span class="k-eyebrow">Nuestra historia</span>
+            <h2 class="k-title">Producto local del Azuay trabajado con respeto y técnica.</h2>
+            <p>
+              En esta sección narrativa cada restaurante cuenta su origen, sus proveedores locales
+              y la filosofía detrás de su cocina. Los textos, horarios y fotografías de este ejemplo
+              se reemplazan íntegramente por los de tu negocio real.
+            </p>
+            <div class="k-story__notes">
+              <div>
+                <strong>Ingredientes regionales</strong>
+                <p style="font-size: 0.9rem; color: var(--k-muted); margin-top: 0.25rem;">
+                  Trucha de altura, papas nativas, mote y hierbas frescas del mercado local.
+                </p>
+              </div>
+              <div>
+                <strong>Atención en salón</strong>
+                <p style="font-size: 0.9rem; color: var(--k-muted); margin-top: 0.25rem;">
+                  Martes a domingo · 12:30 a 22:30 (horario de ejemplo en formato 24h).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="k-section k-section--soft" id="menu">
+        <div class="container">
+          <div class="k-menu-bar">
+            <div>
+              <span class="k-eyebrow">Carta digital interactiva</span>
+              <h2 class="k-title" style="margin-bottom: 0;">Menú de demostración</h2>
+            </div>
+            <div class="k-tabs" role="group" aria-label="Categorías del menú">
+              <button type="button" class="k-tab is-active" data-menu-filter="Todos">Todos</button>
+              <button type="button" class="k-tab" data-menu-filter="Entradas">Entradas</button>
+              <button type="button" class="k-tab" data-menu-filter="Platos Fuertes">Platos Fuertes</button>
+              <button type="button" class="k-tab" data-menu-filter="De la Brasa">De la Brasa</button>
+              <button type="button" class="k-tab" data-menu-filter="Postres y Bebidas">Postres y Bebidas</button>
+            </div>
+          </div>
+
+          <div class="k-menu-layout">
+            <div class="k-menu-grid" id="menu-grid"></div>
+
+            <aside class="k-tray" aria-label="Selección demostrativa de platos">
+              <span class="k-eyebrow" style="margin-bottom: 0.35rem; display: block;">Pedido demostrativo</span>
+              <h3 style="font-family: var(--k-font-display); margin: 0 0 0.35rem;">Tu selección de prueba</h3>
+              <p style="font-size: 0.825rem; opacity: 0.85; margin: 0;">
+                Esta lista no procesa pagos ni confirma órdenes reales; permite probar la experiencia
+                de consulta hacia WhatsApp.
+              </p>
+              <ul class="k-tray__list" id="tray-list"></ul>
+              <div class="k-tray__total">
+                <span>Subtotal estimado</span>
+                <span id="tray-total" style="font-family: var(--k-font-mono);">$0.00 USD</span>
+              </div>
+              <a
+                id="tray-wa-link"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="k-btn k-btn--olive"
+                style="width: 100%;"
+              >
+                Consultar por WhatsApp
+              </a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="k-section" id="especialidades">
+        <div class="container k-specials">
+          <div>
+            <span class="k-eyebrow">Especialidades de la casa</span>
+            <h2 class="k-title">Platos emblemáticos de temporada.</h2>
+            <div class="k-special-list">
+              <div class="k-special-item">
+                <strong>Trucha Sellada en Puré de Melloco · $16.50</strong>
+                <p style="margin: 0.3rem 0 0; color: var(--k-muted); font-size: 0.92rem;">
+                  Pesca fresca de montaña con guarnición cremosa de tubérculos locales y aceite aromático.
+                </p>
+              </div>
+              <div class="k-special-item">
+                <strong>Cordero Braseado en Chicha de Jora · $19.00</strong>
+                <p style="margin: 0.3rem 0 0; color: var(--k-muted); font-size: 0.92rem;">
+                  Cocción lenta en reducción tradicional servida con mote pillo suave.
+                </p>
+              </div>
+              <div>
+                <strong>Higos Confitados y Helado de Queso · $6.50</strong>
+                <p style="margin: 0.3rem 0 0; color: var(--k-muted); font-size: 0.92rem;">
+                  Clásico cuencano reinterpretado con helado artesanal y panela especiada.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="k-story__img">
+            <picture>
+              <source srcset="./images/plato-trucha.webp" type="image/webp" />
+              <img
+                src="./images/plato-trucha.jpg"
+                alt="Trucha sellada con puré dorado y aceite de hierbas sobre plato de cerámica artesanal"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="k-section k-section--soft" id="galeria">
+        <div class="container">
+          <span class="k-eyebrow">Galería gastronómica</span>
+          <h2 class="k-title">Ambiente y cocina en cada detalle</h2>
+          <div class="k-gallery">
+            <button type="button" class="k-gallery-btn" aria-label="Ampliar fotografía de salón nocturno">
+              <picture>
+                <source srcset="./images/salon-cuenca.webp" type="image/webp" />
+                <img
+                  src="./images/salon-cuenca.jpg"
+                  alt="Salón interior de restaurante andino al anochecer"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </button>
+            <button type="button" class="k-gallery-btn" aria-label="Ampliar fotografía de mesa servida">
+              <picture>
+                <source srcset="./images/mesa-andina.webp" type="image/webp" />
+                <img
+                  src="./images/mesa-andina.jpg"
+                  alt="Mesa gastronómica con vajilla artesanal en tono terracota y oliva"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </button>
+            <button type="button" class="k-gallery-btn" aria-label="Ampliar fotografía de plato de trucha">
+              <picture>
+                <source srcset="./images/plato-trucha.webp" type="image/webp" />
+                <img
+                  src="./images/plato-trucha.jpg"
+                  alt="Plato fuerte de trucha andina emplatada sobre piedra oscura"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="k-section" id="ubicacion">
+        <div class="container k-contact-grid">
+          <div>
+            <span class="k-eyebrow">Ubicación y contacto</span>
+            <h2 class="k-title">Referencia en Cuenca, Azuay, Ecuador.</h2>
+            <p>
+              <strong>Sector de ejemplo:</strong> El Vergel / Cercanías del Centro Histórico de Cuenca.<br />
+              <strong>Horarios de ejemplo:</strong> Martes a domingo de 12:30 a 22:30 (Zona horaria America/Guayaquil).<br />
+              <strong>Teléfono de demostración:</strong> +593 979 290 747 (canal de contacto AV·STUDIO).
+            </p>
+            <p style="font-size: 0.875rem; color: var(--k-muted);">
+              Nota: Kallpa es un restaurante ficticio creado únicamente como ejemplo funcional de AV·STUDIO.
+            </p>
+          </div>
+
+          <div class="k-form" id="contacto">
+            <h3 style="font-family: var(--k-font-display); font-size: 1.6rem; margin: 0 0 0.4rem;">
+              Solicitud demostrativa de reserva
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--k-muted); margin: 0 0 1.25rem;">
+              Valida los campos para generar un mensaje de ejemplo hacia WhatsApp.
+            </p>
+            <form id="k-res-form" novalidate>
+              <div class="k-form-grid">
+                <div class="k-field">
+                  <label for="k-name">Nombre completo *</label>
+                  <input id="k-name" type="text" placeholder="Ej. Andrés León" />
+                  <span class="k-err" id="k-err-name"></span>
+                </div>
+                <div class="k-field">
+                  <label for="k-guests">Personas *</label>
+                  <input id="k-guests" type="number" min="1" max="16" value="2" />
+                  <span class="k-err" id="k-err-guests"></span>
+                </div>
+                <div class="k-field">
+                  <label for="k-date">Fecha *</label>
+                  <input id="k-date" type="date" />
+                  <span class="k-err" id="k-err-date"></span>
+                </div>
+                <div class="k-field">
+                  <label for="k-time">Hora (24h) *</label>
+                  <select id="k-time">
+                    <option value="">Elige una hora</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="19:30">19:30</option>
+                    <option value="20:30">20:30</option>
+                  </select>
+                  <span class="k-err" id="k-err-time"></span>
+                </div>
+                <div class="k-field k-field--full">
+                  <label for="k-phone">WhatsApp de contacto *</label>
+                  <input id="k-phone" type="tel" placeholder="+593 9..." />
+                  <span class="k-err" id="k-err-phone"></span>
+                </div>
+              </div>
+              <div style="margin-top: 1rem;">
+                <button type="submit" class="k-btn k-btn--primary">Preparar consulta por WhatsApp</button>
+              </div>
+              <div class="k-prepared" id="k-prepared" hidden>
+                <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+                  <strong>Solicitud demostrativa preparada.</strong> Al no estar conectada a un
+                  restaurante real, el enlace abre la conversación con AV·STUDIO:
+                </p>
+                <a
+                  id="k-prepared-wa"
+                  href="https://wa.me/593979290747"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="k-btn k-btn--olive"
+                >
+                  Abrir mensaje en WhatsApp
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="k-lightbox" id="k-lightbox" aria-label="Vista ampliada">
+      <div class="k-lightbox__bar">
+        <span id="k-lightbox-caption" style="font-size: 0.875rem;"></span>
+        <button type="button" id="k-lightbox-close" class="k-tray__remove" style="font-size: 0.9rem; padding: 0.4rem 0.85rem;">
+          Cerrar
+        </button>
+      </div>
+      <picture>
+        <source id="k-lightbox-webp" srcset="./images/salon-cuenca.webp" type="image/webp" />
+        <img id="k-lightbox-img" src="./images/salon-cuenca.jpg" alt="" />
+      </picture>
+    </dialog>
+
+    <footer class="k-footer">
+      <div class="container">
+        <div class="k-footer__top">
+          <div>
+            <strong style="font-family: var(--k-font-display); font-size: 1.4rem;">KALLPA · Cocina Andina</strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.875rem; opacity: 0.8;">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#menu">Menú</a>
+            <a href="#galeria">Galería</a>
+            <a href="#contacto">Reservas</a>
+            <a href="../../index.html" style="color: #E7B09B; font-weight: 600;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="k-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Creamos experiencias digitales personalizadas para negocios y profesionales.
+            </p>
+            <p style="margin: 0; opacity: 0.88;">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> · Contacto:
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=restaurantes#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mi restaurante &rarr;
+          </a>
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a
+              href="https://wa.me/593979290747"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="k-btn k-btn--olive"
+            >
+              Solicitar página personalizada
+            </a>
+            <a href="../../index.html#categorias" class="k-btn k-btn--outline" style="color: var(--k-cream); border-color: rgba(246,239,230,0.35);">
+              Ver más sectores
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

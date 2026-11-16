@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Torque Andino — Taller Automotriz (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de taller mecánico y diagnóstico automotriz en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Torque Andino — Taller Automotriz (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Taller automotriz ficticio en Cuenca con servicios preventivos en USD, bahía de diagnóstico y reserva de turno por hora."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/automotriz.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Taller automotriz ficticio en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="au-header">
+      <div class="container au-header__inner">
+        <a href="#inicio" class="au-brand">TORQUE <span class="au-brand__accent">ANDINO</span></a>
+        <nav class="au-nav" aria-label="Navegación automotriz">
+          <a class="au-nav__link" href="#inicio">Inicio</a>
+          <a class="au-nav__link" href="#servicios">Servicios</a>
+          <a class="au-nav__link" href="#diagnostico">Diagnóstico</a>
+          <a class="au-nav__link" href="#turnos">Agendar turno</a>
+        </nav>
+        <div class="au-header__actions">
+          <a href="#turnos" class="au-btn au-btn--red au-header__cta">Pedir turno</a>
+          <button
+            type="button"
+            class="au-mobile-toggle"
+            id="au-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="au-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="au-mobile-drawer" id="au-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#diagnostico">Diagnóstico</a>
+        <a href="#turnos">Agendar turno</a>
+        <a href="../../index.html" class="au-mobile-drawer__back">
+          &larr; Volver a AV·STUDIO
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="au-hero" id="inicio">
+        <div class="container au-hero__grid">
+          <div>
+            <span class="au-eyebrow au-eyebrow--hero">
+              Diagnóstico y mecánica · Av. España, Cuenca
+            </span>
+            <h1 class="au-title au-title--hero">
+              Mantenimiento preventivo claro, diagnóstico técnico y turnos por hora.
+            </h1>
+            <p class="au-hero__lead">
+              Torque Andino es un taller automotriz ficticio creado por AV·STUDIO para demostrar cómo
+              presentar servicios mecánicos con tarifas base en USD y solicitud rápida de revisión.
+            </p>
+            <div class="au-btn-row">
+              <a href="#turnos" class="au-btn au-btn--red">Solicitar turno de revisión</a>
+              <a href="#servicios" class="au-btn au-btn--outline">Ver servicios en USD</a>
+            </div>
+          </div>
+
+          <div class="au-hero__media">
+            <picture>
+              <source srcset="./images/hero.webp" type="image/webp" />
+              <img
+                src="./images/hero.jpg"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+                alt="Bahía limpia de servicio automotriz con elevador hidráulico y gabinetes técnicos organizados"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="au-section au-section--white" id="servicios">
+        <div class="container">
+          <span class="au-eyebrow">Servicios técnicos en USD</span>
+          <h2 class="au-title">Mantenimiento y diagnóstico</h2>
+
+          <div class="au-tabs" role="group" aria-label="Filtrar servicios automotrices">
+            <button type="button" class="au-tab is-active" data-auto-filter="Todos">Todos</button>
+            <button type="button" class="au-tab" data-auto-filter="Preventivo">Preventivo</button>
+            <button type="button" class="au-tab" data-auto-filter="Frenos y Suspensión">Frenos y Suspensión</button>
+            <button type="button" class="au-tab" data-auto-filter="Diagnóstico">Diagnóstico</button>
+            <button type="button" class="au-tab" data-auto-filter="Alineación">Alineación</button>
+          </div>
+
+          <div class="au-grid" id="au-grid"></div>
+        </div>
+      </section>
+
+      <section class="au-section au-section--diag" id="diagnostico">
+        <div class="container au-diag-grid">
+          <div class="au-diag__media">
+            <picture>
+              <source srcset="./images/diagnostico.webp" type="image/webp" />
+              <img
+                src="./images/diagnostico.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                alt="Bahía de diagnóstico electrónico automotriz con escáner OBD-II y herramientas calibradas"
+              />
+            </picture>
+          </div>
+          <div>
+            <span class="au-eyebrow">Bahía computarizada</span>
+            <h2 class="au-title">Diagnóstico ordenado antes de cotizar repuestos</h2>
+            <p class="au-diag__copy">
+              Un taller confiable comunica sus procesos con transparencia: explica qué incluye cada
+              revisión electrónica, cuánto tiempo toma en taller y qué modelo de vehículo atiendes.
+            </p>
+            <ul class="au-diag__list">
+              <li>Lectura de códigos OBD-II, batería y sistema de carga con reporte claro.</li>
+              <li>Tarifas base en USD visibles por servicio antes de agendar cita.</li>
+              <li>Reserva por placa o modelo directo hacia WhatsApp de recepción.</li>
+            </ul>
+            <a href="#turnos" class="au-btn au-btn--dark">Reservar bahía de revisión</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="au-section" id="turnos">
+        <div class="container au-booking-grid">
+          <div>
+            <span class="au-eyebrow">Atención en taller</span>
+            <h2 class="au-title">Agenda tu revisión demostrativa</h2>
+            <p class="au-booking__copy">
+              <strong>Horario de ejemplo (24h):</strong> Lunes a viernes 08:00 – 18:00 · Sábados 08:30 – 13:30.<br />
+              <strong>Sector referencial:</strong> Av. España y Chapetones, Cuenca, Ecuador.
+            </p>
+            <p class="au-booking__note">
+              Este formulario valida el modelo del vehículo y prepara el mensaje directo hacia el
+              WhatsApp de Anderson Vallejo (AV·STUDIO).
+            </p>
+          </div>
+
+          <form class="au-form-card" id="au-turn-form" novalidate>
+            <h3 style="font-family: var(--au-font-display); font-size: 1.45rem; margin: 0 0 1rem;">
+              Solicitud de turno mecánico
+            </h3>
+            <div class="au-form-fields">
+              <div class="au-field">
+                <label for="au-name">Propietario *</label>
+                <input id="au-name" type="text" placeholder="Ej. Carlos Vicuña" />
+                <span class="au-err" id="au-err-name"></span>
+              </div>
+              <div class="au-field">
+                <label for="au-phone">WhatsApp *</label>
+                <input id="au-phone" type="tel" placeholder="+593 9..." />
+                <span class="au-err" id="au-err-phone"></span>
+              </div>
+              <div class="au-field">
+                <label for="au-vehicle">Vehículo y año *</label>
+                <input id="au-vehicle" type="text" placeholder="Ej. Kia Sportage 2020" />
+                <span class="au-err" id="au-err-vehicle"></span>
+              </div>
+              <div class="au-field">
+                <label for="au-service">Servicio *</label>
+                <select id="au-service">
+                  <option value="">Selecciona servicio</option>
+                  <option value="Mantenimiento Preventivo (Cambio de Aceite & Filtros)">Mantenimiento Preventivo (Cambio de Aceite &amp; Filtros)</option>
+                  <option value="Revisión & Cambio de Pastillas de Freno">Revisión &amp; Cambio de Pastillas de Freno</option>
+                  <option value="Inspección de Amortiguadores & Terminales">Inspección de Amortiguadores &amp; Terminales</option>
+                  <option value="Escaneo Electrónico Computarizado OBD-II">Escaneo Electrónico Computarizado OBD-II</option>
+                  <option value="Prueba de Batería, Arranque y Alternador">Prueba de Batería, Arranque y Alternador</option>
+                  <option value="Alineación Computarizada y Balanceo x4">Alineación Computarizada y Balanceo x4</option>
+                </select>
+                <span class="au-err" id="au-err-service"></span>
+              </div>
+              <div class="au-field">
+                <label for="au-date">Fecha *</label>
+                <input id="au-date" type="date" />
+                <span class="au-err" id="au-err-date"></span>
+              </div>
+              <div class="au-field">
+                <label for="au-time">Hora (24h) *</label>
+                <select id="au-time">
+                  <option value="">Elige horario</option>
+                  <option value="08:30">08:30</option>
+                  <option value="10:30">10:30</option>
+                  <option value="14:30">14:30</option>
+                  <option value="16:30">16:30</option>
+                </select>
+                <span class="au-err" id="au-err-time"></span>
+              </div>
+            </div>
+            <div style="margin-top: 1rem;">
+              <button type="submit" class="au-btn au-btn--red">Preparar turno por WhatsApp</button>
+            </div>
+            <div id="au-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: var(--au-white); border: 1px solid var(--au-border);">
+              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+                <strong>Turno demostrativo preparado.</strong> Abre el mensaje hacia AV·STUDIO:
+              </p>
+              <a
+                id="au-prepared-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="au-btn au-btn--dark"
+              >
+                Enviar por WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="au-footer">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <strong style="font-family: var(--au-font-display); font-size: 1.3rem;">TORQUE ANDINO · Automotriz</strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; color: var(--au-muted-dark);">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#servicios">Servicios</a>
+            <a href="#turnos">Turnos</a>
+            <a href="../../index.html" style="color: #f4a49f; font-weight: 700;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="au-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Creamos sitios claros para talleres, mecánicas y centros automotrices.
+            </p>
+            <p style="margin: 0; color: var(--au-muted-dark);">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=automotriz#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mi taller automotriz &rarr;
+          </a>
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="au-btn au-btn--red"
+          >
+            Solicitar sitio personalizado
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

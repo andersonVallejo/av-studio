@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Tres Filos — Barbería &amp; Grooming (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de barbería y cuidado masculino en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Tres Filos — Barbería &amp; Grooming (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Sitio web demostrativo de barbería y cuidado masculino en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/barberia.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Negocio ficticio en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="b-header">
+      <div class="container b-header__inner">
+        <a href="#inicio" class="b-brand">
+          <span class="b-brand__mark" aria-hidden="true">TF</span>
+          <span>TRES FILOS</span>
+        </a>
+
+        <nav class="b-nav" aria-label="Navegación de la barbería">
+          <a class="b-nav__link" href="#inicio">Inicio</a>
+          <a class="b-nav__link" href="#servicios">Servicios</a>
+          <a class="b-nav__link" href="#precios">Precios</a>
+          <a class="b-nav__link" href="#barberos">Barberos</a>
+          <a class="b-nav__link" href="#galeria">Galería</a>
+          <a class="b-nav__link" href="#reservas">Reservas</a>
+          <a class="b-nav__link" href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="b-header__actions">
+          <a href="#reservas" class="b-btn b-btn--bronze b-header__cta">Agendar turno</a>
+          <button
+            type="button"
+            class="b-mobile-toggle"
+            id="b-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="b-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+
+      <nav class="b-mobile-drawer" id="b-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#precios">Precios</a>
+        <a href="#barberos">Barberos</a>
+        <a href="#galeria">Galería</a>
+        <a href="#reservas">Reservas</a>
+        <a href="#contacto">Contacto</a>
+        <a href="../../index.html" style="color: var(--b-bronze-bright); font-weight: 700;">
+          &larr; Volver a AV·STUDIO
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="b-hero" id="inicio">
+        <div class="container b-hero__grid">
+          <div>
+            <span class="b-eyebrow">Barbería de autor · Centro Histórico, Cuenca</span>
+            <h1 class="b-hero__title">Precisión clásica, navaja limpia y atención sin apuros.</h1>
+            <p class="b-hero__desc">
+              Tres Filos es una barbería ficticia de demostración diseñada por AV·STUDIO para mostrar
+              cómo tu estudio de grooming puede exhibir servicios, tarifas en USD, barberos y
+              reservas directas por WhatsApp.
+            </p>
+            <div class="b-hero__actions">
+              <a href="#reservas" class="b-btn b-btn--bronze">Agendar turno de ejemplo</a>
+              <a href="#precios" class="b-btn b-btn--outline">Ver lista de precios</a>
+            </div>
+            <div class="b-hero__facts">
+              <div>
+                <strong>09:00 — 20:00</strong>
+                <span>Martes a sábado (horario 24h)</span>
+              </div>
+              <div>
+                <strong>Tarifas en USD</strong>
+                <span>Precios claros sin sorpresas</span>
+              </div>
+              <div>
+                <strong>Cuenca, Ecuador</strong>
+                <span>Sitio adaptable a cualquier ciudad</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="b-hero__media">
+            <picture>
+              <source srcset="./images/salon-barberia.webp" type="image/webp" />
+              <img
+                src="./images/salon-barberia.jpg"
+                alt="Salón de barbería clásica contemporánea con sillón negro, espejo iluminado y detalles en bronce"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+            <div class="b-hero__caption">
+              AMBIENTE DE REFERENCIA · Sillones individuales y estación de toalla caliente
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="b-section b-section--gray" id="servicios">
+        <div class="container">
+          <div class="b-section-head">
+            <div>
+              <span class="b-eyebrow">Catálogo de servicios</span>
+              <h2 class="b-title" style="margin-bottom: 0;">Servicios de corte, barba y cuidado facial</h2>
+            </div>
+            <div class="b-tabs" role="group" aria-label="Filtrar servicios de barbería">
+              <button type="button" class="b-tab is-active" data-barber-filter="Todos">Todos</button>
+              <button type="button" class="b-tab" data-barber-filter="Cortes">Cortes</button>
+              <button type="button" class="b-tab" data-barber-filter="Barba">Barba</button>
+              <button type="button" class="b-tab" data-barber-filter="Rituales">Rituales</button>
+            </div>
+          </div>
+
+          <div class="b-services-grid" id="b-services-grid"></div>
+        </div>
+      </section>
+
+      <section class="b-section b-section--sand" id="precios">
+        <div class="container">
+          <div class="b-section-head" style="margin-bottom: 2rem;">
+            <div>
+              <span class="b-eyebrow">Tarifario transparente</span>
+              <h2 class="b-title" style="margin-bottom: 0;">Lista de precios en dólares (USD)</h2>
+            </div>
+            <p class="b-lead">
+              Valores referenciales de demostración. Selecciona cualquier servicio para precargarlo
+              en el formulario de turno.
+            </p>
+          </div>
+
+          <div class="b-ledger-grid">
+            <div class="b-ledger-table">
+              <div class="b-ledger-row">
+                <div>
+                  <span class="b-ledger-row__name">Corte Clásico &amp; Tijera</span>
+                  <span class="b-ledger-row__meta">40 min · Lavado capilar y styling</span>
+                </div>
+                <span class="b-ledger-row__price">$12.00 USD</span>
+                <button
+                  type="button"
+                  class="b-btn b-btn--outline-dark b-btn--sm"
+                  data-prefill-service="Corte Clásico & Tijera ($12.00 USD)"
+                >
+                  Seleccionar
+                </button>
+              </div>
+
+              <div class="b-ledger-row">
+                <div>
+                  <span class="b-ledger-row__name">Degradado Skin Fade</span>
+                  <span class="b-ledger-row__meta">45 min · Shaver de precisión y perfilado</span>
+                </div>
+                <span class="b-ledger-row__price">$14.00 USD</span>
+                <button
+                  type="button"
+                  class="b-btn b-btn--outline-dark b-btn--sm"
+                  data-prefill-service="Degradado Skin Fade ($14.00 USD)"
+                >
+                  Seleccionar
+                </button>
+              </div>
+
+              <div class="b-ledger-row">
+                <div>
+                  <span class="b-ledger-row__name">Perfilado &amp; Ritual de Barba</span>
+                  <span class="b-ledger-row__meta">35 min · Toalla caliente, navaja y aceite</span>
+                </div>
+                <span class="b-ledger-row__price">$10.00 USD</span>
+                <button
+                  type="button"
+                  class="b-btn b-btn--outline-dark b-btn--sm"
+                  data-prefill-service="Perfilado & Ritual de Barba ($10.00 USD)"
+                >
+                  Seleccionar
+                </button>
+              </div>
+
+              <div class="b-ledger-row">
+                <div>
+                  <span class="b-ledger-row__name">Afeitado Tradicional a Navaja</span>
+                  <span class="b-ledger-row__meta">35 min · Doble espuma tibia y tónico</span>
+                </div>
+                <span class="b-ledger-row__price">$11.00 USD</span>
+                <button
+                  type="button"
+                  class="b-btn b-btn--outline-dark b-btn--sm"
+                  data-prefill-service="Afeitado Tradicional a Navaja ($11.00 USD)"
+                >
+                  Seleccionar
+                </button>
+              </div>
+
+              <div class="b-ledger-row">
+                <div>
+                  <span class="b-ledger-row__name">Ritual Completo Tres Filos</span>
+                  <span class="b-ledger-row__meta">75 min · Corte + barba + exfoliación facial</span>
+                </div>
+                <span class="b-ledger-row__price">$21.00 USD</span>
+                <button
+                  type="button"
+                  class="b-btn b-btn--dark b-btn--sm"
+                  data-prefill-service="Ritual Completo Tres Filos ($21.00 USD)"
+                >
+                  Seleccionar
+                </button>
+              </div>
+
+              <div class="b-ledger-row">
+                <div>
+                  <span class="b-ledger-row__name">Cuidado Facial Masculino</span>
+                  <span class="b-ledger-row__meta">30 min · Limpieza con vapor y mascarilla</span>
+                </div>
+                <span class="b-ledger-row__price">$13.00 USD</span>
+                <button
+                  type="button"
+                  class="b-btn b-btn--outline-dark b-btn--sm"
+                  data-prefill-service="Cuidado Facial Masculino ($13.00 USD)"
+                >
+                  Seleccionar
+                </button>
+              </div>
+            </div>
+
+            <aside class="b-ledger-aside">
+              <picture>
+                <source srcset="./images/herramientas.webp" type="image/webp" />
+                <img
+                  src="./images/herramientas.jpg"
+                  alt="Navaja clásica, brocha de afeitar y tijeras profesionales de acero sobre mesa oscura"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <div class="b-ledger-aside__body">
+                <span class="b-eyebrow" style="margin-bottom: 0.4rem;">Higiene y oficio</span>
+                <h3 style="font-family: var(--b-font-display); margin: 0 0 0.5rem;">
+                  Esterilización entre cada servicio
+                </h3>
+                <p style="margin: 0; font-size: 0.9rem; color: var(--b-muted-dark);">
+                  Hojas desechables nuevas en cada cliente, desinfección UV de herramientas y
+                  productos sin fragancias invasivas. Todo este contenido es personalizable según
+                  la propuesta real de tu barbería.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="b-section" id="barberos">
+        <div class="container">
+          <div style="margin-bottom: 2rem;">
+            <span class="b-eyebrow">Equipo de ejemplo</span>
+            <h2 class="b-title">Barberos de la casa</h2>
+            <p class="b-lead">
+              Los perfiles siguientes son ficticios y muestran cómo presentar especialidades y
+              horarios individuales para generar confianza antes de la visita.
+            </p>
+          </div>
+
+          <div class="b-team-grid">
+            <article class="b-barber-card">
+              <span class="b-barber-card__tag">Perfil ficticio de demostración</span>
+              <h3 class="b-barber-card__name">Matías Ordóñez</h3>
+              <p class="b-barber-card__role">Barbero Director · Cortes clásicos y tijera</p>
+              <p class="b-barber-card__bio">
+                Especialista en proporciones clásicas, cabello medio y acabados limpios que mantienen
+                su forma con el paso de las semanas.
+              </p>
+              <div class="b-barber-card__hours">Horario: Mar a Sáb · 09:00 — 19:00</div>
+            </article>
+
+            <article class="b-barber-card">
+              <span class="b-barber-card__tag">Perfil ficticio de demostración</span>
+              <h3 class="b-barber-card__name">Sebastián Paredes</h3>
+              <p class="b-barber-card__role">Maestro en Degradados · Skin Fade y Textura</p>
+              <p class="b-barber-card__bio">
+                Enfocado en degradados graduales sin marcas visibles, diseño de contornos frontales y
+                texturizado superior moderno.
+              </p>
+              <div class="b-barber-card__hours">Horario: Mar a Dom · 10:00 — 20:00</div>
+            </article>
+
+            <article class="b-barber-card">
+              <span class="b-barber-card__tag">Perfil ficticio de demostración</span>
+              <h3 class="b-barber-card__name">Emilio Cárdenas</h3>
+              <p class="b-barber-card__role">Especialista en Barba &amp; Afeitado</p>
+              <p class="b-barber-card__bio">
+                Dedicado al perfilado geométrico a navaja, rituales de toalla caliente con aceite de
+                eucalipto y cuidado facial masculino.
+              </p>
+              <div class="b-barber-card__hours">Horario: Mié a Dom · 10:00 — 19:30</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="b-section b-section--ivory" id="galeria">
+        <div class="container">
+          <div style="margin-bottom: 2rem;">
+            <span class="b-eyebrow">Estética y trabajo real</span>
+            <h2 class="b-title">Galería de referencia</h2>
+            <p class="b-lead">
+              Haz clic en cualquiera de las fotografías para abrir la vista ampliada.
+            </p>
+          </div>
+
+          <div class="b-gallery-grid">
+            <button
+              type="button"
+              class="b-gallery-item"
+              data-b-gallery="Salón principal — Centro Histórico de Cuenca (referencia)"
+            >
+              <picture>
+                <source srcset="./images/salon-barberia.webp" type="image/webp" />
+                <img
+                  src="./images/salon-barberia.jpg"
+                  alt="Salón de barbería clásica con sillón de cuero negro e iluminación cálida"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <span class="b-gallery-item__cap">Estación principal y ambiente nocturno</span>
+            </button>
+
+            <button
+              type="button"
+              class="b-gallery-item"
+              data-b-gallery="Corte de precisión y acabado clásico — Demostración Tres Filos"
+            >
+              <picture>
+                <source srcset="./images/corte-clasico.webp" type="image/webp" />
+                <img
+                  src="./images/corte-clasico.jpg"
+                  alt="Resultado de corte masculino clásico y barba perfilada en estudio oscuro"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <span class="b-gallery-item__cap">Acabado de corte y perfilado de barba</span>
+            </button>
+
+            <button
+              type="button"
+              class="b-gallery-item"
+              data-b-gallery="Herramientas esterilizadas y ritual de toalla caliente"
+            >
+              <picture>
+                <source srcset="./images/herramientas.webp" type="image/webp" />
+                <img
+                  src="./images/herramientas.jpg"
+                  alt="Navaja barbera, tijeras y brocha de afeitar sobre barra de madera oscura"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <span class="b-gallery-item__cap">Instrumental de corte y afeitado tradicional</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="b-section" id="reservas">
+        <div class="container b-booking-grid">
+          <div id="contacto">
+            <span class="b-eyebrow">Agenda y ubicación</span>
+            <h2 class="b-title">Reserva tu turno demostrativo</h2>
+            <p class="b-lead" style="margin-bottom: 1.5rem;">
+              Este formulario valida tus datos y prepara un mensaje de WhatsApp de ejemplo dirigido
+              a Anderson Vallejo (AV·STUDIO) para que compruebes cómo funciona antes de contratar tu
+              propio sitio web.
+            </p>
+
+            <div class="b-info-panel">
+              <div class="b-info-item">
+                <strong>Ubicación de referencia (ficticia)</strong>
+                <p>Calle Larga y Hermano Miguel · Centro Histórico, Cuenca, Ecuador</p>
+              </div>
+              <div class="b-info-item">
+                <strong>Horarios de atención (formato 24h)</strong>
+                <p>Martes a sábado: 09:00 a 20:00 · Domingos: 10:00 a 15:00 · Lunes cerrado</p>
+              </div>
+              <div class="b-info-item">
+                <strong>Atención directa de AV·STUDIO</strong>
+                <p>
+                  WhatsApp: +593 979 290 747 · Correo:
+                  <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">
+                    andersonvallejo021@gmail.com
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <form class="b-form-card" id="b-booking-form" novalidate>
+            <h3 style="font-family: var(--b-font-display); margin: 0 0 0.35rem; font-size: 1.35rem;">
+              Solicitud de turno
+            </h3>
+            <p style="margin: 0 0 1.25rem; font-size: 0.875rem; color: var(--b-muted-light);">
+              Completa los campos para generar la confirmación demostrativa por WhatsApp.
+            </p>
+
+            <div class="b-form-grid">
+              <div class="b-field">
+                <label for="b-name">Nombre completo *</label>
+                <input id="b-name" type="text" placeholder="Ej. Mateo Jaramillo" />
+                <span class="b-err" id="b-err-name"></span>
+              </div>
+
+              <div class="b-field">
+                <label for="b-phone">WhatsApp de contacto *</label>
+                <input id="b-phone" type="tel" placeholder="+593 9..." />
+                <span class="b-err" id="b-err-phone"></span>
+              </div>
+
+              <div class="b-field b-field--full">
+                <label for="b-service">Servicio deseado *</label>
+                <select id="b-service">
+                  <option value="">Elige un servicio</option>
+                  <option value="Corte Clásico & Tijera ($12.00 USD)">Corte Clásico &amp; Tijera ($12.00 USD)</option>
+                  <option value="Degradado Skin Fade ($14.00 USD)">Degradado Skin Fade ($14.00 USD)</option>
+                  <option value="Perfilado & Ritual de Barba ($10.00 USD)">Perfilado &amp; Ritual de Barba ($10.00 USD)</option>
+                  <option value="Afeitado Tradicional a Navaja ($11.00 USD)">Afeitado Tradicional a Navaja ($11.00 USD)</option>
+                  <option value="Ritual Completo Tres Filos ($21.00 USD)">Ritual Completo Tres Filos ($21.00 USD)</option>
+                  <option value="Cuidado Facial Masculino ($13.00 USD)">Cuidado Facial Masculino ($13.00 USD)</option>
+                </select>
+                <span class="b-err" id="b-err-service"></span>
+              </div>
+
+              <div class="b-field">
+                <label for="b-barber">Barbero *</label>
+                <select id="b-barber">
+                  <option value="Cualquier barbero disponible">Cualquier barbero disponible</option>
+                  <option value="Matías Ordóñez">Matías Ordóñez</option>
+                  <option value="Sebastián Paredes">Sebastián Paredes</option>
+                  <option value="Emilio Cárdenas">Emilio Cárdenas</option>
+                </select>
+                <span class="b-err" id="b-err-barber"></span>
+              </div>
+
+              <div class="b-field">
+                <label for="b-date">Fecha *</label>
+                <input id="b-date" type="date" />
+                <span class="b-err" id="b-err-date"></span>
+              </div>
+
+              <div class="b-field b-field--full">
+                <label for="b-time">Horario disponible (24h) *</label>
+                <select id="b-time">
+                  <option value="">Selecciona una hora</option>
+                  <option value="09:30">09:30</option>
+                  <option value="11:00">11:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="17:30">17:30</option>
+                  <option value="19:00">19:00</option>
+                </select>
+                <span class="b-err" id="b-err-time"></span>
+              </div>
+            </div>
+
+            <div style="margin-top: 1rem;">
+              <button type="submit" class="b-btn b-btn--dark">Preparar reserva por WhatsApp</button>
+            </div>
+
+            <div class="b-prepared" id="b-prepared" hidden>
+              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+                <strong>Turno demostrativo preparado.</strong> Al no estar conectado a una barbería
+                real, el enlace abre la conversación con Anderson Vallejo — AV·STUDIO:
+              </p>
+              <a
+                id="b-prepared-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="b-btn b-btn--bronze"
+              >
+                Enviar mensaje por WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="b-lightbox" id="b-lightbox" aria-label="Imagen ampliada">
+      <div class="b-lightbox__bar">
+        <span id="b-lightbox-caption" style="font-size: 0.875rem;"></span>
+        <button type="button" id="b-lightbox-close" class="b-btn b-btn--outline b-btn--sm">
+          Cerrar
+        </button>
+      </div>
+      <picture>
+        <source id="b-lightbox-webp" srcset="./images/salon-barberia.webp" type="image/webp" />
+        <img id="b-lightbox-img" src="./images/salon-barberia.jpg" alt="" />
+      </picture>
+    </dialog>
+
+    <footer class="b-footer">
+      <div class="container">
+        <div class="b-footer__top">
+          <div>
+            <strong style="font-family: var(--b-font-display); font-size: 1.35rem; letter-spacing: 0.1em;">
+              TRES FILOS · Barbería &amp; Grooming
+            </strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.875rem; color: var(--b-muted-dark);">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#servicios">Servicios</a>
+            <a href="#precios">Precios</a>
+            <a href="#reservas">Reservas</a>
+            <a href="../../index.html" style="color: var(--b-bronze-bright); font-weight: 600;">
+              Volver a AV·STUDIO
+            </a>
+          </div>
+        </div>
+
+        <div class="b-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos sitios a medida para
+              barberías, estudios de imagen y comercios en Ecuador.
+            </p>
+            <p style="margin: 0; color: var(--b-muted-dark);">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> · Contacto:
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">
+                andersonvallejo021@gmail.com
+              </a>
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="../../index.html?sector=barberia#contacto" class="b-btn b-btn--bronze">
+            Quiero una página para mi barbería &rarr;
+          </a>
+            <a href="../../index.html#categorias" class="b-btn b-btn--outline">
+              Ver más sectores
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

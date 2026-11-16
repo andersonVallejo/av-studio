@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Forno Bravo — Pizzería &amp; Burgers (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de pizzería y comida rápida en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Forno Bravo — Pizzería &amp; Burgers (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Sitio web demostrativo de pizzería y comida rápida en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/pizzeria.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="p-demo-bar">
+      <div class="container p-demo-bar__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Pizzería ficticia en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="p-demo-bar__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="p-header">
+      <div class="container p-header__inner">
+        <a href="#inicio" class="p-brand">FORNO <span>BRAVO</span></a>
+        <nav class="p-nav" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#menu" data-jump-tab="Pizzas">Pizzas</a>
+          <a href="#menu" data-jump-tab="Hamburguesas">Hamburguesas</a>
+          <a href="#menu" data-jump-tab="Combos">Combos</a>
+          <a href="#menu" data-jump-tab="Complementos">Complementos</a>
+          <a href="#promociones">Promociones</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <a href="#menu" class="p-btn p-btn--amber p-header__cta">Armar pedido</a>
+          <button
+            type="button"
+            class="p-mobile-btn"
+            id="p-mobile-btn"
+            aria-expanded="false"
+            aria-controls="p-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="p-mobile-drawer" id="p-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#promociones">Promociones</a>
+        <a href="#menu">Menú completo</a>
+        <a href="#contacto">Contacto</a>
+        <a href="../../index.html" style="color: var(--p-amber); font-weight: 700;">&larr; Volver a AV·STUDIO</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="p-hero" id="inicio">
+        <div class="container p-hero__grid">
+          <div>
+            <span class="p-kicker">Masa madre al horno · Av. Remigio Crespo, Cuenca</span>
+            <h1 class="p-hero__title">Pizza artesanal al fuego y burgers al instante.</h1>
+            <p style="color: var(--p-muted); font-size: 1.05rem; max-width: 45ch; margin-bottom: 1.5rem;">
+              Forno Bravo es una marca ficticia creada por AV·STUDIO para demostrar cómo tu local de
+              pizzas o comida rápida puede mostrar su carta, combos en USD y recibir pedidos por
+              WhatsApp.
+            </p>
+            <div class="p-hero__actions">
+              <a href="#menu" class="p-btn p-btn--amber">Ver menú y armar pedido</a>
+              <a href="#promociones" class="p-btn p-btn--red">Promociones del día</a>
+            </div>
+          </div>
+          <div class="p-hero__img">
+            <picture>
+              <source srcset="./images/pizza-horno.webp" type="image/webp" />
+              <img
+                src="./images/pizza-horno.jpg"
+                alt="Pizza artesanal recién salida del horno con albahaca fresca sobre barra oscura"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-promos" id="promociones">
+        <div class="container">
+          <span class="p-kicker" style="color: #FCE2AC;">Promociones de demostración</span>
+          <div class="p-promos__grid">
+            <article class="p-promo-card">
+              <strong>Martes de Horno · 2 Pizzas Clásicas</strong>
+              <p style="margin: 0.35rem 0; font-size: 0.9rem; opacity: 0.9;">
+                Dos pizzas personales Margherita o Pepperoni para compartir en Cuenca.
+              </p>
+              <span class="p-promo-card__price">$18.50 USD</span>
+            </article>
+            <article class="p-promo-card">
+              <strong>Combo Dúo Cuenca</strong>
+              <p style="margin: 0.35rem 0; font-size: 0.9rem; opacity: 0.9;">
+                Pizza mediana de 32 cm + pan al ajo + 2 bebidas personales.
+              </p>
+              <span class="p-promo-card__price">$19.50 USD</span>
+            </article>
+            <article class="p-promo-card">
+              <strong>Noche de Smash Burgers</strong>
+              <p style="margin: 0.35rem 0; font-size: 0.9rem; opacity: 0.9;">
+                2 Doble Smash Bravo con papas rústicas y salsa de la casa.
+              </p>
+              <span class="p-promo-card__price">$15.90 USD</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-section" id="menu">
+        <div class="container">
+          <span class="p-kicker" style="color: var(--p-red);">Menú interactivo en USD</span>
+          <h2 class="p-section-title">Elige tus productos</h2>
+          <p style="margin: 0; color: #4A443F;">
+            Filtra por pizzas, hamburguesas, combos o complementos y prueba el selector demostrativo.
+          </p>
+
+          <div class="p-menu-tabs" role="group" aria-label="Categorías del menú">
+            <button type="button" class="p-tab is-active" data-p-tab="Todas">Todas</button>
+            <button type="button" class="p-tab" data-p-tab="Pizzas">Pizzas</button>
+            <button type="button" class="p-tab" data-p-tab="Hamburguesas">Hamburguesas</button>
+            <button type="button" class="p-tab" data-p-tab="Combos">Combos</button>
+            <button type="button" class="p-tab" data-p-tab="Complementos">Complementos</button>
+          </div>
+
+          <div class="p-order-layout">
+            <div class="p-items-grid" id="p-items-grid"></div>
+
+            <aside class="p-cart" aria-label="Pedido demostrativo">
+              <span class="p-kicker" style="margin-bottom: 0.25rem;">Pedido demostrativo</span>
+              <h3 style="font-family: var(--p-font-display); text-transform: uppercase; margin: 0 0 0.4rem;">
+                Resumen de orden
+              </h3>
+              <p style="font-size: 0.82rem; color: var(--p-muted); margin: 0;">
+                Demostración sin pagos en línea: al finalizar, se prepara el texto de pedido para WhatsApp.
+              </p>
+
+              <ul class="p-cart__items" id="p-cart-items"></ul>
+
+              <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 1rem;">
+                <span>Total estimado</span>
+                <span id="p-cart-total" style="font-family: var(--p-font-mono); color: var(--p-amber);">$0.00 USD</span>
+              </div>
+
+              <div class="p-cart__fields">
+                <label for="p-customer-name" class="p-cart__label">Tu nombre (opcional)</label>
+                <input
+                  id="p-customer-name"
+                  type="text"
+                  class="p-cart__input"
+                  placeholder="Ej. Diego Paredes"
+                />
+                <label for="p-customer-sector" class="p-cart__label">Sector en Cuenca (opcional)</label>
+                <input
+                  id="p-customer-sector"
+                  type="text"
+                  class="p-cart__input"
+                  placeholder="Ej. El Ejido / Totoracocha"
+                />
+              </div>
+
+              <a
+                id="p-cart-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-btn p-btn--amber"
+                style="width: 100%;"
+              >
+                Enviar pedido por WhatsApp
+              </a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-section" style="padding-top: 0;">
+        <div class="container">
+          <div class="p-split-feature">
+            <picture>
+              <source srcset="./images/burger-combo.webp" type="image/webp" />
+              <img
+                src="./images/burger-combo.jpg"
+                alt="Hamburguesa doble con queso cheddar fundido y papas rústicas sobre pizarra oscura"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <div>
+              <span class="p-kicker">Especialidad nocturna</span>
+              <h2 class="p-section-title" style="color: var(--p-cream);">
+                Burgers selladas al momento y entregas en Cuenca.
+              </h2>
+              <p style="color: var(--p-muted);">
+                Horario de atención de ejemplo: miércoles a lunes de 16:00 a 23:00 (24h). Zona de
+                referencia: Av. Remigio Crespo y sectores aledaños en Cuenca, Azuay, Ecuador.
+              </p>
+              <a href="#contacto" class="p-btn p-btn--red" style="margin-top: 0.5rem;">
+                Ver datos de contacto
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-section" id="contacto" style="padding-top: 1rem;">
+        <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; align-items: center;">
+          <div>
+            <span class="p-kicker" style="color: var(--p-red);">Contacto de ejemplo</span>
+            <h2 class="p-section-title">¿Listo para tu página de pizzería o comida rápida?</h2>
+            <p style="margin: 0; color: #4A443F;">
+              Ciudad de referencia: Cuenca, Ecuador · Negocio ficticio de demostración · Moneda USD ($).
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-btn p-btn--red"
+          >
+            Cotizar un sitio como este por WhatsApp
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="p-footer">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <strong class="p-brand" style="font-size: 1.35rem;">FORNO <span>BRAVO</span></strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; color: var(--p-muted);">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#menu">Menú</a>
+            <a href="#promociones">Promociones</a>
+            <a href="../../index.html" style="color: var(--p-amber); font-weight: 700;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="p-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Creamos experiencias digitales personalizadas para negocios y profesionales.
+            </p>
+            <p style="margin: 0; color: var(--p-muted);">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=pizzerias#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mi pizzería &rarr;
+          </a>
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-btn p-btn--amber"
+          >
+            Solicitar mi página web
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

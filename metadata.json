@@ -1,0 +1,6 @@
+{
+  "name": "AV Studio",
+  "description": "Plataforma comercial de diseño y desarrollo web personalizado por Anderson Vallejo en Ecuador. Ideas que toman forma.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

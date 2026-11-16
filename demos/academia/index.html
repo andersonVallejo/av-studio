@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Instituto Paideia — Educación &amp; Cursos (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de academia y centro educativo en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Instituto Paideia — Educación &amp; Cursos (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Academia ficticia en Cuenca con catálogo filtrable por área y modalidad, valores en USD y solicitud de pensum."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/academia.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Merriweather:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Academia ficticia en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="ac-header">
+      <div class="container ac-header__inner">
+        <a href="#inicio" class="ac-brand">INSTITUTO PAIDEIA</a>
+        <nav class="ac-nav" aria-label="Navegación académica">
+          <a class="ac-nav__link" href="#inicio">Inicio</a>
+          <a class="ac-nav__link" href="#programas">Programas</a>
+          <a class="ac-nav__link" href="#aulas">Aulas</a>
+          <a class="ac-nav__link" href="#inscripciones">Inscripciones</a>
+        </nav>
+        <div class="ac-header__actions">
+          <a href="#inscripciones" class="ac-btn ac-btn--blue ac-header__cta">Inscribirme</a>
+          <button
+            type="button"
+            class="ac-mobile-toggle"
+            id="ac-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="ac-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="ac-mobile-drawer" id="ac-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#programas">Programas</a>
+        <a href="#aulas">Aulas</a>
+        <a href="#inscripciones">Inscripciones</a>
+        <a href="../../index.html" class="ac-mobile-drawer__back">
+          &larr; Volver a AV·STUDIO
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="ac-hero" id="inicio">
+        <div class="container ac-hero__grid">
+          <div>
+            <span class="ac-eyebrow">Formación presencial y en línea · Cuenca, Ecuador</span>
+            <h1 class="ac-title ac-title--hero">
+              Programas estructurados, horarios claros y proceso directo de matrícula.
+            </h1>
+            <p class="ac-hero__lead">
+              Instituto Paideia es una academia ficticia diseñada por AV·STUDIO para demostrar cómo
+              exhibir cursos por área y modalidad, valores en USD y solicitudes de pensum.
+            </p>
+            <div class="ac-btn-row">
+              <a href="#programas" class="ac-btn ac-btn--blue">Explorar cursos</a>
+              <a href="#inscripciones" class="ac-btn ac-btn--mustard">Solicitar información</a>
+            </div>
+          </div>
+
+          <div class="ac-hero__media">
+            <picture>
+              <source srcset="./images/hero.webp" type="image/webp" />
+              <img
+                src="./images/hero.jpg"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+                alt="Aula luminosa de academia contemporánea con mesas de madera clara y estudiantes"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="ac-section" id="programas">
+        <div class="container">
+          <span class="ac-eyebrow">Oferta educativa en USD</span>
+          <h2 class="ac-title">Cursos y programas de demostración</h2>
+
+          <div class="ac-toolbar">
+            <div class="ac-tabs ac-tabs--inline" role="group" aria-label="Filtrar cursos por área">
+              <button type="button" class="ac-tab is-active" data-acad-area="Todos">Todos</button>
+              <button type="button" class="ac-tab" data-acad-area="Idiomas">Idiomas</button>
+              <button type="button" class="ac-tab" data-acad-area="Diseño Digital">Diseño Digital</button>
+              <button type="button" class="ac-tab" data-acad-area="Finanzas">Finanzas</button>
+              <button type="button" class="ac-tab" data-acad-area="Preuniversitario">Preuniversitario</button>
+            </div>
+            <div class="ac-modality-filter">
+              <label for="ac-filter-modality" class="ac-modality-label">
+                Modalidad:
+              </label>
+              <select id="ac-filter-modality" class="ac-modality-select">
+                <option value="Todas">Todas</option>
+                <option value="Presencial Cuenca">Presencial Cuenca</option>
+                <option value="En línea">En línea</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ac-courses-grid" id="ac-courses-grid"></div>
+        </div>
+      </section>
+
+      <section class="ac-section ac-section--campus" id="aulas">
+        <div class="container ac-campus-grid">
+          <div class="ac-campus__media">
+            <picture>
+              <source srcset="./images/aula.webp" type="image/webp" />
+              <img
+                src="./images/aula.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                alt="Sala de seminarios y tutoría académica con estantería de libros, mesas amplias e iluminación natural"
+              />
+            </picture>
+          </div>
+          <div>
+            <span class="ac-eyebrow">Campus &amp; metodología híbrida</span>
+            <h2 class="ac-title">Grupos reducidos en Cuenca y clases en vivo</h2>
+            <p class="ac-campus__copy">
+              Un sitio educativo profesional permite que estudiantes y padres filtren por área de
+              conocimiento, modalidad y costos en USD antes de pedir el pensum académico completo.
+            </p>
+            <ul class="ac-campus__list">
+              <li>Aulas equipadas para talleres presenciales en Av. Paucarbamba y 12 de Abril.</li>
+              <li>Sesiones sincrónicas en línea con material de respaldo descargable.</li>
+              <li>Solicitud directa de horarios, becas o pensum por WhatsApp.</li>
+            </ul>
+            <a href="#inscripciones" class="ac-btn ac-btn--blue">Pedir pensum por WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="ac-section ac-section--gray" id="inscripciones">
+        <div class="container ac-enroll-grid">
+          <div>
+            <span class="ac-eyebrow">Admisiones e información</span>
+            <h2 class="ac-title">Solicita el pensum o separa un cupo demostrativo</h2>
+            <p class="ac-enroll__copy">
+              <strong>Horarios de atención (24h):</strong> Lunes a viernes 08:30 – 19:00 · Sábados 09:00 – 13:00.<br />
+              <strong>Sede referencial:</strong> Av. Paucarbamba y 12 de Abril, Cuenca, Ecuador.
+            </p>
+          </div>
+
+          <form class="ac-form-card ac-form-card--white" id="ac-enroll-form" novalidate>
+            <h3 class="ac-form-card__title">Formulario de admisión</h3>
+            <div class="ac-form-fields">
+              <div class="ac-field">
+                <label for="ac-name">Nombre del estudiante *</label>
+                <input id="ac-name" type="text" placeholder="Ej. Camila León" />
+                <span class="ac-err" id="ac-err-name"></span>
+              </div>
+              <div class="ac-field">
+                <label for="ac-phone">WhatsApp *</label>
+                <input id="ac-phone" type="tel" placeholder="+593 9..." />
+                <span class="ac-err" id="ac-err-phone"></span>
+              </div>
+              <div class="ac-field">
+                <label for="ac-course">Curso de interés *</label>
+                <select id="ac-course">
+                  <option value="">Selecciona curso</option>
+                  <option value="Inglés Comunicativo B1–B2">Inglés Comunicativo B1–B2</option>
+                  <option value="Fundamentos de Diseño Gráfico y Marca">Fundamentos de Diseño Gráfico y Marca</option>
+                  <option value="Finanzas Prácticas para Emprendedores">Finanzas Prácticas para Emprendedores</option>
+                  <option value="Razonamiento Numérico y Verbal">Razonamiento Numérico y Verbal</option>
+                </select>
+                <span class="ac-err" id="ac-err-course"></span>
+              </div>
+              <div class="ac-field">
+                <label for="ac-modality">Modalidad *</label>
+                <select id="ac-modality">
+                  <option value="">Elige modalidad</option>
+                  <option value="Presencial en Cuenca">Presencial en Cuenca</option>
+                  <option value="En línea en vivo">En línea en vivo</option>
+                </select>
+                <span class="ac-err" id="ac-err-modality"></span>
+              </div>
+            </div>
+            <div style="margin-top: 1rem;">
+              <button type="submit" class="ac-btn ac-btn--blue">Preparar solicitud en WhatsApp</button>
+            </div>
+            <div id="ac-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: var(--ac-gray); border: 1px solid var(--ac-border); border-radius: 6px;">
+              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+                <strong>Solicitud demostrativa validada.</strong> Abre el mensaje hacia AV·STUDIO:
+              </p>
+              <a
+                id="ac-prepared-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="ac-btn ac-btn--mustard"
+              >
+                Enviar por WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="ac-footer">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <strong style="font-family: var(--ac-font-serif); font-size: 1.2rem;">INSTITUTO PAIDEIA</strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; color: #cfdcf0;">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#programas">Programas</a>
+            <a href="#inscripciones">Inscripciones</a>
+            <a href="../../index.html" style="color: #f6cf79; font-weight: 700;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="ac-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Creamos sitios claros para academias, colegios y centros de capacitación.
+            </p>
+            <p style="margin: 0; color: #dbe5f5;">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=academia#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mi academia &rarr;
+          </a>
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ac-btn ac-btn--mustard"
+          >
+            Solicitar sitio personalizado
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

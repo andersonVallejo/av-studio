@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Pulso 360 — Gimnasio &amp; Entrenamiento (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de gimnasio y centro de entrenamiento en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Pulso 360 — Gimnasio &amp; Entrenamiento (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Club deportivo ficticio en Cuenca con programas por disciplina, membresías transparentes en USD y clase de prueba."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/gimnasio.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Gimnasio ficticio en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="g-header">
+      <div class="container g-header__inner">
+        <a href="#inicio" class="g-brand">PULSO <span class="g-brand__accent">360</span></a>
+        <nav class="g-nav" aria-label="Navegación del gimnasio">
+          <a class="g-nav__link" href="#inicio">Inicio</a>
+          <a class="g-nav__link" href="#programas">Programas</a>
+          <a class="g-nav__link" href="#instalaciones">Instalaciones</a>
+          <a class="g-nav__link" href="#planes">Planes en USD</a>
+          <a class="g-nav__link" href="#prueba">Clase de prueba</a>
+        </nav>
+        <div class="g-header__actions">
+          <a href="#prueba" class="g-btn g-btn--orange g-header__cta">Pase de prueba</a>
+          <button
+            type="button"
+            class="g-mobile-toggle"
+            id="g-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="g-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="g-mobile-drawer" id="g-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#programas">Programas</a>
+        <a href="#instalaciones">Instalaciones</a>
+        <a href="#planes">Planes en USD</a>
+        <a href="#prueba">Clase de prueba</a>
+        <a href="../../index.html" class="g-mobile-drawer__back">
+          &larr; Volver a AV·STUDIO
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="g-hero" id="inicio">
+        <div class="container g-hero__grid">
+          <div>
+            <span class="g-eyebrow">Entrenamiento funcional &amp; fuerza · Cuenca, Ecuador</span>
+            <h1 class="g-title g-title--hero">
+              Entrena con técnica, horarios claros y planes sin cargos ocultos.
+            </h1>
+            <p class="g-hero__lead">
+              Pulso 360 es un gimnasio ficticio diseñado por AV·STUDIO para mostrar cómo un centro
+              deportivo presenta disciplinas, horarios en 24h, tarifas transparentes en USD y
+              registro para clases de prueba.
+            </p>
+            <div class="g-btn-row">
+              <a href="#prueba" class="g-btn g-btn--orange">Solicitar clase de prueba</a>
+              <a href="#planes" class="g-btn g-btn--outline">Ver planes en USD</a>
+            </div>
+          </div>
+
+          <div class="g-hero__media">
+            <picture>
+              <source srcset="./images/hero.webp" type="image/webp" />
+              <img
+                src="./images/hero.jpg"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+                alt="Centro de entrenamiento moderno con racks de fuerza, piso de caucho negro e iluminación naranja"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="g-section g-section--gray" id="programas">
+        <div class="container">
+          <span class="g-eyebrow">Horarios y disciplinas (Ejemplo 24h)</span>
+          <h2 class="g-title">Programas de entrenamiento</h2>
+
+          <div class="g-tabs" role="group" aria-label="Filtrar disciplinas">
+            <button type="button" class="g-tab is-active" data-gym-filter="Todos">Todos</button>
+            <button type="button" class="g-tab" data-gym-filter="Fuerza">Fuerza</button>
+            <button type="button" class="g-tab" data-gym-filter="Acondicionamiento">Acondicionamiento</button>
+            <button type="button" class="g-tab" data-gym-filter="Movilidad">Movilidad</button>
+          </div>
+
+          <div class="g-grid" id="g-programs-grid"></div>
+        </div>
+      </section>
+
+      <section class="g-section g-section--studio" id="instalaciones">
+        <div class="container g-studio-grid">
+          <div class="g-studio__media">
+            <picture>
+              <source srcset="./images/estudio.webp" type="image/webp" />
+              <img
+                src="./images/estudio.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                alt="Estudio de entrenamiento funcional con pesas rusas, pistas de césped y zona de movilidad"
+              />
+            </picture>
+          </div>
+          <div>
+            <span class="g-eyebrow">Equipamiento &amp; zonas de práctica</span>
+            <h2 class="g-title">Espacios organizados por objetivo y horario</h2>
+            <p class="g-studio__copy">
+              Un gimnasio moderno convierte más visitantes en socios cuando muestra con claridad
+              sus zonas de fuerza, pistas funcionales y franjas de menor afluencia antes de la
+              primera clase de prueba.
+            </p>
+            <ul class="g-studio__list">
+              <li>Zona de fuerza libre, pista metabólica y estudio guiado de movilidad.</li>
+              <li>Horarios visibles en formato 24h desde las 05:30 hasta las 21:30.</li>
+              <li>Precios en USD sin letras pequeñas ni matrícula sorpresiva.</li>
+            </ul>
+            <a href="#prueba" class="g-btn g-btn--orange">Apartar clase de prueba</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="g-section g-section--light" id="planes">
+        <div class="container">
+          <span class="g-eyebrow">Membresías transparentes</span>
+          <h2 class="g-title">Planes de referencia en USD</h2>
+          <div class="g-grid" id="g-plans-grid"></div>
+        </div>
+      </section>
+
+      <section class="g-section" id="prueba">
+        <div class="container g-booking-grid">
+          <div>
+            <span class="g-eyebrow">Primera visita</span>
+            <h2 class="g-title">Registra tu clase de prueba demostrativa</h2>
+            <p class="g-booking__copy">
+              <strong>Horario del club (24h):</strong> Lunes a viernes 05:30 – 21:30 · Sábados 07:00 – 15:00.<br />
+              <strong>Referencia:</strong> Sector Av. Ordóñez Lasso, Cuenca, Ecuador.
+            </p>
+          </div>
+
+          <form class="g-form-card" id="g-trial-form" novalidate>
+            <h3 style="font-family: var(--g-font-display); font-size: 1.45rem; margin: 0 0 1rem;">
+              Solicitud de clase de prueba
+            </h3>
+            <div class="g-form-fields">
+              <div class="g-field">
+                <label for="g-name">Nombre completo *</label>
+                <input id="g-name" type="text" placeholder="Ej. Andrés Bermeo" />
+                <span class="g-err" id="g-err-name"></span>
+              </div>
+              <div class="g-field">
+                <label for="g-phone">WhatsApp *</label>
+                <input id="g-phone" type="tel" placeholder="+593 9..." />
+                <span class="g-err" id="g-err-phone"></span>
+              </div>
+              <div class="g-field">
+                <label for="g-plan">Plan de interés *</label>
+                <select id="g-plan">
+                  <option value="">Selecciona una opción</option>
+                  <option value="Clase de prueba gratuita">Clase de prueba gratuita</option>
+                  <option value="Plan Mensual Libre ($38.00 USD)">Plan Mensual Libre ($38.00 USD)</option>
+                  <option value="Plan Trimestral ($99.00 USD)">Plan Trimestral ($99.00 USD)</option>
+                  <option value="Plan Anual Constancia ($340.00 USD)">Plan Anual Constancia ($340.00 USD)</option>
+                </select>
+                <span class="g-err" id="g-err-plan"></span>
+              </div>
+              <div class="g-field">
+                <label for="g-timeslot">Horario preferido (24h) *</label>
+                <select id="g-timeslot">
+                  <option value="">Elige franja</option>
+                  <option value="Mañana (06:30 – 09:00)">Mañana (06:30 – 09:00)</option>
+                  <option value="Mediodía (12:00 – 14:00)">Mediodía (12:00 – 14:00)</option>
+                  <option value="Noche (18:00 – 20:30)">Noche (18:00 – 20:30)</option>
+                </select>
+                <span class="g-err" id="g-err-timeSlot"></span>
+              </div>
+            </div>
+            <div style="margin-top: 1rem;">
+              <button type="submit" class="g-btn g-btn--orange">Preparar solicitud en WhatsApp</button>
+            </div>
+            <div id="g-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: var(--g-black); border: 1px solid rgba(251,146,60,0.4); border-radius: 6px;">
+              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+                <strong>Solicitud lista.</strong> Abre el mensaje hacia AV·STUDIO:
+              </p>
+              <a
+                id="g-prepared-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="g-btn g-btn--orange"
+              >
+                Enviar por WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="g-footer">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <strong style="font-family: var(--g-font-display); font-size: 1.35rem;">PULSO 360 · Gimnasio</strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; color: var(--g-muted-dark);">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#programas">Programas</a>
+            <a href="#planes">Planes</a>
+            <a href="../../index.html" style="color: var(--g-orange-bright); font-weight: 700;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="g-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos sitios dinámicos para gimnasios, boxes y centros deportivos.
+            </p>
+            <p style="margin: 0; color: var(--g-muted-dark);">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=gimnasio#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mi gimnasio &rarr;
+          </a>
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="g-btn g-btn--orange"
+          >
+            Solicitar sitio personalizado
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

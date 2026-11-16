@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Las 16 demostraciones conceptuales (/demos/*) declaran <meta name="robots" content="noindex, follow">
+# directamente en su HTML, por lo que no se bloquean aquí para que los buscadores puedan leer esa directiva.
+# Cuando publiques en un dominio definitivo, compila con SITE_URL=https://tu-dominio.ec para generar
+# sitemap.xml y añadir automáticamente la línea Sitemap correspondiente.

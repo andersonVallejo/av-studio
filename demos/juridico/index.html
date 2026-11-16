@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Valdivieso &amp; Asociados — Estudio Jurídico (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de servicios jurídicos en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Valdivieso &amp; Asociados — Estudio Jurídico (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Sitio web demostrativo de servicios jurídicos en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/juridico.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Firma jurídica ficticia en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="j-header">
+      <div class="container j-header__inner">
+        <a href="#inicio" class="j-brand">VALDIVIESO &amp; ASOCIADOS</a>
+        <nav class="j-nav" aria-label="Navegación del estudio jurídico">
+          <a class="j-nav__link" href="#inicio">Inicio</a>
+          <a class="j-nav__link" href="#areas">Áreas de práctica</a>
+          <a class="j-nav__link" href="#despacho">El despacho</a>
+          <a class="j-nav__link" href="#equipo">Equipo</a>
+          <a class="j-nav__link" href="#consulta">Consulta inicial</a>
+        </nav>
+        <div class="j-header__actions">
+          <a href="#consulta" class="j-btn j-btn--navy j-header__cta">Agendar consulta</a>
+          <button
+            type="button"
+            class="j-mobile-toggle"
+            id="j-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="j-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="j-mobile-drawer" id="j-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#areas">Áreas de práctica</a>
+        <a href="#despacho">El despacho</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#consulta">Consulta inicial</a>
+        <a href="../../index.html" class="j-drawer-back">
+          &larr; Volver a AV·STUDIO
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="j-hero" id="inicio">
+        <div class="container j-hero__grid">
+          <div>
+            <span class="j-eyebrow" style="color: var(--j-bronze-light);">
+              Asesoría legal preventiva · Sector Estadio / Av. Solano, Cuenca
+            </span>
+            <h1 class="j-title" style="color: #ffffff;">
+              Criterio jurídico claro para decisiones empresariales y patrimoniales.
+            </h1>
+            <p style="color: rgba(255, 255, 255, 0.82); max-width: 55ch; margin: 0 0 1.5rem;">
+              Valdivieso &amp; Asociados es un estudio jurídico ficticio de demostración diseñado por
+              AV·STUDIO. Presenta una arquitectura sobria, confiable y ordenada para bufetes y
+              abogados independientes en Ecuador.
+            </p>
+            <div class="j-hero__actions">
+              <a href="#consulta" class="j-btn j-btn--bronze">Solicitar consulta inicial</a>
+              <a
+                href="#areas"
+                class="j-btn j-btn--outline-light"
+              >
+                Explorar áreas de práctica
+              </a>
+            </div>
+          </div>
+
+          <div class="j-hero__media">
+            <picture>
+              <source srcset="./images/hero.webp" type="image/webp" />
+              <img
+                src="./images/hero.jpg"
+                alt="Sala de juntas de estudio jurídico sobrio con estanterías azul marino y lámpara de bronce"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="j-section" id="areas">
+        <div class="container">
+          <span class="j-eyebrow">Especialidades jurídicas</span>
+          <h2 class="j-title">Áreas de práctica de ejemplo</h2>
+
+          <div class="j-practice-grid">
+            <div class="j-practice-tabs" role="group" aria-label="Áreas de práctica legal">
+              <button type="button" class="j-practice-tab is-active" data-legal-area="corporativo" aria-pressed="true">
+                Derecho Societario y Corporativo
+              </button>
+              <button type="button" class="j-practice-tab" data-legal-area="civil" aria-pressed="false">
+                Derecho Civil y Bienes Raíces
+              </button>
+              <button type="button" class="j-practice-tab" data-legal-area="laboral" aria-pressed="false">
+                Asesoría Laboral Preventiva
+              </button>
+              <button type="button" class="j-practice-tab" data-legal-area="propiedad" aria-pressed="false">
+                Propiedad Intelectual y Marcas
+              </button>
+            </div>
+
+            <article class="j-practice-panel" aria-live="polite">
+              <span class="j-eyebrow">Alcance del área</span>
+              <h3 id="j-area-title" style="font-family: var(--j-font-serif); margin: 0 0 0.65rem; font-size: 1.35rem;"></h3>
+              <p id="j-area-summary" style="color: var(--j-muted); margin: 0 0 1rem;"></p>
+              <ul id="j-area-scope" style="list-style: none; padding: 0; margin: 0; font-size: 0.92rem;"></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="j-section j-section--paper" id="despacho">
+        <div class="container j-office-grid">
+          <div class="j-office__media">
+            <picture>
+              <source srcset="./images/despacho.webp" type="image/webp" />
+              <img
+                src="./images/despacho.jpg"
+                alt="Despacho jurídico privado con escritorio de madera oscura, biblioteca legal y luz natural"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </div>
+          <div>
+            <span class="j-eyebrow">Confidencialidad y criterio</span>
+            <h2 class="j-title">Un espacio reservado para decisiones patrimoniales y corporativas.</h2>
+            <p class="j-muted-copy">
+              La arquitectura web de un estudio jurídico prioriza la sobriedad visual, la lectura sin
+              distracciones y un canal ordenado para agendar una primera evaluación confidencial.
+            </p>
+            <ul class="j-office-list">
+              <li><strong>Atención presencial en Cuenca:</strong> Reuniones privadas previa agenda.</li>
+              <li><strong>Revisión documental previa:</strong> Alcance y honorarios definidos con claridad.</li>
+              <li><strong>Acompañamiento remoto:</strong> Videollamadas seguras para clientes fuera de la ciudad.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="j-section" id="equipo">
+        <div class="container">
+          <span class="j-eyebrow">Perfiles ficticios de demostración</span>
+          <h2 class="j-title">Equipo legal de referencia</h2>
+          <div class="j-team-grid">
+            <article class="j-team-card">
+              <span class="j-eyebrow" style="margin-bottom: 0.25rem;">Perfil de ejemplo</span>
+              <h3 style="font-family: var(--j-font-serif); margin: 0 0 0.25rem;">Abg. Rodrigo Valdivieso</h3>
+              <p style="margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--j-bronze-ink); font-weight: 700;">
+                Socio Director · Derecho Corporativo
+              </p>
+              <p style="margin: 0; font-size: 0.88rem; color: var(--j-muted);">
+                Espacio destinado a presentar matrícula del Foro de Abogados, formación y publicaciones.
+              </p>
+            </article>
+            <article class="j-team-card">
+              <span class="j-eyebrow" style="margin-bottom: 0.25rem;">Perfil de ejemplo</span>
+              <h3 style="font-family: var(--j-font-serif); margin: 0 0 0.25rem;">Abg. Beatriz Maldonado</h3>
+              <p style="margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--j-bronze-ink); font-weight: 700;">
+                Asociada · Civil &amp; Bienes Raíces
+              </p>
+              <p style="margin: 0; font-size: 0.88rem; color: var(--j-muted);">
+                Espacio editable para detallar experiencia en contratación inmobiliaria y mediación.
+              </p>
+            </article>
+            <article class="j-team-card">
+              <span class="j-eyebrow" style="margin-bottom: 0.25rem;">Perfil de ejemplo</span>
+              <h3 style="font-family: var(--j-font-serif); margin: 0 0 0.25rem;">Abg. Nicolás Estrella</h3>
+              <p style="margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--j-bronze-ink); font-weight: 700;">
+                Asociado · Laboral &amp; Marcas
+              </p>
+              <p style="margin: 0; font-size: 0.88rem; color: var(--j-muted);">
+                Espacio reservado para explicar atención presencial en Cuenca o asesoría remota nacional.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="j-section j-section--paper" id="consulta">
+        <div class="container j-consult-grid">
+          <div>
+            <span class="j-eyebrow">Consulta inicial</span>
+            <h2 class="j-title">Formulario de contacto confidencial (Demostración)</h2>
+            <p style="color: var(--j-muted);">
+              <strong>Horario de atención (24h):</strong> Lunes a viernes de 08:30 a 18:00.<br />
+              <strong>Ubicación referencial:</strong> Av. Remigio Crespo y Unidad Nacional, Cuenca, Ecuador.
+            </p>
+            <p style="font-size: 0.88rem; color: var(--j-muted);">
+              Este ejemplo valida los datos esenciales antes de abrir el canal directo hacia WhatsApp
+              de Anderson Vallejo — AV·STUDIO. No envía ni almacena expedientes reales.
+            </p>
+          </div>
+
+          <form class="j-form-card" id="j-consult-form" novalidate>
+            <div class="j-form-fields">
+              <div class="j-field">
+                <label for="j-name">Nombre o empresa *</label>
+                <input id="j-name" type="text" placeholder="Ej. Javier Serrano" />
+                <span class="j-err" id="j-err-name"></span>
+              </div>
+              <div class="j-field">
+                <label for="j-phone">WhatsApp de contacto *</label>
+                <input id="j-phone" type="tel" placeholder="+593 9..." />
+                <span class="j-err" id="j-err-phone"></span>
+              </div>
+              <div class="j-field">
+                <label for="j-area">Área jurídica *</label>
+                <select id="j-area">
+                  <option value="">Selecciona un área</option>
+                  <option value="Derecho Societario">Derecho Societario</option>
+                  <option value="Derecho Civil y Bienes">Derecho Civil y Bienes</option>
+                  <option value="Laboral Preventivo">Laboral Preventivo</option>
+                  <option value="Propiedad Intelectual">Propiedad Intelectual</option>
+                </select>
+                <span class="j-err" id="j-err-area"></span>
+              </div>
+              <div class="j-field">
+                <label for="j-modality">Modalidad *</label>
+                <select id="j-modality">
+                  <option value="">Elige modalidad</option>
+                  <option value="Presencial en Cuenca">Presencial en Cuenca</option>
+                  <option value="Videollamada">Videollamada</option>
+                </select>
+                <span class="j-err" id="j-err-modality"></span>
+              </div>
+              <div class="j-field j-field--full">
+                <label for="j-summary">Breve resumen del asunto *</label>
+                <textarea id="j-summary" rows="3" placeholder="Ej. Revisión de contrato comercial y registro de marca..."></textarea>
+                <span class="j-err" id="j-err-summary"></span>
+              </div>
+            </div>
+            <div style="margin-top: 1rem;">
+              <button type="submit" class="j-btn j-btn--navy">Preparar consulta en WhatsApp</button>
+            </div>
+            <div id="j-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: #ffffff; border: 1px solid var(--j-border);">
+              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+                <strong>Consulta demostrativa validada.</strong> Abre el mensaje hacia AV·STUDIO:
+              </p>
+              <a
+                id="j-prepared-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="j-btn j-btn--bronze"
+              >
+                Enviar por WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="j-footer">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <strong style="font-family: var(--j-font-serif); font-size: 1.15rem;">VALDIVIESO &amp; ASOCIADOS</strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.82;">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#areas">Áreas</a>
+            <a href="#consulta">Consulta</a>
+            <a href="../../index.html" style="color: var(--j-bronze-light); font-weight: 700;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="j-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos presencia digital sobria para abogados y firmas legales.
+            </p>
+            <p style="margin: 0; opacity: 0.88;">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=juridico#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mi estudio jurídico &rarr;
+          </a>
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="j-btn j-btn--bronze"
+          >
+            Solicitar sitio personalizado
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

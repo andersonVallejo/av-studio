@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Origen Cuenca — Cafetería de Especialidad (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de cafetería artesanal en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Origen Cuenca — Cafetería de Especialidad (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Barra ficticia de café ecuatoriano en El Vado con trazabilidad de orígenes, métodos filtrados y pedido por WhatsApp."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/cafeteria.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cafetería ficticia en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="c-header">
+      <div class="container c-header__inner">
+        <a href="#inicio" class="c-brand">ORIGEN CUENCA</a>
+        <nav class="c-nav" aria-label="Navegación de la cafetería">
+          <a class="c-nav__link" href="#inicio">Inicio</a>
+          <a class="c-nav__link" href="#origen">Orígenes</a>
+          <a class="c-nav__link" href="#metodos">Métodos</a>
+          <a class="c-nav__link" href="#carta">Carta</a>
+          <a class="c-nav__link" href="#ubicacion">Ubicación</a>
+        </nav>
+        <div class="c-header__actions">
+          <a href="#carta" class="c-btn c-btn--espresso c-header__cta">Explorar carta</a>
+          <button
+            type="button"
+            class="c-mobile-toggle"
+            id="c-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="c-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="c-mobile-drawer" id="c-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#origen">Orígenes</a>
+        <a href="#metodos">Métodos</a>
+        <a href="#carta">Carta</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="../../index.html" class="c-mobile-drawer__back">
+          &larr; Volver a AV·STUDIO
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="c-hero" id="inicio">
+        <div class="container c-hero__grid">
+          <div>
+            <span class="c-eyebrow c-eyebrow--hero">
+              Barra de especialidad · Barrio El Vado, Cuenca
+            </span>
+            <h1 class="c-hero__title">Café ecuatoriano de altura extraído con calma y oficio.</h1>
+            <p class="c-hero__lead">
+              Origen Cuenca es una cafetería ficticia creada por AV·STUDIO para mostrar cómo tu
+              barra de café puede presentar lotes ecuatorianos, métodos filtrados, repostería y
+              pedidos rápidos por WhatsApp.
+            </p>
+            <div class="c-btn-row">
+              <a href="#carta" class="c-btn c-btn--caramel">Ver bebidas y repostería</a>
+              <a href="#origen" class="c-btn c-btn--outline-light">Conocer nuestros granos</a>
+            </div>
+          </div>
+
+          <div class="c-hero__media">
+            <picture>
+              <source srcset="./images/hero.webp" type="image/webp" />
+              <img
+                src="./images/hero.jpg"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+                alt="Barra artesanal de cafetería en Cuenca con método filtrado V60 y taza de latte en cerámica"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="c-section" id="origen">
+        <div class="container">
+          <span class="c-eyebrow">Tostaduría y trazabilidad (Ejemplo)</span>
+          <h2 class="c-title">Granos seleccionados de fincas del sur del Ecuador.</h2>
+          <p class="c-origins-lead">
+            Selecciona un origen para ver cómo una cafetería puede educar a sus clientes sobre
+            perfiles de taza y métodos recomendados.
+          </p>
+
+          <div class="c-origins-grid">
+            <div class="c-origin-tabs" role="group" aria-label="Seleccionar origen de café">
+              <button type="button" class="c-origin-tab is-active" data-origin-key="loja" aria-pressed="true">
+                <strong>Loja · Finca La Cordillera</strong>
+                <div class="c-origin-tab__sub">1.850 m · Lavado</div>
+              </button>
+              <button type="button" class="c-origin-tab" data-origin-key="azuay" aria-pressed="false">
+                <strong>Azuay · Valle de Gualaceo</strong>
+                <div class="c-origin-tab__sub">2.100 m · Honey amarillo</div>
+              </button>
+              <button type="button" class="c-origin-tab" data-origin-key="zamora" aria-pressed="false">
+                <strong>Zamora Chinchipe · Palanda</strong>
+                <div class="c-origin-tab__sub">1.700 m · Natural</div>
+              </button>
+            </div>
+
+            <article class="c-origin-panel" aria-live="polite">
+              <span class="c-eyebrow">Perfil sensorial de referencia</span>
+              <h3 id="c-origin-title" class="c-origin-panel__title"></h3>
+              <p id="c-origin-process" class="c-origin-panel__process"></p>
+              <p id="c-origin-notes" class="c-origin-panel__notes"></p>
+              <p id="c-origin-rec" class="c-origin-panel__rec"></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="c-section c-section--craft" id="metodos">
+        <div class="container c-craft-grid">
+          <div class="c-craft__media">
+            <picture>
+              <source srcset="./images/metodos.webp" type="image/webp" />
+              <img
+                src="./images/metodos.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                alt="Extracción artesanal de café en método Chemex y V60 sobre barra de madera con molino de especialidad"
+              />
+            </picture>
+          </div>
+          <div>
+            <span class="c-eyebrow">Barismo de especialidad</span>
+            <h2 class="c-title">Cada molienda y temperatura explicada con claridad</h2>
+            <p class="c-craft__copy">
+              Un espacio editorial dedicado a la barra ayuda a diferenciar una cafetería de autor:
+              destaca tus métodos filtrados, moliendas disponibles para casa y maridajes con
+              repostería artesanal.
+            </p>
+            <ul class="c-craft__list">
+              <li>Extracciones en V60, Chemex y Prensa Francesa preparadas al momento.</li>
+              <li>Presentación de granos en bolsa de 250 g listos para llevar o moler.</li>
+              <li>Pedido previo sin filas mediante resumen directo por WhatsApp.</li>
+            </ul>
+            <a href="#carta" class="c-btn c-btn--espresso">Ir a la carta en USD</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="c-section c-section--soft" id="carta">
+        <div class="container">
+          <span class="c-eyebrow">Carta digital en USD</span>
+          <h2 class="c-title">Bebidas calientes, frías y repostería</h2>
+
+          <div class="c-tabs" role="group" aria-label="Categorías de cafetería">
+            <button type="button" class="c-tab is-active" data-cafe-filter="Todos">Todos</button>
+            <button type="button" class="c-tab" data-cafe-filter="Cafés de origen">Cafés de origen</button>
+            <button type="button" class="c-tab" data-cafe-filter="Métodos">Métodos</button>
+            <button type="button" class="c-tab" data-cafe-filter="Bebidas frías">Bebidas frías</button>
+            <button type="button" class="c-tab" data-cafe-filter="Repostería">Repostería</button>
+          </div>
+
+          <div class="c-menu-layout">
+            <div class="c-menu-grid" id="c-menu-grid"></div>
+
+            <aside class="c-tray" aria-label="Bandeja demostrativa">
+              <span class="c-eyebrow" style="color: var(--c-caramel-light);">Pedido demostrativo</span>
+              <h3 style="font-family: var(--c-font-display); margin: 0 0 0.35rem;">Tu selección de barra</h3>
+              <p style="font-size: 0.82rem; opacity: 0.82; margin: 0;">
+                Ejemplo interactivo sin cobros reales; prepara el resumen hacia WhatsApp.
+              </p>
+              <ul class="c-tray__list" id="c-tray-list"></ul>
+              <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 1rem;">
+                <span>Total estimado</span>
+                <span id="c-tray-total" style="font-family: var(--c-font-mono);">$0.00 USD</span>
+              </div>
+              <a
+                id="c-tray-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="c-btn c-btn--caramel"
+                style="width: 100%;"
+              >
+                Consultar por WhatsApp
+              </a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="c-section" id="ubicacion">
+        <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; align-items: center;">
+          <div>
+            <span class="c-eyebrow">Ubicación y horarios (Ejemplo)</span>
+            <h2 class="c-title">Barrio El Vado · Cuenca, Ecuador</h2>
+            <p style="color: var(--c-muted); margin: 0;">
+              Lunes a sábado: 07:30 a 20:00 · Domingos: 08:30 a 18:00 (24h).<br />
+              Negocio ficticio de muestra creado por AV·STUDIO.
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="c-btn c-btn--espresso"
+          >
+            Solicitar web similar por WhatsApp
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="c-footer">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <strong style="font-family: var(--c-font-display); font-size: 1.3rem;">ORIGEN CUENCA · Cafetería</strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.8;">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#origen">Orígenes</a>
+            <a href="#carta">Carta</a>
+            <a href="../../index.html" style="color: var(--c-caramel-light); font-weight: 600;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="c-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos sitios web a medida para cafeterías y marcas gastronómicas.
+            </p>
+            <p style="margin: 0; opacity: 0.86;">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=cafeterias#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mi cafetería &rarr;
+          </a>
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="c-btn c-btn--caramel"
+          >
+            Solicitar página personalizada
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

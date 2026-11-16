@@ -1,0 +1,478 @@
+/* ==========================================================================
+   CASA DEL BARRANCO — Hotel Boutique & Turismo (Demostración AV·STUDIO)
+   Paleta: Arena (#ECE4D7), Verde Musgo (#2E4738), Madera Cálida (#6E4B32), Crema (#FAF7F2)
+   Pure CSS3 | Responsive
+   ========================================================================== */
+
+:root {
+  --h-sand: #ece4d7;
+  --h-cream: #faf7f2;
+  --h-moss: #2e4738;
+  --h-moss-dark: #1f3227;
+  --h-wood: #6e4b32;
+  --h-ink: #1e241f;
+  --h-muted: #565e57;
+  --h-border: rgba(46, 71, 56, 0.16);
+  --h-font-display: 'Cormorant Garamond', Georgia, serif;
+  --h-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --h-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--h-cream);
+  color: var(--h-ink);
+  font-family: var(--h-font-sans);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--h-moss);
+  outline-offset: 3px;
+}
+
+.container {
+  width: min(1180px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.demo-ribbon {
+  background-color: var(--h-moss-dark);
+  color: var(--h-cream);
+  font-size: 0.8125rem;
+}
+
+.demo-ribbon__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-block: 0.55rem;
+}
+
+.demo-ribbon__back {
+  color: #d6e6da;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.h-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: rgba(250, 247, 242, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--h-border);
+}
+
+.h-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  min-height: 4.5rem;
+}
+
+.h-brand {
+  font-family: var(--h-font-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--h-moss-dark);
+  white-space: nowrap;
+}
+
+.h-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.h-nav__link {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--h-muted);
+  white-space: nowrap;
+}
+
+.h-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.h-mobile-toggle {
+  display: none;
+  background: var(--h-sand);
+  border: 1px solid var(--h-border);
+  border-radius: 6px;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+
+.h-mobile-drawer {
+  display: none;
+  border-top: 1px solid var(--h-border);
+  background-color: #ffffff;
+  padding: 0.85rem 1.25rem 1.25rem;
+}
+
+.h-mobile-drawer[hidden] {
+  display: none;
+}
+
+.h-mobile-drawer:not([hidden]) {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.h-mobile-drawer a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 500;
+}
+
+.h-mobile-drawer__back {
+  color: var(--h-wood);
+  font-weight: 700;
+}
+
+.h-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.72rem 1.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.h-btn--moss {
+  background-color: var(--h-moss);
+  color: #ffffff;
+}
+
+.h-btn--wood {
+  background-color: var(--h-wood);
+  color: #ffffff;
+}
+
+.h-btn--outline {
+  background-color: transparent;
+  border-color: rgba(46, 71, 56, 0.35);
+  color: var(--h-moss-dark);
+}
+
+.h-btn--outline-light {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.42);
+  color: #ffffff;
+}
+
+.h-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.h-section {
+  padding-block: clamp(3.5rem, 6vw, 5.25rem);
+}
+
+.h-section--sand {
+  background-color: var(--h-sand);
+  border-top: 1px solid var(--h-border);
+  border-bottom: 1px solid var(--h-border);
+}
+
+.h-eyebrow {
+  display: inline-block;
+  font-family: var(--h-font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--h-wood);
+  margin-bottom: 0.5rem;
+}
+
+.h-eyebrow--hero {
+  color: #d6e6da;
+}
+
+.h-title {
+  font-family: var(--h-font-display);
+  font-size: clamp(1.9rem, 3.3vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.12;
+  margin: 0 0 0.85rem;
+}
+
+.h-title--hero {
+  color: #ffffff;
+}
+
+.h-hero {
+  background-color: var(--h-moss);
+  color: var(--h-cream);
+  padding-block: clamp(3rem, 5.5vw, 4.75rem);
+}
+
+.h-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.h-hero__lead {
+  color: rgba(250, 247, 242, 0.88);
+  max-width: 55ch;
+  margin: 0 0 1.5rem;
+}
+
+.h-hero__media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.h-rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.h-room-card {
+  background-color: #ffffff;
+  border: 1px solid var(--h-border);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.h-room-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(31, 50, 39, 0.08);
+}
+
+.h-room-card__media {
+  overflow: hidden;
+  background-color: var(--h-cream);
+}
+
+.h-room-card__media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.h-room-card:hover .h-room-card__media img {
+  transform: scale(1.03);
+}
+
+.h-room-card__body {
+  padding: 1.35rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.15rem;
+}
+
+.h-room-card__cap {
+  margin-bottom: 0.2rem;
+}
+
+.h-room-card__title {
+  font-family: var(--h-font-display);
+  font-size: 1.48rem;
+  line-height: 1.15;
+  margin: 0 0 0.35rem;
+}
+
+.h-room-card__price {
+  font-family: var(--h-font-mono);
+  font-weight: 700;
+  color: var(--h-wood);
+}
+
+.h-room-card__desc {
+  font-size: 0.9rem;
+  color: var(--h-muted);
+  margin: 0.5rem 0 0;
+}
+
+.h-room-card__btn {
+  width: 100%;
+}
+
+.h-stay-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 2.25rem;
+  align-items: start;
+}
+
+.h-stay__copy {
+  color: var(--h-muted);
+}
+
+.h-stay__note {
+  font-size: 0.88rem;
+  color: var(--h-muted);
+}
+
+.h-form-card {
+  background-color: #ffffff;
+  border: 1px solid var(--h-border);
+  border-radius: 8px;
+  padding: 1.75rem;
+}
+
+.h-form-card__title {
+  font-family: var(--h-font-display);
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.h-form-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.h-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.h-field--full {
+  grid-column: 1 / -1;
+}
+
+.h-field label {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.h-field input,
+.h-field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(46, 71, 56, 0.25);
+  border-radius: 5px;
+  background-color: var(--h-cream);
+}
+
+.h-err {
+  font-size: 0.78rem;
+  color: #a6261e;
+  min-height: 1rem;
+}
+
+.h-footer {
+  background-color: var(--h-moss-dark);
+  color: var(--h-cream);
+  padding-block: 3rem 2.25rem;
+}
+
+.h-av-signature {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background-color: var(--h-moss);
+  border: 1px solid rgba(250, 247, 242, 0.22);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 960px) {
+  .h-nav,
+  .h-header__cta {
+    display: none;
+  }
+
+  .h-mobile-toggle {
+    display: inline-grid;
+    place-items: center;
+  }
+
+  .h-hero__grid,
+  .h-stay-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .h-rooms-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(1180px, calc(100% - 1.5rem));
+  }
+
+  .h-rooms-grid,
+  .h-form-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .h-form-card {
+    padding: 1.35rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .h-btn-row .h-btn {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+}

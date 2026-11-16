@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Casa del Barranco — Hotel Boutique Cuenca (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de hotel boutique y turismo en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Casa del Barranco — Hotel Boutique Cuenca (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Hotel boutique ficticio en El Barranco del Tomebamba con suites, tarifas en USD y consulta directa sin comisiones."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/hotel.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Hotel ficticio en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="h-header">
+      <div class="container h-header__inner">
+        <a href="#inicio" class="h-brand">Casa del Barranco</a>
+        <nav class="h-nav" aria-label="Navegación del hotel">
+          <a class="h-nav__link" href="#inicio">Inicio</a>
+          <a class="h-nav__link" href="#habitaciones">Habitaciones</a>
+          <a class="h-nav__link" href="#disponibilidad">Disponibilidad</a>
+        </nav>
+        <div class="h-header__actions">
+          <a href="#disponibilidad" class="h-btn h-btn--moss h-header__cta">Consultar estadía</a>
+          <button
+            type="button"
+            class="h-mobile-toggle"
+            id="h-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="h-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="h-mobile-drawer" id="h-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#habitaciones">Habitaciones</a>
+        <a href="#disponibilidad">Disponibilidad</a>
+        <a href="../../index.html" class="h-mobile-drawer__back">
+          &larr; Volver a AV·STUDIO
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="h-hero" id="inicio">
+        <div class="container h-hero__grid">
+          <div>
+            <span class="h-eyebrow h-eyebrow--hero">
+              Hospedaje patrimonial · El Barranco del Tomebamba, Cuenca
+            </span>
+            <h1 class="h-title h-title--hero">
+              Descanso sereno en arquitectura cuencana a pasos del Centro Histórico.
+            </h1>
+            <p class="h-hero__lead">
+              Casa del Barranco es un hotel boutique ficticio diseñado por AV·STUDIO. Muestra cómo
+              exhibir habitaciones con tarifas claras en USD, experiencias andinas y consulta directa
+              de disponibilidad sin intermediarios.
+            </p>
+            <div class="h-btn-row">
+              <a href="#habitaciones" class="h-btn h-btn--wood">Ver habitaciones en USD</a>
+              <a href="#disponibilidad" class="h-btn h-btn--outline-light">Consultar fechas</a>
+            </div>
+          </div>
+
+          <div class="h-hero__media">
+            <picture>
+              <source srcset="./images/hero.webp" type="image/webp" />
+              <img
+                src="./images/hero.jpg"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+                alt="Patio patrimonial andino en Cuenca con arcos de piedra, balcones de madera y vegetación"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="h-section h-section--sand" id="habitaciones">
+        <div class="container">
+          <span class="h-eyebrow">Alojamiento (Tarifas de referencia en USD)</span>
+          <h2 class="h-title">Habitaciones y suites de ejemplo</h2>
+          <div class="h-rooms-grid" id="h-rooms-grid"></div>
+        </div>
+      </section>
+
+      <section class="h-section" id="disponibilidad">
+        <div class="container h-stay-grid">
+          <div>
+            <span class="h-eyebrow">Consulta directa sin comisiones</span>
+            <h2 class="h-title">Solicita disponibilidad de ejemplo</h2>
+            <p class="h-stay__copy">
+              <strong>Check-in / Check-out referencial (24h):</strong> Ingreso 14:00 · Salida 12:00.<br />
+              <strong>Experiencias sugeridas:</strong> Caminata guiada por El Barranco, Parque Nacional
+              Cajas y talleres artesanales de Chordeleg.
+            </p>
+            <p class="h-stay__note">
+              Este formulario valida las fechas de entrada y salida y genera el enlace demostrativo
+              hacia WhatsApp de Anderson Vallejo (AV·STUDIO).
+            </p>
+          </div>
+
+          <form class="h-form-card" id="h-stay-form" novalidate>
+            <h3 class="h-form-card__title">
+              Formulario de disponibilidad
+            </h3>
+            <div class="h-form-fields">
+              <div class="h-field">
+                <label for="h-name">Nombre del huésped *</label>
+                <input id="h-name" type="text" placeholder="Ej. Isabel Molina" />
+                <span class="h-err" id="h-err-name"></span>
+              </div>
+              <div class="h-field">
+                <label for="h-phone">WhatsApp *</label>
+                <input id="h-phone" type="tel" placeholder="+593 9..." />
+                <span class="h-err" id="h-err-phone"></span>
+              </div>
+              <div class="h-field">
+                <label for="h-room">Habitación *</label>
+                <select id="h-room">
+                  <option value="">Selecciona habitación</option>
+                  <option value="Suite Balcón del Río">Suite Balcón del Río ($118/noche)</option>
+                  <option value="Habitación Doble Patio Colonial">Habitación Doble Patio Colonial ($88/noche)</option>
+                  <option value="Loft Familiar El Cajas">Loft Familiar El Cajas ($145/noche)</option>
+                </select>
+                <span class="h-err" id="h-err-room"></span>
+              </div>
+              <div class="h-field">
+                <label for="h-guests">Huéspedes *</label>
+                <input id="h-guests" type="number" min="1" max="8" value="2" />
+                <span class="h-err" id="h-err-guests"></span>
+              </div>
+              <div class="h-field">
+                <label for="h-checkin">Fecha de ingreso *</label>
+                <input id="h-checkin" type="date" />
+                <span class="h-err" id="h-err-checkIn"></span>
+              </div>
+              <div class="h-field">
+                <label for="h-checkout">Fecha de salida *</label>
+                <input id="h-checkout" type="date" />
+                <span class="h-err" id="h-err-checkOut"></span>
+              </div>
+            </div>
+            <div style="margin-top: 1rem;">
+              <button type="submit" class="h-btn h-btn--moss">Preparar consulta en WhatsApp</button>
+            </div>
+            <div id="h-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: var(--h-cream); border: 1px solid var(--h-border); border-radius: 6px;">
+              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+                <strong>Consulta de estadía lista.</strong> Abre el mensaje hacia AV·STUDIO:
+              </p>
+              <a
+                id="h-prepared-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="h-btn h-btn--wood"
+              >
+                Enviar por WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="h-footer">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <strong style="font-family: var(--h-font-display); font-size: 1.4rem;">Casa del Barranco · Hotel</strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.82;">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#habitaciones">Habitaciones</a>
+            <a href="#disponibilidad">Disponibilidad</a>
+            <a href="../../index.html" style="color: #d6e6da; font-weight: 700;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="h-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos sitios directos para hoteles, hosterías y turismo.
+            </p>
+            <p style="margin: 0; opacity: 0.88;">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=hotel#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mi hotel &rarr;
+          </a>
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="h-btn h-btn--wood"
+          >
+            Solicitar sitio personalizado
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

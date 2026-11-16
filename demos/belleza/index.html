@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Atelier Rosa — Salón de Belleza &amp; Estética (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de salón de belleza y estética en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Atelier Rosa — Salón de Belleza &amp; Estética (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Estudio ficticio de estética facial, capilar y manicure en El Ejido, Cuenca con reserva por horario."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/belleza.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Salón ficticio en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="r-header">
+      <div class="container r-header__inner">
+        <a href="#inicio" class="r-brand">ATELIER ROSA</a>
+        <nav class="r-nav" aria-label="Navegación del salón">
+          <a class="r-nav__link" href="#inicio">Inicio</a>
+          <a class="r-nav__link" href="#tratamientos">Tratamientos</a>
+          <a class="r-nav__link" href="#ambiente">Cabinas</a>
+          <a class="r-nav__link" href="#reservas">Reservas</a>
+        </nav>
+        <div class="r-header__actions">
+          <a href="#reservas" class="r-btn r-btn--rose r-header__cta">Reservar cita</a>
+          <button
+            type="button"
+            class="r-mobile-toggle"
+            id="r-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="r-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="r-mobile-drawer" id="r-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#tratamientos">Tratamientos</a>
+        <a href="#ambiente">Cabinas</a>
+        <a href="#reservas">Reservas</a>
+        <a href="../../index.html" class="r-mobile-drawer__back">
+          &larr; Volver a AV·STUDIO
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="r-hero" id="inicio">
+        <div class="container r-hero__grid">
+          <div>
+            <span class="r-eyebrow">Estética integral &amp; cabello · Sector El Ejido, Cuenca</span>
+            <h1 class="r-title">Cuidado estético en calma, tonos cálidos y atención personalizada.</h1>
+            <p class="r-hero__lead">
+              Atelier Rosa es un salón ficticio de demostración creado por AV·STUDIO para ilustrar
+              cómo exhibir tratamientos faciales, capilares y spa de uñas en USD con reserva directa.
+            </p>
+            <div class="r-btn-row">
+              <a href="#tratamientos" class="r-btn r-btn--rose">Explorar tratamientos</a>
+              <a href="#reservas" class="r-btn r-btn--outline">Solicitar cita de ejemplo</a>
+            </div>
+          </div>
+
+          <div class="r-hero__media">
+            <picture>
+              <source srcset="./images/hero.webp" type="image/webp" />
+              <img
+                src="./images/hero.jpg"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+                alt="Estudio de estética minimalista en tonos nude con espejo arqueado de latón y sillón de lino"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="r-section r-section--white" id="tratamientos">
+        <div class="container">
+          <span class="r-eyebrow">Carta de servicios en USD</span>
+          <h2 class="r-title">Tratamientos y cuidados</h2>
+
+          <div class="r-tabs" role="group" aria-label="Filtrar servicios estéticos">
+            <button type="button" class="r-tab is-active" data-beauty-filter="Todos">Todos</button>
+            <button type="button" class="r-tab" data-beauty-filter="Facial">Facial</button>
+            <button type="button" class="r-tab" data-beauty-filter="Capilar">Capilar</button>
+            <button type="button" class="r-tab" data-beauty-filter="Manicure & Spa">Manicure &amp; Spa</button>
+            <button type="button" class="r-tab" data-beauty-filter="Maquillaje">Maquillaje</button>
+          </div>
+
+          <div class="r-services-grid" id="r-services-grid"></div>
+        </div>
+      </section>
+
+      <section class="r-section r-section--ambiente" id="ambiente">
+        <div class="container r-ambiente-grid">
+          <div class="r-ambiente__media">
+            <picture>
+              <source srcset="./images/cabina.webp" type="image/webp" />
+              <img
+                src="./images/cabina.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                alt="Cabina privada de estética y spa facial con luz suave, linos neutros y mesa de tratamiento"
+              />
+            </picture>
+          </div>
+          <div>
+            <span class="r-eyebrow">Experiencia del espacio</span>
+            <h2 class="r-title">Cabinas privadas pensadas para desconectar</h2>
+            <p class="r-ambiente__copy">
+              Mostrar la atmósfera real de tus cabinas de cuidado facial, estación de colorimetría
+              y zona de manicure eleva la confianza de quien agenda su primera visita.
+            </p>
+            <ul class="r-ambiente__list">
+              <li>Protocolos de higiene y productos cosméticos detallados en cada servicio.</li>
+              <li>Duración aproximada y tarifa transparente en USD antes de agendar.</li>
+              <li>Confirmación por horario de 24h directamente a tu WhatsApp.</li>
+            </ul>
+            <a href="#reservas" class="r-btn r-btn--rose">Elegir tratamiento y horario</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="r-section" id="reservas">
+        <div class="container r-booking-grid">
+          <div>
+            <span class="r-eyebrow">Agenda y atención</span>
+            <h2 class="r-title">Reserva tu turno demostrativo</h2>
+            <p class="r-booking__copy">
+              <strong>Horario de ejemplo (24h):</strong> Martes a sábado 09:00 – 19:00.<br />
+              <strong>Ubicación referencial:</strong> Av. Remigio Crespo y Los Fresnos, Cuenca, Ecuador.
+            </p>
+            <p class="r-booking__note">
+              Al enviar, se genera un enlace validado hacia WhatsApp de Anderson Vallejo — AV·STUDIO
+              para mostrar el flujo real de solicitud de cita.
+            </p>
+          </div>
+
+          <form class="r-form-card" id="r-booking-form" novalidate>
+            <h3 class="r-form-card__title">
+              Solicitud de cita estética
+            </h3>
+            <div class="r-form-fields">
+              <div class="r-field">
+                <label for="r-name">Nombre completo *</label>
+                <input id="r-name" type="text" placeholder="Ej. Daniela Vega" />
+                <span class="r-err" id="r-err-name"></span>
+              </div>
+              <div class="r-field">
+                <label for="r-phone">WhatsApp *</label>
+                <input id="r-phone" type="tel" placeholder="+593 9..." />
+                <span class="r-err" id="r-err-phone"></span>
+              </div>
+              <div class="r-field r-field--full">
+                <label for="r-service">Tratamiento deseado *</label>
+                <select id="r-service">
+                  <option value="">Selecciona un servicio</option>
+                  <option value="Limpieza Facial & Hidratación Profunda">Limpieza Facial &amp; Hidratación Profunda</option>
+                  <option value="Iluminación & Hidratación Capilar">Iluminación &amp; Hidratación Capilar</option>
+                  <option value="Corte de Diseño & Brushing">Corte de Diseño &amp; Brushing</option>
+                  <option value="Manicure Semipermanente & Spa de Manos">Manicure Semipermanente &amp; Spa de Manos</option>
+                  <option value="Pedicure Clínico-Estético">Pedicure Clínico-Estético</option>
+                  <option value="Maquillaje Social & Preparación de Piel">Maquillaje Social &amp; Preparación de Piel</option>
+                </select>
+                <span class="r-err" id="r-err-service"></span>
+              </div>
+              <div class="r-field">
+                <label for="r-date">Fecha preferida *</label>
+                <input id="r-date" type="date" />
+                <span class="r-err" id="r-err-date"></span>
+              </div>
+              <div class="r-field">
+                <label for="r-time">Horario (24h) *</label>
+                <select id="r-time">
+                  <option value="">Elige hora</option>
+                  <option value="09:30">09:30</option>
+                  <option value="11:30">11:30</option>
+                  <option value="15:00">15:00</option>
+                  <option value="17:30">17:30</option>
+                </select>
+                <span class="r-err" id="r-err-time"></span>
+              </div>
+            </div>
+            <div style="margin-top: 1rem;">
+              <button type="submit" class="r-btn r-btn--rose">Preparar reserva en WhatsApp</button>
+            </div>
+            <div id="r-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: var(--r-nude); border: 1px solid var(--r-border); border-radius: 6px;">
+              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+                <strong>Turno demostrativo listo.</strong> Abre el mensaje hacia AV·STUDIO:
+              </p>
+              <a
+                id="r-prepared-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="r-btn r-btn--rose"
+              >
+                Enviar por WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="r-footer">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <strong style="font-family: var(--r-font-display); font-size: 1.4rem;">ATELIER ROSA</strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.82;">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#tratamientos">Tratamientos</a>
+            <a href="#reservas">Reservas</a>
+            <a href="../../index.html" style="color: var(--r-champagne); font-weight: 700;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="r-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos sitios elegantes para salones, spas y estudios de estética.
+            </p>
+            <p style="margin: 0; opacity: 0.88;">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=belleza#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mi salón de belleza &rarr;
+          </a>
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="r-btn r-btn--rose"
+          >
+            Solicitar sitio personalizado
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

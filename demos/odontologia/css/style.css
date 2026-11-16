@@ -1,0 +1,328 @@
+/* ==========================================================================
+   ALBA DENTAL — Clínica Odontológica (Demostración AV·STUDIO)
+   Paleta: Blanco, Verde Salvia, Verde Profundo y Gris Claro
+   Pure CSS3 | Responsive
+   ========================================================================== */
+
+:root {
+  --o-white: #FFFFFF;
+  --o-gray-bg: #F3F6F4;
+  --o-sage: #DCE6E0;
+  --o-sage-mid: #557664;
+  --o-deep: #1B3B2F;
+  --o-ink: #1A2420;
+  --o-muted: #52615A;
+  --o-border: rgba(27, 59, 47, 0.14);
+  --o-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --o-font-serif: 'Cormorant Garamond', Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background-color: var(--o-white);
+  color: var(--o-ink);
+  font-family: var(--o-font-sans);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--o-deep); outline-offset: 3px; }
+
+.container { width: min(1200px, calc(100% - 2.5rem)); margin-inline: auto; }
+
+.o-demo-bar {
+  background-color: var(--o-deep);
+  color: var(--o-white);
+  font-size: 0.8125rem;
+}
+.o-demo-bar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding-block: 0.5rem;
+}
+.o-demo-bar__back { color: #CBE4D5; font-weight: 600; white-space: nowrap; }
+
+.o-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--o-border);
+}
+.o-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 70px;
+}
+.o-brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  color: var(--o-deep);
+  white-space: nowrap;
+}
+.o-nav { display: flex; align-items: center; gap: 1.25rem; }
+.o-nav a { font-size: 0.875rem; font-weight: 500; color: var(--o-muted); white-space: nowrap; }
+.o-nav a:hover { color: var(--o-deep); }
+
+.o-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.72rem 1.4rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+.o-btn--deep { background-color: var(--o-deep); color: var(--o-white); }
+.o-btn--deep:hover { background-color: #132B22; }
+.o-btn--outline { border-color: var(--o-deep); color: var(--o-deep); background: transparent; }
+.o-btn--outline:hover { background-color: var(--o-sage); }
+
+.o-mobile-btn {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--o-border);
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.o-mobile-drawer {
+  background: var(--o-gray-bg);
+  padding: 1rem 1.25rem 1.5rem;
+  border-top: 1px solid var(--o-border);
+}
+.o-mobile-drawer a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-block: 0.55rem;
+  border-bottom: 1px solid var(--o-border);
+}
+
+/* Hero */
+.o-hero {
+  background-color: var(--o-gray-bg);
+  padding-block: 4rem;
+  border-bottom: 1px solid var(--o-border);
+}
+.o-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.25rem;
+  align-items: center;
+}
+.o-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+.o-eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--o-sage-mid);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.o-hero__title {
+  font-family: var(--o-font-serif);
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.08;
+  color: var(--o-deep);
+  margin: 0.65rem 0 1rem;
+  text-wrap: balance;
+}
+.o-hero__img {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--o-border);
+  aspect-ratio: 4 / 3;
+}
+.o-hero__img picture { display: block; width: 100%; height: 100%; }
+.o-hero__img img { width: 100%; height: 100%; object-fit: cover; }
+
+.o-section { padding-block: 4.5rem; }
+.o-section--sage { background-color: var(--o-sage); }
+.o-section--gray { background-color: var(--o-gray-bg); border-top: 1px solid var(--o-border); border-bottom: 1px solid var(--o-border); }
+
+.o-title {
+  font-family: var(--o-font-serif);
+  font-size: clamp(1.95rem, 3vw, 2.65rem);
+  color: var(--o-deep);
+  line-height: 1.15;
+  margin: 0.4rem 0 1rem;
+}
+
+.o-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.o-spec-card {
+  background-color: var(--o-white);
+  border: 1px solid var(--o-border);
+  border-radius: 6px;
+  padding: 1.35rem;
+}
+.o-spec-card h3 { margin: 0 0 0.45rem; color: var(--o-deep); font-size: 1.08rem; }
+.o-spec-card p { margin: 0; font-size: 0.9rem; color: var(--o-muted); }
+
+/* Treatments Interactive Selector */
+.o-treat-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+.o-treat-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.o-treat-tab {
+  min-height: 46px;
+  padding: 0.85rem 1.15rem;
+  text-align: left;
+  background: var(--o-gray-bg);
+  border: 1px solid var(--o-border);
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.o-treat-tab.is-active {
+  background: var(--o-deep);
+  color: var(--o-white);
+  border-color: var(--o-deep);
+}
+.o-treat-panel {
+  background: var(--o-gray-bg);
+  border: 1px solid var(--o-border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+/* Team & Facilities */
+.o-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.o-team-card {
+  background: var(--o-white);
+  border: 1px solid var(--o-border);
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+.o-facility {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.o-facility picture { display: block; width: 100%; }
+.o-facility img {
+  border-radius: 8px;
+  border: 1px solid var(--o-border);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Appointment Form */
+.o-appt-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3rem;
+}
+.o-form-box {
+  background: var(--o-gray-bg);
+  border: 1px solid var(--o-border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.o-form-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.o-field { display: flex; flex-direction: column; gap: 0.35rem; }
+.o-field--full { grid-column: 1 / -1; }
+.o-field input, .o-field select, .o-field textarea {
+  min-height: 44px;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--o-border);
+  border-radius: 6px;
+  background: var(--o-white);
+}
+.o-err { font-size: 0.8rem; color: #B42318; min-height: 1em; }
+
+.o-footer {
+  background-color: var(--o-deep);
+  color: var(--o-white);
+  padding-block: 3.25rem 2rem;
+}
+.o-av-signature {
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 1120px) {
+  .o-header__inner { gap: 1rem; }
+  .o-nav { gap: 0.85rem; }
+  .o-nav a { font-size: 0.8125rem; }
+  .o-header__cta { padding: 0.62rem 1rem; font-size: 0.84rem; }
+}
+
+@media (max-width: 920px) {
+  .o-nav, .o-header__cta { display: none; }
+  .o-mobile-btn { display: inline-flex; align-items: center; justify-content: center; }
+  .o-hero__grid, .o-treat-layout, .o-team-grid, .o-facility, .o-appt-grid {
+    grid-template-columns: 1fr;
+  }
+  .o-spec-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .container { width: min(1200px, calc(100% - 1.5rem)); }
+  .o-spec-grid, .o-form-fields {
+    grid-template-columns: 1fr;
+  }
+  .o-treat-panel, .o-form-box { padding: 1.25rem; }
+}
+
+@media (max-width: 420px) {
+  .o-hero__actions .o-btn { width: 100%; }
+}

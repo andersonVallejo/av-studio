@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Mercado Serrano — Tienda &amp; Diseño Hogar (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de tienda y catálogo comercial en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Mercado Serrano — Tienda &amp; Diseño Hogar (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Catálogo online de ejemplo con buscador instantáneo, filtros de categoría y carrito conectado a WhatsApp."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/tienda.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Comercio ficticio en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="s-header">
+      <div class="container s-header__inner">
+        <a href="#inicio" class="s-brand">MERCADO SERRANO</a>
+        <nav class="s-nav" aria-label="Navegación de tienda">
+          <a class="s-nav__link" href="#inicio">Inicio</a>
+          <a class="s-nav__link" href="#catalogo">Catálogo</a>
+          <a class="s-nav__link" href="#envios">Envíos</a>
+        </nav>
+        <div class="s-header__actions">
+          <a href="#catalogo" class="s-btn s-btn--black s-header__cta">Ver productos</a>
+          <button
+            type="button"
+            class="s-mobile-toggle"
+            id="s-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="s-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="s-mobile-drawer" id="s-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#envios">Envíos</a>
+        <a href="../../index.html" class="s-mobile-drawer__back">
+          &larr; Volver a AV·STUDIO
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="s-hero" id="inicio">
+        <div class="container s-hero__grid">
+          <div>
+            <span class="s-eyebrow">Objetos de diseño &amp; hogar · Cuenca, Ecuador</span>
+            <h1 class="s-title s-title--hero">
+              Catálogo curado con buscador instantáneo y carrito por WhatsApp.
+            </h1>
+            <p class="s-hero__lead">
+              Mercado Serrano es una tienda ficticia creada por AV·STUDIO para demostrar cómo tu
+              comercio puede organizar productos por categoría, permitir búsqueda en vivo y armar
+              pedidos en USD sin pagar comisiones de pasarela hasta que tu negocio lo requiera.
+            </p>
+            <div class="s-btn-row">
+              <a href="#catalogo" class="s-btn s-btn--terracotta">Explorar catálogo</a>
+              <a href="#envios" class="s-btn s-btn--outline">Cobertura en Ecuador</a>
+            </div>
+          </div>
+
+          <div class="s-hero__media">
+            <picture>
+              <source srcset="./images/hero.webp" type="image/webp" />
+              <img
+                src="./images/hero.jpg"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+                alt="Exhibición luminosa de cerámica artesanal, mantas tejidas y lámparas de lino en estantería de roble"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="s-section s-section--gray" id="catalogo">
+        <div class="container">
+          <span class="s-eyebrow">Tienda interactiva en USD</span>
+          <h2 class="s-title">Catálogo demostrativo de piezas</h2>
+
+          <div class="s-toolbar">
+            <div class="s-tabs" role="group" aria-label="Filtrar artículos por categoría">
+              <button type="button" class="s-tab is-active" data-store-filter="Todos">Todos</button>
+              <button type="button" class="s-tab" data-store-filter="Cerámica">Cerámica</button>
+              <button type="button" class="s-tab" data-store-filter="Textiles">Textiles</button>
+              <button type="button" class="s-tab" data-store-filter="Iluminación">Iluminación</button>
+            </div>
+            <label for="s-search" class="sr-only">
+              Buscar producto
+            </label>
+            <input
+              id="s-search"
+              type="search"
+              class="s-search"
+              placeholder="Buscar artículo (ej. manta, lámpara)..."
+            />
+          </div>
+
+          <div class="s-shop-layout">
+            <div class="s-products-grid" id="s-products-grid"></div>
+
+            <aside class="s-cart" aria-label="Carrito demostrativo">
+              <span class="s-eyebrow s-eyebrow--light">Carrito demostrativo</span>
+              <h3 class="s-cart__title">Resumen de selección</h3>
+              <p class="s-cart__note">
+                Demostración sin pasarela de pago; prepara tu lista de compra hacia WhatsApp.
+              </p>
+              <ul class="s-cart__list" id="s-cart-list"></ul>
+              <div class="s-cart__subtotal">
+                <span>Subtotal estimado</span>
+                <span id="s-cart-total" class="s-cart__total-val">$0.00 USD</span>
+              </div>
+              <a
+                id="s-cart-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="s-btn s-btn--terracotta s-cart__btn"
+              >
+                Enviar pedido por WhatsApp
+              </a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="s-section" id="envios">
+        <div class="container s-cta-band">
+          <div>
+            <span class="s-eyebrow">Logística de ejemplo</span>
+            <h2 class="s-title">Entregas en Cuenca y envíos nacionales</h2>
+            <p class="s-cta-band__text">
+              Si tu comercio requiere pasarela de pagos en línea, inventario sincronizado o base de
+              datos de clientes, se planifica e integra como extensión backend a medida.
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="s-btn s-btn--black"
+          >
+            Cotizar tienda online
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="s-footer">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <strong style="font-size: 1.15rem;">MERCADO SERRANO · Tienda de Diseño</strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.82;">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#catalogo">Catálogo</a>
+            <a href="#envios">Envíos</a>
+            <a href="../../index.html" style="color: var(--s-terracotta-light); font-weight: 700;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="s-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos catálogos y tiendas digitales para comercios en Ecuador.
+            </p>
+            <p style="margin: 0; opacity: 0.88;">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=tienda#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mi tienda &rarr;
+          </a>
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="s-btn s-btn--terracotta"
+          >
+            Solicitar sitio personalizado
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

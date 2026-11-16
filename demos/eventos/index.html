@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Verbena &amp; Estilo — Eventos y Celebraciones (Demostración) | AV·STUDIO</title>
+    <meta
+      name="description"
+      content="Sitio web demostrativo de diseño y producción de eventos en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+    />
+    <meta property="og:title" content="Verbena &amp; Estilo — Eventos y Celebraciones (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:description"
+      content="Productora ficticia de bodas, eventos corporativos y recepciones privadas con cotizador interactivo en Cuenca."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AV·STUDIO" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:image" content="../../assets/images/categories/eventos.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      <div class="container demo-ribbon__inner">
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Productora ficticia en Cuenca, Ecuador</span>
+        <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
+      </div>
+    </div>
+
+    <header class="e-header">
+      <div class="container e-header__inner">
+        <a href="#inicio" class="e-brand">VERBENA &amp; ESTILO</a>
+        <nav class="e-nav" aria-label="Navegación de eventos">
+          <a class="e-nav__link" href="#inicio">Inicio</a>
+          <a class="e-nav__link" href="#formatos">Formatos</a>
+          <a class="e-nav__link" href="#escenarios">Escenarios</a>
+          <a class="e-nav__link" href="#cotizacion">Cotizar</a>
+        </nav>
+        <div class="e-header__actions">
+          <a href="#cotizacion" class="e-btn e-btn--black e-header__cta">Solicitar cotización</a>
+          <button
+            type="button"
+            class="e-mobile-toggle"
+            id="e-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="e-mobile-drawer"
+            aria-label="Abrir menú"
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <nav class="e-mobile-drawer" id="e-mobile-drawer" hidden aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="#formatos">Formatos</a>
+        <a href="#escenarios">Escenarios</a>
+        <a href="#cotizacion">Cotizar</a>
+        <a href="../../index.html" class="e-mobile-drawer__back">
+          &larr; Volver a AV·STUDIO
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="e-hero" id="inicio">
+        <div class="container e-hero__grid">
+          <div>
+            <span class="e-eyebrow e-eyebrow--hero">
+              Diseño &amp; producción de eventos · Cuenca y Azuay
+            </span>
+            <h1 class="e-title e-title--hero">
+              Atmósferas memorables diseñadas con calma, detalle y dirección estética.
+            </h1>
+            <p class="e-hero__lead">
+              Verbena &amp; Estilo es una productora ficticia creada por AV·STUDIO. Demuestra cómo
+              exhibir formatos de bodas, eventos corporativos y celebraciones privadas con
+              solicitud guiada de cotización.
+            </p>
+            <div class="e-btn-row">
+              <a href="#formatos" class="e-btn e-btn--gold">Ver formatos de evento</a>
+              <a href="#cotizacion" class="e-btn e-btn--outline-light">Cotizar fecha de ejemplo</a>
+            </div>
+          </div>
+
+          <div class="e-hero__media">
+            <picture>
+              <source srcset="./images/hero.webp" type="image/webp" />
+              <img
+                src="./images/hero.jpg"
+                width="1200"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+                alt="Banquete nocturno de gala en salón de piedra andina con velas, lino marfil y arreglos florales"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="e-section e-section--blush" id="formatos">
+        <div class="container">
+          <span class="e-eyebrow">Servicios de producción</span>
+          <h2 class="e-title">Formatos de evento de ejemplo</h2>
+
+          <div class="e-tabs" role="group" aria-label="Filtrar formatos de eventos">
+            <button type="button" class="e-tab is-active" data-event-filter="Todos">Todos</button>
+            <button type="button" class="e-tab" data-event-filter="Bodas">Bodas</button>
+            <button type="button" class="e-tab" data-event-filter="Corporativos">Corporativos</button>
+            <button type="button" class="e-tab" data-event-filter="Celebraciones">Celebraciones</button>
+          </div>
+
+          <div class="e-formats-grid" id="e-formats-grid"></div>
+        </div>
+      </section>
+
+      <section class="e-section e-section--gallery" id="escenarios">
+        <div class="container e-showcase-grid">
+          <div class="e-showcase__media">
+            <picture>
+              <source srcset="./images/galeria-hacienda.webp" type="image/webp" />
+              <img
+                src="./images/galeria-hacienda.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                alt="Recepción al aire libre en jardín de hacienda andina con mesas vestidas de lino y luz cálida"
+              />
+            </picture>
+          </div>
+          <div>
+            <span class="e-eyebrow">Escenografía de día y de noche</span>
+            <h2 class="e-title">Haciendas, patios patrimoniales y jardines del Azuay</h2>
+            <p class="e-showcase__copy">
+              Un sitio web pensado para productoras de eventos debe transmitir atmósfera desde la
+              primera pantalla: combinando montajes exteriores diurnos y salones nocturnos para que
+              cada cliente imagine su fecha antes de escribir.
+            </p>
+            <ul class="e-showcase__list">
+              <li>Ambientación floral, mantelería y mobiliario coordinado por locación.</li>
+              <li>Logística adaptable para quintas en Challuabamba, Baños o Centro Histórico.</li>
+              <li>Solicitud directa por fecha, aforo aproximado y estilo deseado.</li>
+            </ul>
+            <a href="#cotizacion" class="e-btn e-btn--black">Planificar evento de ejemplo</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="e-section" id="cotizacion">
+        <div class="container e-quote-grid">
+          <div>
+            <span class="e-eyebrow">Propuesta personalizada</span>
+            <h2 class="e-title">Solicita una cotización demostrativa</h2>
+            <p class="e-quote__copy">
+              Indica tipo de evento, aforo aproximado y fecha tentativa para generar un mensaje
+              estructurado dirigido a Anderson Vallejo — AV·STUDIO por WhatsApp.
+            </p>
+          </div>
+
+          <form class="e-form-card" id="e-quote-form" novalidate>
+            <h3 class="e-form-card__title">
+              Detalles del evento de ejemplo
+            </h3>
+            <div class="e-form-fields">
+              <div class="e-field">
+                <label for="e-name">Nombre o empresa *</label>
+                <input id="e-name" type="text" placeholder="Ej. Valentina y Martín" />
+                <span class="e-err" id="e-err-name"></span>
+              </div>
+              <div class="e-field">
+                <label for="e-phone">WhatsApp *</label>
+                <input id="e-phone" type="tel" placeholder="+593 9..." />
+                <span class="e-err" id="e-err-phone"></span>
+              </div>
+              <div class="e-field e-field--full">
+                <label for="e-type">Formato de evento *</label>
+                <select id="e-type">
+                  <option value="">Selecciona un formato</option>
+                  <option value="Bodas en Hacienda o Quinta Andina">Bodas en Hacienda o Quinta Andina</option>
+                  <option value="Lanzamientos & Cenas Corporativas">Lanzamientos &amp; Cenas Corporativas</option>
+                  <option value="Aniversarios & Recepciones Íntimas">Aniversarios &amp; Recepciones Íntimas</option>
+                </select>
+                <span class="e-err" id="e-err-eventType"></span>
+              </div>
+              <div class="e-field">
+                <label for="e-guests">Invitados estimados *</label>
+                <input id="e-guests" type="number" min="10" max="500" value="80" />
+                <span class="e-err" id="e-err-guests"></span>
+              </div>
+              <div class="e-field">
+                <label for="e-date">Fecha tentativa *</label>
+                <input id="e-date" type="date" />
+                <span class="e-err" id="e-err-date"></span>
+              </div>
+              <div class="e-field e-field--full">
+                <label for="e-notes">Estilo o ciudad (opcional)</label>
+                <input id="e-notes" type="text" placeholder="Ej. Jardín en Challuabamba, tonos marfil" />
+              </div>
+            </div>
+            <div style="margin-top: 1rem;">
+              <button type="submit" class="e-btn e-btn--black">Preparar cotización en WhatsApp</button>
+            </div>
+            <div id="e-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: var(--e-ivory); border: 1px solid var(--e-border);">
+              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+                <strong>Cotización demostrativa lista.</strong> Abre el mensaje hacia AV·STUDIO:
+              </p>
+              <a
+                id="e-prepared-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="e-btn e-btn--gold"
+              >
+                Enviar por WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="e-footer">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <strong style="font-family: var(--e-font-display); font-size: 1.4rem;">VERBENA &amp; ESTILO</strong>
+            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.82;">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+            <a href="#formatos">Formatos</a>
+            <a href="#cotizacion">Cotización</a>
+            <a href="../../index.html" style="color: var(--e-gold-bright); font-weight: 700;">Volver a AV·STUDIO</a>
+          </div>
+        </div>
+
+        <div class="e-av-signature">
+          <div>
+            <p style="margin: 0 0 0.25rem;">
+              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos presencia elegante para organizadores, haciendas y productoras de eventos.
+            </p>
+            <p style="margin: 0; opacity: 0.88;">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
+              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=eventos#contacto" class="" style="text-decoration: underline;">
+            Quiero una página para mis eventos &rarr;
+          </a>
+            </p>
+          </div>
+          <a
+            href="https://wa.me/593979290747"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="e-btn e-btn--gold"
+          >
+            Solicitar sitio personalizado
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

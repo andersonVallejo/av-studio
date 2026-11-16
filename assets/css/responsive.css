@@ -1,0 +1,369 @@
+/* ==========================================================================
+   AV STUDIO — Responsive Breakpoints (1440px, 1024px, 768px, 390px, 360px)
+   Pure CSS3 | Zero Horizontal Overflow
+   ========================================================================== */
+
+@media (max-width: 1120px) {
+  :root {
+    --section-space: 5rem;
+    --container-gutter: 1.5rem;
+  }
+
+  .primary-nav__list {
+    gap: 1.15rem;
+  }
+
+  .primary-nav__link {
+    font-size: 0.85rem;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .process-step:nth-child(3) {
+    border-right: none;
+  }
+
+  .process-step:nth-child(n + 4) {
+    border-top: 1px solid var(--border-dark-hairline);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  .primary-nav,
+  .site-header__desktop-cta {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: inline-flex;
+  }
+
+  .hero__grid,
+  .presentation-grid,
+  .comparison-grid,
+  .services-layout,
+  .custom-grid,
+  .faq-layout,
+  .contact-grid,
+  .section-head {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .hero__media {
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .hero__strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .services-aside,
+  .contact-direct-card {
+    position: static;
+  }
+
+  .sector-card,
+  .sectors-grid.is-filtered .sector-card--featured {
+    grid-column: span 6;
+  }
+
+  .sector-card--featured .sector-card__media {
+    aspect-ratio: 16 / 10;
+  }
+
+  .sector-card--wide {
+    grid-column: span 12;
+    grid-template-columns: minmax(240px, 310px) minmax(0, 1fr);
+  }
+
+  .sector-card--wide .sector-card__media {
+    min-height: 210px;
+  }
+
+  .sector-card--wide .sector-card__body {
+    padding: 1.25rem 1.4rem 0.95rem;
+  }
+
+  .demos-grid,
+  .brand-variants-grid,
+  .brand-foundations-grid,
+  .privacy-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-toc {
+    position: static;
+  }
+
+  .brand-system-controls {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --section-space: 4rem;
+    --container-gutter: 1.25rem;
+  }
+
+  .site-header__inner {
+    min-height: 62px;
+  }
+
+  .hero {
+    padding-block: 2.5rem 3.25rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 8vw, 2.75rem);
+  }
+
+  .hero__media {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .hero__depth-inset {
+    left: 0.65rem;
+    right: 0.65rem;
+    bottom: 0.65rem;
+    padding: 0.55rem 0.75rem;
+    gap: 0.65rem;
+  }
+
+  .hero__depth-accent {
+    width: 16px;
+  }
+
+  .hero__caption-title {
+    font-size: 1.05rem;
+  }
+
+  .hero__caption-sub {
+    font-size: 0.75rem;
+  }
+
+  .hero__monogram-seal {
+    min-width: 40px;
+    height: 36px;
+    font-size: 0.98rem;
+  }
+
+  .hero__strip {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2.25rem;
+  }
+
+  .section-cta-bar {
+    padding: 1.35rem;
+  }
+
+  .sector-card,
+  .sector-card--featured,
+  .sectors-grid.is-filtered .sector-card--featured,
+  .sector-card--wide {
+    grid-column: span 12;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sector-card__media,
+  .sector-card--featured .sector-card__media,
+  .sectors-grid.is-filtered .sector-card--featured .sector-card__media,
+  .sector-card--wide .sector-card__media {
+    aspect-ratio: 16 / 10;
+    height: auto;
+    min-height: 0;
+  }
+
+  .sector-card__body,
+  .sector-card--wide .sector-card__body {
+    padding: 1.1rem 1.15rem 0.8rem;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .sector-card__footer,
+  .sector-card--wide .sector-card__footer {
+    margin-top: 0.25rem;
+  }
+
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+
+  .service-item,
+  .service-item:nth-child(even) {
+    padding: 1.35rem 0;
+    border-left: none;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-step {
+    padding: 1.5rem 0;
+    border-right: none;
+    border-top: 1px solid var(--border-dark-hairline);
+  }
+
+  .process-step:first-child {
+    border-top: none;
+  }
+
+  .preview-stage__body,
+  .custom-capabilities,
+  .form-grid,
+  .sector-dialog__list,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-stage__canvas {
+    padding: 1.35rem;
+  }
+
+  .preview-stage__headline {
+    font-size: 1.75rem;
+  }
+
+  .contact-direct-card,
+  .contact-form-card {
+    padding: 1.45rem;
+  }
+
+  .sector-dialog__body {
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .brand-system-stage {
+    padding: 1.15rem;
+  }
+
+  .brand-variant-card {
+    padding: 1.1rem;
+    min-height: 0;
+  }
+
+  .brand-palette-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brand-type-row {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .brand-type-row__spec {
+    text-align: left;
+  }
+
+  .privacy-hero {
+    padding-block: 3rem 2.5rem;
+  }
+
+  .privacy-dl__row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding: 0.8rem 1rem;
+  }
+}
+
+@media (max-width: 440px) {
+  :root {
+    --container-gutter: 1rem;
+  }
+
+  .hero__actions .btn,
+  .contact-direct__buttons .btn,
+  .form-actions .btn,
+  .prepared-output__links .btn,
+  .demos-more-bar .btn,
+  .section-cta-bar .btn {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .filter-tabs {
+    width: 100%;
+  }
+
+  .filter-tab {
+    flex: 1 1 auto;
+    text-align: center;
+    padding-inline: 0.6rem;
+    font-size: 0.8125rem;
+  }
+
+  .hero__caption-title {
+    font-size: 1.12rem;
+  }
+
+  .sector-card__footer {
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero__meta-line {
+    row-gap: 0.2rem;
+    font-size: 0.8125rem;
+  }
+
+  .hero__meta-sep--desktop {
+    display: none;
+  }
+
+  .hero__meta-loc {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-mark__svg {
+    height: 22px;
+  }
+
+  .brand-mark__av,
+  .brand-mark__dot {
+    font-size: 1.45rem;
+  }
+
+  .brand-mark__studio {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+  }
+
+  .contact-channel__value {
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-direct-card,
+  .contact-form-card {
+    padding: 1.2rem;
+  }
+
+  .demo-showcase__content {
+    padding: 1.35rem;
+  }
+
+  .demo-showcase__title {
+    font-size: 1.55rem;
+  }
+}
