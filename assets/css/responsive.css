@@ -96,18 +96,12 @@
   }
 
   .demos-grid,
-  .brand-variants-grid,
-  .brand-foundations-grid,
   .privacy-layout {
     grid-template-columns: 1fr;
   }
 
   .privacy-toc {
     position: static;
-  }
-
-  .brand-system-controls {
-    align-items: flex-start;
   }
 }
 
@@ -154,7 +148,7 @@
     font-size: 0.75rem;
   }
 
-  .hero__monogram-seal {
+  .hero__brand-seal {
     min-width: 40px;
     height: 36px;
     font-size: 0.98rem;
@@ -247,28 +241,6 @@
 
   .sector-dialog__body {
     padding: 1.25rem 1.25rem 1.5rem;
-  }
-
-  .brand-system-stage {
-    padding: 1.15rem;
-  }
-
-  .brand-variant-card {
-    padding: 1.1rem;
-    min-height: 0;
-  }
-
-  .brand-palette-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .brand-type-row {
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .brand-type-row__spec {
-    text-align: left;
   }
 
   .privacy-hero {

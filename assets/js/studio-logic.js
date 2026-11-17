@@ -395,12 +395,11 @@ export function computeHeroDepthShift({
 }
 
 /**
- * Definitive AV·STUDIO brand identity tokens and surface matrix (Zero DOM side effects).
+ * Definitive AV·STUDIO brand identity tokens (Zero DOM side effects).
  */
 export const BRAND_IDENTITY = Object.freeze({
   name: 'AV·STUDIO',
   signature: 'ANDERSON VALLEJO',
-  monogram: 'HH',
   slogan: 'Ideas que toman forma.',
   description:
     'Estudio creativo especializado en diseño y desarrollo de experiencias digitales y páginas web para negocios.',
@@ -422,35 +421,3 @@ export const BRAND_IDENTITY = Object.freeze({
     { role: 'Elementos de navegación', spec: 'Plus Jakarta Sans · Peso 500 · 0.9rem' },
   ]),
 });
-
-/**
- * Resolves coherent chromatic surface styling for the AV·STUDIO brand showcase.
- * @param {string} mode
- * @returns {{ mode: 'oscuro' | 'claro' | 'monocromo', label: string, description: string, isDark: boolean }}
- */
-export function resolveBrandSurfaceConfig(mode) {
-  switch (mode) {
-    case 'claro':
-      return {
-        mode: 'claro',
-        label: 'Versión clara · Marfil #F3F0E9 y Carbón #171717',
-        description: 'Contraste editorial sobre lienzo marfil con nodo focal terracota.',
-        isDark: false,
-      };
-    case 'monocromo':
-      return {
-        mode: 'monocromo',
-        label: 'Versión monocromática · Tinta pura #171717 sobre Blanco #FFFFFF',
-        description: 'Aplicación técnica en una sola tinta para sellos, impresos y documentos.',
-        isDark: false,
-      };
-    case 'oscuro':
-    default:
-      return {
-        mode: 'oscuro',
-        label: 'Versión oscura · Carbón #171717 y Marfil #F3F0E9',
-        description: 'Aplicación principal sobre superficies oscuras con nodo focal #C96F4A.',
-        isDark: true,
-      };
-  }
-}

@@ -5,7 +5,6 @@ import {
   INPUT_LIMITS,
   BRAND_IDENTITY,
   SECTOR_CTA_MAP,
-  resolveBrandSurfaceConfig,
   resolveSectorOptionValue,
   resolveSectorFromQuery,
   sanitizeText,
@@ -32,33 +31,16 @@ test('STUDIO_CONTACT preserves official AV·STUDIO and Anderson Vallejo contact 
   assert.equal(STUDIO_CONTACT.owner, 'Anderson Vallejo');
 });
 
-test('BRAND_IDENTITY maintains official AV·STUDIO naming, HH monogram, 6-color palette, and 7 typographic roles', () => {
+test('BRAND_IDENTITY maintains official AV·STUDIO naming without HH monogram, keeping 6-color palette and 7 typographic roles', () => {
   assert.equal(BRAND_IDENTITY.name, 'AV·STUDIO');
   assert.equal(BRAND_IDENTITY.signature, 'ANDERSON VALLEJO');
-  assert.equal(BRAND_IDENTITY.monogram, 'HH');
+  assert.equal('monogram' in BRAND_IDENTITY, false);
   assert.equal(BRAND_IDENTITY.slogan, 'Ideas que toman forma.');
   assert.deepEqual(
     BRAND_IDENTITY.palette.map((c) => c.hex),
     ['#171717', '#F3F0E9', '#B8B5AE', '#30302E', '#C96F4A', '#FFFFFF']
   );
   assert.equal(BRAND_IDENTITY.typographyRoles.length, 7);
-});
-
-test('resolveBrandSurfaceConfig resolves oscuro, claro, and monocromo brand surface modes', () => {
-  const dark = resolveBrandSurfaceConfig('oscuro');
-  assert.equal(dark.mode, 'oscuro');
-  assert.equal(dark.isDark, true);
-  assert.match(dark.label, /#171717/);
-
-  const light = resolveBrandSurfaceConfig('claro');
-  assert.equal(light.mode, 'claro');
-  assert.equal(light.isDark, false);
-  assert.match(light.label, /#F3F0E9/);
-
-  const mono = resolveBrandSurfaceConfig('monocromo');
-  assert.equal(mono.mode, 'monocromo');
-  assert.equal(mono.isDark, false);
-  assert.match(mono.label, /monocromática/i);
 });
 
 test('resolveSectorOptionValue maps all 16 sector keys to select options', () => {

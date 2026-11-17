@@ -9,7 +9,6 @@ import {
   shouldEnableCinematicMotion,
   computeHeroParallax,
   computeHeroDepthShift,
-  resolveBrandSurfaceConfig,
   resolveSectorOptionValue,
   resolveSectorFromQuery,
   SECTOR_CTA_MAP,
@@ -617,39 +616,8 @@ function initHeroCinematicParallax() {
   }
 }
 
-function initBrandSystemShowcase() {
-  const stage = document.getElementById('brand-system-stage');
-  if (!stage) return;
-
-  const labelEl = document.getElementById('brand-surface-status');
-  const buttons = Array.from(document.querySelectorAll('[data-brand-surface]'));
-
-  const applySurface = (mode) => {
-    const config = resolveBrandSurfaceConfig(mode);
-    stage.setAttribute('data-brand-surface-mode', config.mode);
-    if (labelEl) {
-      labelEl.textContent = config.label;
-    }
-    buttons.forEach((btn) => {
-      const isSelected = btn.getAttribute('data-brand-surface') === config.mode;
-      btn.classList.toggle('is-active', isSelected);
-      btn.setAttribute('aria-pressed', String(isSelected));
-    });
-  };
-
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const mode = btn.getAttribute('data-brand-surface') || 'oscuro';
-      applySurface(mode);
-    });
-  });
-
-  applySurface('oscuro');
-}
-
 export function initInteractions() {
   initHeroCinematicParallax();
-  initBrandSystemShowcase();
   initSectorDirectory();
   initSectorModal();
   initSectorPreselection();

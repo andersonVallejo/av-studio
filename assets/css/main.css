@@ -320,8 +320,7 @@ p {
   .brand-svg__av,
   .brand-svg__node,
   .brand-svg__node-ring,
-  .brand-svg__studio,
-  .brand-hh-reveal {
+  .brand-svg__studio {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;
