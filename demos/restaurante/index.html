@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="robots" content="noindex, follow" />
-    <title>Kallpa — Restaurante Andino (Demostración) | AV·STUDIO</title>
+    <title>Kallpa — Cocina Andina Contemporánea (Demostración) | AV·STUDIO</title>
     <meta
       name="description"
-      content="Sitio web demostrativo de restaurante ficticio en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+      content="Sitio web demostrativo de restaurante de cocina andina contemporánea en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
     />
-    <meta property="og:title" content="Kallpa — Restaurante Andino (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:title"
+      content="Kallpa — Cocina Andina Contemporánea (Demostración) | AV·STUDIO"
+    />
     <meta
       property="og:description"
-      content="Sitio web demostrativo de restaurante ficticio en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+      content="Sitio web demostrativo de restaurante de cocina andina contemporánea en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AV·STUDIO" />
@@ -23,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -41,22 +44,23 @@
         <a href="#inicio" class="k-brand">KALLPA</a>
         <nav class="k-nav" aria-label="Menú del restaurante">
           <a class="k-nav__link" href="#inicio">Inicio</a>
-          <a class="k-nav__link" href="#historia">Historia</a>
-          <a class="k-nav__link" href="#menu">Menú</a>
-          <a class="k-nav__link" href="#especialidades">Especialidades</a>
-          <a class="k-nav__link" href="#galeria">Galería</a>
-          <a class="k-nav__link" href="#ubicacion">Ubicación</a>
+          <a class="k-nav__link" href="#menu">Carta</a>
+          <a class="k-nav__link" href="#especialidades">Destacados</a>
+          <a class="k-nav__link" href="#experiencia">La Mesa</a>
           <a class="k-nav__link" href="#contacto">Contacto</a>
         </nav>
-        <div style="display: flex; align-items: center; gap: 0.75rem;">
-          <a href="#contacto" class="k-btn k-btn--primary k-header__cta">Reservar mesa</a>
+        <div class="k-header__actions">
+          <a href="#contacto" class="k-btn k-btn--primary k-header__cta">
+            Consultar reserva
+            <span class="k-header__badge" id="k-header-count" aria-live="polite">0</span>
+          </a>
           <button
             type="button"
             class="k-mobile-toggle"
             id="k-mobile-toggle"
             aria-expanded="false"
             aria-controls="k-mobile-drawer"
-            aria-label="Abrir menú"
+            aria-label="Abrir menú de navegación"
           >
             &#9776;
           </button>
@@ -64,264 +68,560 @@
       </div>
       <nav class="k-mobile-drawer" id="k-mobile-drawer" hidden aria-label="Menú móvil">
         <a href="#inicio">Inicio</a>
-        <a href="#historia">Historia</a>
-        <a href="#menu">Menú</a>
-        <a href="#especialidades">Especialidades</a>
-        <a href="#galeria">Galería</a>
-        <a href="#ubicacion">Ubicación</a>
-        <a href="#contacto">Contacto</a>
-        <a href="../../index.html" style="color: var(--k-terracotta-text); font-weight: 700;">&larr; Volver a AV·STUDIO</a>
+        <a href="#historia">Filosofía culinaria</a>
+        <a href="#menu">Carta gastronómica</a>
+        <a href="#especialidades">Platos destacados</a>
+        <a href="#experiencia">Experiencia en la mesa</a>
+        <a href="#origen">Origen y preparación</a>
+        <a href="#galeria">Galería editorial</a>
+        <a href="#contacto">Contacto y reservas</a>
+        <a href="../../index.html" class="k-mobile-drawer__back">&larr; Volver a AV·STUDIO</a>
       </nav>
     </header>
 
     <main>
+      <!-- 1. Portada Gastronómica (Composición escénica inmersiva con scrim editorial) -->
       <section class="k-hero" id="inicio">
-        <div class="container k-hero__grid">
+        <div class="k-hero__backdrop">
+          <picture>
+            <source srcset="./images/salon-cuenca.webp" type="image/webp" />
+            <img
+              src="./images/salon-cuenca.jpg"
+              alt="Salón nocturno del restaurante ficticio Kallpa en Cuenca con luz cálida, arcos de adobe y mesas de madera"
+              width="1200"
+              height="900"
+              fetchpriority="high"
+              decoding="sync"
+              referrerpolicy="no-referrer"
+            />
+          </picture>
+        </div>
+
+        <div class="container k-hero__inner">
           <div class="k-hero__copy">
-            <span class="k-eyebrow">Cocina andina de autor · El Vergel, Cuenca</span>
+            <span class="k-eyebrow k-eyebrow--light">Cocina andina contemporánea · El Vergel, Cuenca</span>
             <h1 class="k-hero__title">Sabores de la sierra ecuatoriana en clave contemporánea.</h1>
             <p class="k-hero__lead">
-              Kallpa es un restaurante ficticio de demostración creado para mostrar cómo tu local
-              gastronómico puede presentar su historia, carta digital y reservas en línea.
+              Kallpa es un restaurante ficticio creado para demostrar cómo un espacio gastronómico
+              presenta su propuesta culinaria, su carta referencial en USD y consultas de reserva
+              listas para WhatsApp.
             </p>
             <div class="k-hero__actions">
-              <a href="#menu" class="k-btn k-btn--olive">Explorar el menú</a>
-              <a href="#contacto" class="k-btn k-btn--outline" style="color: var(--k-cream); border-color: rgba(246,239,230,0.4);">
-                Solicitar reserva de ejemplo
-              </a>
+              <a href="#menu" class="k-btn k-btn--olive">Explorar carta gastronómica</a>
+              <a href="#contacto" class="k-btn k-btn--outline-cream">Solicitar reserva de ejemplo</a>
             </div>
           </div>
-          <div class="k-hero__media">
-            <picture>
-              <source srcset="./images/salon-cuenca.webp" type="image/webp" />
-              <img
-                src="./images/salon-cuenca.jpg"
-                alt="Salón nocturno del restaurante ficticio Kallpa en Cuenca con luz cálida y mesas de madera"
-                width="1200"
-                height="900"
-                fetchpriority="high"
-                decoding="async"
-              />
-            </picture>
-          </div>
+
+          <aside class="k-hero__folio" aria-label="Ficha de referencia del restaurante">
+            <dl class="k-hero__specs">
+              <div class="k-hero__spec">
+                <dt>Sector modelo</dt>
+                <dd>El Vergel, Cuenca</dd>
+              </div>
+              <div class="k-hero__spec">
+                <dt>Atención en salón</dt>
+                <dd>Mar – Dom · 12:30–22:30</dd>
+              </div>
+              <div class="k-hero__spec">
+                <dt>Carta referencial</dt>
+                <dd>7 platos · Moneda USD ($)</dd>
+              </div>
+            </dl>
+          </aside>
         </div>
       </section>
 
+      <!-- 2. Filosofía Culinaria -->
       <section class="k-section" id="historia">
-        <div class="container k-story">
-          <div class="k-story__img">
-            <picture>
-              <source srcset="./images/mesa-andina.webp" type="image/webp" />
-              <img
-                src="./images/mesa-andina.jpg"
-                alt="Mesa servida con cerámica artesanal y gastronomía andina contemporánea"
-                width="1200"
-                height="900"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-          </div>
-          <div>
-            <span class="k-eyebrow">Nuestra historia</span>
+        <div class="container k-philosophy">
+          <div class="k-philosophy__intro">
+            <span class="k-eyebrow">Filosofía culinaria</span>
             <h2 class="k-title">Producto local del Azuay trabajado con respeto y técnica.</h2>
-            <p>
-              En esta sección narrativa cada restaurante cuenta su origen, sus proveedores locales
-              y la filosofía detrás de su cocina. Los textos, horarios y fotografías de este ejemplo
-              se reemplazan íntegramente por los de tu negocio real.
+            <p class="k-lead">
+              En esta sección narrativa cada restaurante comparte el sentido de su cocina y la
+              relación con los ingredientes de su entorno. Los textos, horarios y fotografías de este
+              ejemplo se reemplazan por los de tu establecimiento real.
             </p>
-            <div class="k-story__notes">
-              <div>
-                <strong>Ingredientes regionales</strong>
-                <p style="font-size: 0.9rem; color: var(--k-muted); margin-top: 0.25rem;">
-                  Trucha de altura, papas nativas, mote y hierbas frescas del mercado local.
-                </p>
-              </div>
-              <div>
-                <strong>Atención en salón</strong>
-                <p style="font-size: 0.9rem; color: var(--k-muted); margin-top: 0.25rem;">
-                  Martes a domingo · 12:30 a 22:30 (horario de ejemplo en formato 24h).
-                </p>
-              </div>
-            </div>
           </div>
+
+          <ol class="k-ledger" aria-label="Pilares de cocina en Kallpa">
+            <li class="k-ledger__item">
+              <span class="k-ledger__num">01</span>
+              <div>
+                <h3 class="k-ledger__title">Ingredientes regionales de temporada</h3>
+                <p class="k-ledger__desc">
+                  Trucha de altura, papas nativas, mote y hierbas frescas del mercado local combinados
+                  en preparaciones directas.
+                </p>
+              </div>
+            </li>
+            <li class="k-ledger__item">
+              <span class="k-ledger__num">02</span>
+              <div>
+                <h3 class="k-ledger__title">Atención pausada en salón</h3>
+                <p class="k-ledger__desc">
+                  Horario de ejemplo de martes a domingo, de 12:30 a 22:30 en zona horaria
+                  America/Guayaquil.
+                </p>
+              </div>
+            </li>
+            <li class="k-ledger__item">
+              <span class="k-ledger__num">03</span>
+              <div>
+                <h3 class="k-ledger__title">Claridad demostrativa en USD</h3>
+                <p class="k-ledger__desc">
+                  Cada plato incluye ingredientes visibles, precio referencial y opción para
+                  preparar una consulta previa por WhatsApp sin cobros reales.
+                </p>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
+      <!-- 3. Carta Gastronómica -->
       <section class="k-section k-section--soft" id="menu">
         <div class="container">
           <div class="k-menu-bar">
             <div>
               <span class="k-eyebrow">Carta digital interactiva</span>
-              <h2 class="k-title" style="margin-bottom: 0;">Menú de demostración</h2>
+              <h2 class="k-title k-title--flush">Carta gastronómica de demostración</h2>
+              <p class="k-lead k-lead--compact">
+                Precios referenciales en dólares estadounidenses (USD). Selecciona tus platos de
+                interés para preparar una consulta de ejemplo.
+              </p>
             </div>
-            <div class="k-tabs" role="group" aria-label="Categorías del menú">
-              <button type="button" class="k-tab is-active" data-menu-filter="Todos">Todos</button>
-              <button type="button" class="k-tab" data-menu-filter="Entradas">Entradas</button>
-              <button type="button" class="k-tab" data-menu-filter="Platos Fuertes">Platos Fuertes</button>
-              <button type="button" class="k-tab" data-menu-filter="De la Brasa">De la Brasa</button>
-              <button type="button" class="k-tab" data-menu-filter="Postres y Bebidas">Postres y Bebidas</button>
+            <div class="k-tabs" role="tablist" aria-label="Categorías del menú">
+              <button
+                type="button"
+                class="k-tab is-active"
+                data-menu-filter="Todos"
+                role="tab"
+                aria-selected="true"
+              >
+                Todos
+              </button>
+              <button type="button" class="k-tab" data-menu-filter="Entradas" role="tab" aria-selected="false">
+                Entradas
+              </button>
+              <button
+                type="button"
+                class="k-tab"
+                data-menu-filter="Platos Fuertes"
+                role="tab"
+                aria-selected="false"
+              >
+                Platos Fuertes
+              </button>
+              <button
+                type="button"
+                class="k-tab"
+                data-menu-filter="De la Brasa"
+                role="tab"
+                aria-selected="false"
+              >
+                De la Brasa
+              </button>
+              <button
+                type="button"
+                class="k-tab"
+                data-menu-filter="Postres y Bebidas"
+                role="tab"
+                aria-selected="false"
+              >
+                Postres y Bebidas
+              </button>
             </div>
           </div>
 
           <div class="k-menu-layout">
-            <div class="k-menu-grid" id="menu-grid"></div>
+            <div class="k-menu-grid" id="menu-grid" aria-live="polite"></div>
 
             <aside class="k-tray" aria-label="Selección demostrativa de platos">
-              <span class="k-eyebrow" style="margin-bottom: 0.35rem; display: block;">Pedido demostrativo</span>
-              <h3 style="font-family: var(--k-font-display); margin: 0 0 0.35rem;">Tu selección de prueba</h3>
-              <p style="font-size: 0.825rem; opacity: 0.85; margin: 0;">
-                Esta lista no procesa pagos ni confirma órdenes reales; permite probar la experiencia
-                de consulta hacia WhatsApp.
+              <div class="k-tray__head">
+                <div>
+                  <span class="k-eyebrow k-eyebrow--light">Consulta demostrativa</span>
+                  <h3 class="k-tray__title">Tu selección de prueba</h3>
+                </div>
+                <button type="button" class="k-tray__clear" id="tray-clear" hidden>
+                  Limpiar
+                </button>
+              </div>
+              <p class="k-tray__notice">
+                No procesa pagos ni confirma órdenes o reservas reales; prepara tu lista de interés
+                para enviarla como consulta por WhatsApp.
               </p>
               <ul class="k-tray__list" id="tray-list"></ul>
               <div class="k-tray__total">
-                <span>Subtotal estimado</span>
-                <span id="tray-total" style="font-family: var(--k-font-mono);">$0.00 USD</span>
+                <span>Subtotal referencial</span>
+                <span id="tray-total" class="k-tray__amount">$0.00 USD</span>
               </div>
               <a
                 id="tray-wa-link"
                 href="https://wa.me/593979290747"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="k-btn k-btn--olive"
-                style="width: 100%;"
+                class="k-btn k-btn--olive k-btn--full"
               >
-                Consultar por WhatsApp
+                Consultar selección por WhatsApp
               </a>
             </aside>
           </div>
         </div>
       </section>
 
-      <section class="k-section" id="especialidades">
-        <div class="container k-specials">
-          <div>
-            <span class="k-eyebrow">Especialidades de la casa</span>
-            <h2 class="k-title">Platos emblemáticos de temporada.</h2>
-            <div class="k-special-list">
-              <div class="k-special-item">
-                <strong>Trucha Sellada en Puré de Melloco · $16.50</strong>
-                <p style="margin: 0.3rem 0 0; color: var(--k-muted); font-size: 0.92rem;">
-                  Pesca fresca de montaña con guarnición cremosa de tubérculos locales y aceite aromático.
+      <!-- 4. Platos Destacados -->
+      <section class="k-specialties-band" id="especialidades">
+        <div class="container">
+          <div class="k-section-head">
+            <div>
+              <span class="k-eyebrow k-eyebrow--light">Platos destacados</span>
+              <h2 class="k-title k-title--light">Tres tiempos emblemáticos de temporada.</h2>
+            </div>
+            <p class="k-section-head__note">
+              Fotografía editorial dedicada por receta. Agrega cualquiera a tu lista o consulta
+              directamente sus detalles.
+            </p>
+          </div>
+
+          <div class="k-featured-grid">
+            <article class="k-featured-hero">
+              <div class="k-featured-hero__media">
+                <picture>
+                  <source srcset="./images/plato-trucha.webp" type="image/webp" />
+                  <img
+                    src="./images/plato-trucha.jpg"
+                    alt="Trucha Sellada en Puré de Melloco sobre plato oscuro con aceite de cilantro"
+                    width="1200"
+                    height="900"
+                    decoding="sync"
+                    referrerpolicy="no-referrer"
+                  />
+                </picture>
+              </div>
+              <div class="k-featured-hero__body">
+                <div class="k-featured__meta">
+                  <span class="k-mono">01 / Platos Fuertes</span>
+                  <span class="k-mono k-mono--accent">$16.50 USD</span>
+                </div>
+                <h3 class="k-featured__title">Trucha Sellada en Puré de Melloco</h3>
+                <p class="k-featured__desc">
+                  Filete sellado a la plancha, crema suave de papa chaucha, aceite de cilantro y
+                  vegetales andinos.
+                </p>
+                <div class="k-featured__actions">
+                  <button
+                    type="button"
+                    class="k-btn k-btn--olive"
+                    data-dish-add="trucha-brasa"
+                  >
+                    + Agregar a selección
+                  </button>
+                  <a href="#contacto" class="k-btn k-btn--outline-cream">Consultar reserva</a>
+                </div>
+              </div>
+            </article>
+
+            <div class="k-featured-stack">
+              <article class="k-featured-card">
+                <div class="k-featured-card__media">
+                  <img
+                    src="./images/cordero-jora.jpg"
+                    alt="Cordero Braseado en Chicha de Jora servido con arroz con mote y maduro asado"
+                    width="1200"
+                    height="900"
+                    decoding="sync"
+                    referrerpolicy="no-referrer"
+                  />
+                </div>
+                <div class="k-featured-card__body">
+                  <div class="k-featured__meta">
+                    <span class="k-mono">02 / Platos Fuertes</span>
+                    <span class="k-mono k-mono--accent">$19.00 USD</span>
+                  </div>
+                  <h3 class="k-featured-card__title">Cordero Braseado en Chicha de Jora</h3>
+                  <p class="k-featured__desc">
+                    Cocción lenta de 6 horas con hierbas serranas, arroz con mote y maduro asado.
+                  </p>
+                  <div class="k-featured__actions">
+                    <button
+                      type="button"
+                      class="k-btn k-btn--olive k-btn--sm"
+                      data-dish-add="seco-cordero"
+                    >
+                      + Agregar a selección
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="k-featured-card">
+                <div class="k-featured-card__media">
+                  <img
+                    src="./images/higos-queso.jpg"
+                    alt="Higos Confitados en almíbar de panela acompañados de helado artesanal de queso"
+                    width="1200"
+                    height="900"
+                    decoding="sync"
+                    referrerpolicy="no-referrer"
+                  />
+                </div>
+                <div class="k-featured-card__body">
+                  <div class="k-featured__meta">
+                    <span class="k-mono">03 / Postres y Bebidas</span>
+                    <span class="k-mono k-mono--accent">$6.50 USD</span>
+                  </div>
+                  <h3 class="k-featured-card__title">Higos Confitados y Helado de Queso</h3>
+                  <p class="k-featured__desc">
+                    Higos en almíbar de panela con especias dulces y helado artesanal de queso
+                    tierno.
+                  </p>
+                  <div class="k-featured__actions">
+                    <button
+                      type="button"
+                      class="k-btn k-btn--olive k-btn--sm"
+                      data-dish-add="higos-queso"
+                    >
+                      + Agregar a selección
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Experiencia en la Mesa -->
+      <section class="k-section k-section--soft" id="experiencia">
+        <div class="container k-story">
+          <figure class="k-story__img">
+            <picture>
+              <source srcset="./images/mesa-andina.webp" type="image/webp" />
+              <img
+                src="./images/mesa-andina.jpg"
+                alt="Mesa servida a la luz de las velas con vajilla cerámica y textiles andinos"
+                width="1200"
+                height="900"
+                decoding="sync"
+                referrerpolicy="no-referrer"
+              />
+            </picture>
+            <figcaption class="k-photo-caption">
+              Fotografía ilustrativa de mesa y ambientación · Demostración sin local real.
+            </figcaption>
+          </figure>
+          <div class="k-story__content">
+            <span class="k-eyebrow">Experiencia en la mesa</span>
+            <h2 class="k-title">Cerámica artesanal, luz cálida y servicio de salón en Cuenca.</h2>
+            <p class="k-lead">
+              Más allá de cada plato, la propuesta del sitio muestra cómo comunicar la atmósfera de
+              sala: mesas de madera, vajilla en tonos tierra y tiempos pensados para conversar
+              sin prisa desde el mediodía hasta la noche.
+            </p>
+            <dl class="k-story__notes">
+              <div class="k-story__note">
+                <dt>Ubicación de referencia</dt>
+                <dd>El Vergel / Cercanías del Centro Histórico de Cuenca</dd>
+              </div>
+              <div class="k-story__note">
+                <dt>Horario ilustrativo</dt>
+                <dd>Martes a domingo · 12:30 a 22:30 (24h)</dd>
+              </div>
+            </dl>
+            <div class="k-story__cta">
+              <a href="#contacto" class="k-btn k-btn--primary">Preparar consulta de mesa</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Origen y Preparación -->
+      <section class="k-section" id="origen">
+        <div class="container k-origin">
+          <div class="k-origin__top">
+            <div>
+              <span class="k-eyebrow">Origen y preparación</span>
+              <h2 class="k-title">Despensa y bases culinarias reflejadas en la carta.</h2>
+            </div>
+            <p class="k-lead">
+              Resumen ilustrativo de los elementos presentes en las recetas del menú demostrativo,
+              sin atribuciones a fincas reales ni certificaciones externas.
+            </p>
+          </div>
+
+          <div class="k-origin__layout">
+            <figure class="k-origin__media">
+              <img
+                src="./images/origen-ingredientes.jpg"
+                alt="Bodegón ilustrativo con papas nativas, mote, choclo, maracuyá, naranjilla, panela y hierbas frescas"
+                width="1376"
+                height="768"
+                decoding="sync"
+                referrerpolicy="no-referrer"
+              />
+              <figcaption class="k-photo-caption">
+                Fotografía ilustrativa de ingredientes representativos incluidos en el menú.
+              </figcaption>
+            </figure>
+
+            <div class="k-origin__specs">
+              <div class="k-origin__item">
+                <span class="k-mono k-mono--terracotta">Pescado y carnes</span>
+                <h3>Trucha arcoíris, cordero en chicha de jora y lomo al carbón</h3>
+                <p>
+                  Láminas frescas en tiradito cítrico, sellado a la plancha, braseado lento de 6
+                  horas o corte a la brasa.
                 </p>
               </div>
-              <div class="k-special-item">
-                <strong>Cordero Braseado en Chicha de Jora · $19.00</strong>
-                <p style="margin: 0.3rem 0 0; color: var(--k-muted); font-size: 0.92rem;">
-                  Cocción lenta en reducción tradicional servida con mote pillo suave.
+              <div class="k-origin__item">
+                <span class="k-mono k-mono--terracotta">Tubérculos y granos</span>
+                <h3>Papas nativas, papa chaucha, mote y choclo</h3>
+                <p>
+                  Presentes en purés cremosos, llapingachos con maní tostado, acompañamientos
+                  rústicos al romero y arroces tradicionales.
                 </p>
               </div>
-              <div>
-                <strong>Higos Confitados y Helado de Queso · $6.50</strong>
-                <p style="margin: 0.3rem 0 0; color: var(--k-muted); font-size: 0.92rem;">
-                  Clásico cuencano reinterpretado con helado artesanal y panela especiada.
+              <div class="k-origin__item">
+                <span class="k-mono k-mono--terracotta">Frutas y hierbas locales</span>
+                <h3>Maracuyá, naranjilla, higos en panela y cilantro</h3>
+                <p>
+                  Aportan acidez fresca a la leche de tigre, dulzor especiado a postres e infusión
+                  caliente de la casa.
                 </p>
               </div>
             </div>
           </div>
-          <div class="k-story__img">
-            <picture>
-              <source srcset="./images/plato-trucha.webp" type="image/webp" />
-              <img
-                src="./images/plato-trucha.jpg"
-                alt="Trucha sellada con puré dorado y aceite de hierbas sobre plato de cerámica artesanal"
-                width="1200"
-                height="900"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-          </div>
         </div>
       </section>
 
+      <!-- 7. Galería Editorial -->
       <section class="k-section k-section--soft" id="galeria">
         <div class="container">
-          <span class="k-eyebrow">Galería gastronómica</span>
-          <h2 class="k-title">Ambiente y cocina en cada detalle</h2>
+          <div class="k-section-head k-section-head--dark">
+            <div>
+              <span class="k-eyebrow">Galería editorial</span>
+              <h2 class="k-title k-title--flush">Detalles de cocina, brasa y cerámica de mesa.</h2>
+            </div>
+            <p class="k-lead k-lead--compact">
+              Escenas ilustrativas exclusivas de esta galería. Haz clic para ampliar cada fotografía.
+            </p>
+          </div>
+
           <div class="k-gallery">
-            <button type="button" class="k-gallery-btn" aria-label="Ampliar fotografía de salón nocturno">
-              <picture>
-                <source srcset="./images/salon-cuenca.webp" type="image/webp" />
+            <button
+              type="button"
+              class="k-gallery-btn k-gallery-btn--tall"
+              data-lightbox-title="Acabado de plato y aceite aromático"
+              aria-label="Ampliar fotografía ilustrativa de emplatado con aceite de hierbas"
+            >
+              <img
+                src="./images/galeria-emplatado.jpg"
+                alt="Manos emplatando trucha sellada con aceite verde de cilantro sobre cerámica artesanal"
+                width="896"
+                height="1200"
+                decoding="sync"
+                referrerpolicy="no-referrer"
+              />
+              <span class="k-gallery__caption">
+                <strong>Emplatado de cocina</strong>
+                <span>Acabado al momento · Ilustrativa</span>
+              </span>
+            </button>
+
+            <div class="k-gallery__stack">
+              <button
+                type="button"
+                class="k-gallery-btn"
+                data-lightbox-title="Fuego de brasa y sartén de hierro"
+                aria-label="Ampliar fotografía ilustrativa de parrilla de carbón encendida"
+              >
                 <img
-                  src="./images/salon-cuenca.jpg"
-                  alt="Salón interior de restaurante andino al anochecer"
+                  src="./images/galeria-brasa.jpg"
+                  alt="Brasas encendidas de carbón con sartén sellando corte en cocina contemporánea"
                   width="1200"
                   height="900"
-                  loading="lazy"
-                  decoding="async"
+                  decoding="sync"
+                  referrerpolicy="no-referrer"
                 />
-              </picture>
-            </button>
-            <button type="button" class="k-gallery-btn" aria-label="Ampliar fotografía de mesa servida">
-              <picture>
-                <source srcset="./images/mesa-andina.webp" type="image/webp" />
+                <span class="k-gallery__caption">
+                  <strong>De la brasa</strong>
+                  <span>Sellado al carbón · Ilustrativa</span>
+                </span>
+              </button>
+
+              <button
+                type="button"
+                class="k-gallery-btn"
+                data-lightbox-title="Vajilla en tonos tierra y oliva"
+                aria-label="Ampliar fotografía ilustrativa de vajilla de cerámica y mesa"
+              >
                 <img
-                  src="./images/mesa-andina.jpg"
-                  alt="Mesa gastronómica con vajilla artesanal en tono terracota y oliva"
+                  src="./images/galeria-ceramica.jpg"
+                  alt="Platos artesanales en tonos terracota y oliva sobre mesa de madera con vela"
                   width="1200"
                   height="900"
-                  loading="lazy"
-                  decoding="async"
+                  decoding="sync"
+                  referrerpolicy="no-referrer"
                 />
-              </picture>
-            </button>
-            <button type="button" class="k-gallery-btn" aria-label="Ampliar fotografía de plato de trucha">
-              <picture>
-                <source srcset="./images/plato-trucha.webp" type="image/webp" />
-                <img
-                  src="./images/plato-trucha.jpg"
-                  alt="Plato fuerte de trucha andina emplatada sobre piedra oscura"
-                  width="1200"
-                  height="900"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </button>
+                <span class="k-gallery__caption">
+                  <strong>Cerámica y textura</strong>
+                  <span>Puesta en mesa · Ilustrativa</span>
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- 8. Contacto y Consultas -->
       <section class="k-section" id="ubicacion">
         <div class="container k-contact-grid">
-          <div>
-            <span class="k-eyebrow">Ubicación y contacto</span>
+          <div class="k-contact-info">
+            <span class="k-eyebrow">Ubicación y consultas</span>
             <h2 class="k-title">Referencia en Cuenca, Azuay, Ecuador.</h2>
-            <p>
-              <strong>Sector de ejemplo:</strong> El Vergel / Cercanías del Centro Histórico de Cuenca.<br />
-              <strong>Horarios de ejemplo:</strong> Martes a domingo de 12:30 a 22:30 (Zona horaria America/Guayaquil).<br />
-              <strong>Teléfono de demostración:</strong> +593 979 290 747 (canal de contacto AV·STUDIO).
-            </p>
-            <p style="font-size: 0.875rem; color: var(--k-muted);">
-              Nota: Kallpa es un restaurante ficticio creado únicamente como ejemplo funcional de AV·STUDIO.
+            <dl class="k-contact-list">
+              <div>
+                <dt>Sector de ejemplo</dt>
+                <dd>El Vergel / Cercanías del Centro Histórico de Cuenca.</dd>
+              </div>
+              <div>
+                <dt>Horarios de ejemplo</dt>
+                <dd>Martes a domingo de 12:30 a 22:30 (Zona horaria America/Guayaquil).</dd>
+              </div>
+              <div>
+                <dt>Teléfono de demostración</dt>
+                <dd>+593 979 290 747 (canal de contacto AV·STUDIO).</dd>
+              </div>
+            </dl>
+            <p class="k-contact-note">
+              Nota: Kallpa es un restaurante ficticio creado únicamente como demostración funcional
+              de AV·STUDIO. Ningún formulario confirma mesas reales ni procesa cobros.
             </p>
           </div>
 
           <div class="k-form" id="contacto">
-            <h3 style="font-family: var(--k-font-display); font-size: 1.6rem; margin: 0 0 0.4rem;">
-              Solicitud demostrativa de reserva
-            </h3>
-            <p style="font-size: 0.9rem; color: var(--k-muted); margin: 0 0 1.25rem;">
-              Valida los campos para generar un mensaje de ejemplo hacia WhatsApp.
+            <h3 class="k-form__title">Solicitud demostrativa de reserva</h3>
+            <p class="k-form__sub">
+              Valida los campos para generar una consulta de ejemplo hacia WhatsApp incluyendo tu
+              selección de platos si elegiste alguno.
             </p>
             <form id="k-res-form" novalidate>
               <div class="k-form-grid">
                 <div class="k-field">
                   <label for="k-name">Nombre completo *</label>
                   <input id="k-name" type="text" placeholder="Ej. Andrés León" />
-                  <span class="k-err" id="k-err-name"></span>
+                  <span class="k-err" id="k-err-name" aria-live="polite"></span>
                 </div>
                 <div class="k-field">
                   <label for="k-guests">Personas *</label>
                   <input id="k-guests" type="number" min="1" max="16" value="2" />
-                  <span class="k-err" id="k-err-guests"></span>
+                  <span class="k-err" id="k-err-guests" aria-live="polite"></span>
                 </div>
                 <div class="k-field">
                   <label for="k-date">Fecha *</label>
                   <input id="k-date" type="date" />
-                  <span class="k-err" id="k-err-date"></span>
+                  <span class="k-err" id="k-err-date" aria-live="polite"></span>
                 </div>
                 <div class="k-field">
                   <label for="k-time">Hora (24h) *</label>
@@ -332,21 +632,22 @@
                     <option value="19:30">19:30</option>
                     <option value="20:30">20:30</option>
                   </select>
-                  <span class="k-err" id="k-err-time"></span>
+                  <span class="k-err" id="k-err-time" aria-live="polite"></span>
                 </div>
                 <div class="k-field k-field--full">
                   <label for="k-phone">WhatsApp de contacto *</label>
                   <input id="k-phone" type="tel" placeholder="+593 9..." />
-                  <span class="k-err" id="k-err-phone"></span>
+                  <span class="k-err" id="k-err-phone" aria-live="polite"></span>
                 </div>
               </div>
-              <div style="margin-top: 1rem;">
+              <div class="k-form__submit">
                 <button type="submit" class="k-btn k-btn--primary">Preparar consulta por WhatsApp</button>
               </div>
               <div class="k-prepared" id="k-prepared" hidden>
-                <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
-                  <strong>Solicitud demostrativa preparada.</strong> Al no estar conectada a un
-                  restaurante real, el enlace abre la conversación con AV·STUDIO:
+                <p class="k-prepared__text">
+                  <strong>Consulta demostrativa preparada.</strong> Al no estar conectada a un
+                  restaurante real, no confirma reserva ni mesa; el enlace abre la conversación con
+                  AV·STUDIO:
                 </p>
                 <a
                   id="k-prepared-wa"
@@ -364,49 +665,54 @@
       </section>
     </main>
 
-    <dialog class="k-lightbox" id="k-lightbox" aria-label="Vista ampliada">
+    <dialog class="k-lightbox" id="k-lightbox" aria-labelledby="k-lightbox-caption">
       <div class="k-lightbox__bar">
-        <span id="k-lightbox-caption" style="font-size: 0.875rem;"></span>
-        <button type="button" id="k-lightbox-close" class="k-tray__remove" style="font-size: 0.9rem; padding: 0.4rem 0.85rem;">
+        <span id="k-lightbox-caption" class="k-lightbox__caption"></span>
+        <button type="button" id="k-lightbox-close" class="k-tray__remove k-lightbox__close">
           Cerrar
         </button>
       </div>
-      <picture>
-        <source id="k-lightbox-webp" srcset="./images/salon-cuenca.webp" type="image/webp" />
-        <img id="k-lightbox-img" src="./images/salon-cuenca.jpg" alt="" />
-      </picture>
+      <div class="k-lightbox__stage">
+        <img id="k-lightbox-img" src="" alt="" referrerpolicy="no-referrer" />
+      </div>
     </dialog>
 
     <footer class="k-footer">
       <div class="container">
         <div class="k-footer__top">
           <div>
-            <strong style="font-family: var(--k-font-display); font-size: 1.4rem;">KALLPA · Cocina Andina</strong>
-            <p style="margin: 0.35rem 0 0; font-size: 0.875rem; opacity: 0.8;">
+            <strong class="k-footer__brand">KALLPA · Cocina Andina</strong>
+            <p class="k-footer__meta">
               DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
             </p>
           </div>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+          <nav class="k-footer__links" aria-label="Enlaces del pie de página">
             <a href="#menu">Menú</a>
+            <a href="#especialidades">Destacados</a>
             <a href="#galeria">Galería</a>
             <a href="#contacto">Reservas</a>
-            <a href="../../index.html" style="color: #E7B09B; font-weight: 600;">Volver a AV·STUDIO</a>
-          </div>
+            <a href="../../index.html" class="k-footer__back">Volver a AV·STUDIO</a>
+          </nav>
         </div>
 
         <div class="k-av-signature">
           <div>
-            <p style="margin: 0 0 0.25rem;">
-              <strong>¿Te gustaría una página web como esta?</strong> Creamos experiencias digitales personalizadas para negocios y profesionales.
+            <p class="k-av-signature__title">
+              <strong>¿Te gustaría una página web como esta?</strong> Creamos experiencias digitales
+              personalizadas para negocios y profesionales.
             </p>
-            <p style="margin: 0; opacity: 0.88;">
+            <p class="k-av-signature__sub">
               <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> · Contacto:
-              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=restaurantes#contacto" class="" style="text-decoration: underline;">
-            Quiero una página para mi restaurante &rarr;
-          </a>
+              <a href="mailto:andersonvallejo021@gmail.com" class="k-inline-link">
+                andersonvallejo021@gmail.com
+              </a>
+              ·
+              <a href="../../index.html?sector=restaurantes#contacto" class="k-inline-link">
+                Quiero una página para mi restaurante &rarr;
+              </a>
             </p>
           </div>
-          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <div class="k-av-signature__actions">
             <a
               href="https://wa.me/593979290747"
               target="_blank"
@@ -415,7 +721,7 @@
             >
               Solicitar página personalizada
             </a>
-            <a href="../../index.html#categorias" class="k-btn k-btn--outline" style="color: var(--k-cream); border-color: rgba(246,239,230,0.35);">
+            <a href="../../index.html#categorias" class="k-btn k-btn--outline-cream">
               Ver más sectores
             </a>
           </div>

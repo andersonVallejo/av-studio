@@ -1,20 +1,26 @@
 /* ==========================================================================
    VALDIVIESO & ASOCIADOS — Estudio Jurídico (Demostración AV·STUDIO)
-   Paleta: Azul Marino (#132033), Gris Pizarra (#2C3A4F), Blanco (#FFFFFF), Bronce (#B3864A)
-   Pure CSS3 | Responsive
+   Paleta: Papel cálido (#F7F5F0), Piedra (#ECE8DF), Carbón (#1A1D21),
+           Azul Marino (#132033), Bronce (#9B7137 / #785525)
+   Pure CSS3 | Responsive | WCAG AA
    ========================================================================== */
 
 :root {
+  --j-paper: #f7f5f0;
+  --j-stone: #ece8df;
+  --j-white: #ffffff;
   --j-navy: #132033;
   --j-navy-deep: #0b1420;
+  --j-charcoal: #1a1d21;
   --j-slate: #2c3a4f;
-  --j-paper: #f7f8fa;
-  --j-white: #ffffff;
   --j-bronze: #b3864a;
-  --j-bronze-light: #dbb27c;
-  --j-bronze-ink: #7a5727;
-  --j-muted: #525d6d;
-  --j-border: rgba(19, 32, 51, 0.14);
+  --j-bronze-light: #e0ba85;
+  --j-bronze-ink: #785525;
+  --j-muted: #505864;
+  --j-border: rgba(26, 29, 33, 0.13);
+  --j-border-strong: rgba(26, 29, 33, 0.28);
+  --j-err: #a6261e;
+
   --j-font-serif: 'Libre Baskerville', Georgia, serif;
   --j-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --j-font-mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -33,15 +39,18 @@ html {
 body {
   margin: 0;
   background-color: var(--j-white);
-  color: var(--j-navy);
+  color: var(--j-charcoal);
   font-family: var(--j-font-sans);
+  font-size: 1rem;
   line-height: 1.65;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -62,15 +71,25 @@ textarea {
   outline-offset: 3px;
 }
 
+.j-mono {
+  font-family: var(--j-font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
 .container {
   width: min(1180px, calc(100% - 2.5rem));
   margin-inline: auto;
 }
 
+/* --------------------------------------------------------------------------
+   Demo Ribbon & Top Bar (3-zone contract)
+   -------------------------------------------------------------------------- */
+
 .demo-ribbon {
   background-color: var(--j-navy-deep);
   color: #e6ecf5;
-  font-size: 0.8125rem;
+  font-size: 0.78rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .demo-ribbon__inner {
@@ -78,8 +97,8 @@ textarea {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
-  padding-block: 0.55rem;
+  gap: 0.5rem 1.25rem;
+  padding-block: 0.45rem;
 }
 
 .demo-ribbon__back {
@@ -88,12 +107,16 @@ textarea {
   white-space: nowrap;
 }
 
+.demo-ribbon__back:hover {
+  color: #ffffff;
+}
+
 .j-header {
   position: sticky;
   top: 0;
   z-index: 40;
-  background-color: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--j-border);
 }
 
@@ -101,44 +124,53 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
-  min-height: 4.5rem;
+  gap: 2rem;
+  min-height: 4.25rem;
 }
 
 .j-brand {
   font-family: var(--j-font-serif);
-  font-size: 1.12rem;
+  font-size: 1.08rem;
   font-weight: 700;
+  letter-spacing: 0.01em;
   color: var(--j-navy);
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .j-nav {
   display: flex;
   align-items: center;
-  gap: 1.35rem;
+  gap: 1.5rem;
 }
 
 .j-nav__link {
-  font-size: 0.88rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--j-muted);
   white-space: nowrap;
+  flex-shrink: 0;
+  padding-block: 0.25rem;
+  border-bottom: 1px solid transparent;
+  transition: color 180ms ease, border-color 180ms ease;
 }
 
 .j-nav__link:hover {
   color: var(--j-navy);
+  border-bottom-color: var(--j-bronze);
 }
 
 .j-header__actions {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 .j-mobile-toggle {
   display: none;
-  background: var(--j-paper);
+  background-color: var(--j-paper);
+  color: var(--j-navy);
   border: 1px solid var(--j-border);
   border-radius: 4px;
   width: 2.75rem;
@@ -147,10 +179,9 @@ textarea {
 }
 
 .j-mobile-drawer {
-  display: none;
   border-top: 1px solid var(--j-border);
-  background-color: #ffffff;
-  padding: 1rem 1.25rem 1.25rem;
+  background-color: var(--j-white);
+  padding: 0.75rem 1.25rem 1.25rem;
 }
 
 .j-mobile-drawer[hidden] {
@@ -159,7 +190,7 @@ textarea {
 
 .j-mobile-drawer:not([hidden]) {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.25rem;
 }
 
 .j-mobile-drawer a {
@@ -173,9 +204,13 @@ textarea {
 
 .j-drawer-back {
   color: var(--j-bronze-ink);
-  font-weight: 700 !important;
-  border-bottom: none !important;
+  font-weight: 700;
+  border-bottom: none;
 }
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
 
 .j-btn {
   display: inline-flex;
@@ -183,14 +218,18 @@ textarea {
   justify-content: center;
   gap: 0.5rem;
   min-height: 44px;
-  padding: 0.75rem 1.35rem;
+  padding: 0.72rem 1.4rem;
   font-size: 0.875rem;
   font-weight: 600;
   border: 1px solid transparent;
   border-radius: 4px;
   cursor: pointer;
   white-space: nowrap;
-  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+  flex-shrink: 0;
+  transition:
+    background-color 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    color 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .j-btn--navy {
@@ -204,17 +243,11 @@ textarea {
 
 .j-btn--bronze {
   background-color: var(--j-bronze);
-  color: #111111;
+  color: #111317;
 }
 
 .j-btn--bronze:hover {
   background-color: var(--j-bronze-light);
-}
-
-.j-btn--outline {
-  background-color: transparent;
-  border-color: rgba(19, 32, 51, 0.35);
-  color: var(--j-navy);
 }
 
 .j-btn--outline-light {
@@ -227,8 +260,16 @@ textarea {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* --------------------------------------------------------------------------
+   Sections & Headings
+   -------------------------------------------------------------------------- */
+
 .j-section {
-  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+  padding-block: clamp(3.75rem, 6.5vw, 5.5rem);
+}
+
+section[id] {
+  scroll-margin-top: 5.25rem;
 }
 
 .j-section--paper {
@@ -237,107 +278,262 @@ textarea {
   border-bottom: 1px solid var(--j-border);
 }
 
-.j-eyebrow {
-  display: inline-block;
-  font-family: var(--j-font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--j-bronze-ink);
-  margin-bottom: 0.55rem;
+.j-section--stone {
+  background-color: var(--j-stone);
+  border-top: 1px solid var(--j-border);
+  border-bottom: 1px solid var(--j-border);
 }
 
-.j-title {
-  font-family: var(--j-font-serif);
-  font-size: clamp(1.75rem, 3vw, 2.45rem);
-  line-height: 1.2;
-  margin: 0 0 0.9rem;
+.j-section--navy {
+  background-color: var(--j-navy);
+  color: #f4f6fa;
 }
+
+.j-kicker {
+  margin: 0 0 0.65rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--j-bronze-ink);
+}
+
+.j-kicker--light {
+  color: var(--j-bronze-light);
+}
+
+.j-section-title {
+  font-family: var(--j-font-serif);
+  font-size: clamp(1.75rem, 2.9vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.22;
+  color: var(--j-navy);
+  margin: 0 0 0.9rem;
+  text-wrap: balance;
+}
+
+.j-section-title--light {
+  color: #ffffff;
+}
+
+.j-section-head {
+  max-width: 45rem;
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+}
+
+.j-section-sub {
+  margin: 0;
+  color: var(--j-muted);
+  font-size: 0.98rem;
+}
+
+/* --------------------------------------------------------------------------
+   1. Portada Editorial (Dark legal broadsheet top + architectural library)
+   -------------------------------------------------------------------------- */
 
 .j-hero {
   background-color: var(--j-navy);
-  color: #ffffff;
-  padding-block: clamp(3.25rem, 6vw, 5rem);
+  color: #f3f5f8;
+  padding-block: clamp(1.15rem, 2.2vw, 1.65rem) clamp(2rem, 3.6vw, 2.75rem);
+}
+
+.j-hero__folio-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: var(--j-bronze-light);
 }
 
 .j-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(2rem, 4vw, 3.5rem);
-  align-items: center;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: start;
+  margin-bottom: 1.35rem;
+}
+
+.j-hero__title {
+  font-family: var(--j-font-serif);
+  font-size: clamp(2rem, 3.45vw, 2.9rem);
+  font-weight: 700;
+  line-height: 1.16;
+  color: #ffffff;
+  margin: 0 0 1.25rem;
+  text-wrap: balance;
+}
+
+.j-hero__quick-areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.j-quick-link {
+  font-size: 0.84rem;
+  color: #dce3ee;
+  white-space: nowrap;
+  transition: color 160ms ease;
+}
+
+.j-quick-link .j-mono {
+  color: var(--j-bronze-light);
+  margin-right: 0.25rem;
+}
+
+.j-quick-link:hover {
+  color: var(--j-bronze-light);
+}
+
+.j-hero__lead {
+  margin: 0 0 1.25rem;
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: rgba(243, 245, 248, 0.84);
 }
 
 .j-hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
-.j-hero__media img,
-.j-office__media img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.j-hero__media img {
-  border: 1px solid rgba(219, 178, 124, 0.35);
-}
-
-.j-office__media img {
-  border: 1px solid var(--j-border);
-  box-shadow: 0 18px 40px -26px rgba(19, 32, 51, 0.32);
-}
-
-.j-office-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(1.75rem, 4vw, 3.25rem);
-  align-items: center;
-}
-
-.j-muted-copy {
-  color: var(--j-muted);
-  margin: 0 0 1rem;
-}
-
-.j-office-list {
-  list-style: none;
-  padding: 0;
+.j-hero__plate {
   margin: 0;
-  display: grid;
-  gap: 0.65rem;
-  font-size: 0.94rem;
+  background-color: var(--j-navy-deep);
+  border: 1px solid rgba(224, 186, 133, 0.28);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.j-office-list li {
-  padding-left: 1rem;
-  border-left: 2px solid var(--j-bronze);
+.j-hero__plate img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 5.35;
+  object-fit: cover;
+  object-position: center 46%;
 }
+
+.j-hero__caption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 0.75rem 1.1rem;
+  font-size: 0.8rem;
+  color: #cbd5e3;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   2. Enfoque Profesional
+   -------------------------------------------------------------------------- */
+
+.j-approach {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 5vw, 4.25rem);
+  align-items: start;
+}
+
+.j-approach__quote {
+  margin: 1.35rem 0 1rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--j-border-strong);
+  font-family: var(--j-font-serif);
+  font-style: italic;
+  font-size: 1.06rem;
+  line-height: 1.65;
+  color: var(--j-navy);
+}
+
+.j-approach__note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--j-muted);
+}
+
+.j-approach__list {
+  border-top: 1px solid var(--j-border-strong);
+}
+
+.j-principle {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 1.45rem;
+  border-bottom: 1px solid var(--j-border);
+}
+
+.j-principle__index {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--j-bronze-ink);
+  padding-top: 0.2rem;
+}
+
+.j-principle h3 {
+  margin: 0 0 0.35rem;
+  font-family: var(--j-font-serif);
+  font-size: 1.14rem;
+  color: var(--j-navy);
+}
+
+.j-principle p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--j-muted);
+}
+
+/* --------------------------------------------------------------------------
+   3. Áreas de Práctica
+   -------------------------------------------------------------------------- */
 
 .j-practice-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: 2rem;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(1.5rem, 3.5vw, 2.5rem);
   align-items: start;
 }
 
 .j-practice-tabs {
   display: grid;
-  gap: 0.6rem;
+  gap: 0.55rem;
 }
 
 .j-practice-tab {
-  min-height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 54px;
+  padding: 0.9rem 1.1rem;
   text-align: left;
-  padding: 0.95rem 1.1rem;
   background-color: var(--j-paper);
   border: 1px solid var(--j-border);
   border-radius: 4px;
   font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--j-navy);
   cursor: pointer;
   transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.j-practice-tab:hover {
+  background-color: var(--j-stone);
+  border-color: var(--j-border-strong);
+}
+
+.j-practice-tab__roman {
+  font-size: 0.82rem;
+  color: var(--j-bronze-ink);
+  min-width: 2rem;
+  flex-shrink: 0;
 }
 
 .j-practice-tab.is-active {
@@ -346,42 +542,459 @@ textarea {
   border-color: var(--j-navy);
 }
 
+.j-practice-tab.is-active .j-practice-tab__roman {
+  color: var(--j-bronze-light);
+}
+
 .j-practice-panel {
-  background-color: #ffffff;
-  border: 1px solid var(--j-border);
-  border-left: 4px solid var(--j-bronze);
-  padding: 1.75rem;
-}
-
-.j-team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.15rem;
-}
-
-.j-team-card {
   background-color: var(--j-paper);
   border: 1px solid var(--j-border);
-  padding: 1.35rem;
+  border-top: 2px solid var(--j-navy);
+  border-radius: 4px;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
 }
 
-.j-consult-grid {
+.j-practice-panel__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.j-practice-panel__code {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--j-bronze-ink);
+}
+
+.j-practice-panel__jurisdiction {
+  font-size: 0.75rem;
+  color: var(--j-muted);
+}
+
+.j-practice-panel__title {
+  font-family: var(--j-font-serif);
+  font-size: clamp(1.38rem, 2.2vw, 1.75rem);
+  color: var(--j-navy);
+  margin: 0 0 0.75rem;
+}
+
+.j-practice-panel__summary {
+  margin: 0;
+  color: var(--j-muted);
+  font-size: 0.97rem;
+}
+
+.j-practice-panel__rule {
+  height: 1px;
+  background-color: var(--j-border);
+  margin-block: 1.35rem;
+}
+
+.j-practice-panel__scope-label {
+  margin: 0 0 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--j-navy);
+}
+
+.j-practice-scope {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: 2.25rem;
+  gap: 0.55rem;
+  font-size: 0.93rem;
+}
+
+.j-practice-scope__item {
+  line-height: 1.5;
+  color: var(--j-charcoal);
+}
+
+.j-practice-panel__actions {
+  margin-top: 1.65rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. Metodología de Atención
+   -------------------------------------------------------------------------- */
+
+.j-method-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--j-border-strong);
+  border-bottom: 1px solid var(--j-border);
+}
+
+.j-method-step {
+  padding: 1.5rem 1.35rem 1.5rem 0;
+}
+
+.j-method-step + .j-method-step {
+  padding-left: 1.35rem;
+  border-left: 1px solid var(--j-border);
+}
+
+.j-method-step__num {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--j-bronze-ink);
+  margin-bottom: 0.65rem;
+}
+
+.j-method-step h3 {
+  margin: 0 0 0.45rem;
+  font-family: var(--j-font-serif);
+  font-size: 1.08rem;
+  color: var(--j-navy);
+}
+
+.j-method-step p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--j-muted);
+}
+
+/* --------------------------------------------------------------------------
+   5. Documentación, Análisis y Espacios
+   -------------------------------------------------------------------------- */
+
+.j-doc-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 4.5vw, 3.5rem);
+  align-items: center;
+}
+
+.j-doc-lead {
+  margin: 0 0 1.5rem;
+  color: var(--j-muted);
+}
+
+.j-doc-index {
+  margin: 0;
+  border-top: 1px solid var(--j-border-strong);
+}
+
+.j-doc-index__item {
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--j-border);
+}
+
+.j-doc-index__item dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--j-bronze-ink);
+  margin-bottom: 0.25rem;
+}
+
+.j-doc-index__item dd {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--j-charcoal);
+}
+
+.j-doc-disclaimer {
+  margin: 1rem 0 0;
+  font-size: 0.82rem;
+  color: var(--j-muted);
+}
+
+.j-doc-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.j-doc-figure {
+  margin: 0;
+  background-color: var(--j-paper);
+  border: 1px solid var(--j-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.j-doc-figure--wide {
+  grid-column: 1 / -1;
+}
+
+.j-doc-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+.j-doc-trigger img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.j-doc-figure--wide .j-doc-trigger img {
+  aspect-ratio: 16 / 9;
+}
+
+.j-doc-figure:not(.j-doc-figure--wide) .j-doc-trigger img {
+  aspect-ratio: 4 / 3;
+}
+
+.j-doc-trigger:hover img {
+  transform: scale(1.02);
+}
+
+.j-doc-figure figcaption {
+  padding: 0.75rem 0.95rem;
+  font-size: 0.82rem;
+  color: var(--j-muted);
+  border-top: 1px solid var(--j-border);
+}
+
+.j-doc-figure figcaption strong {
+  color: var(--j-navy);
+}
+
+.j-lightbox {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 0;
+  background-color: var(--j-white);
+  max-width: min(920px, calc(100% - 2rem));
+  box-shadow: 0 24px 60px -20px rgba(11, 20, 32, 0.55);
+}
+
+.j-lightbox::backdrop {
+  background-color: rgba(11, 20, 32, 0.78);
+}
+
+.j-lightbox__inner {
+  padding: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.j-lightbox__close {
+  justify-self: end;
+  min-height: 40px;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--j-border-strong);
+  border-radius: 4px;
+  background-color: var(--j-paper);
+  color: var(--j-navy);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.j-lightbox__inner img {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.j-lightbox__caption {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--j-muted);
+}
+
+/* --------------------------------------------------------------------------
+   6. Directorio Institucional (Sin inventar perfiles/matrículas)
+   -------------------------------------------------------------------------- */
+
+.j-directory-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3.5vw, 3rem);
+  align-items: end;
+  margin-bottom: 2rem;
+}
+
+.j-directory-note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #dce3ee;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(224, 186, 133, 0.28);
+  border-radius: 6px;
+  padding: 1rem 1.15rem;
+}
+
+.j-roster {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.j-roster__row {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 0.75rem 1.75rem;
+  align-items: start;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.j-roster__roman {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--j-bronze-light);
+  padding-top: 0.25rem;
+}
+
+.j-roster__title h3 {
+  margin: 0 0 0.3rem;
+  font-family: var(--j-font-serif);
+  font-size: 1.15rem;
+  color: #ffffff;
+}
+
+.j-roster__title p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #cad5e4;
+}
+
+.j-roster__slot {
+  font-size: 0.88rem;
+  color: #e4eaf3;
+}
+
+/* --------------------------------------------------------------------------
+   7. Preguntas Frecuentes
+   -------------------------------------------------------------------------- */
+
+.j-faq-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
   align-items: start;
 }
 
+.j-faq-intro {
+  margin: 0;
+  color: var(--j-muted);
+  font-size: 0.95rem;
+}
+
+.j-faq-list {
+  border-top: 1px solid var(--j-border-strong);
+}
+
+.j-faq-item {
+  border-bottom: 1px solid var(--j-border);
+}
+
+.j-faq-item summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 54px;
+  padding-block: 1rem;
+  font-family: var(--j-font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--j-navy);
+  cursor: pointer;
+}
+
+.j-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.j-faq-item summary::after {
+  content: '+';
+  font-family: var(--j-font-sans);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--j-bronze-ink);
+  flex-shrink: 0;
+}
+
+.j-faq-item[open] summary::after {
+  content: '−';
+}
+
+.j-faq-item p {
+  margin: 0 0 1.25rem;
+  font-size: 0.94rem;
+  color: var(--j-muted);
+  max-width: 64ch;
+}
+
+/* --------------------------------------------------------------------------
+   8. Contacto y Formulario
+   -------------------------------------------------------------------------- */
+
+.j-consult-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(2rem, 4.5vw, 3.5rem);
+  align-items: start;
+}
+
+.j-consult-intro {
+  margin: 0 0 1.4rem;
+  color: var(--j-muted);
+}
+
+.j-consult-meta {
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--j-border-strong);
+}
+
+.j-consult-meta dt {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--j-bronze-ink);
+  margin-bottom: 0.15rem;
+}
+
+.j-consult-meta dd {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--j-charcoal);
+}
+
 .j-form-card {
-  background-color: #ffffff;
+  background-color: var(--j-paper);
   border: 1px solid var(--j-border);
-  padding: 1.75rem;
+  border-top: 2px solid var(--j-navy);
+  border-radius: 4px;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.j-form-card__title {
+  margin: 0 0 0.25rem;
+  font-family: var(--j-font-serif);
+  font-size: 1.32rem;
+  color: var(--j-navy);
+}
+
+.j-form-card__sub {
+  margin: 0 0 1.35rem;
+  font-size: 0.85rem;
+  color: var(--j-muted);
 }
 
 .j-form-fields {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.85rem 1rem;
 }
 
 .j-field {
@@ -396,6 +1009,7 @@ textarea {
 .j-field label {
   font-size: 0.82rem;
   font-weight: 700;
+  color: var(--j-navy);
 }
 
 .j-field input,
@@ -403,36 +1017,119 @@ textarea {
 .j-field textarea {
   width: 100%;
   min-height: 44px;
-  padding: 0.65rem 0.8rem;
-  border: 1px solid rgba(19, 32, 51, 0.25);
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--j-border-strong);
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: var(--j-white);
+  color: var(--j-charcoal);
+  transition: border-color 160ms ease;
+}
+
+.j-field input:focus,
+.j-field select:focus,
+.j-field textarea:focus {
+  border-color: var(--j-navy);
 }
 
 .j-err {
   font-size: 0.78rem;
-  color: #a6261e;
-  min-height: 1rem;
+  color: var(--j-err);
+  min-height: 1.05rem;
 }
+
+.j-form-actions {
+  margin-top: 0.75rem;
+}
+
+.j-prepared {
+  margin-top: 1.2rem;
+  padding: 1.1rem;
+  background-color: var(--j-white);
+  border: 1px solid var(--j-bronze);
+  border-radius: 4px;
+}
+
+.j-prepared__text {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--j-navy);
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
 
 .j-footer {
   background-color: var(--j-navy-deep);
-  color: #ffffff;
-  padding-block: 3rem 2.25rem;
+  color: #f3f5f8;
+  padding-block: 3.25rem 2.5rem;
+}
+
+.j-footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem 2rem;
+}
+
+.j-footer__brand {
+  font-family: var(--j-font-serif);
+  font-size: 1.18rem;
+}
+
+.j-footer__meta {
+  margin: 0.3rem 0 0;
+  font-size: 0.84rem;
+  color: #c2ccd9;
+}
+
+.j-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.4rem;
+  font-size: 0.88rem;
+}
+
+.j-footer__links a:hover {
+  text-decoration: underline;
+}
+
+.j-footer__back {
+  color: var(--j-bronze-light);
+  font-weight: 700;
 }
 
 .j-av-signature {
-  margin-top: 1.5rem;
-  padding: 1.25rem;
+  margin-top: 1.75rem;
+  padding: 1.35rem;
   background-color: var(--j-navy);
-  border: 1px solid rgba(219, 178, 124, 0.35);
+  border: 1px solid rgba(224, 186, 133, 0.32);
+  border-radius: 4px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1rem 1.5rem;
   font-size: 0.875rem;
 }
+
+.j-av-signature__lead {
+  margin: 0 0 0.3rem;
+}
+
+.j-av-signature__credit {
+  margin: 0;
+  color: #d0dae7;
+}
+
+.j-av-signature__credit a {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
 
 @media (max-width: 960px) {
   .j-nav,
@@ -446,14 +1143,31 @@ textarea {
   }
 
   .j-hero__grid,
-  .j-office-grid,
+  .j-approach,
   .j-practice-grid,
+  .j-doc-layout,
+  .j-directory-head,
+  .j-faq-grid,
   .j-consult-grid {
     grid-template-columns: 1fr;
   }
 
-  .j-team-grid {
+  .j-method-steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .j-method-step:nth-child(odd) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .j-method-step:nth-child(n + 3) {
+    border-top: 1px solid var(--j-border);
+  }
+
+  .j-roster__row {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
   }
 }
 
@@ -462,19 +1176,40 @@ textarea {
     width: min(1180px, calc(100% - 1.5rem));
   }
 
-  .j-team-grid,
+  .j-method-steps,
+  .j-doc-gallery,
   .j-form-fields {
     grid-template-columns: 1fr;
   }
 
-  .j-practice-panel,
-  .j-form-card {
-    padding: 1.25rem;
+  .j-method-step + .j-method-step {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--j-border);
+  }
+
+  .j-principle {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .j-hero__plate img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .j-hero__actions .j-btn {
+    width: 100%;
   }
 }
 
-@media (max-width: 420px) {
-  .j-hero__actions .j-btn {
-    width: 100%;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
   }
 }

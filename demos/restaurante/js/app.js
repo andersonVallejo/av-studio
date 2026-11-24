@@ -6,11 +6,44 @@ import {
   buildRestaurantWhatsApp,
 } from './logic.js';
 
+const DISH_MEDIA = {
+  'ceviche-trucha': {
+    src: './images/tiradito-trucha.jpg',
+    alt: 'Tiradito de Trucha del Cajas con leche de tigre de maracuyá y choclo crocante',
+  },
+  llapingachos: {
+    src: './images/llapingachos.jpg',
+    alt: 'Trío de Llapingachos dorados con salsa de maní tostado y curtido criollo',
+  },
+  'trucha-brasa': {
+    src: './images/plato-trucha.jpg',
+    alt: 'Trucha Sellada en Puré de Melloco con aceite aromático de cilantro',
+  },
+  'seco-cordero': {
+    src: './images/cordero-jora.jpg',
+    alt: 'Cordero Braseado en Chicha de Jora con arroz con mote y maduro asado',
+  },
+  'lomo-leña': {
+    src: './images/lomo-brasa.jpg',
+    alt: 'Lomo Fino a la Brasa con chimichurri de hierbas, papas al romero y emulsión de ajo',
+  },
+  'higos-queso': {
+    src: './images/higos-queso.jpg',
+    alt: 'Higos Confitados en almíbar de panela con helado artesanal de queso tierno',
+  },
+  'canelazo-sin-licor': {
+    src: './images/infusion-naranjilla.jpg',
+    alt: 'Infusión Caliente de Naranjilla y Canela en vaso de vidrio acanalado',
+  },
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   const menuContainer = document.getElementById('menu-grid');
   const trayList = document.getElementById('tray-list');
   const trayTotalEl = document.getElementById('tray-total');
   const trayWaLink = document.getElementById('tray-wa-link');
+  const trayClearBtn = document.getElementById('tray-clear');
+  const headerCountEl = document.getElementById('k-header-count');
   const filterBtns = Array.from(document.querySelectorAll('[data-menu-filter]'));
 
   const mobileBtn = document.getElementById('k-mobile-toggle');
@@ -37,10 +70,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderTray = () => {
     if (!trayList || !trayTotalEl || !trayWaLink) return;
     trayList.innerHTML = '';
+
+    const totalItems = selection.reduce((sum, entry) => sum + entry.qty, 0);
+    if (headerCountEl) {
+      headerCountEl.textContent = String(totalItems);
+    }
+    if (trayClearBtn) {
+      if (selection.length === 0) trayClearBtn.setAttribute('hidden', '');
+      else trayClearBtn.removeAttribute('hidden');
+    }
+
     if (selection.length === 0) {
       const li = document.createElement('li');
-      li.className = 'k-tray__item';
-      li.textContent = 'Agrega platos del menú para armar una selección demostrativa.';
+      li.className = 'k-tray__item k-tray__empty';
+      li.textContent = 'Agrega platos de la carta para armar una selección demostrativa.';
       trayList.appendChild(li);
     } else {
       selection.forEach((item) => {
@@ -65,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trayList.appendChild(li);
       });
     }
+
     const total = calculateSelectionTotal(selection);
     trayTotalEl.textContent = `$${total.toFixed(2)} USD`;
 
@@ -77,20 +121,63 @@ document.addEventListener('DOMContentLoaded', () => {
     trayWaLink.setAttribute('href', `https://wa.me/593979290747?text=${encodeURIComponent(summaryText)}`);
   };
 
+  const addDishById = (dishId, triggerBtn) => {
+    const dish = RESTAURANT_MENU.find((d) => d.id === dishId);
+    if (!dish) return;
+    const existing = selection.find((s) => s.id === dish.id);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      selection.push({ id: dish.id, name: dish.name, price: dish.price, qty: 1 });
+    }
+    renderTray();
+
+    if (triggerBtn) {
+      const original = triggerBtn.dataset.originalLabel || triggerBtn.textContent;
+      triggerBtn.dataset.originalLabel = original;
+      triggerBtn.textContent = 'Agregado a selección';
+      window.setTimeout(() => {
+        if (triggerBtn.isConnected) {
+          triggerBtn.textContent = original;
+        }
+      }, 1100);
+    }
+  };
+
   const renderMenu = () => {
     if (!menuContainer) return;
     const filtered = filterMenuByCategory(RESTAURANT_MENU, activeCategory);
     menuContainer.innerHTML = '';
 
     filtered.forEach((dish) => {
+      const media = DISH_MEDIA[dish.id] || {
+        src: './images/plato-trucha.jpg',
+        alt: dish.name,
+      };
+
       const card = document.createElement('article');
       card.className = 'k-dish';
+
+      const mediaWrap = document.createElement('div');
+      mediaWrap.className = 'k-dish__media';
+
+      const img = document.createElement('img');
+      img.src = media.src;
+      img.alt = media.alt;
+      img.width = 1200;
+      img.height = 896;
+      img.decoding = 'sync';
+      img.referrerPolicy = 'no-referrer';
+      mediaWrap.appendChild(img);
+
+      const content = document.createElement('div');
+      content.className = 'k-dish__content';
 
       const body = document.createElement('div');
 
       const catSpan = document.createElement('span');
       catSpan.className = 'k-dish__cat';
-      catSpan.textContent = dish.category;
+      catSpan.textContent = `${dish.category} · Referencial USD`;
 
       const topDiv = document.createElement('div');
       topDiv.className = 'k-dish__top';
@@ -115,25 +202,34 @@ document.addEventListener('DOMContentLoaded', () => {
       body.appendChild(descEl);
 
       const btnWrap = document.createElement('div');
+      btnWrap.className = 'k-dish__actions';
+
       const addBtn = document.createElement('button');
       addBtn.type = 'button';
-      addBtn.className = 'k-btn k-btn--outline';
-      addBtn.style.width = '100%';
-      addBtn.style.minHeight = '40px';
+      addBtn.className = 'k-btn k-btn--outline k-btn--sm';
       addBtn.textContent = '+ Agregar a selección';
+      addBtn.setAttribute('aria-label', `Agregar ${dish.name} a la selección`);
       addBtn.addEventListener('click', () => {
-        const existing = selection.find((s) => s.id === dish.id);
-        if (existing) {
-          existing.qty += 1;
-        } else {
-          selection.push({ id: dish.id, name: dish.name, price: dish.price, qty: 1 });
-        }
-        renderTray();
+        addDishById(dish.id, addBtn);
       });
 
+      const consultLink = document.createElement('a');
+      consultLink.className = 'k-btn k-btn--ghost-ink k-btn--sm';
+      const singleMsg = `Hola Anderson, vi el plato "${dish.name}" ($${dish.price.toFixed(2)} USD) en la demostración KALLPA y quiero consultar sobre una web para restaurante.`;
+      consultLink.href = `https://wa.me/593979290747?text=${encodeURIComponent(singleMsg)}`;
+      consultLink.target = '_blank';
+      consultLink.rel = 'noopener noreferrer';
+      consultLink.textContent = 'Consultar';
+      consultLink.setAttribute('aria-label', `Consultar por ${dish.name} en WhatsApp`);
+
       btnWrap.appendChild(addBtn);
-      card.appendChild(body);
-      card.appendChild(btnWrap);
+      btnWrap.appendChild(consultLink);
+
+      content.appendChild(body);
+      content.appendChild(btnWrap);
+
+      card.appendChild(mediaWrap);
+      card.appendChild(content);
       menuContainer.appendChild(card);
     });
   };
@@ -141,17 +237,34 @@ document.addEventListener('DOMContentLoaded', () => {
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       activeCategory = btn.getAttribute('data-menu-filter') || 'Todos';
-      filterBtns.forEach((b) => b.classList.toggle('is-active', b === btn));
+      filterBtns.forEach((b) => {
+        const active = b === btn;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-selected', String(active));
+      });
       renderMenu();
     });
   });
+
+  document.querySelectorAll('[data-dish-add]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const dishId = btn.getAttribute('data-dish-add');
+      if (dishId) addDishById(dishId, btn);
+    });
+  });
+
+  if (trayClearBtn) {
+    trayClearBtn.addEventListener('click', () => {
+      selection = [];
+      renderTray();
+    });
+  }
 
   renderMenu();
   renderTray();
 
   // Gallery Lightbox
   const lightbox = document.getElementById('k-lightbox');
-  const lightboxWebp = document.getElementById('k-lightbox-webp');
   const lightboxImg = document.getElementById('k-lightbox-img');
   const lightboxCap = document.getElementById('k-lightbox-caption');
   const lightboxClose = document.getElementById('k-lightbox-close');
@@ -161,14 +274,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const img = btn.querySelector('img');
       if (!lightbox || !img) return;
       const src = img.getAttribute('src') || '';
-      if (lightboxWebp) {
-        lightboxWebp.setAttribute('srcset', src.replace(/\.(jpg|jpeg|png)$/i, '.webp'));
-      }
+      const title = btn.getAttribute('data-lightbox-title') || img.getAttribute('alt') || '';
       if (lightboxImg) {
         lightboxImg.setAttribute('src', src);
-        lightboxImg.setAttribute('alt', img.getAttribute('alt') || '');
+        lightboxImg.setAttribute('alt', img.getAttribute('alt') || title);
       }
-      if (lightboxCap) lightboxCap.textContent = img.getAttribute('alt') || '';
+      if (lightboxCap) lightboxCap.textContent = title;
       if (typeof lightbox.showModal === 'function') lightbox.showModal();
     });
   });
@@ -180,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Reservation Form
+  // Reservation Consultation Form
   const resForm = document.getElementById('k-res-form');
   const preparedBox = document.getElementById('k-prepared');
   const preparedWa = document.getElementById('k-prepared-wa');

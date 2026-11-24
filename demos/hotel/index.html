@@ -5,25 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="robots" content="noindex, follow" />
-    <title>Casa del Barranco — Hotel Boutique Cuenca (Demostración) | AV·STUDIO</title>
+    <title>Casa del Barranco — Hotel Boutique Patrimonial en Cuenca (Demostración) | AV·STUDIO</title>
     <meta
       name="description"
-      content="Sitio web demostrativo de hotel boutique y turismo en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+      content="Sitio web demostrativo para hotel boutique patrimonial en El Barranco del Tomebamba, Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
     />
-    <meta property="og:title" content="Casa del Barranco — Hotel Boutique Cuenca (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:title"
+      content="Casa del Barranco — Hotel Boutique Patrimonial en Cuenca (Demostración) | AV·STUDIO"
+    />
     <meta
       property="og:description"
-      content="Hotel boutique ficticio en El Barranco del Tomebamba con suites, tarifas en USD y consulta directa sin comisiones."
+      content="Propuesta editorial de hospitalidad en Cuenca con arquitectura patrimonial, habitaciones en USD, experiencias locales y solicitud directa de disponibilidad."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AV·STUDIO" />
     <meta property="og:locale" content="es_EC" />
-    <meta property="og:image" content="../../assets/images/categories/hotel.jpg" />
+    <meta property="og:image" content="./images/barranco-fachada.jpg" />
     <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -31,7 +34,7 @@
   <body>
     <div class="demo-ribbon">
       <div class="container demo-ribbon__inner">
-        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Hotel ficticio en Cuenca, Ecuador</span>
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Hotel boutique ficticio en Cuenca, Ecuador</span>
         <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
       </div>
     </div>
@@ -39,143 +42,561 @@
     <header class="h-header">
       <div class="container h-header__inner">
         <a href="#inicio" class="h-brand">Casa del Barranco</a>
-        <nav class="h-nav" aria-label="Navegación del hotel">
-          <a class="h-nav__link" href="#inicio">Inicio</a>
+
+        <nav class="h-nav" aria-label="Navegación principal del hotel">
+          <a class="h-nav__link" href="#arquitectura">Arquitectura</a>
           <a class="h-nav__link" href="#habitaciones">Habitaciones</a>
-          <a class="h-nav__link" href="#disponibilidad">Disponibilidad</a>
+          <a class="h-nav__link" href="#experiencias">Experiencias</a>
+          <a class="h-nav__link" href="#galeria">Galería</a>
+          <a class="h-nav__link" href="#ubicacion">Ubicación</a>
         </nav>
+
         <div class="h-header__actions">
-          <a href="#disponibilidad" class="h-btn h-btn--moss h-header__cta">Consultar estadía</a>
+          <a href="#disponibilidad" class="h-btn h-btn--moss h-header__cta">Solicitar reserva</a>
           <button
             type="button"
             class="h-mobile-toggle"
             id="h-mobile-toggle"
             aria-expanded="false"
             aria-controls="h-mobile-drawer"
-            aria-label="Abrir menú"
+            aria-label="Abrir menú de navegación"
           >
             &#9776;
           </button>
         </div>
       </div>
+
       <nav class="h-mobile-drawer" id="h-mobile-drawer" hidden aria-label="Menú móvil">
-        <a href="#inicio">Inicio</a>
+        <a href="#inicio">Portada</a>
+        <a href="#arquitectura">Arquitectura</a>
         <a href="#habitaciones">Habitaciones</a>
-        <a href="#disponibilidad">Disponibilidad</a>
-        <a href="../../index.html" class="h-mobile-drawer__back">
-          &larr; Volver a AV·STUDIO
-        </a>
+        <a href="#experiencias">Experiencias</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#disponibilidad">Solicitar reserva</a>
+        <a href="../../index.html" class="h-mobile-drawer__back">&larr; Volver a AV·STUDIO</a>
       </nav>
     </header>
 
     <main>
-      <section class="h-hero" id="inicio">
-        <div class="container h-hero__grid">
-          <div>
-            <span class="h-eyebrow h-eyebrow--hero">
-              Hospedaje patrimonial · El Barranco del Tomebamba, Cuenca
-            </span>
-            <h1 class="h-title h-title--hero">
-              Descanso sereno en arquitectura cuencana a pasos del Centro Histórico.
+      <!-- 1. PORTADA INMERSIVA -->
+      <section class="h-hero" id="inicio" aria-labelledby="h-hero-title">
+        <div class="h-hero__backdrop">
+          <img
+            src="./images/barranco-fachada.jpg"
+            width="1600"
+            height="900"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+            alt="Fachada patrimonial restaurada de Casa del Barranco al atardecer sobre las terrazas del río Tomebamba en Cuenca, Ecuador"
+          />
+          <div class="h-hero__scrim" aria-hidden="true"></div>
+        </div>
+
+        <div class="container h-hero__content">
+          <div class="h-hero__headline-block">
+            <p class="h-kicker h-kicker--light">
+              El Barranco del Tomebamba <span aria-hidden="true">·</span> Cuenca, Ecuador
+            </p>
+            <h1 class="h-hero__title" id="h-hero-title">
+              Arquitectura patrimonial y silencio andino frente al río Tomebamba.
             </h1>
             <p class="h-hero__lead">
-              Casa del Barranco es un hotel boutique ficticio diseñado por AV·STUDIO. Muestra cómo
-              exhibir habitaciones con tarifas claras en USD, experiencias andinas y consulta directa
-              de disponibilidad sin intermediarios.
+              Casona republicana de adobe, piedra andina y balcones de madera restaurada como refugio
+              boutique de escala íntima. Propuesta demostrativa diseñada por AV·STUDIO para hoteles
+              con reserva directa sin comisiones.
             </p>
             <div class="h-btn-row">
-              <a href="#habitaciones" class="h-btn h-btn--wood">Ver habitaciones en USD</a>
-              <a href="#disponibilidad" class="h-btn h-btn--outline-light">Consultar fechas</a>
+              <a href="#disponibilidad" class="h-btn h-btn--wood">Consultar disponibilidad</a>
+              <a href="#habitaciones" class="h-btn h-btn--outline-light">Explorar habitaciones</a>
             </div>
           </div>
 
-          <div class="h-hero__media">
-            <picture>
-              <source srcset="./images/hero.webp" type="image/webp" />
-              <img
-                src="./images/hero.jpg"
-                width="1200"
-                height="900"
-                fetchpriority="high"
-                decoding="async"
-                alt="Patio patrimonial andino en Cuenca con arcos de piedra, balcones de madera y vegetación"
-              />
-            </picture>
-          </div>
+          <dl class="h-hero__factbar" aria-label="Información esencial de estadía">
+            <div class="h-factbar__item">
+              <dt>Ubicación referencial</dt>
+              <dd>Calle Larga y Bajada del Padrón</dd>
+            </div>
+            <div class="h-factbar__item">
+              <dt>Tarifas en USD</dt>
+              <dd class="tabular-nums">Desde $88.00 / noche</dd>
+            </div>
+            <div class="h-factbar__item">
+              <dt>Horarios (24h)</dt>
+              <dd class="tabular-nums">Ingreso 14:00 · Salida 12:00</dd>
+            </div>
+            <div class="h-factbar__item">
+              <dt>Atención directa</dt>
+              <dd>Desayuno andino incluido</dd>
+            </div>
+          </dl>
         </div>
       </section>
 
-      <section class="h-section h-section--sand" id="habitaciones">
+      <!-- 2. PRESENTACIÓN DEL HOTEL Y ARQUITECTURA PATRIMONIAL -->
+      <section class="h-section" id="arquitectura" aria-labelledby="h-arch-title">
+        <div class="container h-arch-grid">
+          <div class="h-arch__prose">
+            <p class="h-kicker">01 · La casona y su arquitectura</p>
+            <h2 class="h-title" id="h-arch-title">
+              Piedra de río, cal y madera labrada en el borde histórico de Cuenca.
+            </h2>
+            <p class="h-body-lead">
+              Casa del Barranco nace como ejercicio editorial de hospitalidad en el entorno
+              arquitectónico de El Barranco: construcciones escalonadas que descienden hacia el cauce
+              del Tomebamba conservando sus patios claustrales y galerías de madera.
+            </p>
+            <p class="h-body-copy">
+              En lugar de una recepción impersonal, cada espacio privilegia la luz natural de la
+              sierra austral, el abrigo acústico de muros anchos de adobe y una transición serena
+              entre el jardín interior y el trazado peatonal del Centro Histórico.
+            </p>
+
+            <dl class="h-spec-list">
+              <div class="h-spec-list__row">
+                <dt>Materialidad</dt>
+                <dd>Arcos de piedra andina, vigas de eucalipto y teja artesanal.</dd>
+              </div>
+              <div class="h-spec-list__row">
+                <dt>Patio claustral</dt>
+                <dd>Fuente central de piedra y vegetación nativa protegida del viento.</dd>
+              </div>
+              <div class="h-spec-list__row">
+                <dt>Escala boutique</dt>
+                <dd>Habitaciones silenciosas orientadas al patio interior y al río.</dd>
+              </div>
+            </dl>
+          </div>
+
+          <figure class="h-arch__figure">
+            <div class="h-arch__frame">
+              <picture>
+                <source srcset="./images/hero.webp" type="image/webp" />
+                <img
+                  src="./images/hero.jpg"
+                  width="1200"
+                  height="900"
+                  loading="eager"
+                  decoding="async"
+                  alt="Patio interior de Casa del Barranco con arcos de piedra, galería superior de madera, fuente central y jardín"
+                />
+              </picture>
+            </div>
+            <figcaption class="h-caption">
+              Patio claustral central — galería de arcos y balcones de madera hacia las áreas comunes.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 3. HABITACIONES Y TARIFAS REFERENCIALES EN USD -->
+      <section class="h-section h-section--sand" id="habitaciones" aria-labelledby="h-rooms-title">
         <div class="container">
-          <span class="h-eyebrow">Alojamiento (Tarifas de referencia en USD)</span>
-          <h2 class="h-title">Habitaciones y suites de ejemplo</h2>
+          <div class="h-section__head">
+            <div>
+              <p class="h-kicker">02 · Alojamiento de ejemplo (USD)</p>
+              <h2 class="h-title" id="h-rooms-title">Habitaciones y suites patrimoniales</h2>
+            </div>
+            <p class="h-section__summary">
+              Tres tipologías de ejemplo con capacidad declarada, características espaciales y
+              tarifas nocturnas referenciales en dólares estadounidenses.
+            </p>
+          </div>
+
           <div class="h-rooms-grid" id="h-rooms-grid"></div>
         </div>
       </section>
 
-      <section class="h-section" id="disponibilidad">
-        <div class="container h-stay-grid">
-          <div>
-            <span class="h-eyebrow">Consulta directa sin comisiones</span>
-            <h2 class="h-title">Solicita disponibilidad de ejemplo</h2>
-            <p class="h-stay__copy">
-              <strong>Check-in / Check-out referencial (24h):</strong> Ingreso 14:00 · Salida 12:00.<br />
-              <strong>Experiencias sugeridas:</strong> Caminata guiada por El Barranco, Parque Nacional
-              Cajas y talleres artesanales de Chordeleg.
+      <!-- 4. EXPERIENCIAS EN CUENCA Y ALREDEDORES -->
+      <section class="h-section h-section--moss" id="experiencias" aria-labelledby="h-exp-title">
+        <div class="container h-exp-grid">
+          <figure class="h-exp__media">
+            <div class="h-exp__frame">
+              <img
+                src="./images/cajas-laguna.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                alt="Laguna de altura entre bosques de polylepis y neblina en el Parque Nacional Cajas, Azuay"
+              />
+            </div>
+            <figcaption class="h-caption h-caption--light">
+              Parque Nacional Cajas — senderos altoandinos y lagunas glaciares a menos de una hora de Cuenca.
+            </figcaption>
+          </figure>
+
+          <div class="h-exp__content">
+            <p class="h-kicker h-kicker--light">03 · Cuenca y su entorno</p>
+            <h2 class="h-title h-title--light" id="h-exp-title">
+              Experiencias locales curadas desde el hotel
+            </h2>
+            <p class="h-exp__intro">
+              Recorridos sugeridos para descubrir el patrimonio fluvial, los oficios del Azuay y los
+              ecosistemas de páramo con horarios flexibles y guía local coordinada.
             </p>
-            <p class="h-stay__note">
-              Este formulario valida las fechas de entrada y salida y genera el enlace demostrativo
-              hacia WhatsApp de Anderson Vallejo (AV·STUDIO).
+
+            <ol class="h-exp-list">
+              <li class="h-exp-list__item">
+                <div class="h-exp-list__meta">01 <span aria-hidden="true">·</span> A pie · 2 horas</div>
+                <h3>Caminata arquitectónica por El Barranco y Puente Roto</h3>
+                <p>
+                  Lectura urbana de casonas colgantes, escalinatas tradicionales y orillas del río
+                  Tomebamba al amanecer o al caer la tarde.
+                </p>
+              </li>
+              <li class="h-exp-list__item">
+                <div class="h-exp-list__meta">02 <span aria-hidden="true">·</span> Mañana completa · 45 min</div>
+                <h3>Lagunas glaciares en el Parque Nacional Cajas</h3>
+                <p>
+                  Recorrido interpretativo entre bosques de quinua (polylepis) y lagunas de páramo
+                  sobre los 3.900 metros de altitud.
+                </p>
+              </li>
+              <li class="h-exp-list__item">
+                <div class="h-exp-list__meta">03 <span aria-hidden="true">·</span> Medio día · Valle del Azuay</div>
+                <h3>Ruta artesanal: paja toquilla y filigrana en Chordeleg</h3>
+                <p>
+                  Visita de taller para conocer el tejido tradicional del sombrero fino y el trabajo
+                  en plata de orfebres locales.
+                </p>
+              </li>
+              <li class="h-exp-list__item">
+                <div class="h-exp-list__meta">04 <span aria-hidden="true">·</span> En la casona · 07:30 a 10:30</div>
+                <h3>Mesa de desayuno serrano y café de altura</h3>
+                <p>
+                  Preparaciones con grano ecuatoriano de Loja y Azuay, quesillo fresco, fruta de
+                  temporada y pan recién horneado en el salón del patio.
+                </p>
+              </li>
+            </ol>
+
+            <div class="h-exp__action">
+              <a href="#disponibilidad" class="h-btn h-btn--outline-light">
+                Incluir interés de recorrido en la consulta
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. SERVICIOS Y COMODIDADES -->
+      <section class="h-section" id="servicios" aria-labelledby="h-serv-title">
+        <div class="container h-serv-grid">
+          <div class="h-serv__prose">
+            <p class="h-kicker">04 · Hospitalidad y detalle</p>
+            <h2 class="h-title" id="h-serv-title">Servicios y comodidades incluidas</h2>
+            <p class="h-body-lead">
+              Diseñado para estadías tranquilas tanto de viaje cultural como de trabajo remoto, con
+              atención cercana y horarios claros.
+            </p>
+
+            <div class="h-amenities-grid">
+              <article class="h-amenity">
+                <h3>Desayuno andino diario</h3>
+                <p>
+                  Incluido en todas las habitaciones. Servicio de mesa en el salón colonial o en las
+                  galerías del jardín.
+                </p>
+              </article>
+              <article class="h-amenity">
+                <h3>Wi-Fi simétrico y calma</h3>
+                <p>
+                  Conectividad estable en suites y escritorios de madera sólida ideales para quienes
+                  trabajan desde Cuenca.
+                </p>
+              </article>
+              <article class="h-amenity">
+                <h3>Abrigo térmico silencioso</h3>
+                <p>
+                  Calefacción discreta en habitaciones, textiles de lana andina y chimenea encendida
+                  en áreas sociales al anochecer.
+                </p>
+              </article>
+              <article class="h-amenity">
+                <h3>Traslados y custodia</h3>
+                <p>
+                  Coordinación directa desde el Aeropuerto Mariscal Lamar y resguardo de equipaje
+                  antes del ingreso o tras el check-out.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <figure class="h-serv__figure">
+            <div class="h-serv__frame">
+              <img
+                src="./images/salon-desayuno.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                alt="Salón de desayuno y lectura con arcos blancos, mesa de madera de nogal y cerámica artesanal hacia el patio"
+              />
+            </div>
+            <figcaption class="h-caption">
+              Salón del patio — desayuno andino matutino, lectura y café de especialidad por la tarde.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 6. GALERÍA FOTOGRÁFICA -->
+      <section class="h-section h-section--sand" id="galeria" aria-labelledby="h-gal-title">
+        <div class="container">
+          <div class="h-section__head">
+            <div>
+              <p class="h-kicker">05 · Recorrido visual</p>
+              <h2 class="h-title" id="h-gal-title">Galería arquitectónica y espacios</h2>
+            </div>
+
+            <div class="h-gallery-filters" role="group" aria-label="Filtrar fotografías por espacio">
+              <button type="button" class="h-filter-btn is-active" data-gallery-filter="all">
+                Todos
+              </button>
+              <button type="button" class="h-filter-btn" data-gallery-filter="arquitectura">
+                Arquitectura y patios
+              </button>
+              <button type="button" class="h-filter-btn" data-gallery-filter="habitaciones">
+                Habitaciones
+              </button>
+              <button type="button" class="h-filter-btn" data-gallery-filter="entorno">
+                Cuenca y salón
+              </button>
+            </div>
+          </div>
+
+          <div class="h-gallery-grid" id="h-gallery-grid">
+            <figure class="h-gallery-card h-gallery-card--wide" data-gallery-cat="arquitectura">
+              <div class="h-gallery-card__media">
+                <picture>
+                  <source srcset="./images/patio-doble.webp" type="image/webp" />
+                  <img
+                    src="./images/patio-doble.jpg"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Corredor abovedado con columnas de piedra andina, piso de ladrillo artesanal y patio ajardinado"
+                  />
+                </picture>
+              </div>
+              <figcaption class="h-gallery-card__cap">
+                <span>Arquitectura</span> · Corredor de arcos en piedra labrada y piso de barro cocido
+              </figcaption>
+            </figure>
+
+            <figure class="h-gallery-card" data-gallery-cat="habitaciones">
+              <div class="h-gallery-card__media">
+                <picture>
+                  <source srcset="./images/suite-balcon.webp" type="image/webp" />
+                  <img
+                    src="./images/suite-balcon.jpg"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Suite Balcón del Río con puertas francesas abiertas hacia las cúpulas de Cuenca"
+                  />
+                </picture>
+              </div>
+              <figcaption class="h-gallery-card__cap">
+                <span>Habitaciones</span> · Suite Balcón del Río con vista a las cúpulas
+              </figcaption>
+            </figure>
+
+            <figure class="h-gallery-card" data-gallery-cat="habitaciones">
+              <div class="h-gallery-card__media">
+                <img
+                  src="./images/patio-doble-interior.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Habitación Doble Patio Colonial con vigas de madera, escritorio y salida al jardín"
+                />
+              </div>
+              <figcaption class="h-gallery-card__cap">
+                <span>Habitaciones</span> · Habitación Doble Patio Colonial y luz de mañana
+              </figcaption>
+            </figure>
+
+            <figure class="h-gallery-card" data-gallery-cat="habitaciones">
+              <div class="h-gallery-card__media">
+                <picture>
+                  <source srcset="./images/loft-cajas.webp" type="image/webp" />
+                  <img
+                    src="./images/loft-cajas.jpg"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Loft Familiar El Cajas con chimenea de piedra natural y vista panorámica a los Andes"
+                  />
+                </picture>
+              </div>
+              <figcaption class="h-gallery-card__cap">
+                <span>Habitaciones</span> · Loft Familiar El Cajas con chimenea de piedra
+              </figcaption>
+            </figure>
+
+            <figure class="h-gallery-card" data-gallery-cat="entorno">
+              <div class="h-gallery-card__media">
+                <img
+                  src="./images/salon-desayuno.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Salón de desayuno andino con café ecuatoriano y pan artesanal"
+                />
+              </div>
+              <figcaption class="h-gallery-card__cap">
+                <span>Entorno y mesa</span> · Salón matutino de desayuno serrano y lectura
+              </figcaption>
+            </figure>
+
+            <figure class="h-gallery-card h-gallery-card--wide" data-gallery-cat="entorno">
+              <div class="h-gallery-card__media">
+                <img
+                  src="./images/cajas-laguna.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Sendero y laguna glaciar en Parque Nacional Cajas en el Azuay"
+                />
+              </div>
+              <figcaption class="h-gallery-card__cap">
+                <span>Entorno</span> · Excursiones al Parque Nacional Cajas y valles cercanos
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 y 8. UBICACIÓN, CONTACTO Y SOLICITUD DE RESERVA -->
+      <section class="h-section" id="disponibilidad" aria-labelledby="h-stay-title">
+        <div class="container h-stay-grid">
+          <div id="ubicacion" class="h-location-col">
+            <p class="h-kicker">06 · Ubicación y reserva directa</p>
+            <h2 class="h-title" id="h-stay-title">
+              Consulta disponibilidad sin intermediarios
+            </h2>
+            <p class="h-stay__copy">
+              El panel derecho valida las fechas seleccionadas y prepara una consulta directa por
+              WhatsApp hacia Anderson Vallejo (AV·STUDIO) como demostración interactiva de reserva
+              hotelera sin comisiones de plataforma.
+            </p>
+
+            <div class="h-location-box">
+              <h3>Ubicación referencial en Cuenca</h3>
+              <p class="h-location-box__address">
+                Calle Larga y Bajada del Padrón · Sector El Barranco del Tomebamba<br />
+                Cuenca, Azuay, Ecuador
+              </p>
+
+              <dl class="h-distance-list">
+                <div>
+                  <dt>Puente Roto y Escalinata</dt>
+                  <dd class="tabular-nums">4 min a pie</dd>
+                </div>
+                <div>
+                  <dt>Parque Calderón y Catedral Nueva</dt>
+                  <dd class="tabular-nums">7 min a pie</dd>
+                </div>
+                <div>
+                  <dt>Museo y Parque Arqueológico Pumapungo</dt>
+                  <dd class="tabular-nums">12 min a pie</dd>
+                </div>
+                <div>
+                  <dt>Aeropuerto Mariscal Lamar (CUE)</dt>
+                  <dd class="tabular-nums">15 min en auto</dd>
+                </div>
+              </dl>
+
+              <div class="h-location-box__meta">
+                <span>Check-in 14:00 · Check-out 12:00 (24h)</span>
+                <span aria-hidden="true">·</span>
+                <span>Tarifas referenciales en USD</span>
+              </div>
+            </div>
+
+            <p class="h-demo-notice">
+              Nota de demostración: Casa del Barranco es una marca ficticia creada por AV·STUDIO. No
+              procesa pagos en línea ni representa reservas hoteleras reales.
             </p>
           </div>
 
           <form class="h-form-card" id="h-stay-form" novalidate>
-            <h3 class="h-form-card__title">
-              Formulario de disponibilidad
-            </h3>
+            <div class="h-form-card__head">
+              <p class="h-kicker">Solicitud demostrativa</p>
+              <h3 class="h-form-card__title">Prepara tu consulta de estadía</h3>
+            </div>
+
             <div class="h-form-fields">
               <div class="h-field">
                 <label for="h-name">Nombre del huésped *</label>
-                <input id="h-name" type="text" placeholder="Ej. Isabel Molina" />
-                <span class="h-err" id="h-err-name"></span>
+                <input id="h-name" type="text" placeholder="Ej. Isabel Molina" autocomplete="name" />
+                <span class="h-err" id="h-err-name" aria-live="polite"></span>
               </div>
+
               <div class="h-field">
-                <label for="h-phone">WhatsApp *</label>
-                <input id="h-phone" type="tel" placeholder="+593 9..." />
-                <span class="h-err" id="h-err-phone"></span>
+                <label for="h-phone">WhatsApp o teléfono *</label>
+                <input id="h-phone" type="tel" placeholder="+593 9..." autocomplete="tel" />
+                <span class="h-err" id="h-err-phone" aria-live="polite"></span>
               </div>
-              <div class="h-field">
-                <label for="h-room">Habitación *</label>
+
+              <div class="h-field h-field--full">
+                <label for="h-room">Habitación de interés *</label>
                 <select id="h-room">
                   <option value="">Selecciona habitación</option>
-                  <option value="Suite Balcón del Río">Suite Balcón del Río ($118/noche)</option>
-                  <option value="Habitación Doble Patio Colonial">Habitación Doble Patio Colonial ($88/noche)</option>
-                  <option value="Loft Familiar El Cajas">Loft Familiar El Cajas ($145/noche)</option>
+                  <option value="Suite Balcón del Río">Suite Balcón del Río ($118.00 USD / noche)</option>
+                  <option value="Habitación Doble Patio Colonial">
+                    Habitación Doble Patio Colonial ($88.00 USD / noche)
+                  </option>
+                  <option value="Loft Familiar El Cajas">
+                    Loft Familiar El Cajas ($145.00 USD / noche)
+                  </option>
                 </select>
-                <span class="h-err" id="h-err-room"></span>
+                <span class="h-err" id="h-err-room" aria-live="polite"></span>
               </div>
+
               <div class="h-field">
                 <label for="h-guests">Huéspedes *</label>
                 <input id="h-guests" type="number" min="1" max="8" value="2" />
-                <span class="h-err" id="h-err-guests"></span>
+                <span class="h-err" id="h-err-guests" aria-live="polite"></span>
               </div>
+
               <div class="h-field">
                 <label for="h-checkin">Fecha de ingreso *</label>
                 <input id="h-checkin" type="date" />
-                <span class="h-err" id="h-err-checkIn"></span>
+                <span class="h-err" id="h-err-checkIn" aria-live="polite"></span>
               </div>
-              <div class="h-field">
+
+              <div class="h-field h-field--full">
                 <label for="h-checkout">Fecha de salida *</label>
                 <input id="h-checkout" type="date" />
-                <span class="h-err" id="h-err-checkOut"></span>
+                <span class="h-err" id="h-err-checkOut" aria-live="polite"></span>
               </div>
             </div>
-            <div style="margin-top: 1rem;">
-              <button type="submit" class="h-btn h-btn--moss">Preparar consulta en WhatsApp</button>
+
+            <div class="h-estimate" id="h-estimate" aria-live="polite">
+              Selecciona una habitación y fechas válidas para ver la referencia estimada en USD.
             </div>
-            <div id="h-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: var(--h-cream); border: 1px solid var(--h-border); border-radius: 6px;">
-              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
-                <strong>Consulta de estadía lista.</strong> Abre el mensaje hacia AV·STUDIO:
+
+            <div class="h-form-actions">
+              <button type="submit" class="h-btn h-btn--moss h-form-submit">
+                Preparar consulta en WhatsApp
+              </button>
+            </div>
+
+            <div class="h-prepared" id="h-prepared" hidden>
+              <p class="h-prepared__text">
+                <strong>Consulta de estadía lista.</strong> Abre el mensaje demostrativo hacia
+                AV·STUDIO para revisar cómo llegaría la solicitud al hotel:
               </p>
               <a
                 id="h-prepared-wa"
@@ -194,30 +615,38 @@
 
     <footer class="h-footer">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+        <div class="h-footer__top">
           <div>
-            <strong style="font-family: var(--h-font-display); font-size: 1.4rem;">Casa del Barranco · Hotel</strong>
-            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.82;">
-              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            <strong class="h-footer__brand">Casa del Barranco · Hotel Boutique</strong>
+            <p class="h-footer__sub">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · El Barranco del Tomebamba, Cuenca, Azuay, Ecuador.
             </p>
           </div>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+          <div class="h-footer__links">
+            <a href="#arquitectura">Arquitectura</a>
             <a href="#habitaciones">Habitaciones</a>
+            <a href="#experiencias">Experiencias</a>
+            <a href="#galeria">Galería</a>
             <a href="#disponibilidad">Disponibilidad</a>
-            <a href="../../index.html" style="color: #d6e6da; font-weight: 700;">Volver a AV·STUDIO</a>
+            <a href="../../index.html" class="h-footer__back">Volver a AV·STUDIO</a>
           </div>
         </div>
 
         <div class="h-av-signature">
           <div>
-            <p style="margin: 0 0 0.25rem;">
-              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos sitios directos para hoteles, hosterías y turismo.
+            <p class="h-av-signature__title">
+              <strong>¿Te gustaría una página web como esta para tu hotel u hostería?</strong>
+              Diseñamos sitios directos con tarifas claras en USD, fotografía protagonista y consulta
+              sin comisiones.
             </p>
-            <p style="margin: 0; opacity: 0.88;">
-              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
-              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=hotel#contacto" class="" style="text-decoration: underline;">
-            Quiero una página para mi hotel &rarr;
-          </a>
+            <p class="h-av-signature__meta">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong>
+              <span aria-hidden="true">·</span>
+              <a href="mailto:andersonvallejo021@gmail.com">andersonvallejo021@gmail.com</a>
+              <span aria-hidden="true">·</span>
+              <a href="../../index.html?sector=hotel#contacto">
+                Quiero una página para mi hotel &rarr;
+              </a>
             </p>
           </div>
           <a

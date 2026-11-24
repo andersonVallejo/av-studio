@@ -41,11 +41,13 @@
         <a href="#inicio" class="i-brand">ANDES HOGAR</a>
         <nav class="i-nav" aria-label="Navegación inmobiliaria">
           <a class="i-nav__link" href="#inicio">Inicio</a>
+          <a class="i-nav__link" href="#destacada">Destacada</a>
           <a class="i-nav__link" href="#propiedades">Propiedades</a>
-          <a class="i-nav__link" href="#contacto">Asesoría</a>
+          <a class="i-nav__link" href="#ubicaciones">Sectores</a>
+          <a class="i-nav__link" href="#contacto">Consulta</a>
         </nav>
         <div class="i-header__actions">
-          <a href="#propiedades" class="i-btn i-btn--navy i-header__cta">Buscar inmueble</a>
+          <a href="#propiedades" class="i-btn i-btn--navy i-header__cta">Explorar catálogo</a>
           <button
             type="button"
             class="i-mobile-toggle"
@@ -60,53 +62,194 @@
       </div>
       <nav class="i-mobile-drawer" id="i-mobile-drawer" hidden aria-label="Menú móvil">
         <a href="#inicio">Inicio</a>
+        <a href="#destacada">Propiedad destacada</a>
         <a href="#propiedades">Propiedades</a>
+        <a href="#ubicaciones">Sectores en Cuenca</a>
+        <a href="#proceso">Proceso de consulta</a>
         <a href="#contacto">Asesoría</a>
-        <a href="../../index.html" class="i-mobile-drawer__back">
-          &larr; Volver a AV·STUDIO
-        </a>
+        <a href="../../index.html" class="i-mobile-drawer__back">&larr; Volver a AV·STUDIO</a>
       </nav>
     </header>
 
     <main>
+      <!-- 1. Portada Inmobiliaria -->
       <section class="i-hero" id="inicio">
-        <div class="container i-hero__grid">
+        <div class="i-hero__backdrop">
+          <picture>
+            <source srcset="./images/inmobiliaria.webp" type="image/webp" />
+            <img
+              src="./images/inmobiliaria.jpg"
+              width="1440"
+              height="810"
+              fetchpriority="high"
+              decoding="sync"
+              referrerpolicy="no-referrer"
+              alt="Arquitectura residencial contemporánea en piedra y cristal orientada hacia los Andes"
+            />
+          </picture>
+        </div>
+        <div class="i-hero__scrim" aria-hidden="true"></div>
+
+        <div class="container i-hero__content">
           <div>
-            <span class="i-eyebrow i-eyebrow--hero">Bienes raíces de ejemplo · Cuenca, Azuay</span>
+            <span class="i-kicker i-kicker--light">Portafolio inmobiliario de ejemplo · Cuenca, Azuay</span>
             <h1 class="i-title i-title--hero">
-              Propiedades seleccionadas con filtros claros y precios transparentes en USD.
+              Arquitectura residencial con datos claros y precios en USD.
             </h1>
             <p class="i-hero__lead">
-              Andes Hogar es una inmobiliaria ficticia diseñada por AV·STUDIO para demostrar cómo tu
-              portafolio inmobiliario puede ofrecer búsqueda por sector, tipo, habitaciones y
-              consulta directa por propiedad.
+              Andes Hogar es una inmobiliaria ficticia creada por AV·STUDIO para mostrar cómo tu catálogo de
+              propiedades puede filtrar por sector, operación y tipología con consulta directa por código.
             </p>
             <div class="i-btn-row">
               <a href="#propiedades" class="i-btn i-btn--gold">Explorar propiedades</a>
-              <a href="#contacto" class="i-btn i-btn--outline-light">Solicitar asesoría</a>
+              <a href="#contacto" class="i-btn i-btn--outline-light">Preparar consulta</a>
             </div>
           </div>
 
-          <div class="i-hero__media">
-            <picture>
-              <source srcset="./images/inmobiliaria.webp" type="image/webp" />
-              <img
-                src="./images/inmobiliaria.jpg"
-                width="1200"
-                height="900"
-                fetchpriority="high"
-                decoding="async"
-                alt="Arquitectura residencial contemporánea con piedra y ventanales hacia los Andes"
-              />
-            </picture>
+          <aside class="i-hero__folio" aria-label="Resumen del catálogo demostrativo">
+            <div class="i-hero__folio-head">
+              <strong class="i-hero__folio-title">Índice de catálogo modelo</strong>
+              <span class="i-hero__folio-code">Cuenca · Azuay</span>
+            </div>
+            <ul class="i-folio-list">
+              <li>
+                <span class="i-folio-list__label">Inmuebles demostrativos</span>
+                <span class="i-folio-list__value">06 modelos · AH-101/106</span>
+              </li>
+              <li>
+                <span class="i-folio-list__label">Modalidades cubiertas</span>
+                <span class="i-folio-list__value">Venta y Alquiler</span>
+              </li>
+              <li>
+                <span class="i-folio-list__label">Sectores de referencia</span>
+                <span class="i-folio-list__value">4 zonas en Cuenca</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 2. Filosofía Inmobiliaria -->
+      <section class="i-section i-section--ivory" id="filosofia">
+        <div class="container i-philosophy-grid">
+          <div>
+            <span class="i-kicker">Criterio arquitectónico y comercial</span>
+            <h2 class="i-title">Claridad técnica antes de coordinar una conversación.</h2>
+            <p class="i-philosophy__lead">
+              Cada propiedad de esta demostración reúne únicamente información verificable en pantalla —tipo,
+              superficie, habitaciones cuando aplica y precio referencial en dólares— para facilitar decisiones
+              ordenadas sin ruido comercial.
+            </p>
+          </div>
+
+          <div class="i-pillars">
+            <article class="i-pillar">
+              <span class="i-pillar__num">01</span>
+              <div>
+                <h3 class="i-pillar__title">Datos homogéneos en USD y m²</h3>
+                <p class="i-pillar__text">
+                  Cada tarjeta y ficha presenta la misma estructura métrica para comparar casas, departamentos y
+                  terrenos bajo criterios consistentes.
+                </p>
+              </div>
+            </article>
+            <article class="i-pillar">
+              <span class="i-pillar__num">02</span>
+              <div>
+                <h3 class="i-pillar__title">Filtrado multicriterio inmediato</h3>
+                <p class="i-pillar__text">
+                  Combina operación, tipología, sector de Cuenca y mínimo de habitaciones en el cliente sin recargas ni
+                  resultados confusos.
+                </p>
+              </div>
+            </article>
+            <article class="i-pillar">
+              <span class="i-pillar__num">03</span>
+              <div>
+                <h3 class="i-pillar__title">Consulta directa por código</h3>
+                <p class="i-pillar__text">
+                  Cualquier propiedad seleccionada prellena el bloque de consulta con su código y resumen para escribir
+                  por WhatsApp sin pasos redundantes.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
+      <!-- 3. Propiedad Destacada -->
+      <section class="i-section" id="destacada">
+        <div class="container i-spotlight">
+          <div class="i-spotlight__media">
+            <div class="i-media-frame i-spotlight__photo">
+              <img
+                src="./images/destacada-interior.jpg"
+                width="1280"
+                height="720"
+                decoding="sync"
+                referrerpolicy="no-referrer"
+                alt="Interior luminoso de residencia contemporánea abierta hacia un jardín interior en Cuenca"
+              />
+            </div>
+            <p class="i-spotlight__caption">
+              Vista interior ilustrativa del inmueble modelo AH-101 · Datos ficticios de demostración.
+            </p>
+          </div>
+
+          <div class="i-spotlight__panel">
+            <div>
+              <span class="i-kicker">Propiedad destacada · AH-101</span>
+              <h2 class="i-title">Casa Contemporánea con Jardín Interior</h2>
+              <div class="i-spotlight__price">$185,000 USD</div>
+
+              <div class="i-spotlight__specs">
+                <div class="i-spec-item">
+                  <span class="i-spec-item__label">Operación</span>
+                  <span class="i-spec-item__value">Venta</span>
+                </div>
+                <div class="i-spec-item">
+                  <span class="i-spec-item__label">Sector en Cuenca</span>
+                  <span class="i-spec-item__value">El Vergel</span>
+                </div>
+                <div class="i-spec-item">
+                  <span class="i-spec-item__label">Superficie referencial</span>
+                  <span class="i-spec-item__value">210 m²</span>
+                </div>
+                <div class="i-spec-item">
+                  <span class="i-spec-item__label">Ambientes</span>
+                  <span class="i-spec-item__value">3 habitaciones</span>
+                </div>
+              </div>
+
+              <p class="i-spotlight__sum">
+                Residencia de dos plantas en conjunto cerrado tranquilo, acabados en madera y piedra andina.
+              </p>
+            </div>
+
+            <div class="i-btn-row">
+              <button type="button" data-open-prop="AH-101" class="i-btn i-btn--navy">
+                Ver ficha detallada
+              </button>
+              <button type="button" data-select-prop="AH-101" class="i-btn i-btn--outline">
+                Seleccionar para consultar
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Exploración y Catálogo de Propiedades -->
       <section class="i-section i-section--stone" id="propiedades">
         <div class="container">
-          <span class="i-eyebrow">Catálogo filtrable (Datos de ejemplo)</span>
-          <h2 class="i-title">Propiedades disponibles en Cuenca</h2>
+          <div class="i-catalog-head">
+            <div>
+              <span class="i-kicker">Catálogo filtrable · Datos de ejemplo</span>
+              <h2 class="i-title">Propiedades disponibles en Cuenca</h2>
+            </div>
+            <p class="i-catalog-note">
+              Precios, ubicaciones y medidas ficticias orientadas a demostrar la búsqueda interactiva del portal.
+            </p>
+          </div>
 
           <div class="i-filter-bar" role="region" aria-label="Filtros de propiedades">
             <div class="i-filter-group">
@@ -144,55 +287,251 @@
                 <option value="3">3+ habitaciones</option>
               </select>
             </div>
+            <div class="i-filter-reset-wrap">
+              <button type="button" id="i-f-reset" class="i-btn i-btn--outline">
+                Restablecer filtros
+              </button>
+            </div>
           </div>
 
-          <p id="i-props-count" class="i-props-count" aria-live="polite"></p>
+          <div class="i-props-meta-row">
+            <p id="i-props-count" class="i-props-count" aria-live="polite"></p>
+          </div>
 
           <div class="i-props-grid" id="i-props-grid"></div>
         </div>
       </section>
 
-      <section class="i-section" id="contacto">
-        <div class="container i-cta-band">
+      <!-- 5. Ubicaciones y Entorno -->
+      <section class="i-section i-section--dark" id="ubicaciones">
+        <div class="container i-sectors-layout">
           <div>
-            <span class="i-eyebrow">Asesoría inmobiliaria digital</span>
-            <h2 class="i-title">¿Necesitas un portal inmobiliario personalizado?</h2>
-            <p class="i-cta-band__text">
-              Podemos adaptar estos filtros a tus sectores reales, incorporar mapas, fichas con
-              múltiples fotografías y conectar cada inmueble directamente con tu equipo por WhatsApp.
+            <span class="i-kicker i-kicker--light">Sectores y entorno · Cuenca</span>
+            <h2 class="i-title i-title--light">Cuatro zonas residenciales del portafolio modelo.</h2>
+
+            <div class="i-sectors-media">
+              <figure class="i-sector-photo-card">
+                <div class="i-media-frame i-sector-photo-card__frame">
+                  <img
+                    src="./images/entorno-urbano.jpg"
+                    width="800"
+                    height="600"
+                    decoding="sync"
+                    referrerpolicy="no-referrer"
+                    alt="Paseo peatonal y entorno residencial junto a ribera urbana en Cuenca"
+                  />
+                </div>
+                <figcaption class="i-sector-photo-card__caption">
+                  Ribera urbana y corredores peatonales · Referencia ilustrativa
+                </figcaption>
+              </figure>
+
+              <figure class="i-sector-photo-card">
+                <div class="i-media-frame i-sector-photo-card__frame">
+                  <img
+                    src="./images/entorno-norte.jpg"
+                    width="800"
+                    height="600"
+                    decoding="sync"
+                    referrerpolicy="no-referrer"
+                    alt="Colinas andinas y lotes residenciales tranquilos hacia el norte de Cuenca"
+                  />
+                </div>
+                <figcaption class="i-sector-photo-card__caption">
+                  Expansión residencial y entorno andino · Referencia ilustrativa
+                </figcaption>
+              </figure>
+            </div>
+
+            <p class="i-sectors-disclaimer">
+              Selección demostrativa de sectores sin direcciones exactas ni tiempos de traslado garantizados.
             </p>
           </div>
-          <a
-            href="https://wa.me/593979290747"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="i-btn i-btn--navy"
-          >
-            Cotizar web inmobiliaria
-          </a>
+
+          <div class="i-sectors-list">
+            <article class="i-sector-row">
+              <div class="i-sector-row__info">
+                <span class="i-sector-row__meta">Inmuebles: AH-101 · AH-105</span>
+                <h3 class="i-sector-row__title">El Vergel</h3>
+                <p class="i-sector-row__desc">
+                  Conjuntos cerrados y residencias amplias adaptables tanto a vivienda familiar como a estudio.
+                </p>
+              </div>
+              <button type="button" class="i-btn i-btn--outline-light" data-select-sector="El Vergel">
+                Ver en El Vergel
+              </button>
+            </article>
+
+            <article class="i-sector-row">
+              <div class="i-sector-row__info">
+                <span class="i-sector-row__meta">Inmueble: AH-102</span>
+                <h3 class="i-sector-row__title">Puertas del Sol</h3>
+                <p class="i-sector-row__desc">
+                  Edificios contemporáneos con terrazas luminosas orientadas hacia la ribera del Tomebamba.
+                </p>
+              </div>
+              <button type="button" class="i-btn i-btn--outline-light" data-select-sector="Puertas del Sol">
+                Ver en Puertas del Sol
+              </button>
+            </article>
+
+            <article class="i-sector-row">
+              <div class="i-sector-row__info">
+                <span class="i-sector-row__meta">Inmuebles: AH-103 · AH-106</span>
+                <h3 class="i-sector-row__title">Yanuncay</h3>
+                <p class="i-sector-row__desc">
+                  Suites y viviendas de estreno próximas a áreas verdes, ciclovía y equipamiento cotidiano.
+                </p>
+              </div>
+              <button type="button" class="i-btn i-btn--outline-light" data-select-sector="Yanuncay">
+                Ver en Yanuncay
+              </button>
+            </article>
+
+            <article class="i-sector-row">
+              <div class="i-sector-row__info">
+                <span class="i-sector-row__meta">Inmueble: AH-104</span>
+                <h3 class="i-sector-row__title">Ricaurte</h3>
+                <p class="i-sector-row__desc">
+                  Terreno residencial plano al norte de la ciudad en sector tranquilo con vía pavimentada.
+                </p>
+              </div>
+              <button type="button" class="i-btn i-btn--outline-light" data-select-sector="Ricaurte">
+                Ver en Ricaurte
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Proceso de Asesoría y Consulta -->
+      <section class="i-section i-section--stone" id="proceso">
+        <div class="container">
+          <span class="i-kicker">Flujo de exploración</span>
+          <h2 class="i-title">Cómo funciona la consulta inmobiliaria en este modelo.</h2>
+
+          <div class="i-steps-grid">
+            <article class="i-step-card">
+              <span class="i-step-card__num">01</span>
+              <h3 class="i-step-card__title">Filtra por operación, tipo y sector</h3>
+              <p class="i-step-card__text">
+                Usa la barra de búsqueda o los accesos directos por sector para acotar las propiedades según tu
+                objetivo de venta o alquiler.
+              </p>
+            </article>
+            <article class="i-step-card">
+              <span class="i-step-card__num">02</span>
+              <h3 class="i-step-card__title">Revisa ficha técnica en USD y m²</h3>
+              <p class="i-step-card__text">
+                Abre cada ficha detallada para revisar superficie, habitaciones disponibles y descripción antes de
+                escribir.
+              </p>
+            </article>
+            <article class="i-step-card">
+              <span class="i-step-card__num">03</span>
+              <h3 class="i-step-card__title">Prepara la consulta por WhatsApp</h3>
+              <p class="i-step-card__text">
+                Selecciona un inmueble para cargar automáticamente su código, operación y valor referencial en el
+                mensaje directo.
+              </p>
+            </article>
+          </div>
+
+          <p class="i-process-notice">
+            Alcance demostrativo: Andes Hogar es una marca ficticia. Este ejemplo no agenda visitas confirmadas ni
+            procesa reservas o trámites contractuales.
+          </p>
+        </div>
+      </section>
+
+      <!-- 7. Contacto y Consultas por Propiedad -->
+      <section class="i-section" id="contacto">
+        <div class="container i-contact-grid">
+          <div class="i-consult-panel">
+            <div>
+              <span class="i-kicker">Consulta referenciada</span>
+              <h2 class="i-title">Prepara tu mensaje con código de propiedad.</h2>
+            </div>
+
+            <div class="i-consult-select-wrap">
+              <label for="i-c-prop">Propiedad de ejemplo seleccionada</label>
+              <select id="i-c-prop">
+                <option value="">Consulta general sobre el portafolio</option>
+              </select>
+            </div>
+
+            <div class="i-selected-box" id="i-selected-box" aria-live="polite">
+              <span class="i-selected-box__meta" id="i-sel-meta"></span>
+              <h3 class="i-selected-box__title" id="i-sel-title"></h3>
+              <div class="i-selected-box__specs" id="i-sel-specs"></div>
+              <p class="i-selected-box__note" id="i-sel-note"></p>
+            </div>
+
+            <div class="i-btn-row">
+              <a
+                id="i-contact-wa"
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="i-btn i-btn--gold"
+              >
+                Consultar por WhatsApp
+              </a>
+              <a href="#propiedades" class="i-btn i-btn--outline">Cambiar en el catálogo</a>
+            </div>
+          </div>
+
+          <aside class="i-contact-aside">
+            <span class="i-kicker i-kicker--light">Implementación comercial · AV·STUDIO</span>
+            <h2 class="i-title i-title--light">¿Necesitas un portal inmobiliario personalizado?</h2>
+            <p class="i-contact-aside__text">
+              Podemos adaptar estos filtros a tus sectores reales, incorporar mapas interactivos, galerías completas por
+              inmueble y conectar cada consulta directamente con tus asesores en WhatsApp.
+            </p>
+            <div class="i-btn-row">
+              <a href="../../index.html?sector=inmobiliaria#contacto" class="i-btn i-btn--gold">
+                Solicitar propuesta en AV·STUDIO
+              </a>
+            </div>
+            <div class="i-contact-aside__links">
+              <a href="../../index.html#categorias" class="i-contact-aside__link">
+                Explorar todas las categorías de AV·STUDIO &rarr;
+              </a>
+              <a href="mailto:andersonvallejo021@gmail.com" class="i-contact-aside__link">
+                andersonvallejo021@gmail.com
+              </a>
+            </div>
+          </aside>
         </div>
       </section>
     </main>
 
+    <!-- 8. Ficha Inmobiliaria Modal -->
     <dialog class="i-dialog" id="i-prop-dialog" aria-labelledby="i-d-title">
-      <div class="i-dialog__media">
-        <picture>
-          <source id="i-d-webp" srcset="./images/prop-casa-vergel.webp" type="image/webp" />
-          <img
-            id="i-d-img"
-            src="./images/prop-casa-vergel.jpg"
-            width="800"
-            height="600"
-            decoding="async"
-            alt="Fotografía referencial de propiedad seleccionada"
-          />
-        </picture>
+      <div class="i-dialog__head">
+        <span id="i-d-meta" class="i-dialog__folio"></span>
+        <button type="button" id="i-d-close-x" class="i-dialog__icon-close" aria-label="Cerrar ficha">
+          &#10005;
+        </button>
       </div>
-      <span id="i-d-meta" class="i-eyebrow"></span>
+      <div class="i-media-frame i-dialog__media">
+        <img
+          id="i-d-img"
+          src="./images/prop-casa-vergel.jpg"
+          width="800"
+          height="600"
+          decoding="sync"
+          referrerpolicy="no-referrer"
+          alt="Fotografía referencial de propiedad seleccionada"
+        />
+      </div>
       <h3 id="i-d-title" class="i-dialog__title"></h3>
       <div id="i-d-price" class="i-dialog__price"></div>
       <p id="i-d-specs" class="i-dialog__specs"></p>
       <p id="i-d-summary" class="i-dialog__summary"></p>
+      <p class="i-dialog__disclaimer">
+        Ficha ilustrativa — los valores en USD, superficies y características mostradas corresponden a datos modelo.
+      </p>
       <div class="i-btn-row">
         <a
           id="i-d-wa"
@@ -203,36 +542,46 @@
         >
           Consultar propiedad por WhatsApp
         </a>
+        <button type="button" id="i-d-select" class="i-btn i-btn--navy">Preparar consulta aquí</button>
         <button type="button" id="i-d-close" class="i-btn i-btn--outline">Cerrar</button>
       </div>
     </dialog>
 
+    <!-- 9. Footer & AV·STUDIO Signature -->
     <footer class="i-footer">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+        <div class="i-footer__top">
           <div>
-            <strong style="font-family: var(--i-font-display); font-size: 1.3rem;">ANDES HOGAR · Bienes Raíces</strong>
-            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.82;">
+            <strong class="i-footer__brand">ANDES HOGAR · Bienes Raíces</strong>
+            <p class="i-footer__note">
               DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
             </p>
           </div>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+          <nav class="i-footer__nav" aria-label="Navegación de pie de página">
+            <a href="#inicio">Inicio</a>
+            <a href="#destacada">Destacada</a>
             <a href="#propiedades">Propiedades</a>
-            <a href="#contacto">Asesoría</a>
-            <a href="../../index.html" style="color: #e4c486; font-weight: 700;">Volver a AV·STUDIO</a>
-          </div>
+            <a href="#ubicaciones">Sectores</a>
+            <a href="#contacto">Consulta</a>
+            <a href="../../index.html" class="i-footer__back">Volver a AV·STUDIO</a>
+          </nav>
         </div>
 
         <div class="i-av-signature">
           <div>
-            <p style="margin: 0 0 0.25rem;">
-              <strong>¿Te gustaría una página web como esta?</strong> Creamos plataformas a medida para inmobiliarias y constructoras.
+            <p class="i-av-signature__heading">
+              <strong>¿Te gustaría una página web como esta?</strong> Creamos plataformas a medida para inmobiliarias y
+              constructoras.
             </p>
-            <p style="margin: 0; opacity: 0.88;">
+            <p class="i-av-signature__meta">
               <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
-              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=inmobiliaria#contacto" class="" style="text-decoration: underline;">
-            Quiero una página para mi inmobiliaria &rarr;
-          </a>
+              <a href="mailto:andersonvallejo021@gmail.com" class="i-av-signature__link">
+                andersonvallejo021@gmail.com
+              </a>
+              ·
+              <a href="../../index.html?sector=inmobiliaria#contacto" class="i-av-signature__link">
+                Quiero una página para mi inmobiliaria &rarr;
+              </a>
             </p>
           </div>
           <a

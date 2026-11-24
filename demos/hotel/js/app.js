@@ -10,39 +10,79 @@ import {
 
 const ROOM_MEDIA = {
   'suite-tomebamba': {
-    base: 'suite-balcon',
-    alt: 'Suite Balcón del Río con cama king, ventanal luminoso y acabados en madera andina',
+    webp: new URL('../images/suite-balcon.webp', import.meta.url).href,
+    jpg: new URL('../images/suite-balcon.jpg', import.meta.url).href,
+    alt: 'Suite Balcón del Río con cama king, ventanal luminoso y vista hacia las cúpulas de Cuenca',
   },
   'doble-patio': {
-    base: 'patio-doble',
-    alt: 'Habitación Doble Patio Colonial con techos altos de madera y acceso al patio interior',
+    webp: null,
+    jpg: new URL('../images/patio-doble-interior.jpg', import.meta.url).href,
+    alt: 'Habitación Doble Patio Colonial con vigas de madera, escritorio y puertas hacia el jardín interior',
   },
   'familiar-cajas': {
-    base: 'loft-cajas',
-    alt: 'Loft Familiar El Cajas con dos ambientes amplios y vista hacia los tejados de Cuenca',
+    webp: new URL('../images/loft-cajas.webp', import.meta.url).href,
+    jpg: new URL('../images/loft-cajas.jpg', import.meta.url).href,
+    alt: 'Loft Familiar El Cajas con chimenea de piedra natural y vista amplia a los Andes',
   },
 };
 
 function createRoomPicture(room) {
   const media = ROOM_MEDIA[room.id] || {
-    base: 'hero',
+    webp: new URL('../images/hero.webp', import.meta.url).href,
+    jpg: new URL('../images/hero.jpg', import.meta.url).href,
     alt: `Fotografía referencial de ${room.name}`,
   };
+
   const picture = document.createElement('picture');
-  const source = document.createElement('source');
-  source.srcset = `./images/${media.base}.webp`;
-  source.type = 'image/webp';
+
+  if (media.webp) {
+    const source = document.createElement('source');
+    source.srcset = media.webp;
+    source.type = 'image/webp';
+    picture.appendChild(source);
+  }
 
   const img = document.createElement('img');
-  img.src = `./images/${media.base}.jpg`;
-  img.width = 800;
-  img.height = 600;
-  img.loading = 'lazy';
+  img.src = media.jpg;
+  img.width = 1200;
+  img.height = 900;
+  img.loading = 'eager';
   img.decoding = 'async';
   img.alt = media.alt;
 
-  picture.append(source, img);
+  picture.appendChild(img);
   return picture;
+}
+
+function updateEstimate() {
+  const estimateEl = document.getElementById('h-estimate');
+  const roomName = document.getElementById('h-room')?.value || '';
+  const checkIn = document.getElementById('h-checkin')?.value || '';
+  const checkOut = document.getElementById('h-checkout')?.value || '';
+  if (!estimateEl) return;
+
+  const selectedRoom = HOTEL_ROOMS.find((room) => room.name === roomName);
+  if (!selectedRoom || !checkIn || !checkOut) {
+    estimateEl.textContent =
+      'Selecciona una habitación y fechas válidas para ver la referencia estimada en USD.';
+    return;
+  }
+
+  const startMs = Date.parse(`${checkIn}T12:00:00Z`);
+  const endMs = Date.parse(`${checkOut}T12:00:00Z`);
+  if (!Number.isFinite(startMs) || !Number.isFinite(endMs) || endMs <= startMs) {
+    estimateEl.textContent =
+      'La fecha de salida debe ser posterior a la fecha de ingreso para calcular noches.';
+    return;
+  }
+
+  const nights = Math.round((endMs - startMs) / 86400000);
+  const totalUsd = nights * selectedRoom.rateUsd;
+  const nightsLabel = nights === 1 ? '1 noche' : `${nights} noches`;
+
+  estimateEl.textContent = `Referencia estimada: ${nightsLabel} · $${selectedRoom.rateUsd.toFixed(
+    2
+  )} USD/noche = $${totalUsd.toFixed(2)} USD (desayuno andino incluido, tarifa demostrativa).`;
 }
 
 function renderRooms() {
@@ -61,9 +101,9 @@ function renderRooms() {
     const body = document.createElement('div');
     body.className = 'h-room-card__body';
 
-    const cap = document.createElement('span');
-    cap.className = 'h-eyebrow h-room-card__cap';
-    cap.textContent = room.capacity;
+    const meta = document.createElement('div');
+    meta.className = 'h-room-card__meta';
+    meta.textContent = `${room.capacity} · Desayuno incluido`;
 
     const title = document.createElement('h3');
     title.className = 'h-room-card__title';
@@ -83,13 +123,16 @@ function renderRooms() {
     btn.textContent = 'Consultar disponibilidad';
     btn.addEventListener('click', () => {
       const sel = document.getElementById('h-room');
-      if (sel) sel.value = room.name;
+      if (sel) {
+        sel.value = room.name;
+        updateEstimate();
+      }
       document.getElementById('disponibilidad')?.scrollIntoView({ behavior: 'smooth' });
       document.getElementById('h-name')?.focus();
     });
 
     const top = document.createElement('div');
-    top.append(cap, title, rate, desc);
+    top.append(meta, title, rate, desc);
 
     body.append(top, btn);
     card.append(mediaWrap, body);
@@ -97,18 +140,45 @@ function renderRooms() {
   });
 }
 
+function initGalleryFilters() {
+  const filterBtns = Array.from(document.querySelectorAll('[data-gallery-filter]'));
+  const cards = Array.from(document.querySelectorAll('#h-gallery-grid [data-gallery-cat]'));
+  if (filterBtns.length === 0 || cards.length === 0) return;
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-gallery-filter') || 'all';
+      filterBtns.forEach((b) => b.classList.toggle('is-active', b === btn));
+
+      cards.forEach((card) => {
+        const cardCat = card.getAttribute('data-gallery-cat');
+        const visible = category === 'all' || cardCat === category;
+        if (visible) card.removeAttribute('hidden');
+        else card.setAttribute('hidden', '');
+      });
+    });
+  });
+}
+
 function initForm() {
   const form = document.getElementById('h-stay-form');
   if (!form) return;
 
+  const roomEl = document.getElementById('h-room');
   const inEl = document.getElementById('h-checkin');
   const outEl = document.getElementById('h-checkout');
+
   if (inEl && !inEl.value) {
     inEl.value = new Date(Date.now() + 2 * 86400000).toISOString().split('T')[0];
   }
   if (outEl && !outEl.value) {
     outEl.value = new Date(Date.now() + 4 * 86400000).toISOString().split('T')[0];
   }
+
+  [roomEl, inEl, outEl].forEach((el) => {
+    el?.addEventListener('change', updateEstimate);
+  });
+  updateEstimate();
 
   const prepared = document.getElementById('h-prepared');
   const preparedLink = document.getElementById('h-prepared-wa');
@@ -162,6 +232,7 @@ function initMobileDrawer() {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderRooms();
+  initGalleryFilters();
   initForm();
   initMobileDrawer();
 });

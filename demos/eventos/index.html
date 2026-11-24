@@ -8,12 +8,12 @@
     <title>Verbena &amp; Estilo — Eventos y Celebraciones (Demostración) | AV·STUDIO</title>
     <meta
       name="description"
-      content="Sitio web demostrativo de diseño y producción de eventos en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+      content="Sitio web demostrativo de diseño, planificación y producción de eventos en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
     />
     <meta property="og:title" content="Verbena &amp; Estilo — Eventos y Celebraciones (Demostración) | AV·STUDIO" />
     <meta
       property="og:description"
-      content="Productora ficticia de bodas, eventos corporativos y recepciones privadas con cotizador interactivo en Cuenca."
+      content="Productora ficticia de bodas, eventos corporativos y celebraciones sociales con cotizador interactivo en Cuenca."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AV·STUDIO" />
@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -40,13 +40,13 @@
       <div class="container e-header__inner">
         <a href="#inicio" class="e-brand">VERBENA &amp; ESTILO</a>
         <nav class="e-nav" aria-label="Navegación de eventos">
-          <a class="e-nav__link" href="#inicio">Inicio</a>
-          <a class="e-nav__link" href="#formatos">Formatos</a>
-          <a class="e-nav__link" href="#escenarios">Escenarios</a>
-          <a class="e-nav__link" href="#cotizacion">Cotizar</a>
+          <a class="e-nav__link" href="#formatos">Servicios</a>
+          <a class="e-nav__link" href="#experiencias">Experiencias</a>
+          <a class="e-nav__link" href="#produccion">Producción</a>
+          <a class="e-nav__link" href="#galeria">Galería</a>
         </nav>
         <div class="e-header__actions">
-          <a href="#cotizacion" class="e-btn e-btn--black e-header__cta">Solicitar cotización</a>
+          <a href="#cotizacion" class="e-btn e-btn--gold e-header__cta">Cotizar fecha</a>
           <button
             type="button"
             class="e-mobile-toggle"
@@ -60,72 +60,82 @@
         </div>
       </div>
       <nav class="e-mobile-drawer" id="e-mobile-drawer" hidden aria-label="Menú móvil">
-        <a href="#inicio">Inicio</a>
-        <a href="#formatos">Formatos</a>
-        <a href="#escenarios">Escenarios</a>
-        <a href="#cotizacion">Cotizar</a>
-        <a href="../../index.html" class="e-mobile-drawer__back">
-          &larr; Volver a AV·STUDIO
-        </a>
+        <a href="#formatos">Servicios y formatos</a>
+        <a href="#experiencias">Experiencias</a>
+        <a href="#produccion">Diseño y producción</a>
+        <a href="#galeria">Galería editorial</a>
+        <a href="#cotizacion">Solicitar cotización</a>
+        <a href="../../index.html" class="e-mobile-drawer__back">&larr; Volver a AV·STUDIO</a>
       </nav>
     </header>
 
     <main>
+      <!-- 1. PORTADA INMERSIVA NOCTURNA -->
       <section class="e-hero" id="inicio">
-        <div class="container e-hero__grid">
-          <div>
-            <span class="e-eyebrow e-eyebrow--hero">
-              Diseño &amp; producción de eventos · Cuenca y Azuay
-            </span>
-            <h1 class="e-title e-title--hero">
-              Atmósferas memorables diseñadas con calma, detalle y dirección estética.
-            </h1>
-            <p class="e-hero__lead">
-              Verbena &amp; Estilo es una productora ficticia creada por AV·STUDIO. Demuestra cómo
-              exhibir formatos de bodas, eventos corporativos y celebraciones privadas con
-              solicitud guiada de cotización.
-            </p>
-            <div class="e-btn-row">
-              <a href="#formatos" class="e-btn e-btn--gold">Ver formatos de evento</a>
-              <a href="#cotizacion" class="e-btn e-btn--outline-light">Cotizar fecha de ejemplo</a>
-            </div>
+        <div class="container e-hero__top">
+          <div class="e-hero__index">
+            <span class="e-eyebrow e-eyebrow--gold">Cuenca · Azuay · Ecuador</span>
+            <p class="e-hero__scope">Diseño, planificación &amp; producción integral de eventos</p>
           </div>
+          <div class="e-hero__headline-wrap">
+            <h1 class="e-hero__title">
+              Atmósferas nocturnas pensadas con <em>calma</em>, luz cálida y dirección escénica.
+            </h1>
+          </div>
+        </div>
 
-          <div class="e-hero__media">
+        <div class="container e-hero__stage">
+          <figure class="e-hero__panoramic">
             <picture>
               <source srcset="./images/hero.webp" type="image/webp" />
               <img
                 src="./images/hero.jpg"
-                width="1200"
-                height="900"
+                width="1400"
+                height="788"
                 fetchpriority="high"
                 decoding="async"
-                alt="Banquete nocturno de gala en salón de piedra andina con velas, lino marfil y arreglos florales"
+                referrerpolicy="no-referrer"
+                alt="Banquete nocturno de gala en salón de piedra andina iluminado con velas altas, florales blancos y mantelería de lino marfil"
               />
             </picture>
+            <div class="e-hero__scrim" aria-hidden="true"></div>
+          </figure>
+
+          <div class="e-hero__plinth">
+            <p class="e-hero__lead">
+              Verbena &amp; Estilo es una demostración interactiva creada por AV·STUDIO para mostrar cómo
+              una productora de eventos presenta sus formatos, escenografías y solicitudes guiadas de
+              cotización sin saturar al visitante.
+            </p>
+            <div class="e-btn-row">
+              <a href="#formatos" class="e-btn e-btn--gold">Explorar servicios y formatos</a>
+              <a href="#cotizacion" class="e-btn e-btn--outline-light">Cotizar fecha de ejemplo</a>
+            </div>
           </div>
         </div>
-      </section>
 
-      <section class="e-section e-section--blush" id="formatos">
         <div class="container">
-          <span class="e-eyebrow">Servicios de producción</span>
-          <h2 class="e-title">Formatos de evento de ejemplo</h2>
-
-          <div class="e-tabs" role="group" aria-label="Filtrar formatos de eventos">
-            <button type="button" class="e-tab is-active" data-event-filter="Todos">Todos</button>
-            <button type="button" class="e-tab" data-event-filter="Bodas">Bodas</button>
-            <button type="button" class="e-tab" data-event-filter="Corporativos">Corporativos</button>
-            <button type="button" class="e-tab" data-event-filter="Celebraciones">Celebraciones</button>
-          </div>
-
-          <div class="e-formats-grid" id="e-formats-grid"></div>
+          <dl class="e-hero__specs" aria-label="Alcance ilustrativo de la demostración">
+            <div class="e-hero__spec-item">
+              <dt>Escenarios de ejemplo</dt>
+              <dd>Haciendas, patios patrimoniales y salones contemporáneos</dd>
+            </div>
+            <div class="e-hero__spec-item">
+              <dt>Disciplinas cubiertas</dt>
+              <dd>Bodas, encuentros corporativos y celebraciones sociales</dd>
+            </div>
+            <div class="e-hero__spec-item">
+              <dt>Aforo demostrativo</dt>
+              <dd>20 a 220 invitados con solicitud guiada por WhatsApp</dd>
+            </div>
+          </dl>
         </div>
       </section>
 
-      <section class="e-section e-section--gallery" id="escenarios">
-        <div class="container e-showcase-grid">
-          <div class="e-showcase__media">
+      <!-- 2. FILOSOFÍA CREATIVA -->
+      <section class="e-section e-section--ivory" id="filosofia">
+        <div class="container e-philosophy">
+          <figure class="e-philosophy__media">
             <picture>
               <source srcset="./images/galeria-hacienda.webp" type="image/webp" />
               <img
@@ -134,43 +144,485 @@
                 height="900"
                 loading="lazy"
                 decoding="async"
-                alt="Recepción al aire libre en jardín de hacienda andina con mesas vestidas de lino y luz cálida"
+                referrerpolicy="no-referrer"
+                alt="Escena ilustrativa de recepción vespertina en patio empedrado de hacienda andina con guirnaldas de luz cálida y mesas largas"
               />
             </picture>
-          </div>
-          <div>
-            <span class="e-eyebrow">Escenografía de día y de noche</span>
-            <h2 class="e-title">Haciendas, patios patrimoniales y jardines del Azuay</h2>
-            <p class="e-showcase__copy">
-              Un sitio web pensado para productoras de eventos debe transmitir atmósfera desde la
-              primera pantalla: combinando montajes exteriores diurnos y salones nocturnos para que
-              cada cliente imagine su fecha antes de escribir.
+            <figcaption class="e-caption">
+              Escena ilustrativa · Patio de hacienda andina ambientado al caer la tarde en el Azuay
+            </figcaption>
+          </figure>
+
+          <div class="e-philosophy__body">
+            <span class="e-eyebrow">Filosofía creativa</span>
+            <h2 class="e-title">
+              Cada celebración se construye desde el <em>espacio</em>, el ritmo y la luz.
+            </h2>
+            <p class="e-copy">
+              Más allá de sumar decoración, diseñar un evento consiste en leer la arquitectura del lugar,
+              ordenar los tiempos de encuentro y cuidar la transición entre la luz natural de la tarde y la
+              calidez nocturna.
             </p>
-            <ul class="e-showcase__list">
-              <li>Ambientación floral, mantelería y mobiliario coordinado por locación.</li>
-              <li>Logística adaptable para quintas en Challuabamba, Baños o Centro Histórico.</li>
-              <li>Solicitud directa por fecha, aforo aproximado y estilo deseado.</li>
-            </ul>
-            <a href="#cotizacion" class="e-btn e-btn--black">Planificar evento de ejemplo</a>
+            <p class="e-copy">
+              En esta página de ejemplo se organiza esa visión con claridad editorial: primero el criterio
+              estético, luego los formatos reales de trabajo y finalmente un cotizador estructurado para
+              iniciar conversación sin formularios confusos.
+            </p>
+            <dl class="e-pillars">
+              <div class="e-pillars__row">
+                <dt>Sensibilidad material</dt>
+                <dd>Lino lavado, piedra natural, madera cepillada, bronce y cristalería fina.</dd>
+              </div>
+              <div class="e-pillars__row">
+                <dt>Ritmo del encuentro</dt>
+                <dd>Transiciones fluidas entre ceremonia, cóctel de bienvenida, cena y música.</dd>
+              </div>
+              <div class="e-pillars__row">
+                <dt>Criterio técnico</dt>
+                <dd>Iluminación cálida graduada, acústica discreta y planos de montaje ordenados.</dd>
+              </div>
+            </dl>
           </div>
         </div>
       </section>
 
-      <section class="e-section" id="cotizacion">
-        <div class="container e-quote-grid">
-          <div>
-            <span class="e-eyebrow">Propuesta personalizada</span>
-            <h2 class="e-title">Solicita una cotización demostrativa</h2>
-            <p class="e-quote__copy">
-              Indica tipo de evento, aforo aproximado y fecha tentativa para generar un mensaje
-              estructurado dirigido a Anderson Vallejo — AV·STUDIO por WhatsApp.
+      <!-- 3. SERVICIOS Y FORMATOS INTERACTIVOS -->
+      <section class="e-section e-section--stone" id="formatos">
+        <div class="container">
+          <div class="e-section-head">
+            <div>
+              <span class="e-eyebrow">Servicios y formatos</span>
+              <h2 class="e-title">Cinco frentes de trabajo y formatos de cotización</h2>
+            </div>
+            <p class="e-section-head__note">
+              Áreas ilustrativas de una productora integral junto con el catálogo interactivo por categoría.
             </p>
           </div>
 
+          <ol class="e-services-ledger" aria-label="Cinco áreas de servicio de ejemplo">
+            <li class="e-service-row">
+              <span class="e-service-row__num">01</span>
+              <div class="e-service-row__title">Bodas y celebraciones</div>
+              <p class="e-service-row__desc">
+                Dirección integral de ceremonias al aire libre, banquetes en hacienda y recepción nocturna.
+              </p>
+            </li>
+            <li class="e-service-row">
+              <span class="e-service-row__num">02</span>
+              <div class="e-service-row__title">Eventos corporativos</div>
+              <p class="e-service-row__desc">
+                Cenas ejecutivas, lanzamientos de marca y encuentros institucionales con línea sobria.
+              </p>
+            </li>
+            <li class="e-service-row">
+              <span class="e-service-row__num">03</span>
+              <div class="e-service-row__title">Celebraciones sociales</div>
+              <p class="e-service-row__desc">
+                Aniversarios, cumpleaños íntimos y recepciones familiares alrededor de mesas largas.
+              </p>
+            </li>
+            <li class="e-service-row">
+              <span class="e-service-row__num">04</span>
+              <div class="e-service-row__title">Diseño y ambientación</div>
+              <p class="e-service-row__desc">
+                Paleta cromática, mobiliario, botánica estacional, papelería sobria y montaje de mesa.
+              </p>
+            </li>
+            <li class="e-service-row">
+              <span class="e-service-row__num">05</span>
+              <div class="e-service-row__title">Producción y coordinación</div>
+              <p class="e-service-row__desc">
+                Cronograma de montaje, iluminación arquitectónica, sonido técnico y conducción del día.
+              </p>
+            </li>
+          </ol>
+
+          <div class="e-catalog-bar">
+            <h3 class="e-subtitle">Explorar formatos base de ejemplo</h3>
+            <div class="e-tabs" role="group" aria-label="Filtrar formatos de eventos">
+              <button type="button" class="e-tab is-active" data-event-filter="Todos">Todos</button>
+              <button type="button" class="e-tab" data-event-filter="Bodas">Bodas</button>
+              <button type="button" class="e-tab" data-event-filter="Corporativos">Corporativos</button>
+              <button type="button" class="e-tab" data-event-filter="Celebraciones">Celebraciones</button>
+            </div>
+          </div>
+
+          <div class="e-formats-grid" id="e-formats-grid"></div>
+        </div>
+      </section>
+
+      <!-- 4. EXPERIENCIAS POR TIPO DE EVENTO -->
+      <section class="e-section e-section--ivory" id="experiencias">
+        <div class="container">
+          <div class="e-section-head">
+            <div>
+              <span class="e-eyebrow">Experiencias por tipo de evento</span>
+              <h2 class="e-title">Tres atmósferas diferenciadas según la ocasión</h2>
+            </div>
+            <p class="e-section-head__note">
+              Escenas ilustrativas independientes que ejemplifican escala, iluminación y tono visual.
+            </p>
+          </div>
+
+          <div class="e-experiences">
+            <!-- Experiencia 01: Bodas -->
+            <article class="e-exp">
+              <figure class="e-exp__media">
+                <img
+                  src="./images/boda-ceremonia.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                  alt="Escena ilustrativa de ceremonia nupcial en jardín andino con sillas de madera, lino claro y arco de piedra con rosas blancas"
+                />
+              </figure>
+              <div class="e-exp__content">
+                <div class="e-exp__meta">Escena ilustrativa · 01 / Bodas</div>
+                <h3 class="e-exp__title">Bodas en quintas y jardines andinos</h3>
+                <p class="e-exp__copy">
+                  Recorridos pensados desde la luz de la tarde en Cuenca: ceremonia frente a arquitectura en
+                  piedra o arboledas de Challuabamba, transición al cóctel con música acústica y banquete
+                  bajo iluminación tenue de velas y pérgolas cálidas.
+                </p>
+                <div class="e-exp__specs">
+                  <span>60 a 220 invitados</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Ceremonia, cóctel &amp; recepción</span>
+                </div>
+                <button
+                  type="button"
+                  class="e-btn e-btn--black"
+                  data-prefill-format="Bodas en Hacienda o Quinta Andina"
+                >
+                  Tomar este estilo como referencia
+                </button>
+              </div>
+            </article>
+
+            <!-- Experiencia 02: Corporativos (composición invertida) -->
+            <article class="e-exp e-exp--reverse">
+              <figure class="e-exp__media">
+                <img
+                  src="./images/corporativo-gala.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                  alt="Escena ilustrativa de cena corporativa nocturna en salón arquitectónico con haces de luz cálida sobre mesas oscuras y cristalería ahumada"
+                />
+              </figure>
+              <div class="e-exp__content">
+                <div class="e-exp__meta">Escena ilustrativa · 02 / Eventos corporativos</div>
+                <h3 class="e-exp__title">Lanzamientos, galas y cenas ejecutivas</h3>
+                <p class="e-exp__copy">
+                  Puestas en escena sobrias donde la identidad visual de la empresa dialoga con la
+                  arquitectura del recinto: iluminación puntual sobre mesas de pizarra, escenario discreto
+                  para vocerías y servicio sincronizado por tiempos.
+                </p>
+                <div class="e-exp__specs">
+                  <span>30 a 180 asistentes</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Audio técnico &amp; dirección de sala</span>
+                </div>
+                <button
+                  type="button"
+                  class="e-btn e-btn--black"
+                  data-prefill-format="Lanzamientos & Cenas Corporativas"
+                >
+                  Tomar este estilo como referencia
+                </button>
+              </div>
+            </article>
+
+            <!-- Experiencia 03: Celebraciones sociales -->
+            <article class="e-exp">
+              <figure class="e-exp__media">
+                <img
+                  src="./images/celebracion-social.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                  alt="Escena ilustrativa de mesa íntima para aniversario bajo pórtico de piedra con lámparas de bronce, vajilla cerámica y velas"
+                />
+              </figure>
+              <div class="e-exp__content">
+                <div class="e-exp__meta">Escena ilustrativa · 03 / Celebraciones sociales</div>
+                <h3 class="e-exp__title">Aniversarios y recepciones de mesa larga</h3>
+                <p class="e-exp__copy">
+                  Encuentros cercanos pensados para conversar sin prisa: madera natural, vajilla artesanal en
+                  tonos crema, velas de cera de abeja y arreglos botánicos bajos que no interrumpen la
+                  mirada entre comensales.
+                </p>
+                <div class="e-exp__specs">
+                  <span>20 a 70 invitados</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Mesas largas &amp; curaduría musical</span>
+                </div>
+                <button
+                  type="button"
+                  class="e-btn e-btn--black"
+                  data-prefill-format="Aniversarios & Recepciones Íntimas"
+                >
+                  Tomar este estilo como referencia
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. DISEÑO Y PRODUCCIÓN -->
+      <section class="e-section e-section--obsidian" id="produccion">
+        <div class="container e-production">
+          <div class="e-production__media-col">
+            <span class="e-eyebrow e-eyebrow--gold">Método de trabajo demostrativo</span>
+            <h2 class="e-title e-title--light">Diseño y producción en cinco etapas</h2>
+            <p class="e-copy e-copy--light">
+              De los bocetos de distribución espacial y muestras de textiles al montaje técnico el día del
+              encuentro. Todo ordenado en una hoja de ruta legible.
+            </p>
+            <figure class="e-production__figure">
+              <img
+                src="./images/diseno-taller.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Mesa de diseño de eventos con muestras de lino marfil, champán y carbón, candelabros de bronce, papelería de algodón y ranúnculos blancos"
+              />
+              <figcaption class="e-caption e-caption--light">
+                Muestras ilustrativas de textiles, bronce, papelería y botánica sobre travertino
+              </figcaption>
+            </figure>
+          </div>
+
+          <ol class="e-stages" aria-label="Etapas de diseño y producción">
+            <li class="e-stage">
+              <span class="e-stage__num">01</span>
+              <div>
+                <h3 class="e-stage__title">Conceptualización</h3>
+                <p class="e-stage__desc">
+                  Definición de atmósfera visual, referencias cromáticas, materiales y tono del encuentro según
+                  el espacio elegido.
+                </p>
+              </div>
+            </li>
+            <li class="e-stage">
+              <span class="e-stage__num">02</span>
+              <div>
+                <h3 class="e-stage__title">Planificación</h3>
+                <p class="e-stage__desc">
+                  Plano de aforo, distribución de mesas, rutas de servicio, listado técnico de iluminación y
+                  cronograma horario.
+                </p>
+              </div>
+            </li>
+            <li class="e-stage">
+              <span class="e-stage__num">03</span>
+              <div>
+                <h3 class="e-stage__title">Ambientación</h3>
+                <p class="e-stage__desc">
+                  Selección de mantelería, mobiliario, vajilla, cristalería y composiciones florales adaptadas a
+                  la estación.
+                </p>
+              </div>
+            </li>
+            <li class="e-stage">
+              <span class="e-stage__num">04</span>
+              <div>
+                <h3 class="e-stage__title">Coordinación</h3>
+                <p class="e-stage__desc">
+                  Alineación previa con locación, cocina, música, fotografía y tiempos clave para evitar
+                  improvisaciones.
+                </p>
+              </div>
+            </li>
+            <li class="e-stage">
+              <span class="e-stage__num">05</span>
+              <div>
+                <h3 class="e-stage__title">Producción en sitio</h3>
+                <p class="e-stage__desc">
+                  Supervisión de montaje, calibración de luces al caer la tarde y acompañamiento continuo hasta
+                  el cierre de sala.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 6. GALERÍA EDITORIAL -->
+      <section class="e-section e-section--ivory" id="galeria">
+        <div class="container">
+          <div class="e-section-head">
+            <div>
+              <span class="e-eyebrow">Galería editorial</span>
+              <h2 class="e-title">Luz, botánica, escenario y detalles de mesa</h2>
+            </div>
+            <p class="e-section-head__note">
+              Haz clic en cualquier fotografía ilustrativa para ampliarla en vista nocturna.
+            </p>
+          </div>
+
+          <div class="e-gallery-mosaic">
+            <button
+              type="button"
+              class="e-gallery-tile e-gallery-tile--wide"
+              data-gallery-img="./images/galeria-iluminacion.jpg"
+              data-gallery-title="Iluminación arquitectónica y cielos cálidos"
+              data-gallery-caption="Escena ilustrativa · Patio de piedra bañado con luz ámbar antes de la llegada de invitados."
+            >
+              <img
+                src="./images/galeria-iluminacion.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Patio patrimonial de piedra iluminado con cielo de luces cálidas ámbar y reflejos nocturnos"
+              />
+              <span class="e-gallery-tile__label">
+                <strong>01 · Iluminación</strong>
+                <span>Guirnaldas cálidas y baño de arcos</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="e-gallery-tile e-gallery-tile--tall"
+              data-gallery-img="./images/galeria-florales.jpg"
+              data-gallery-title="Arreglos florales escultóricos"
+              data-gallery-caption="Escena ilustrativa · Ánfora de travertino con rosas de jardín blancas, ranúnculos y eucalipto."
+            >
+              <img
+                src="./images/galeria-florales.jpg"
+                width="900"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Arreglo floral escultórico en ánfora de piedra travertino con flores blancas y velas sobre fondo carbón"
+              />
+              <span class="e-gallery-tile__label">
+                <strong>02 · Arreglos florales</strong>
+                <span>Botánica asimétrica en piedra</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="e-gallery-tile e-gallery-tile--detail"
+              data-gallery-img="./images/galeria-montaje.jpg"
+              data-gallery-title="Montaje de mesa, cristalería y papelería"
+              data-gallery-caption="Escena ilustrativa · Copas talladas, cubertería de bronce cepillado y lino neutro con romero."
+            >
+              <img
+                src="./images/galeria-montaje.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Detalle editorial de mesa servida con copas de cristal estriado, cubiertos dorados mate y servilleta de lino"
+              />
+              <span class="e-gallery-tile__label">
+                <strong>03 · Mesas y vajilla</strong>
+                <span>Cristal, bronce y textiles</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="e-gallery-tile e-gallery-tile--panorama"
+              data-gallery-img="./images/galeria-escenario.jpg"
+              data-gallery-title="Escenarios de lounge y acústica nocturna"
+              data-gallery-caption="Escena ilustrativa · Invernadero con mobiliario modular claro, faroles de bronce y zona acústica."
+            >
+              <img
+                src="./images/galeria-escenario.jpg"
+                width="1400"
+                height="788"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Salón acristalado de cóctel con sofás curvos crema, faroles cálidos y tarima acústica nocturna"
+              />
+              <span class="e-gallery-tile__label">
+                <strong>04 · Escenarios y lounge</strong>
+                <span>Zonas de cóctel e intercambio</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. PROCESO DE CONSULTA -->
+      <section class="e-section e-section--stone" id="consulta-pasos">
+        <div class="container">
+          <div class="e-process-banner">
+            <div>
+              <span class="e-eyebrow">Proceso de consulta</span>
+              <h2 class="e-title">Cómo funciona la cotización demostrativa</h2>
+            </div>
+            <div class="e-process-steps">
+              <div class="e-process-step">
+                <span class="e-process-step__index">Paso 01</span>
+                <h3>Elige el formato</h3>
+                <p>Indica si buscas una boda en hacienda, un evento corporativo o una recepción íntima.</p>
+              </div>
+              <div class="e-process-step">
+                <span class="e-process-step__index">Paso 02</span>
+                <h3>Aforo y fecha tentativa</h3>
+                <p>Ingresa el número aproximado de invitados y una fecha referencial para contextualizar el montaje.</p>
+              </div>
+              <div class="e-process-step">
+                <span class="e-process-step__index">Paso 03</span>
+                <h3>Mensaje listo para WhatsApp</h3>
+                <p>Genera el resumen estructurado para enviar a AV·STUDIO y conversar sobre un proyecto web similar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. CONTACTO Y COTIZACIÓN -->
+      <section class="e-section e-section--ivory" id="cotizacion">
+        <div class="container e-quote-grid">
+          <div class="e-quote-aside">
+            <span class="e-eyebrow">Contacto y cotización de ejemplo</span>
+            <h2 class="e-title">Prepara una propuesta demostrativa</h2>
+            <p class="e-quote__copy">
+              Completa el formulario de prueba indicando formato de evento, aforo estimado y fecha
+              tentativa. El sistema valida los campos y redacta un mensaje listo para enviar por WhatsApp a
+              Anderson Vallejo — AV·STUDIO.
+            </p>
+            <div class="e-quote__facts">
+              <div class="e-quote__fact">
+                <span class="e-quote__fact-label">Ubicación referencial</span>
+                <strong>Cuenca y valles del Azuay, Ecuador</strong>
+              </div>
+              <div class="e-quote__fact">
+                <span class="e-quote__fact-label">Alcance del formulario</span>
+                <strong>Demostración interactiva · Sin reserva automática ni cobro en línea</strong>
+              </div>
+              <div class="e-quote__fact">
+                <span class="e-quote__fact-label">Canal de prueba</span>
+                <strong>WhatsApp directo +593 97 929 0747 · AV·STUDIO</strong>
+              </div>
+            </div>
+          </div>
+
           <form class="e-form-card" id="e-quote-form" novalidate>
-            <h3 class="e-form-card__title">
-              Detalles del evento de ejemplo
-            </h3>
+            <div class="e-form-card__head">
+              <h3 class="e-form-card__title">Detalles del evento de ejemplo</h3>
+              <p class="e-form-selected" id="e-selected-note" hidden></p>
+            </div>
             <div class="e-form-fields">
               <div class="e-field">
                 <label for="e-name">Nombre o empresa *</label>
@@ -203,16 +655,16 @@
                 <span class="e-err" id="e-err-date"></span>
               </div>
               <div class="e-field e-field--full">
-                <label for="e-notes">Estilo o ciudad (opcional)</label>
-                <input id="e-notes" type="text" placeholder="Ej. Jardín en Challuabamba, tonos marfil" />
+                <label for="e-notes">Estilo, ambiente o sector (opcional)</label>
+                <input id="e-notes" type="text" placeholder="Ej. Jardín en Challuabamba, luz cálida y lino marfil" />
               </div>
             </div>
-            <div style="margin-top: 1rem;">
+            <div class="e-form-submit">
               <button type="submit" class="e-btn e-btn--black">Preparar cotización en WhatsApp</button>
             </div>
-            <div id="e-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: var(--e-ivory); border: 1px solid var(--e-border);">
-              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
-                <strong>Cotización demostrativa lista.</strong> Abre el mensaje hacia AV·STUDIO:
+            <div class="e-prepared" id="e-prepared" hidden>
+              <p class="e-prepared__text">
+                <strong>Cotización demostrativa lista.</strong> Abre el mensaje estructurado hacia AV·STUDIO:
               </p>
               <a
                 id="e-prepared-wa"
@@ -229,32 +681,51 @@
       </section>
     </main>
 
+    <dialog class="e-lightbox" id="e-lightbox" aria-labelledby="e-lightbox-title">
+      <div class="e-lightbox__panel">
+        <div class="e-lightbox__bar">
+          <div>
+            <h2 class="e-lightbox__title" id="e-lightbox-title">Escena ilustrativa</h2>
+            <p class="e-lightbox__caption" id="e-lightbox-caption"></p>
+          </div>
+          <button type="button" class="e-lightbox__close" id="e-lightbox-close" aria-label="Cerrar vista ampliada">
+            &times;
+          </button>
+        </div>
+        <figure class="e-lightbox__media">
+          <img id="e-lightbox-img" src="" alt="" referrerpolicy="no-referrer" />
+        </figure>
+      </div>
+    </dialog>
+
     <footer class="e-footer">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+        <div class="e-footer__top">
           <div>
-            <strong style="font-family: var(--e-font-display); font-size: 1.4rem;">VERBENA &amp; ESTILO</strong>
-            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.82;">
+            <strong class="e-footer__brand">VERBENA &amp; ESTILO</strong>
+            <p class="e-footer__meta">
               DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
             </p>
           </div>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
-            <a href="#formatos">Formatos</a>
+          <div class="e-footer__links">
+            <a href="#formatos">Servicios</a>
+            <a href="#experiencias">Experiencias</a>
+            <a href="#galeria">Galería</a>
             <a href="#cotizacion">Cotización</a>
-            <a href="../../index.html" style="color: var(--e-gold-bright); font-weight: 700;">Volver a AV·STUDIO</a>
+            <a href="../../index.html" class="e-footer__back">Volver a AV·STUDIO</a>
           </div>
         </div>
 
         <div class="e-av-signature">
           <div>
-            <p style="margin: 0 0 0.25rem;">
-              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos presencia elegante para organizadores, haciendas y productoras de eventos.
+            <p class="e-av-signature__lead">
+              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos presencia editorial para
+              productoras de eventos, haciendas, bodas y recepciones corporativas.
             </p>
-            <p style="margin: 0; opacity: 0.88;">
+            <p class="e-av-signature__meta">
               <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
-              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=eventos#contacto" class="" style="text-decoration: underline;">
-            Quiero una página para mis eventos &rarr;
-          </a>
+              <a href="mailto:andersonvallejo021@gmail.com">andersonvallejo021@gmail.com</a> ·
+              <a href="../../index.html?sector=eventos#contacto">Quiero una página para mis eventos &rarr;</a>
             </p>
           </div>
           <a

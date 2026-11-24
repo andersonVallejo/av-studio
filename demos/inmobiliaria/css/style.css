@@ -1,19 +1,26 @@
 /* ==========================================================================
    ANDES HOGAR — Bienes Raíces Cuenca (Demostración AV·STUDIO)
-   Paleta: Blanco (#FFFFFF), Gris Piedra (#E9E6DF), Azul Oscuro (#1A2B3C), Dorado (#B88D3E)
-   Pure CSS3 | Responsive
+   Estética: Editorial inmobiliaria & arquitectura andina contemporánea
+   Paleta: Blanco (#FFFFFF), Marfil (#FAF8F4), Gris Piedra (#E9E6DF / #F5F3EF),
+           Azul Grafito (#1A2B3C / #101B27), Bronce Dorado (#B88D3E / #7D5B19)
+   Zero inline styles | CSS3 puro | Tabular numerals
    ========================================================================== */
 
 :root {
   --i-white: #ffffff;
+  --i-ivory: #faf8f4;
   --i-stone: #e9e6df;
   --i-stone-soft: #f5f3ef;
   --i-navy: #1a2b3c;
   --i-navy-deep: #101b27;
+  --i-navy-card: #162433;
   --i-gold: #b88d3e;
+  --i-gold-soft: #e4c486;
   --i-gold-ink: #7d5b19;
   --i-muted: #525c66;
   --i-border: rgba(26, 43, 60, 0.14);
+  --i-border-strong: rgba(26, 43, 60, 0.24);
+  --i-border-light: rgba(250, 248, 244, 0.16);
   --i-font-display: 'Playfair Display', Georgia, serif;
   --i-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --i-font-mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -36,6 +43,7 @@ body {
   font-family: var(--i-font-sans);
   line-height: 1.65;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -65,10 +73,12 @@ select {
   margin-inline: auto;
 }
 
+/* Top Demo Ribbon */
 .demo-ribbon {
   background-color: var(--i-navy-deep);
   color: #edf1f5;
   font-size: 0.8125rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .demo-ribbon__inner {
@@ -81,17 +91,22 @@ select {
 }
 
 .demo-ribbon__back {
-  color: #e4c486;
+  color: var(--i-gold-soft);
   font-weight: 600;
   white-space: nowrap;
 }
 
+.demo-ribbon__back:hover {
+  text-decoration: underline;
+}
+
+/* Header: 3-zone Top Bar Contract */
 .i-header {
   position: sticky;
   top: 0;
   z-index: 40;
   background-color: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--i-border);
 }
 
@@ -99,35 +114,63 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
-  min-height: 4.5rem;
+  gap: 2rem;
+  min-height: 4.25rem;
 }
 
 .i-brand {
   font-family: var(--i-font-display);
-  font-size: 1.35rem;
+  font-size: 1.32rem;
   font-weight: 700;
+  letter-spacing: 0.02em;
   color: var(--i-navy);
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .i-nav {
   display: flex;
   align-items: center;
-  gap: 1.35rem;
+  gap: 1.5rem;
 }
 
 .i-nav__link {
+  position: relative;
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--i-muted);
   white-space: nowrap;
+  flex-shrink: 0;
+  padding-block: 0.25rem;
+  transition: color 0.18s ease;
+}
+
+.i-nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: var(--i-gold-ink);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.i-nav__link:hover {
+  color: var(--i-navy);
+}
+
+.i-nav__link:hover::after {
+  transform: scaleX(1);
 }
 
 .i-header__actions {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 .i-mobile-toggle {
@@ -143,7 +186,7 @@ select {
 .i-mobile-drawer {
   display: none;
   border-top: 1px solid var(--i-border);
-  background-color: #ffffff;
+  background-color: var(--i-white);
   padding: 0.85rem 1.25rem 1.25rem;
 }
 
@@ -153,7 +196,7 @@ select {
 
 .i-mobile-drawer:not([hidden]) {
   display: grid;
-  gap: 0.25rem;
+  gap: 0.2rem;
 }
 
 .i-mobile-drawer a {
@@ -161,6 +204,12 @@ select {
   align-items: center;
   min-height: 44px;
   font-weight: 500;
+  color: var(--i-navy);
+  border-bottom: 1px solid rgba(26, 43, 60, 0.08);
+}
+
+.i-mobile-drawer a:last-child {
+  border-bottom: 0;
 }
 
 .i-mobile-drawer__back {
@@ -168,42 +217,69 @@ select {
   font-weight: 700;
 }
 
+/* Shared Buttons & Typography */
 .i-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   min-height: 44px;
-  padding: 0.72rem 1.35rem;
+  padding: 0.68rem 1.35rem;
   font-size: 0.875rem;
   font-weight: 600;
   border: 1px solid transparent;
   border-radius: 5px;
   cursor: pointer;
   white-space: nowrap;
-  transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+  flex-shrink: 0;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.i-btn:hover {
+  transform: translateY(-1px);
 }
 
 .i-btn--navy {
   background-color: var(--i-navy);
-  color: #ffffff;
+  color: var(--i-white);
+}
+
+.i-btn--navy:hover {
+  background-color: var(--i-navy-deep);
 }
 
 .i-btn--gold {
   background-color: var(--i-gold);
-  color: #111111;
+  color: #11161c;
+}
+
+.i-btn--gold:hover {
+  background-color: var(--i-gold-soft);
 }
 
 .i-btn--outline {
   background-color: transparent;
-  border-color: rgba(26, 43, 60, 0.3);
+  border-color: var(--i-border-strong);
   color: var(--i-navy);
 }
 
+.i-btn--outline:hover {
+  background-color: var(--i-stone-soft);
+  border-color: var(--i-navy);
+}
+
 .i-btn--outline-light {
-  background-color: transparent;
-  border-color: rgba(255, 255, 255, 0.42);
-  color: #ffffff;
+  background-color: rgba(16, 27, 39, 0.36);
+  border-color: rgba(250, 248, 244, 0.45);
+  color: var(--i-ivory);
+}
+
+.i-btn--outline-light:hover {
+  background-color: rgba(250, 248, 244, 0.12);
+  border-color: var(--i-gold-soft);
 }
 
 .i-btn-row {
@@ -212,8 +288,43 @@ select {
   gap: 0.85rem;
 }
 
+.i-kicker {
+  display: block;
+  font-family: var(--i-font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--i-gold-ink);
+  margin-bottom: 0.55rem;
+}
+
+.i-kicker--light {
+  color: var(--i-gold-soft);
+}
+
+.i-title {
+  font-family: var(--i-font-display);
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.14;
+  text-wrap: balance;
+  margin: 0 0 0.85rem;
+}
+
+.i-title--hero {
+  font-size: clamp(2.25rem, 4.1vw, 3.55rem);
+  line-height: 1.08;
+  color: var(--i-ivory);
+  max-width: 18ch;
+}
+
+.i-title--light {
+  color: var(--i-ivory);
+}
+
 .i-section {
-  padding-block: clamp(3.5rem, 6vw, 5.25rem);
+  padding-block: clamp(3.75rem, 6vw, 5.5rem);
+  scroll-margin-top: 5.25rem;
 }
 
 .i-section--stone {
@@ -222,68 +333,316 @@ select {
   border-bottom: 1px solid var(--i-border);
 }
 
-.i-eyebrow {
-  display: inline-block;
-  font-family: var(--i-font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--i-gold-ink);
-  margin-bottom: 0.5rem;
+.i-section--ivory {
+  background-color: var(--i-ivory);
 }
 
-.i-eyebrow--hero {
-  color: #e4c486;
+.i-section--dark {
+  background-color: var(--i-navy-deep);
+  color: var(--i-ivory);
 }
 
-.i-title {
-  font-family: var(--i-font-display);
-  font-size: clamp(1.85rem, 3.2vw, 2.65rem);
-  line-height: 1.14;
-  margin: 0 0 0.85rem;
+/* Resilient Media Frame Fallback */
+.i-media-frame {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--i-stone);
+  background-image:
+    linear-gradient(135deg, rgba(26, 43, 60, 0.08) 0%, rgba(184, 141, 62, 0.08) 100%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(26, 43, 60, 0.03) 0 1px,
+      transparent 1px 48px
+    );
 }
 
-.i-title--hero {
-  color: #ffffff;
+.i-media-frame img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
+/* 1. Portada Inmobiliaria (Full-Bleed Architectural Hero) */
 .i-hero {
-  background-color: var(--i-navy);
-  color: #ffffff;
-  padding-block: clamp(3rem, 5.5vw, 4.75rem);
+  position: relative;
+  min-height: clamp(540px, 78vh, 720px);
+  display: flex;
+  align-items: flex-end;
+  padding-block: clamp(3.5rem, 6vw, 5rem);
+  background-color: var(--i-navy-deep);
+  color: var(--i-ivory);
+  overflow: hidden;
 }
 
-.i-hero__grid {
+.i-hero__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.i-hero__backdrop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+.i-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    102deg,
+    rgba(16, 27, 39, 0.94) 0%,
+    rgba(16, 27, 39, 0.82) 48%,
+    rgba(16, 27, 39, 0.34) 100%
+  );
+}
+
+.i-hero__content {
+  position: relative;
+  z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
   gap: clamp(2rem, 4vw, 3.5rem);
-  align-items: center;
+  align-items: end;
 }
 
 .i-hero__lead {
-  color: rgba(255, 255, 255, 0.84);
-  max-width: 55ch;
-  margin: 0 0 1.5rem;
+  color: rgba(250, 248, 244, 0.88);
+  max-width: 54ch;
+  margin: 0 0 1.75rem;
+  font-size: 1.02rem;
 }
 
-.i-hero__media img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.i-hero__folio {
+  background-color: rgba(16, 27, 39, 0.84);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(228, 196, 134, 0.32);
   border-radius: 6px;
+  padding: 1.5rem;
+  display: grid;
+  gap: 0.95rem;
 }
 
-/* Search Filter Bar */
+.i-hero__folio-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(250, 248, 244, 0.14);
+}
+
+.i-hero__folio-title {
+  font-family: var(--i-font-display);
+  font-size: 1.15rem;
+  color: var(--i-ivory);
+}
+
+.i-hero__folio-code {
+  font-family: var(--i-font-mono);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--i-gold-soft);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.i-folio-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.i-folio-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 0.88rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(250, 248, 244, 0.1);
+}
+
+.i-folio-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.i-folio-list__label {
+  color: rgba(250, 248, 244, 0.72);
+}
+
+.i-folio-list__value {
+  font-family: var(--i-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--i-ivory);
+  text-align: right;
+}
+
+/* 2. Filosofía Inmobiliaria */
+.i-philosophy-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.i-philosophy__lead {
+  color: var(--i-muted);
+  max-width: 46ch;
+  margin: 0;
+}
+
+.i-pillars {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--i-border);
+}
+
+.i-pillar {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 1.35rem;
+  border-bottom: 1px solid var(--i-border);
+  align-items: baseline;
+}
+
+.i-pillar__num {
+  font-family: var(--i-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--i-gold-ink);
+}
+
+.i-pillar__title {
+  font-family: var(--i-font-display);
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+  color: var(--i-navy);
+}
+
+.i-pillar__text {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--i-muted);
+}
+
+/* 3. Propiedad Destacada */
+.i-spotlight {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  gap: clamp(2rem, 4.5vw, 3.75rem);
+  align-items: stretch;
+}
+
+.i-spotlight__media {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.i-spotlight__photo {
+  border-radius: 6px;
+  border: 1px solid var(--i-border);
+  aspect-ratio: 16 / 9;
+}
+
+.i-spotlight__caption {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--i-muted);
+}
+
+.i-spotlight__panel {
+  background-color: var(--i-white);
+  border: 1px solid var(--i-border);
+  border-radius: 6px;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.35rem;
+}
+
+.i-spotlight__price {
+  font-family: var(--i-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(1.5rem, 2.5vw, 1.95rem);
+  font-weight: 700;
+  color: var(--i-navy);
+  margin: 0.25rem 0 0.75rem;
+}
+
+.i-spotlight__specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--i-border);
+  border-bottom: 1px solid var(--i-border);
+  padding-block: 0.9rem;
+  gap: 0.85rem 1.25rem;
+}
+
+.i-spec-item {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.i-spec-item__label {
+  font-size: 0.75rem;
+  color: var(--i-muted);
+}
+
+.i-spec-item__value {
+  font-family: var(--i-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--i-navy);
+}
+
+.i-spotlight__sum {
+  margin: 0;
+  color: var(--i-muted);
+  font-size: 0.95rem;
+}
+
+/* 4. Exploración, Filtros y Catálogo */
+.i-catalog-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem 2rem;
+  margin-bottom: 1.75rem;
+}
+
+.i-catalog-note {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--i-muted);
+  max-width: 44ch;
+}
+
 .i-filter-bar {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
   gap: 1rem;
-  background-color: #ffffff;
+  align-items: end;
+  background-color: var(--i-white);
   border: 1px solid var(--i-border);
   border-radius: 6px;
   padding: 1.25rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .i-filter-group {
@@ -293,110 +652,122 @@ select {
 
 .i-filter-group label {
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--i-muted);
 }
 
 .i-filter-group select {
   width: 100%;
   min-height: 44px;
-  padding: 0.55rem 0.75rem;
-  border: 1px solid rgba(26, 43, 60, 0.25);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--i-border-strong);
   border-radius: 4px;
-  background-color: var(--i-stone-soft);
+  background-color: var(--i-ivory);
+  color: var(--i-navy);
+}
+
+.i-props-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .i-props-count {
-  font-size: 0.875rem;
+  font-family: var(--i-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
   color: var(--i-muted);
-  margin: 0 0 1.25rem;
+  margin: 0;
 }
 
 .i-props-empty {
   grid-column: 1 / -1;
+  background-color: var(--i-white);
+  border: 1px solid var(--i-border);
+  border-radius: 6px;
+  padding: 2.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   color: var(--i-muted);
+}
+
+.i-props-empty p {
+  margin: 0;
 }
 
 .i-props-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .i-prop-card {
-  background-color: #ffffff;
+  background-color: var(--i-white);
   border: 1px solid var(--i-border);
   border-radius: 6px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .i-prop-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(16, 27, 39, 0.08);
+  border-color: var(--i-border-strong);
+  box-shadow: 0 12px 26px rgba(16, 27, 39, 0.08);
 }
 
 .i-prop-card__media {
-  position: relative;
-  overflow: hidden;
-  background-color: var(--i-stone);
+  aspect-ratio: 4 / 3;
 }
 
 .i-prop-card__media img {
-  width: 100%;
-  height: auto;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
-  transition: transform 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .i-prop-card:hover .i-prop-card__media img {
   transform: scale(1.03);
 }
 
-.i-prop-card__badge {
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  background-color: rgba(16, 27, 39, 0.88);
-  color: #e4c486;
-  font-family: var(--i-font-mono);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.28rem 0.58rem;
-  border-radius: 4px;
-}
-
 .i-prop-card__body {
-  padding: 1.25rem 1.35rem 1.35rem;
+  padding: 1.3rem 1.35rem 1.4rem;
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
 .i-prop-card__meta {
+  display: block;
   font-family: var(--i-font-mono);
-  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.76rem;
   color: var(--i-gold-ink);
-  text-transform: uppercase;
+  margin-bottom: 0.4rem;
 }
 
 .i-prop-card__title {
   font-family: var(--i-font-display);
-  font-size: 1.22rem;
-  line-height: 1.25;
-  margin: 0.35rem 0 0.25rem;
+  font-size: 1.2rem;
+  line-height: 1.24;
+  margin: 0 0 0.4rem;
+  color: var(--i-navy);
 }
 
 .i-prop-card__price {
   font-family: var(--i-font-mono);
-  font-size: 1.2rem;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.18rem;
   font-weight: 700;
   color: var(--i-navy);
 }
@@ -404,101 +775,414 @@ select {
 .i-prop-card__sum {
   font-size: 0.9rem;
   color: var(--i-muted);
-  margin: 0.5rem 0 0;
+  margin: 0.65rem 0 0;
 }
 
 .i-prop-card__foot {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .i-prop-card__specs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.85rem;
-  font-size: 0.84rem;
+  font-family: var(--i-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
   color: var(--i-muted);
-  padding-top: 0.75rem;
+  padding-top: 0.85rem;
   border-top: 1px solid var(--i-border);
 }
 
-.i-prop-card__btn {
-  width: 100%;
+.i-prop-card__actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.55rem;
 }
 
-.i-cta-band {
+.i-prop-card__actions .i-btn {
+  padding-inline: 0.95rem;
+}
+
+/* 5. Ubicaciones y Entorno */
+.i-sectors-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 4.5vw, 3.75rem);
+  align-items: start;
+}
+
+.i-sectors-media {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.i-sector-photo-card {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.i-sector-photo-card__frame {
+  border-radius: 6px;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--i-border-light);
+}
+
+.i-sector-photo-card__caption {
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgba(250, 248, 244, 0.72);
+}
+
+.i-sectors-list {
+  display: grid;
+  border-top: 1px solid var(--i-border-light);
+}
+
+.i-sector-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 2rem;
   align-items: center;
+  gap: 0.85rem 1.25rem;
+  padding-block: 1.2rem;
+  border-bottom: 1px solid var(--i-border-light);
 }
 
-.i-cta-band__text {
-  color: var(--i-muted);
+.i-sector-row__info {
+  max-width: 44ch;
+}
+
+.i-sector-row__meta {
+  display: block;
+  font-family: var(--i-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.75rem;
+  color: var(--i-gold-soft);
+  margin-bottom: 0.2rem;
+}
+
+.i-sector-row__title {
+  font-family: var(--i-font-display);
+  font-size: 1.22rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  color: var(--i-ivory);
+}
+
+.i-sector-row__desc {
   margin: 0;
-  max-width: 60ch;
+  font-size: 0.88rem;
+  color: rgba(250, 248, 244, 0.78);
 }
 
-.i-dialog {
-  max-width: min(560px, 92vw);
+.i-sectors-disclaimer {
+  margin: 1.25rem 0 0;
+  font-size: 0.8125rem;
+  color: rgba(250, 248, 244, 0.65);
+}
+
+/* 6. Proceso de Asesoría y Consulta */
+.i-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.i-step-card {
+  background-color: var(--i-white);
   border: 1px solid var(--i-border);
+  border-radius: 6px;
+  padding: 1.6rem;
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+}
+
+.i-step-card__num {
+  font-family: var(--i-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--i-gold-ink);
+}
+
+.i-step-card__title {
+  font-family: var(--i-font-display);
+  font-size: 1.22rem;
+  line-height: 1.25;
+  margin: 0;
+  color: var(--i-navy);
+}
+
+.i-step-card__text {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--i-muted);
+}
+
+.i-process-notice {
+  margin: 1.5rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--i-border);
+  font-size: 0.86rem;
+  color: var(--i-muted);
+}
+
+/* 7. Contacto y Consultas por Propiedad */
+.i-contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(2rem, 4.5vw, 3.5rem);
+  align-items: start;
+}
+
+.i-consult-panel {
+  background-color: var(--i-ivory);
+  border: 1px solid var(--i-border);
+  border-radius: 6px;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  display: grid;
+  gap: 1.25rem;
+}
+
+.i-consult-select-wrap {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.i-consult-select-wrap label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--i-navy);
+}
+
+.i-consult-select-wrap select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--i-border-strong);
+  border-radius: 4px;
+  background-color: var(--i-white);
+  color: var(--i-navy);
+}
+
+.i-selected-box {
+  background-color: var(--i-white);
+  border: 1px solid var(--i-border);
+  border-radius: 5px;
+  padding: 1.15rem 1.25rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.i-selected-box__meta {
+  font-family: var(--i-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.76rem;
+  color: var(--i-gold-ink);
+}
+
+.i-selected-box__title {
+  font-family: var(--i-font-display);
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--i-navy);
+  margin: 0;
+}
+
+.i-selected-box__specs {
+  font-family: var(--i-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.86rem;
+  color: var(--i-navy);
+  font-weight: 600;
+}
+
+.i-selected-box__note {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--i-muted);
+}
+
+.i-contact-aside {
+  display: grid;
+  gap: 1.1rem;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  background-color: var(--i-navy);
+  color: var(--i-ivory);
+  border-radius: 6px;
+}
+
+.i-contact-aside__text {
+  margin: 0;
+  color: rgba(250, 248, 244, 0.84);
+  font-size: 0.94rem;
+}
+
+.i-contact-aside__links {
+  display: grid;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--i-border-light);
+  font-size: 0.86rem;
+}
+
+.i-contact-aside__link {
+  color: var(--i-gold-soft);
+  text-decoration: underline;
+}
+
+/* 8. Ficha Inmobiliaria (Modal Dialog) */
+.i-dialog {
+  width: min(680px, 92vw);
+  max-height: 92vh;
+  overflow-y: auto;
+  border: 1px solid var(--i-border-strong);
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: clamp(1.15rem, 2.5vw, 1.5rem);
+  background-color: var(--i-white);
+  color: var(--i-navy);
+}
+
+.i-dialog::backdrop {
+  background-color: rgba(16, 27, 39, 0.74);
+  backdrop-filter: blur(4px);
+}
+
+.i-dialog__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.i-dialog__folio {
+  font-family: var(--i-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.78rem;
+  color: var(--i-gold-ink);
+}
+
+.i-dialog__icon-close {
+  display: inline-grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  background-color: var(--i-stone-soft);
+  border: 1px solid var(--i-border);
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--i-navy);
 }
 
 .i-dialog__media {
-  margin-bottom: 1rem;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.i-dialog__media img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  margin-bottom: 0.95rem;
+  border-radius: 6px;
+  aspect-ratio: 16 / 9;
+  max-height: 290px;
+  border: 1px solid var(--i-border);
 }
 
 .i-dialog__title {
   font-family: var(--i-font-display);
-  font-size: 1.5rem;
+  font-size: 1.42rem;
   line-height: 1.2;
-  margin: 0 0 0.45rem;
+  margin: 0 0 0.35rem;
 }
 
 .i-dialog__price {
   font-family: var(--i-font-mono);
-  font-size: 1.25rem;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.24rem;
   font-weight: 700;
+  color: var(--i-navy);
   margin-bottom: 0.65rem;
 }
 
 .i-dialog__specs {
-  font-size: 0.88rem;
+  font-family: var(--i-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.84rem;
   color: var(--i-gold-ink);
   font-weight: 600;
-  margin: 0 0 0.65rem;
+  padding-block: 0.55rem;
+  border-top: 1px solid var(--i-border);
+  border-bottom: 1px solid var(--i-border);
+  margin: 0 0 0.75rem;
 }
 
 .i-dialog__summary {
   color: var(--i-muted);
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.55rem;
+  font-size: 0.94rem;
 }
 
-.i-dialog::backdrop {
-  background-color: rgba(16, 27, 39, 0.72);
+.i-dialog__disclaimer {
+  font-size: 0.79rem;
+  color: var(--i-muted);
+  margin: 0 0 1rem;
 }
 
+.i-dialog .i-btn-row {
+  gap: 0.65rem;
+}
+
+.i-dialog .i-btn-row .i-btn {
+  padding-inline: 1.05rem;
+}
+
+/* 9. Footer & AV·STUDIO Signature */
 .i-footer {
   background-color: var(--i-navy-deep);
-  color: #ffffff;
-  padding-block: 3rem 2.25rem;
+  color: var(--i-ivory);
+  padding-block: 3.25rem 2.5rem;
+  border-top: 1px solid var(--i-border-light);
+}
+
+.i-footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.i-footer__brand {
+  font-family: var(--i-font-display);
+  font-size: 1.32rem;
+  font-weight: 700;
+  display: block;
+}
+
+.i-footer__note {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  color: rgba(250, 248, 244, 0.76);
+}
+
+.i-footer__nav {
+  display: flex;
+  gap: 1.35rem;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.88rem;
+}
+
+.i-footer__nav a:hover {
+  text-decoration: underline;
+}
+
+.i-footer__back {
+  color: var(--i-gold-soft);
+  font-weight: 700;
 }
 
 .i-av-signature {
-  margin-top: 1.5rem;
-  padding: 1.25rem;
+  margin-top: 1.75rem;
+  padding: 1.35rem;
   background-color: var(--i-navy);
   border: 1px solid rgba(228, 196, 134, 0.35);
   border-radius: 6px;
@@ -510,6 +1194,21 @@ select {
   font-size: 0.875rem;
 }
 
+.i-av-signature__heading {
+  margin: 0 0 0.3rem;
+}
+
+.i-av-signature__meta {
+  margin: 0;
+  color: rgba(250, 248, 244, 0.88);
+}
+
+.i-av-signature__link {
+  text-decoration: underline;
+  color: var(--i-gold-soft);
+}
+
+/* Responsive Breakpoints */
 @media (max-width: 960px) {
   .i-nav,
   .i-header__cta {
@@ -521,12 +1220,24 @@ select {
     place-items: center;
   }
 
-  .i-hero__grid {
+  .i-hero__content,
+  .i-philosophy-grid,
+  .i-spotlight,
+  .i-sectors-layout,
+  .i-contact-grid {
     grid-template-columns: 1fr;
   }
 
-  .i-filter-bar,
-  .i-props-grid {
+  .i-filter-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .i-filter-reset-wrap {
+    grid-column: 1 / -1;
+  }
+
+  .i-props-grid,
+  .i-steps-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -536,9 +1247,23 @@ select {
     width: min(1200px, calc(100% - 1.5rem));
   }
 
+  .i-header__inner {
+    min-height: 3.75rem;
+  }
+
   .i-filter-bar,
-  .i-props-grid {
+  .i-props-grid,
+  .i-steps-grid,
+  .i-sectors-media {
     grid-template-columns: 1fr;
+  }
+
+  .i-prop-card__actions {
+    grid-template-columns: 1fr;
+  }
+
+  .i-pillar {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
   }
 }
 
@@ -547,5 +1272,15 @@ select {
     width: 100%;
     white-space: normal;
     text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }

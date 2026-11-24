@@ -9,6 +9,33 @@ import {
   buildBarberWhatsAppUrl,
 } from './logic.js';
 
+const SERVICE_MEDIA = {
+  'corte-clasico': {
+    src: './images/corte-clasico.jpg',
+    alt: 'Corte clásico masculino acabado con tijera en ambiente de barbería oscura',
+  },
+  'corte-fade': {
+    src: './images/servicio-fade.jpg',
+    alt: 'Degradado Skin Fade limpio con iluminación cálida de bronce',
+  },
+  'barba-ritual': {
+    src: './images/servicio-barba.jpg',
+    alt: 'Perfilado de barba junto a toallas oscuras y aceite botánico en piedra pizarra',
+  },
+  'afeitado-tradicional': {
+    src: './images/servicio-afeitado.jpg',
+    alt: 'Espuma tibia en cuenco de cerámica con brocha y navaja de acero sobre piedra oscura',
+  },
+  'ritual-tres-filos': {
+    src: './images/servicio-ritual.jpg',
+    alt: 'Toallas calientes enrolladas, cepillo, carbón activo y peine de bronce sobre madera',
+  },
+  'limpieza-facial': {
+    src: './images/servicio-facial.jpg',
+    alt: 'Estación de cuidado facial masculino con vapor suave, arcilla mineral y lino oscuro',
+  },
+};
+
 let activeCategory = 'Todos';
 
 function renderServices() {
@@ -19,19 +46,41 @@ function renderServices() {
   grid.innerHTML = '';
 
   list.forEach((srv) => {
+    const media = SERVICE_MEDIA[srv.id] || {
+      src: './images/corte-clasico.jpg',
+      alt: srv.name,
+    };
+
     const card = document.createElement('article');
     card.className = 'b-service-card';
+
+    const mediaWrap = document.createElement('div');
+    mediaWrap.className = 'b-service-card__media';
+
+    const img = document.createElement('img');
+    img.src = media.src;
+    img.alt = media.alt;
+    img.width = 1200;
+    img.height = 896;
+    img.decoding = 'sync';
+    img.referrerPolicy = 'no-referrer';
+    mediaWrap.appendChild(img);
+
+    const body = document.createElement('div');
+    body.className = 'b-service-card__body';
+
+    const copyWrap = document.createElement('div');
 
     const top = document.createElement('div');
     top.className = 'b-service-card__top';
 
     const cat = document.createElement('span');
-    cat.className = 'b-service-card__cat';
-    cat.textContent = srv.category;
+    cat.className = 'b-service-card__meta';
+    cat.textContent = `${srv.category} · Referencial USD`;
 
     const price = document.createElement('span');
     price.className = 'b-service-card__price';
-    price.textContent = `$${srv.price.toFixed(2)} USD`;
+    price.textContent = `$${srv.price.toFixed(2)}`;
 
     top.append(cat, price);
 
@@ -43,8 +92,7 @@ function renderServices() {
     desc.className = 'b-service-card__desc';
     desc.textContent = srv.description;
 
-    const bodyWrap = document.createElement('div');
-    bodyWrap.append(top, title, desc);
+    copyWrap.append(top, title, desc);
 
     const footer = document.createElement('div');
     footer.className = 'b-service-card__footer';
@@ -56,39 +104,53 @@ function renderServices() {
     const bookBtn = document.createElement('button');
     bookBtn.type = 'button';
     bookBtn.className = 'b-btn b-btn--outline b-btn--sm';
-    bookBtn.textContent = 'Reservar servicio';
+    bookBtn.textContent = 'Preseleccionar';
+    bookBtn.setAttribute('aria-label', `Preseleccionar servicio ${srv.name}`);
     bookBtn.setAttribute('data-prefill-service', `${srv.name} ($${srv.price.toFixed(2)} USD)`);
 
     footer.append(dur, bookBtn);
-    card.append(bodyWrap, footer);
+    body.append(copyWrap, footer);
+    card.append(mediaWrap, body);
     grid.appendChild(card);
   });
 }
 
-function prefillServiceAndScroll(serviceLabel) {
-  const select = document.getElementById('b-service');
-  if (select && serviceLabel) {
-    const option = Array.from(select.options).find((opt) => opt.value === serviceLabel);
+function prefillBookingAndScroll({ serviceLabel, barberLabel }) {
+  const serviceSelect = document.getElementById('b-service');
+  if (serviceSelect && serviceLabel) {
+    const option = Array.from(serviceSelect.options).find((opt) => opt.value === serviceLabel);
     if (option) {
-      select.value = option.value;
+      serviceSelect.value = option.value;
     }
   }
+
+  const barberSelect = document.getElementById('b-barber');
+  if (barberSelect && barberLabel) {
+    const option = Array.from(barberSelect.options).find((opt) => opt.value === barberLabel);
+    if (option) {
+      barberSelect.value = option.value;
+    }
+  }
+
   const bookingSection = document.getElementById('reservas');
   if (bookingSection) {
     bookingSection.scrollIntoView({ behavior: 'smooth' });
   }
   const nameInput = document.getElementById('b-name');
   if (nameInput) {
-    setTimeout(() => nameInput.focus(), 300);
+    window.setTimeout(() => nameInput.focus(), 260);
   }
 }
 
 function initFiltersAndPrefills() {
-  document.querySelectorAll('[data-barber-filter]').forEach((btn) => {
+  const filterBtns = Array.from(document.querySelectorAll('[data-barber-filter]'));
+  filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       activeCategory = btn.getAttribute('data-barber-filter') || 'Todos';
-      document.querySelectorAll('[data-barber-filter]').forEach((item) => {
-        item.classList.toggle('is-active', item === btn);
+      filterBtns.forEach((item) => {
+        const active = item === btn;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-selected', String(active));
       });
       renderServices();
     });
@@ -97,16 +159,26 @@ function initFiltersAndPrefills() {
   document.addEventListener('click', (event) => {
     const target = event.target;
     if (!(target instanceof Element)) return;
-    const prefillBtn = target.closest('[data-prefill-service]');
-    if (prefillBtn) {
-      prefillServiceAndScroll(prefillBtn.getAttribute('data-prefill-service') || '');
+
+    const serviceBtn = target.closest('[data-prefill-service]');
+    if (serviceBtn) {
+      prefillBookingAndScroll({
+        serviceLabel: serviceBtn.getAttribute('data-prefill-service') || '',
+      });
+      return;
+    }
+
+    const barberBtn = target.closest('[data-prefill-barber]');
+    if (barberBtn) {
+      prefillBookingAndScroll({
+        barberLabel: barberBtn.getAttribute('data-prefill-barber') || '',
+      });
     }
   });
 }
 
 function initLightbox() {
   const dialog = document.getElementById('b-lightbox');
-  const webpSource = document.getElementById('b-lightbox-webp');
   const img = document.getElementById('b-lightbox-img');
   const cap = document.getElementById('b-lightbox-caption');
   const closeBtn = document.getElementById('b-lightbox-close');
@@ -117,9 +189,6 @@ function initLightbox() {
       const pic = trigger.querySelector('img');
       if (!pic) return;
       const src = pic.getAttribute('src') || '';
-      if (webpSource) {
-        webpSource.setAttribute('srcset', src.replace(/\.(jpg|jpeg|png)$/i, '.webp'));
-      }
       img.setAttribute('src', src);
       img.setAttribute('alt', pic.getAttribute('alt') || '');
       if (cap) cap.textContent = trigger.getAttribute('data-b-gallery') || '';

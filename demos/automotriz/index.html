@@ -13,17 +13,17 @@
     <meta property="og:title" content="Torque Andino — Taller Automotriz (Demostración) | AV·STUDIO" />
     <meta
       property="og:description"
-      content="Taller automotriz ficticio en Cuenca con servicios preventivos en USD, bahía de diagnóstico y reserva de turno por hora."
+      content="Taller automotriz ficticio en Cuenca con servicios preventivos en USD, exploración técnica por áreas y solicitud demostrativa de turno por hora."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AV·STUDIO" />
     <meta property="og:locale" content="es_EC" />
-    <meta property="og:image" content="../../assets/images/categories/automotriz.jpg" />
+    <meta property="og:image" content="./images/hero.jpg" />
     <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -39,14 +39,16 @@
     <header class="au-header">
       <div class="container au-header__inner">
         <a href="#inicio" class="au-brand">TORQUE <span class="au-brand__accent">ANDINO</span></a>
+
         <nav class="au-nav" aria-label="Navegación automotriz">
-          <a class="au-nav__link" href="#inicio">Inicio</a>
           <a class="au-nav__link" href="#servicios">Servicios</a>
-          <a class="au-nav__link" href="#diagnostico">Diagnóstico</a>
-          <a class="au-nav__link" href="#turnos">Agendar turno</a>
+          <a class="au-nav__link" href="#diagnostico">Inspección</a>
+          <a class="au-nav__link" href="#galeria">Taller</a>
+          <a class="au-nav__link" href="#turnos">Turnos</a>
         </nav>
+
         <div class="au-header__actions">
-          <a href="#turnos" class="au-btn au-btn--red au-header__cta">Pedir turno</a>
+          <a href="#turnos" class="au-btn au-btn--amber au-header__cta">Solicitar turno</a>
           <button
             type="button"
             class="au-mobile-toggle"
@@ -59,38 +61,74 @@
           </button>
         </div>
       </div>
+
       <nav class="au-mobile-drawer" id="au-mobile-drawer" hidden aria-label="Menú móvil">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#diagnostico">Diagnóstico</a>
-        <a href="#turnos">Agendar turno</a>
-        <a href="../../index.html" class="au-mobile-drawer__back">
-          &larr; Volver a AV·STUDIO
-        </a>
+        <a href="#filosofia">Filosofía técnica</a>
+        <a href="#servicios">Servicios en USD</a>
+        <a href="#diagnostico">Sistema de inspección</a>
+        <a href="#proceso">Proceso de atención</a>
+        <a href="#galeria">Galería del taller</a>
+        <a href="#mantenimiento">Mantenimiento y consultas</a>
+        <a href="#turnos">Turnos por WhatsApp</a>
+        <a href="../../index.html" class="au-mobile-drawer__back">&larr; Volver a AV·STUDIO</a>
       </nav>
     </header>
 
     <main>
       <section class="au-hero" id="inicio">
-        <div class="container au-hero__grid">
-          <div>
-            <span class="au-eyebrow au-eyebrow--hero">
-              Diagnóstico y mecánica · Av. España, Cuenca
-            </span>
-            <h1 class="au-title au-title--hero">
-              Mantenimiento preventivo claro, diagnóstico técnico y turnos por hora.
-            </h1>
-            <p class="au-hero__lead">
-              Torque Andino es un taller automotriz ficticio creado por AV·STUDIO para demostrar cómo
-              presentar servicios mecánicos con tarifas base en USD y solicitud rápida de revisión.
-            </p>
-            <div class="au-btn-row">
-              <a href="#turnos" class="au-btn au-btn--red">Solicitar turno de revisión</a>
-              <a href="#servicios" class="au-btn au-btn--outline">Ver servicios en USD</a>
-            </div>
+        <div class="container">
+          <div class="au-hero__ledger">
+            <span class="au-hero__meta">Diagnóstico y mecánica · Av. España y Chapetones, Cuenca</span>
+            <span class="au-hero__meta">Tarifas referenciales en USD · Atención 24h por cita</span>
           </div>
 
-          <div class="au-hero__media">
+          <div class="au-hero__grid">
+            <div class="au-hero__copy">
+              <h1 class="au-hero__title">
+                Mantenimiento claro, diagnóstico ordenado y turnos por hora.
+              </h1>
+              <p class="au-hero__lead">
+                Torque Andino es un taller automotriz ficticio creado por AV·STUDIO para mostrar cómo
+                comunicar servicios preventivos en USD, áreas de inspección y solicitudes claras de turno
+                desde el primer vistazo.
+              </p>
+              <div class="au-btn-row">
+                <a href="#turnos" class="au-btn au-btn--amber">Solicitar turno de revisión</a>
+                <a href="#servicios" class="au-btn au-btn--outline-dark">Ver servicios en USD</a>
+              </div>
+            </div>
+
+            <aside class="au-spec-panel" aria-label="Áreas técnicas del catálogo">
+              <div class="au-spec-panel__head">
+                <span class="au-spec-panel__label">Especialidades del catálogo</span>
+                <span class="au-spec-panel__hint">Acceso rápido</span>
+              </div>
+              <div class="au-spec-list">
+                <button type="button" class="au-spec-row" data-jump-category="Preventivo">
+                  <span class="au-spec-row__index">01</span>
+                  <span class="au-spec-row__name">Preventivo y lubricación</span>
+                  <span class="au-spec-row__cta">Desde $48.00 &rarr;</span>
+                </button>
+                <button type="button" class="au-spec-row" data-jump-category="Frenos y Suspensión">
+                  <span class="au-spec-row__index">02</span>
+                  <span class="au-spec-row__name">Frenos y suspensión</span>
+                  <span class="au-spec-row__cta">Desde $25.00 &rarr;</span>
+                </button>
+                <button type="button" class="au-spec-row" data-jump-category="Diagnóstico">
+                  <span class="au-spec-row__index">03</span>
+                  <span class="au-spec-row__name">Diagnóstico OBD-II y carga</span>
+                  <span class="au-spec-row__cta">Desde $15.00 &rarr;</span>
+                </button>
+                <button type="button" class="au-spec-row" data-jump-category="Alineación">
+                  <span class="au-spec-row__index">04</span>
+                  <span class="au-spec-row__name">Alineación y balanceo x4</span>
+                  <span class="au-spec-row__cta">$32.00 USD &rarr;</span>
+                </button>
+              </div>
+            </aside>
+          </div>
+
+          <figure class="au-hero__panorama">
             <picture>
               <source srcset="./images/hero.webp" type="image/webp" />
               <img
@@ -99,22 +137,96 @@
                 height="900"
                 fetchpriority="high"
                 decoding="async"
-                alt="Bahía limpia de servicio automotriz con elevador hidráulico y gabinetes técnicos organizados"
+                referrerpolicy="no-referrer"
+                alt="Bahía de servicio automotriz de Torque Andino con vehículo sedán sobre elevador hidráulico"
               />
             </picture>
+          </figure>
+        </div>
+      </section>
+
+      <section class="au-section au-section--slate" id="filosofia">
+        <div class="container au-filosofia-grid">
+          <figure class="au-media-frame">
+            <img
+              src="./images/filosofia-herramientas.jpg"
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+              alt="Banco de trabajo automotriz organizado con torquímetro, dados milimétricos y llaves métricas sobre acero inoxidable"
+            />
+            <figcaption class="au-media-caption">
+              Área de trabajo ordenada · Herramienta métrica y control de torque según protocolo
+            </figcaption>
+          </figure>
+
+          <div class="au-filosofia-body">
+            <span class="au-eyebrow">01 · Filosofía técnica</span>
+            <h2 class="au-title">Revisar y explicar antes de cotizar repuestos.</h2>
+            <p class="au-prose">
+              La confianza en un taller mecánico nace del orden visible y de explicaciones comprensibles.
+              Esta demostración estructura la información para que cada propietario sepa qué se inspecciona,
+              cuál es la tarifa base en USD del servicio y cómo apartar un horario antes de movilizar su
+              vehículo.
+            </p>
+
+            <div class="au-pillars">
+              <div class="au-pillar">
+                <span class="au-pillar__num">01</span>
+                <div>
+                  <h3 class="au-pillar__title">Inspección previa documentada</h3>
+                  <p class="au-pillar__text">
+                    Cada intervención parte de verificar el componente afectado en bahía antes de sugerir
+                    reemplazos.
+                  </p>
+                </div>
+              </div>
+              <div class="au-pillar">
+                <span class="au-pillar__num">02</span>
+                <div>
+                  <h3 class="au-pillar__title">Tarifas base visibles en USD</h3>
+                  <p class="au-pillar__text">
+                    Precios referenciales claros para mantenimiento preventivo, escaneo y alineación antes
+                    de coordinar la visita.
+                  </p>
+                </div>
+              </div>
+              <div class="au-pillar">
+                <span class="au-pillar__num">03</span>
+                <div>
+                  <h3 class="au-pillar__title">Recepción ordenada por horario 24h</h3>
+                  <p class="au-pillar__text">
+                    Indicas marca, modelo y año para preparar la bahía adecuada sin esperas innecesarias en
+                    recepción.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="au-section au-section--white" id="servicios">
         <div class="container">
-          <span class="au-eyebrow">Servicios técnicos en USD</span>
-          <h2 class="au-title">Mantenimiento y diagnóstico</h2>
+          <div class="au-section-head">
+            <div>
+              <span class="au-eyebrow">02 · Catálogo técnico en USD</span>
+              <h2 class="au-title">Servicios automotrices</h2>
+            </div>
+            <p class="au-section-head__note">
+              Valores referenciales de ejemplo en dólares estadounidenses. Selecciona un servicio para
+              cargar automáticamente el formulario de turno.
+            </p>
+          </div>
 
           <div class="au-tabs" role="group" aria-label="Filtrar servicios automotrices">
-            <button type="button" class="au-tab is-active" data-auto-filter="Todos">Todos</button>
+            <button type="button" class="au-tab is-active" data-auto-filter="Todos">Todos (6)</button>
             <button type="button" class="au-tab" data-auto-filter="Preventivo">Preventivo</button>
-            <button type="button" class="au-tab" data-auto-filter="Frenos y Suspensión">Frenos y Suspensión</button>
+            <button type="button" class="au-tab" data-auto-filter="Frenos y Suspensión">
+              Frenos y Suspensión
+            </button>
             <button type="button" class="au-tab" data-auto-filter="Diagnóstico">Diagnóstico</button>
             <button type="button" class="au-tab" data-auto-filter="Alineación">Alineación</button>
           </div>
@@ -123,57 +235,368 @@
         </div>
       </section>
 
-      <section class="au-section au-section--diag" id="diagnostico">
-        <div class="container au-diag-grid">
-          <div class="au-diag__media">
-            <picture>
-              <source srcset="./images/diagnostico.webp" type="image/webp" />
-              <img
-                src="./images/diagnostico.jpg"
-                width="1200"
-                height="900"
-                loading="lazy"
-                decoding="async"
-                alt="Bahía de diagnóstico electrónico automotriz con escáner OBD-II y herramientas calibradas"
-              />
-            </picture>
-          </div>
-          <div>
-            <span class="au-eyebrow">Bahía computarizada</span>
-            <h2 class="au-title">Diagnóstico ordenado antes de cotizar repuestos</h2>
-            <p class="au-diag__copy">
-              Un taller confiable comunica sus procesos con transparencia: explica qué incluye cada
-              revisión electrónica, cuánto tiempo toma en taller y qué modelo de vehículo atiendes.
+      <section class="au-section au-section--dark" id="diagnostico">
+        <div class="container">
+          <div class="au-section-head au-section-head--dark">
+            <div>
+              <span class="au-eyebrow au-eyebrow--bright">03 · Sistema de inspección</span>
+              <h2 class="au-title au-title--light">Bahía y puntos clave de revisión</h2>
+            </div>
+            <p class="au-section-head__note au-section-head__note--dark">
+              Guía interactiva ilustrativa de las áreas que atiende el taller. No realiza telemetría ni
+              lectura electrónica en vivo.
             </p>
-            <ul class="au-diag__list">
-              <li>Lectura de códigos OBD-II, batería y sistema de carga con reporte claro.</li>
-              <li>Tarifas base en USD visibles por servicio antes de agendar cita.</li>
-              <li>Reserva por placa o modelo directo hacia WhatsApp de recepción.</li>
-            </ul>
-            <a href="#turnos" class="au-btn au-btn--dark">Reservar bahía de revisión</a>
+          </div>
+
+          <div class="au-inspect-grid">
+            <div class="au-inspect-visual">
+              <figure class="au-media-frame au-media-frame--dark">
+                <picture>
+                  <source srcset="./images/diagnostico.webp" type="image/webp" />
+                  <img
+                    src="./images/diagnostico.jpg"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    referrerpolicy="no-referrer"
+                    alt="Técnico automotriz operando escáner OBD-II frente al compartimiento del motor abierto"
+                  />
+                </picture>
+                <figcaption class="au-media-caption au-media-caption--dark">
+                  Exploración ilustrativa de revisión mecánica y lectura OBD-II en bahía de ejemplo
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="au-inspect-explorer">
+              <div class="au-zone-tabs" role="group" aria-label="Áreas del vehículo para inspeccionar">
+                <button
+                  type="button"
+                  class="au-zone-btn is-active"
+                  data-inspect-zone="motor"
+                  aria-pressed="true"
+                >
+                  01 · Motor y aceite
+                </button>
+                <button
+                  type="button"
+                  class="au-zone-btn"
+                  data-inspect-zone="frenos"
+                  aria-pressed="false"
+                >
+                  02 · Frenos hidráulicos
+                </button>
+                <button
+                  type="button"
+                  class="au-zone-btn"
+                  data-inspect-zone="suspension"
+                  aria-pressed="false"
+                >
+                  03 · Suspensión
+                </button>
+                <button
+                  type="button"
+                  class="au-zone-btn"
+                  data-inspect-zone="obd"
+                  aria-pressed="false"
+                >
+                  04 · Escaneo OBD-II y carga
+                </button>
+                <button
+                  type="button"
+                  class="au-zone-btn"
+                  data-inspect-zone="alineacion"
+                  aria-pressed="false"
+                >
+                  05 · Alineación x4
+                </button>
+              </div>
+
+              <article class="au-zone-card" id="au-zone-card" aria-live="polite">
+                <div class="au-zone-card__meta">
+                  <span id="au-zone-kicker">Área 01 · Mantenimiento preventivo</span>
+                  <span class="au-zone-card__price" id="au-zone-price">Desde $48.00 USD</span>
+                </div>
+                <h3 class="au-zone-card__title" id="au-zone-title">
+                  Motor, filtros y 25 puntos de control preventivo
+                </h3>
+                <p class="au-zone-card__desc" id="au-zone-desc">
+                  Verificación de estado de lubricante según especificación del fabricante, reemplazo de
+                  filtros y chequeo visual de fluidos, mangueras y correas.
+                </p>
+                <ul class="au-zone-card__checks" id="au-zone-checks">
+                  <li>Nivel y condición de aceite, filtro de aceite y filtro de aire.</li>
+                  <li>Inspección de refrigerante, líquido limpiaparabrisas y posibles fugas.</li>
+                  <li>Control visual de bandas auxiliares y mangueras de presión.</li>
+                </ul>
+                <div class="au-zone-card__foot">
+                  <div class="au-zone-card__service">
+                    Servicio relacionado: <strong id="au-zone-service">Mantenimiento Preventivo (Cambio de Aceite &amp; Filtros)</strong>
+                  </div>
+                  <button type="button" class="au-btn au-btn--amber" id="au-zone-prefill">
+                    Preseleccionar para turno
+                  </button>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="au-section" id="turnos">
-        <div class="container au-booking-grid">
-          <div>
-            <span class="au-eyebrow">Atención en taller</span>
-            <h2 class="au-title">Agenda tu revisión demostrativa</h2>
-            <p class="au-booking__copy">
-              <strong>Horario de ejemplo (24h):</strong> Lunes a viernes 08:00 – 18:00 · Sábados 08:30 – 13:30.<br />
-              <strong>Sector referencial:</strong> Av. España y Chapetones, Cuenca, Ecuador.
-            </p>
-            <p class="au-booking__note">
-              Este formulario valida el modelo del vehículo y prepara el mensaje directo hacia el
-              WhatsApp de Anderson Vallejo (AV·STUDIO).
+      <section class="au-section au-section--slate" id="proceso">
+        <div class="container">
+          <div class="au-section-head">
+            <div>
+              <span class="au-eyebrow">04 · Proceso de atención</span>
+              <h2 class="au-title">Cómo funciona la revisión en bahía</h2>
+            </div>
+            <p class="au-section-head__note">
+              Cuatro pasos claros para ordenar la atención vehicular sin suposiciones ni cobros sorpresa.
             </p>
           </div>
 
+          <ol class="au-process-grid">
+            <li class="au-process-step">
+              <span class="au-process-step__num">01</span>
+              <h3 class="au-process-step__title">Recepción e historial</h3>
+              <p class="au-process-step__text">
+                Registras marca, modelo, año y síntoma principal o servicio preventivo requerido.
+              </p>
+            </li>
+            <li class="au-process-step">
+              <span class="au-process-step__num">02</span>
+              <h3 class="au-process-step__title">Inspección en elevador o escáner</h3>
+              <p class="au-process-step__text">
+                Revisión física de seguridad o lectura de módulos electrónicos según la solicitud.
+              </p>
+            </li>
+            <li class="au-process-step">
+              <span class="au-process-step__num">03</span>
+              <h3 class="au-process-step__title">Explicación y referencia en USD</h3>
+              <p class="au-process-step__text">
+                Se detalla la condición encontrada y el costo referencial en USD antes de ejecutar trabajos
+                adicionales.
+              </p>
+            </li>
+            <li class="au-process-step">
+              <span class="au-process-step__num">04</span>
+              <h3 class="au-process-step__title">Solicitud demostrativa por WhatsApp</h3>
+              <p class="au-process-step__text">
+                Al validar el formulario inferior se genera el resumen de ejemplo directo para contacto en
+                AV·STUDIO.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="au-section au-section--white" id="galeria">
+        <div class="container">
+          <div class="au-section-head">
+            <div>
+              <span class="au-eyebrow">05 · Galería del taller</span>
+              <h2 class="au-title">Bahías, herramientas e intervenciones técnicas</h2>
+            </div>
+            <p class="au-section-head__note">
+              Fotografías referenciales del ambiente de trabajo. Haz clic en cualquier escena para ampliar.
+            </p>
+          </div>
+
+          <div class="au-gallery-mosaic">
+            <button
+              type="button"
+              class="au-gallery-item au-gallery-item--wide"
+              data-lightbox-src="./images/galeria-frenos.jpg"
+              data-lightbox-title="Inspección de frenos y tren delantero"
+              data-lightbox-caption="Revisión de disco ventilado, mordaza hidráulica y componentes de suspensión con rueda desmontada en elevador."
+            >
+              <img
+                src="./images/galeria-frenos.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Detalle técnico de disco de freno ventilado, mordaza y amortiguador con la rueda desmontada en bahía"
+              />
+              <span class="au-gallery-overlay">
+                <span class="au-gallery-overlay__tag">01 · Frenos y suspensión</span>
+                <span class="au-gallery-overlay__title">Inspección de discos, mordazas y amortiguación</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="au-gallery-item"
+              data-lightbox-src="./images/galeria-alineacion.jpg"
+              data-lightbox-title="Alineación computarizada x4"
+              data-lightbox-caption="Sensores ópticos montados sobre rines en rampa nivelada para verificar convergencia, camber y desgaste parejo."
+            >
+              <img
+                src="./images/galeria-alineacion.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Vehículo en rampa de alineación con objetivos de medición óptica instalados en las ruedas"
+              />
+              <span class="au-gallery-overlay">
+                <span class="au-gallery-overlay__tag">02 · Geometría</span>
+                <span class="au-gallery-overlay__title">Alineación y balanceo en rampa</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="au-gallery-item"
+              data-lightbox-src="./images/galeria-motor.jpg"
+              data-lightbox-title="Servicio preventivo de motor"
+              data-lightbox-caption="Cambio limpio de aceite según especificación y revisión general bajo el capó."
+            >
+              <img
+                src="./images/galeria-motor.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Técnico realizando llenado limpio de aceite sintético de motor con embudo de acero inoxidable"
+              />
+              <span class="au-gallery-overlay">
+                <span class="au-gallery-overlay__tag">03 · Preventivo</span>
+                <span class="au-gallery-overlay__title">Cambio de aceite y filtros</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="au-gallery-item au-gallery-item--wide"
+              data-lightbox-src="./images/galeria-bahia.jpg"
+              data-lightbox-title="Vista general de bahías de servicio"
+              data-lightbox-caption="Área limpia de taller organizada con elevadores de dos columnas, gabinetes rojos de herramienta y pisos demarcados."
+            >
+              <img
+                src="./images/galeria-bahia.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Vista general de las bahías del taller automotriz con piso epóxico demarcado, elevadores hidráulicos y carros de herramientas"
+              />
+              <span class="au-gallery-overlay">
+                <span class="au-gallery-overlay__tag">04 · Infraestructura</span>
+                <span class="au-gallery-overlay__title">Bahías delimitadas y recepción técnica</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="au-section au-section--slate" id="mantenimiento">
+        <div class="container au-faq-grid">
+          <div class="au-faq-aside">
+            <span class="au-eyebrow">06 · Mantenimiento y consultas</span>
+            <h2 class="au-title">Orientación práctica para tu vehículo</h2>
+            <p class="au-prose">
+              Respuestas claras basadas únicamente en los servicios de esta demostración para ayudarte a
+              identificar qué revisión conviene solicitar.
+            </p>
+            <div class="au-disclaimer-box">
+              <strong class="au-disclaimer-box__title">Nota técnica obligatoria</strong>
+              <p class="au-disclaimer-box__text">
+                Esta guía es referencial y educativa. Consulta siempre los intervalos exactos de aceite,
+                viscosidad y reemplazos recomendados en el manual oficial del fabricante de tu vehículo.
+              </p>
+            </div>
+          </div>
+
+          <div class="au-faq-list">
+            <details class="au-faq-item" open>
+              <summary class="au-faq-item__summary">
+                <span>¿Qué incluye el mantenimiento preventivo base (desde $48.00 USD)?</span>
+                <span class="au-faq-item__icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="au-faq-item__body">
+                Comprende cambio de aceite sintético o semisintético acorde al motor, reemplazo de filtros y
+                una inspección visual de 25 puntos de seguridad antes de devolver el vehículo.
+              </div>
+            </details>
+
+            <details class="au-faq-item">
+              <summary class="au-faq-item__summary">
+                <span>¿Cuándo conviene solicitar revisión de frenos y suspensión?</span>
+                <span class="au-faq-item__icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="au-faq-item__body">
+                Si notas chirrido al frenar, vibración en el volante al detenerte, recorrido largo del pedal
+                o golpes secos en baches urbanos, puedes solicitar inspección física de pastillas, discos y
+                amortiguadores sin compromiso de cambio innecesario.
+              </div>
+            </details>
+
+            <details class="au-faq-item">
+              <summary class="au-faq-item__summary">
+                <span>¿Para qué sirve el escaneo OBD-II y la prueba de batería/alternador?</span>
+                <span class="au-faq-item__icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="au-faq-item__body">
+                Cuando se enciende un testigo en el tablero o notas dificultad al encender en frío, la
+                lectura computarizada OBD-II ($28.00 USD) junto con la prueba de carga de batería y alternador
+                ($15.00 USD) identifican el circuito afectado antes de cambiar piezas.
+              </div>
+            </details>
+
+            <details class="au-faq-item">
+              <summary class="au-faq-item__summary">
+                <span>¿Cuándo realizar alineación computarizada y balanceo x4?</span>
+                <span class="au-faq-item__icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="au-faq-item__body">
+                Después de cambiar llantas, intervenir el tren delantero, golpear un bache fuerte o al
+                percibir que el volante tiende hacia un lado en recta. El servicio incluye corrección de
+                ángulos, rotación y calibración de presión ($32.00 USD).
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="au-section au-section--white" id="turnos">
+        <div class="container au-booking-grid">
+          <div class="au-booking-info">
+            <span class="au-eyebrow au-eyebrow--bright">07 · Solicitud de turno demostrativo</span>
+            <h2 class="au-title au-title--light">Coordina la revisión de ejemplo</h2>
+            <p class="au-booking-info__lead">
+              Formulario de demostración para talleres mecánicos y centros automotrices: valida el modelo
+              y año del vehículo, verifica horario en formato 24h y arma el mensaje directo hacia WhatsApp
+              de <strong>AV·STUDIO</strong>.
+            </p>
+
+            <dl class="au-booking-facts">
+              <div class="au-booking-fact">
+                <dt>Horario de ejemplo (24h)</dt>
+                <dd>Lunes a viernes 08:00 – 18:00 · Sábados 08:30 – 13:30</dd>
+              </div>
+              <div class="au-booking-fact">
+                <dt>Sector referencial</dt>
+                <dd>Av. España y Chapetones · Cuenca, Azuay, Ecuador</dd>
+              </div>
+              <div class="au-booking-fact">
+                <dt>Alcance de esta demo</dt>
+                <dd>
+                  No agenda turnos reales en taller ni emite cotizaciones automáticas finales de repuestos.
+                </dd>
+              </div>
+            </dl>
+          </div>
+
           <form class="au-form-card" id="au-turn-form" novalidate>
-            <h3 style="font-family: var(--au-font-display); font-size: 1.45rem; margin: 0 0 1rem;">
-              Solicitud de turno mecánico
-            </h3>
+            <h3 class="au-form-card__title">Solicitud de turno mecánico</h3>
+            <p class="au-selected-note" id="au-selected-note" hidden></p>
+
             <div class="au-form-fields">
               <div class="au-field">
                 <label for="au-name">Propietario *</label>
@@ -194,12 +617,24 @@
                 <label for="au-service">Servicio *</label>
                 <select id="au-service">
                   <option value="">Selecciona servicio</option>
-                  <option value="Mantenimiento Preventivo (Cambio de Aceite & Filtros)">Mantenimiento Preventivo (Cambio de Aceite &amp; Filtros)</option>
-                  <option value="Revisión & Cambio de Pastillas de Freno">Revisión &amp; Cambio de Pastillas de Freno</option>
-                  <option value="Inspección de Amortiguadores & Terminales">Inspección de Amortiguadores &amp; Terminales</option>
-                  <option value="Escaneo Electrónico Computarizado OBD-II">Escaneo Electrónico Computarizado OBD-II</option>
-                  <option value="Prueba de Batería, Arranque y Alternador">Prueba de Batería, Arranque y Alternador</option>
-                  <option value="Alineación Computarizada y Balanceo x4">Alineación Computarizada y Balanceo x4</option>
+                  <option value="Mantenimiento Preventivo (Cambio de Aceite & Filtros)">
+                    Mantenimiento Preventivo (Cambio de Aceite &amp; Filtros)
+                  </option>
+                  <option value="Revisión & Cambio de Pastillas de Freno">
+                    Revisión &amp; Cambio de Pastillas de Freno
+                  </option>
+                  <option value="Inspección de Amortiguadores & Terminales">
+                    Inspección de Amortiguadores &amp; Terminales
+                  </option>
+                  <option value="Escaneo Electrónico Computarizado OBD-II">
+                    Escaneo Electrónico Computarizado OBD-II
+                  </option>
+                  <option value="Prueba de Batería, Arranque y Alternador">
+                    Prueba de Batería, Arranque y Alternador
+                  </option>
+                  <option value="Alineación Computarizada y Balanceo x4">
+                    Alineación Computarizada y Balanceo x4
+                  </option>
                 </select>
                 <span class="au-err" id="au-err-service"></span>
               </div>
@@ -220,13 +655,16 @@
                 <span class="au-err" id="au-err-time"></span>
               </div>
             </div>
-            <div style="margin-top: 1rem;">
-              <button type="submit" class="au-btn au-btn--red">Preparar turno por WhatsApp</button>
+
+            <div class="au-form-submit">
+              <button type="submit" class="au-btn au-btn--amber">Preparar turno por WhatsApp</button>
             </div>
-            <div id="au-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: var(--au-white); border: 1px solid var(--au-border);">
-              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+
+            <div id="au-prepared" class="au-prepared" hidden>
+              <p class="au-prepared__title">
                 <strong>Turno demostrativo preparado.</strong> Abre el mensaje hacia AV·STUDIO:
               </p>
+              <p class="au-prepared__summary" id="au-prepared-summary"></p>
               <a
                 id="au-prepared-wa"
                 href="https://wa.me/593979290747"
@@ -244,43 +682,70 @@
 
     <footer class="au-footer">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+        <div class="au-footer__top">
           <div>
-            <strong style="font-family: var(--au-font-display); font-size: 1.3rem;">TORQUE ANDINO · Automotriz</strong>
-            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; color: var(--au-muted-dark);">
-              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            <strong class="au-footer__brand">TORQUE ANDINO · Automotriz</strong>
+            <p class="au-footer__sub">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Av. España y Chapetones, Cuenca, Azuay, Ecuador.
             </p>
           </div>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+          <nav class="au-footer__links" aria-label="Enlaces del pie de página">
+            <a href="#filosofia">Filosofía</a>
             <a href="#servicios">Servicios</a>
+            <a href="#diagnostico">Inspección</a>
             <a href="#turnos">Turnos</a>
-            <a href="../../index.html" style="color: #f4a49f; font-weight: 700;">Volver a AV·STUDIO</a>
-          </div>
+            <a href="../../index.html" class="au-footer__back">Volver a AV·STUDIO</a>
+          </nav>
         </div>
 
         <div class="au-av-signature">
           <div>
-            <p style="margin: 0 0 0.25rem;">
-              <strong>¿Te gustaría una página web como esta?</strong> Creamos sitios claros para talleres, mecánicas y centros automotrices.
+            <p class="au-av-signature__title">
+              <strong>¿Te gustaría una página web como esta?</strong> Creamos sitios claros para talleres,
+              mecánicas y centros automotrices.
             </p>
-            <p style="margin: 0; color: var(--au-muted-dark);">
+            <p class="au-av-signature__meta">
               <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
-              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=automotriz#contacto" class="" style="text-decoration: underline;">
-            Quiero una página para mi taller automotriz &rarr;
-          </a>
+              <a href="mailto:andersonvallejo021@gmail.com" class="au-av-signature__link">
+                andersonvallejo021@gmail.com
+              </a>
+              ·
+              <a href="../../index.html?sector=automotriz#contacto" class="au-av-signature__link">
+                Quiero una página para mi taller automotriz &rarr;
+              </a>
             </p>
           </div>
           <a
             href="https://wa.me/593979290747"
             target="_blank"
             rel="noopener noreferrer"
-            class="au-btn au-btn--red"
+            class="au-btn au-btn--amber"
           >
             Solicitar sitio personalizado
           </a>
         </div>
       </div>
     </footer>
+
+    <dialog class="au-lightbox" id="au-lightbox" aria-labelledby="au-lightbox-title">
+      <div class="au-lightbox__shell">
+        <div class="au-lightbox__head">
+          <h3 class="au-lightbox__title" id="au-lightbox-title">Detalle de taller</h3>
+          <button
+            type="button"
+            class="au-lightbox__close"
+            id="au-lightbox-close"
+            aria-label="Cerrar galería ampliada"
+          >
+            Cerrar &times;
+          </button>
+        </div>
+        <div class="au-lightbox__media">
+          <img id="au-lightbox-img" src="" alt="" referrerpolicy="no-referrer" />
+        </div>
+        <p class="au-lightbox__caption" id="au-lightbox-caption"></p>
+      </div>
+    </dialog>
 
     <script type="module" src="./js/app.js"></script>
   </body>

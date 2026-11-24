@@ -1,18 +1,23 @@
 /* ==========================================================================
-   CASA DEL BARRANCO — Hotel Boutique & Turismo (Demostración AV·STUDIO)
-   Paleta: Arena (#ECE4D7), Verde Musgo (#2E4738), Madera Cálida (#6E4B32), Crema (#FAF7F2)
-   Pure CSS3 | Responsive
+   CASA DEL BARRANCO — Hotel Boutique Patrimonial (Demostración AV·STUDIO)
+   Paleta: Arena (#ECE4D7), Crema (#FAF7F2), Verde Musgo (#2E4738 / #1F3227),
+           Madera Cálida (#6E4B32), Tinta (#1E241F)
+   Tipografía: Cormorant Garamond + Plus Jakarta Sans + JetBrains Mono
    ========================================================================== */
 
 :root {
   --h-sand: #ece4d7;
   --h-cream: #faf7f2;
   --h-moss: #2e4738;
-  --h-moss-dark: #1f3227;
+  --h-moss-dark: #192920;
+  --h-moss-deep: #121e17;
   --h-wood: #6e4b32;
+  --h-wood-hover: #583b26;
   --h-ink: #1e241f;
-  --h-muted: #565e57;
+  --h-muted: #515952;
   --h-border: rgba(46, 71, 56, 0.16);
+  --h-border-strong: rgba(46, 71, 56, 0.28);
+  --h-border-light: rgba(250, 247, 242, 0.2);
   --h-font-display: 'Cormorant Garamond', Georgia, serif;
   --h-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --h-font-mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -26,6 +31,17 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+section[id],
+div[id="ubicacion"] {
+  scroll-margin-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -59,15 +75,24 @@ select {
   outline-offset: 3px;
 }
 
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
 .container {
-  width: min(1180px, calc(100% - 2.5rem));
+  width: min(1200px, calc(100% - 2.5rem));
   margin-inline: auto;
 }
 
+/* --------------------------------------------------------------------------
+   Demo Ribbon & Top Header
+   -------------------------------------------------------------------------- */
+
 .demo-ribbon {
-  background-color: var(--h-moss-dark);
+  background-color: var(--h-moss-deep);
   color: var(--h-cream);
   font-size: 0.8125rem;
+  border-bottom: 1px solid rgba(250, 247, 242, 0.12);
 }
 
 .demo-ribbon__inner {
@@ -76,7 +101,7 @@ select {
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  padding-block: 0.55rem;
+  padding-block: 0.5rem;
 }
 
 .demo-ribbon__back {
@@ -85,12 +110,16 @@ select {
   white-space: nowrap;
 }
 
+.demo-ribbon__back:hover {
+  text-decoration: underline;
+}
+
 .h-header {
   position: sticky;
   top: 0;
   z-index: 40;
   background-color: rgba(250, 247, 242, 0.94);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--h-border);
 }
 
@@ -98,22 +127,24 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
+  gap: 2rem;
   min-height: 4.5rem;
 }
 
 .h-brand {
   font-family: var(--h-font-display);
-  font-size: 1.55rem;
+  font-size: 1.6rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--h-moss-dark);
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .h-nav {
   display: flex;
   align-items: center;
-  gap: 1.35rem;
+  gap: 1.5rem;
 }
 
 .h-nav__link {
@@ -121,12 +152,22 @@ select {
   font-weight: 500;
   color: var(--h-muted);
   white-space: nowrap;
+  flex-shrink: 0;
+  padding-block: 0.25rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.h-nav__link:hover {
+  color: var(--h-moss-dark);
+  border-bottom-color: var(--h-wood);
 }
 
 .h-header__actions {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 .h-mobile-toggle {
@@ -142,7 +183,7 @@ select {
 .h-mobile-drawer {
   display: none;
   border-top: 1px solid var(--h-border);
-  background-color: #ffffff;
+  background-color: var(--h-cream);
   padding: 0.85rem 1.25rem 1.25rem;
 }
 
@@ -160,12 +201,18 @@ select {
   align-items: center;
   min-height: 44px;
   font-weight: 500;
+  border-bottom: 1px solid rgba(46, 71, 56, 0.08);
 }
 
 .h-mobile-drawer__back {
   color: var(--h-wood);
   font-weight: 700;
+  border-bottom: 0;
 }
+
+/* --------------------------------------------------------------------------
+   Buttons & Editorial Type Tokens
+   -------------------------------------------------------------------------- */
 
 .h-btn {
   display: inline-flex;
@@ -173,14 +220,19 @@ select {
   justify-content: center;
   gap: 0.5rem;
   min-height: 44px;
-  padding: 0.72rem 1.35rem;
+  padding: 0.72rem 1.45rem;
   font-size: 0.875rem;
   font-weight: 600;
   border: 1px solid transparent;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   white-space: nowrap;
-  transition: transform 0.18s ease, background-color 0.18s ease;
+  flex-shrink: 0;
+  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.h-btn:hover {
+  transform: translateY(-1px);
 }
 
 .h-btn--moss {
@@ -188,21 +240,39 @@ select {
   color: #ffffff;
 }
 
+.h-btn--moss:hover {
+  background-color: var(--h-moss-dark);
+}
+
 .h-btn--wood {
   background-color: var(--h-wood);
   color: #ffffff;
 }
 
+.h-btn--wood:hover {
+  background-color: var(--h-wood-hover);
+}
+
 .h-btn--outline {
   background-color: transparent;
-  border-color: rgba(46, 71, 56, 0.35);
+  border-color: var(--h-border-strong);
   color: var(--h-moss-dark);
 }
 
+.h-btn--outline:hover {
+  background-color: rgba(46, 71, 56, 0.06);
+  border-color: var(--h-moss);
+}
+
 .h-btn--outline-light {
-  background-color: transparent;
-  border-color: rgba(255, 255, 255, 0.42);
+  background-color: rgba(18, 30, 23, 0.38);
+  border-color: rgba(250, 247, 242, 0.5);
   color: #ffffff;
+}
+
+.h-btn--outline-light:hover {
+  background-color: rgba(250, 247, 242, 0.14);
+  border-color: #ffffff;
 }
 
 .h-btn-row {
@@ -211,8 +281,64 @@ select {
   gap: 0.85rem;
 }
 
+.h-kicker {
+  margin: 0 0 0.65rem;
+  font-family: var(--h-font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--h-wood);
+}
+
+.h-kicker--light {
+  color: #dfece2;
+}
+
+.h-title {
+  font-family: var(--h-font-display);
+  font-size: clamp(2rem, 3.4vw, 2.85rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 1rem;
+  color: var(--h-moss-dark);
+  text-wrap: balance;
+}
+
+.h-title--light {
+  color: var(--h-cream);
+}
+
+.h-body-lead {
+  font-size: 1.0625rem;
+  color: var(--h-ink);
+  margin: 0 0 1rem;
+  max-width: 60ch;
+}
+
+.h-body-copy {
+  color: var(--h-muted);
+  margin: 0 0 1.5rem;
+  max-width: 60ch;
+}
+
+.h-caption {
+  margin: 0.75rem 0 0;
+  font-size: 0.82rem;
+  color: var(--h-muted);
+}
+
+.h-caption--light {
+  color: rgba(250, 247, 242, 0.76);
+}
+
+/* --------------------------------------------------------------------------
+   Section Rhythm
+   -------------------------------------------------------------------------- */
+
 .h-section {
-  padding-block: clamp(3.5rem, 6vw, 5.25rem);
+  padding-block: clamp(4rem, 6.5vw, 5.75rem);
 }
 
 .h-section--sand {
@@ -221,88 +347,231 @@ select {
   border-bottom: 1px solid var(--h-border);
 }
 
-.h-eyebrow {
-  display: inline-block;
-  font-family: var(--h-font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--h-wood);
-  margin-bottom: 0.5rem;
+.h-section--moss {
+  background-color: var(--h-moss-dark);
+  color: var(--h-cream);
 }
 
-.h-eyebrow--hero {
-  color: #d6e6da;
+.h-section__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
-.h-title {
-  font-family: var(--h-font-display);
-  font-size: clamp(1.9rem, 3.3vw, 2.75rem);
-  font-weight: 700;
-  line-height: 1.12;
-  margin: 0 0 0.85rem;
+.h-section__summary {
+  margin: 0;
+  max-width: 44ch;
+  color: var(--h-muted);
+  font-size: 0.95rem;
 }
 
-.h-title--hero {
-  color: #ffffff;
-}
+/* --------------------------------------------------------------------------
+   1. PORTADA INMERSIVA (Full-Bleed Architectural Frame — Not 50/50 Split)
+   -------------------------------------------------------------------------- */
 
 .h-hero {
-  background-color: var(--h-moss);
+  position: relative;
+  min-height: clamp(560px, 78vh, 760px);
+  display: flex;
+  align-items: flex-end;
+  background-color: var(--h-moss-deep);
   color: var(--h-cream);
-  padding-block: clamp(3rem, 5.5vw, 4.75rem);
+  overflow: hidden;
 }
 
-.h-hero__grid {
+.h-hero__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.h-hero__backdrop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.h-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(14, 24, 18, 0.74) 0%,
+      rgba(14, 24, 18, 0.48) 54%,
+      rgba(14, 24, 18, 0.14) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(16, 27, 21, 0.3) 0%,
+      rgba(16, 27, 21, 0.4) 38%,
+      rgba(16, 27, 21, 0.86) 76%,
+      rgba(14, 24, 18, 0.96) 100%
+    );
+}
+
+.h-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-block: clamp(3rem, 6vw, 4.5rem) clamp(2rem, 4vw, 2.75rem);
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
-  gap: clamp(2rem, 4vw, 3.5rem);
-  align-items: center;
+  gap: 2.25rem;
+}
+
+.h-hero__headline-block {
+  max-width: 720px;
+}
+
+.h-hero__title {
+  font-family: var(--h-font-display);
+  font-size: clamp(2.45rem, 4.8vw, 4.1rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  margin: 0 0 1rem;
+  color: #ffffff;
+  text-wrap: balance;
 }
 
 .h-hero__lead {
-  color: rgba(250, 247, 242, 0.88);
-  max-width: 55ch;
-  margin: 0 0 1.5rem;
+  color: rgba(250, 247, 242, 0.92);
+  font-size: 1.02rem;
+  max-width: 58ch;
+  margin: 0 0 1.65rem;
 }
 
-.h-hero__media img {
+.h-hero__factbar {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  padding: 1.15rem 1.35rem;
+  background-color: rgba(18, 30, 23, 0.82);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(250, 247, 242, 0.2);
+  border-radius: 6px;
+}
+
+.h-factbar__item {
+  padding-right: 1rem;
+  border-right: 1px solid rgba(250, 247, 242, 0.16);
+}
+
+.h-factbar__item:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+.h-factbar__item dt {
+  font-family: var(--h-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c8dbc9;
+  margin-bottom: 0.25rem;
+}
+
+.h-factbar__item dd {
+  margin: 0;
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   2. ARQUITECTURA PATRIMONIAL
+   -------------------------------------------------------------------------- */
+
+.h-arch-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.h-spec-list {
+  margin: 1.75rem 0 0;
+  border-top: 1px solid var(--h-border);
+}
+
+.h-spec-list__row {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 0.9rem;
+  border-bottom: 1px solid var(--h-border);
+}
+
+.h-spec-list__row dt {
+  font-family: var(--h-font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--h-wood);
+}
+
+.h-spec-list__row dd {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--h-ink);
+}
+
+.h-arch__figure {
+  margin: 0;
+}
+
+.h-arch__frame {
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--h-sand);
+  border: 1px solid var(--h-border);
+}
+
+.h-arch__frame img {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 8px;
 }
+
+/* --------------------------------------------------------------------------
+   3. HABITACIONES Y SUITES
+   -------------------------------------------------------------------------- */
 
 .h-rooms-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.35rem;
+  gap: 1.5rem;
 }
 
 .h-room-card {
-  background-color: #ffffff;
+  background-color: var(--h-cream);
   border: 1px solid var(--h-border);
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .h-room-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 26px rgba(31, 50, 39, 0.08);
+  border-color: var(--h-border-strong);
 }
 
 .h-room-card__media {
   overflow: hidden;
-  background-color: var(--h-cream);
+  background-color: var(--h-sand);
+  aspect-ratio: 4 / 3;
 }
 
 .h-room-card__media img {
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   transition: transform 0.35s ease;
@@ -313,68 +582,368 @@ select {
 }
 
 .h-room-card__body {
-  padding: 1.35rem;
+  padding: 1.45rem;
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.15rem;
+  gap: 1.25rem;
 }
 
-.h-room-card__cap {
-  margin-bottom: 0.2rem;
+.h-room-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--h-font-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--h-muted);
+  margin-bottom: 0.45rem;
 }
 
 .h-room-card__title {
   font-family: var(--h-font-display);
-  font-size: 1.48rem;
-  line-height: 1.15;
-  margin: 0 0 0.35rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.12;
+  color: var(--h-moss-dark);
+  margin: 0 0 0.45rem;
 }
 
 .h-room-card__price {
   font-family: var(--h-font-mono);
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--h-wood);
+  font-variant-numeric: tabular-nums;
 }
 
 .h-room-card__desc {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--h-muted);
-  margin: 0.5rem 0 0;
+  margin: 0.65rem 0 0;
 }
 
 .h-room-card__btn {
   width: 100%;
 }
 
+/* --------------------------------------------------------------------------
+   4. EXPERIENCIAS EN CUENCA Y ALREDEDORES
+   -------------------------------------------------------------------------- */
+
+.h-exp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.h-exp__media {
+  margin: 0;
+  position: sticky;
+  top: 6rem;
+}
+
+.h-exp__frame {
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--h-moss-deep);
+  border: 1px solid var(--h-border-light);
+}
+
+.h-exp__frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.h-exp__intro {
+  color: rgba(250, 247, 242, 0.85);
+  margin: 0 0 2rem;
+  max-width: 56ch;
+}
+
+.h-exp-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--h-border-light);
+}
+
+.h-exp-list__item {
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var(--h-border-light);
+}
+
+.h-exp-list__meta {
+  font-family: var(--h-font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c8dbc9;
+  margin-bottom: 0.35rem;
+}
+
+.h-exp-list__item h3 {
+  font-family: var(--h-font-display);
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.18;
+  color: #ffffff;
+  margin: 0 0 0.4rem;
+}
+
+.h-exp-list__item p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: rgba(250, 247, 242, 0.82);
+}
+
+.h-exp__action {
+  margin-top: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. SERVICIOS Y COMODIDADES
+   -------------------------------------------------------------------------- */
+
+.h-serv-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.h-amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 2rem;
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--h-border);
+}
+
+.h-amenity h3 {
+  font-family: var(--h-font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--h-moss-dark);
+  margin: 0 0 0.35rem;
+}
+
+.h-amenity p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--h-muted);
+}
+
+.h-serv__figure {
+  margin: 0;
+}
+
+.h-serv__frame {
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--h-sand);
+  border: 1px solid var(--h-border);
+}
+
+.h-serv__frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   6. GALERÍA FOTOGRÁFICA ARQUITECTÓNICA
+   -------------------------------------------------------------------------- */
+
+.h-gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.25rem;
+  background-color: rgba(46, 71, 56, 0.08);
+  border-radius: 6px;
+}
+
+.h-filter-btn {
+  border: 0;
+  background: transparent;
+  color: var(--h-muted);
+  padding: 0.5rem 0.9rem;
+  min-height: 40px;
+  border-radius: 4px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.16s ease, color 0.16s ease;
+}
+
+.h-filter-btn:hover {
+  color: var(--h-moss-dark);
+}
+
+.h-filter-btn.is-active {
+  background-color: var(--h-cream);
+  color: var(--h-moss-dark);
+  box-shadow: 0 1px 3px rgba(30, 36, 31, 0.08);
+}
+
+.h-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.h-gallery-card {
+  margin: 0;
+  background-color: var(--h-cream);
+  border: 1px solid var(--h-border);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.h-gallery-card[hidden] {
+  display: none;
+}
+
+.h-gallery-card--wide {
+  grid-column: span 2;
+}
+
+.h-gallery-card__media {
+  overflow: hidden;
+  background-color: var(--h-sand);
+  height: 280px;
+}
+
+.h-gallery-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.h-gallery-card:hover .h-gallery-card__media img {
+  transform: scale(1.03);
+}
+
+.h-gallery-card__cap {
+  padding: 0.85rem 1.1rem;
+  font-size: 0.85rem;
+  color: var(--h-muted);
+  border-top: 1px solid var(--h-border);
+}
+
+.h-gallery-card__cap span {
+  font-weight: 600;
+  color: var(--h-moss-dark);
+}
+
+/* --------------------------------------------------------------------------
+   7 & 8. UBICACIÓN, CONTACTO Y FORMULARIO DE DISPONIBILIDAD
+   -------------------------------------------------------------------------- */
+
 .h-stay-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: 2.25rem;
+  gap: clamp(2rem, 5vw, 3.75rem);
   align-items: start;
 }
 
 .h-stay__copy {
   color: var(--h-muted);
+  margin: 0 0 1.5rem;
 }
 
-.h-stay__note {
+.h-location-box {
+  background-color: var(--h-sand);
+  border: 1px solid var(--h-border);
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.h-location-box h3 {
+  font-family: var(--h-font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin: 0 0 0.45rem;
+  color: var(--h-moss-dark);
+}
+
+.h-location-box__address {
+  margin: 0 0 1.25rem;
+  font-size: 0.94rem;
+  color: var(--h-ink);
+}
+
+.h-distance-list {
+  margin: 0;
+  border-top: 1px solid var(--h-border);
+}
+
+.h-distance-list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.65rem;
+  border-bottom: 1px solid var(--h-border);
   font-size: 0.88rem;
+}
+
+.h-distance-list dt {
+  color: var(--h-muted);
+}
+
+.h-distance-list dd {
+  margin: 0;
+  font-family: var(--h-font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--h-moss-dark);
+  white-space: nowrap;
+}
+
+.h-location-box__meta {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--h-muted);
+}
+
+.h-demo-notice {
+  margin: 1.15rem 0 0;
+  font-size: 0.84rem;
   color: var(--h-muted);
 }
 
 .h-form-card {
   background-color: #ffffff;
   border: 1px solid var(--h-border);
-  border-radius: 8px;
-  padding: 1.75rem;
+  border-radius: 6px;
+  padding: 2rem;
+}
+
+.h-form-card__head {
+  margin-bottom: 1.25rem;
 }
 
 .h-form-card__title {
   font-family: var(--h-font-display);
-  font-size: 1.5rem;
-  margin: 0 0 1rem;
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--h-moss-dark);
+  margin: 0;
 }
 
 .h-form-fields {
@@ -394,7 +963,8 @@ select {
 
 .h-field label {
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
+  color: var(--h-moss-dark);
 }
 
 .h-field input,
@@ -402,35 +972,147 @@ select {
   width: 100%;
   min-height: 44px;
   padding: 0.55rem 0.8rem;
-  border: 1px solid rgba(46, 71, 56, 0.25);
-  border-radius: 5px;
+  border: 1px solid var(--h-border-strong);
+  border-radius: 4px;
   background-color: var(--h-cream);
+}
+
+.h-field input:focus-visible,
+.h-field select:focus-visible {
+  outline: 2px solid var(--h-moss);
+  outline-offset: 1px;
 }
 
 .h-err {
   font-size: 0.78rem;
-  color: #a6261e;
+  color: #9e2a22;
   min-height: 1rem;
 }
 
+.h-estimate {
+  margin-top: 0.85rem;
+  padding: 0.75rem 0.95rem;
+  background-color: var(--h-cream);
+  border: 1px solid var(--h-border);
+  border-radius: 4px;
+  font-size: 0.86rem;
+  color: var(--h-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.h-form-actions {
+  margin-top: 1.1rem;
+}
+
+.h-form-submit {
+  width: 100%;
+}
+
+.h-prepared {
+  margin-top: 1.25rem;
+  padding: 1.15rem;
+  background-color: var(--h-sand);
+  border: 1px solid var(--h-border-strong);
+  border-radius: 6px;
+}
+
+.h-prepared__text {
+  margin: 0 0 0.8rem;
+  font-size: 0.92rem;
+  color: var(--h-ink);
+}
+
+/* --------------------------------------------------------------------------
+   Footer & Official AV·STUDIO Signature
+   -------------------------------------------------------------------------- */
+
 .h-footer {
-  background-color: var(--h-moss-dark);
+  background-color: var(--h-moss-deep);
   color: var(--h-cream);
-  padding-block: 3rem 2.25rem;
+  padding-block: 3.25rem 2.5rem;
+}
+
+.h-footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.h-footer__brand {
+  font-family: var(--h-font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.h-footer__sub {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  color: rgba(250, 247, 242, 0.78);
+}
+
+.h-footer__links {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.h-footer__links a:hover {
+  text-decoration: underline;
+}
+
+.h-footer__back {
+  color: #d6e6da;
+  font-weight: 700;
 }
 
 .h-av-signature {
-  margin-top: 1.5rem;
-  padding: 1.25rem;
-  background-color: var(--h-moss);
-  border: 1px solid rgba(250, 247, 242, 0.22);
-  border-radius: 8px;
+  margin-top: 2rem;
+  padding: 1.35rem;
+  background-color: var(--h-moss-dark);
+  border: 1px solid var(--h-border-light);
+  border-radius: 6px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   font-size: 0.875rem;
+}
+
+.h-av-signature__title {
+  margin: 0 0 0.3rem;
+}
+
+.h-av-signature__meta {
+  margin: 0;
+  color: rgba(250, 247, 242, 0.88);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.h-av-signature__meta a {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints (Tablet & Mobile)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .h-hero__factbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .h-factbar__item:nth-child(2n) {
+    border-right: 0;
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 960px) {
@@ -444,24 +1126,82 @@ select {
     place-items: center;
   }
 
-  .h-hero__grid,
+  .h-arch-grid,
+  .h-exp-grid,
+  .h-serv-grid,
   .h-stay-grid {
     grid-template-columns: 1fr;
   }
 
-  .h-rooms-grid {
+  .h-exp__media {
+    position: static;
+  }
+
+  .h-rooms-grid,
+  .h-gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .h-gallery-card--wide {
+    grid-column: span 2;
   }
 }
 
 @media (max-width: 640px) {
   .container {
-    width: min(1180px, calc(100% - 1.5rem));
+    width: min(1200px, calc(100% - 1.5rem));
   }
 
+  .h-hero {
+    min-height: 520px;
+  }
+
+  .h-hero__title {
+    font-size: clamp(2.1rem, 8.2vw, 2.65rem);
+  }
+
+  .h-hero__scrim {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(14, 24, 18, 0.56) 0%,
+        rgba(14, 24, 18, 0.62) 45%,
+        rgba(14, 24, 18, 0.92) 82%,
+        rgba(14, 24, 18, 0.98) 100%
+      );
+  }
+
+  .h-hero__factbar,
   .h-rooms-grid,
+  .h-amenities-grid,
+  .h-gallery-grid,
   .h-form-fields {
     grid-template-columns: 1fr;
+  }
+
+  .h-factbar__item {
+    border-right: 0;
+    padding-right: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(250, 247, 242, 0.14);
+  }
+
+  .h-factbar__item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .h-spec-list__row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .h-gallery-card--wide {
+    grid-column: auto;
+  }
+
+  .h-gallery-card__media {
+    height: 230px;
   }
 
   .h-form-card {

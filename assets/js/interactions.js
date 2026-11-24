@@ -389,23 +389,23 @@ function initCustomizationPreview() {
     av: {
       bg: '#F3F0E9',
       ink: '#171717',
-      accent: '#A64E2B',
+      accent: '#C96F4A',
       surface: '#FFFFFF',
       label: 'Marfil cálido · Carbón · Terracota',
     },
     nocturno: {
-      bg: '#171717',
+      bg: '#242522',
       ink: '#F3F0E9',
       accent: '#C96F4A',
-      surface: '#242422',
-      label: 'Carbón · Marfil · Acento Terracota',
+      surface: '#30302E',
+      label: 'Carbón · Marfil · Terracota',
     },
     clinico: {
       bg: '#F2F5F3',
-      ink: '#1A2B24',
-      accent: '#2D6A54',
+      ink: '#1F3531',
+      accent: '#355650',
       surface: '#FFFFFF',
-      label: 'Blanco mineral · Verde profundo',
+      label: 'Verde salvia claro · Petróleo',
     },
   };
 
@@ -625,3 +625,4 @@ export function initInteractions() {
   initFaqAccordion();
   initScrollReveals();
 }
+

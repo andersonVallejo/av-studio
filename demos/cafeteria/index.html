@@ -13,7 +13,7 @@
     <meta property="og:title" content="Origen Cuenca — Cafetería de Especialidad (Demostración) | AV·STUDIO" />
     <meta
       property="og:description"
-      content="Barra ficticia de café ecuatoriano en El Vado con trazabilidad de orígenes, métodos filtrados y pedido por WhatsApp."
+      content="Barra ficticia de café ecuatoriano en El Vado con perfiles de orígenes demostrativos, métodos filtrados y consulta por WhatsApp."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AV·STUDIO" />
@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -39,13 +39,15 @@
     <header class="c-header">
       <div class="container c-header__inner">
         <a href="#inicio" class="c-brand">ORIGEN CUENCA</a>
+
         <nav class="c-nav" aria-label="Navegación de la cafetería">
-          <a class="c-nav__link" href="#inicio">Inicio</a>
+          <a class="c-nav__link" href="#filosofia">Filosofía</a>
+          <a class="c-nav__link" href="#carta">Carta</a>
           <a class="c-nav__link" href="#origen">Orígenes</a>
           <a class="c-nav__link" href="#metodos">Métodos</a>
-          <a class="c-nav__link" href="#carta">Carta</a>
-          <a class="c-nav__link" href="#ubicacion">Ubicación</a>
+          <a class="c-nav__link" href="#galeria">Galería</a>
         </nav>
+
         <div class="c-header__actions">
           <a href="#carta" class="c-btn c-btn--espresso c-header__cta">Explorar carta</a>
           <button
@@ -54,44 +56,59 @@
             id="c-mobile-toggle"
             aria-expanded="false"
             aria-controls="c-mobile-drawer"
-            aria-label="Abrir menú"
+            aria-label="Abrir menú de navegación"
           >
-            &#9776;
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+            </svg>
           </button>
         </div>
       </div>
+
       <nav class="c-mobile-drawer" id="c-mobile-drawer" hidden aria-label="Menú móvil">
         <a href="#inicio">Inicio</a>
-        <a href="#origen">Orígenes</a>
-        <a href="#metodos">Métodos</a>
-        <a href="#carta">Carta</a>
-        <a href="#ubicacion">Ubicación</a>
-        <a href="../../index.html" class="c-mobile-drawer__back">
-          &larr; Volver a AV·STUDIO
-        </a>
+        <a href="#filosofia">Filosofía del café</a>
+        <a href="#carta">Carta en USD</a>
+        <a href="#origen">Orígenes demostrativos</a>
+        <a href="#metodos">Métodos de preparación</a>
+        <a href="#experiencia">Experiencia en barra</a>
+        <a href="#galeria">Galería fotográfica</a>
+        <a href="#ubicacion">Ubicación y consultas</a>
+        <a href="../../index.html" class="c-mobile-drawer__back">&larr; Volver a AV·STUDIO</a>
       </nav>
     </header>
 
     <main>
+      <!-- 1. PORTADA CAFETERA ASIMÉTRICA (38 / 62 ROASTED EDITORIAL) -->
       <section class="c-hero" id="inicio">
         <div class="container c-hero__grid">
-          <div>
-            <span class="c-eyebrow c-eyebrow--hero">
-              Barra de especialidad · Barrio El Vado, Cuenca
-            </span>
-            <h1 class="c-hero__title">Café ecuatoriano de altura extraído con calma y oficio.</h1>
+          <div class="c-hero__copy">
+            <p class="c-eyebrow c-eyebrow--hero">Barra de especialidad &middot; Barrio El Vado, Cuenca</p>
+            <h1 class="c-hero__title">Café ecuatoriano extraído con calma y oficio.</h1>
             <p class="c-hero__lead">
-              Origen Cuenca es una cafetería ficticia creada por AV·STUDIO para mostrar cómo tu
-              barra de café puede presentar lotes ecuatorianos, métodos filtrados, repostería y
-              pedidos rápidos por WhatsApp.
+              Origen Cuenca es una cafetería ficticia diseñada por AV·STUDIO para mostrar cómo una barra de autor
+              presenta perfiles de café ecuatoriano, métodos filtrados y una carta referencial en USD lista para
+              consultar por WhatsApp.
             </p>
+
+            <dl class="c-hero__facts">
+              <div>
+                <dt>Horario referencial (24h)</dt>
+                <dd class="c-mono">Lun–Sáb 07:30–20:00 &middot; Dom 08:30–18:00</dd>
+              </div>
+              <div>
+                <dt>Barra &amp; granos</dt>
+                <dd>Filtrados en mesa, espresso doble y bolsas de 250 g</dd>
+              </div>
+            </dl>
+
             <div class="c-btn-row">
-              <a href="#carta" class="c-btn c-btn--caramel">Ver bebidas y repostería</a>
-              <a href="#origen" class="c-btn c-btn--outline-light">Conocer nuestros granos</a>
+              <a href="#carta" class="c-btn c-btn--caramel">Explorar carta en USD</a>
+              <a href="#metodos" class="c-btn c-btn--outline-light">Métodos de preparación</a>
             </div>
           </div>
 
-          <div class="c-hero__media">
+          <figure class="c-hero__media">
             <picture>
               <source srcset="./images/hero.webp" type="image/webp" />
               <img
@@ -100,172 +117,495 @@
                 height="900"
                 fetchpriority="high"
                 decoding="async"
-                alt="Barra artesanal de cafetería en Cuenca con método filtrado V60 y taza de latte en cerámica"
+                alt="Barra de madera artesanal en El Vado con filtrado V60, taza de latte en cerámica y patio empedrado"
               />
             </picture>
-          </div>
+            <figcaption class="c-hero__caption">
+              <span>Barra demostrativa de El Vado &middot; Cafetería ficticia</span>
+              <span class="c-mono">07:30–20:00 (24h)</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <section class="c-section" id="origen">
+      <!-- 2. FILOSOFÍA DEL CAFÉ -->
+      <section class="c-section" id="filosofia">
         <div class="container">
-          <span class="c-eyebrow">Tostaduría y trazabilidad (Ejemplo)</span>
-          <h2 class="c-title">Granos seleccionados de fincas del sur del Ecuador.</h2>
-          <p class="c-origins-lead">
-            Selecciona un origen para ver cómo una cafetería puede educar a sus clientes sobre
-            perfiles de taza y métodos recomendados.
-          </p>
-
-          <div class="c-origins-grid">
-            <div class="c-origin-tabs" role="group" aria-label="Seleccionar origen de café">
-              <button type="button" class="c-origin-tab is-active" data-origin-key="loja" aria-pressed="true">
-                <strong>Loja · Finca La Cordillera</strong>
-                <div class="c-origin-tab__sub">1.850 m · Lavado</div>
-              </button>
-              <button type="button" class="c-origin-tab" data-origin-key="azuay" aria-pressed="false">
-                <strong>Azuay · Valle de Gualaceo</strong>
-                <div class="c-origin-tab__sub">2.100 m · Honey amarillo</div>
-              </button>
-              <button type="button" class="c-origin-tab" data-origin-key="zamora" aria-pressed="false">
-                <strong>Zamora Chinchipe · Palanda</strong>
-                <div class="c-origin-tab__sub">1.700 m · Natural</div>
-              </button>
+          <div class="c-philo-top">
+            <div>
+              <p class="c-eyebrow">Filosofía del café</p>
+              <h2 class="c-title">Cultura de barra pensada para explicar cada taza.</h2>
             </div>
+            <p class="c-philo-lead">
+              Más allá de listar bebidas, este modelo organiza granos ecuatorianos de ejemplo, métodos de extracción y
+              precios referenciales para orientar al visitante antes de acercarse a la barra o escribir por WhatsApp.
+            </p>
+          </div>
 
-            <article class="c-origin-panel" aria-live="polite">
-              <span class="c-eyebrow">Perfil sensorial de referencia</span>
-              <h3 id="c-origin-title" class="c-origin-panel__title"></h3>
-              <p id="c-origin-process" class="c-origin-panel__process"></p>
-              <p id="c-origin-notes" class="c-origin-panel__notes"></p>
-              <p id="c-origin-rec" class="c-origin-panel__rec"></p>
+          <div class="c-philo-grid">
+            <article class="c-philo-item">
+              <span class="c-mono c-philo-item__idx">01</span>
+              <h3>Enfoque ecuatoriano ilustrativo</h3>
+              <p>
+                Presenta perfiles demostrativos asociados a distintas alturas y procesos del sur del Ecuador sin inventar
+                historias reales de fincas ni certificaciones.
+              </p>
+            </article>
+            <article class="c-philo-item">
+              <span class="c-mono c-philo-item__idx">02</span>
+              <h3>Extracción honesta por método</h3>
+              <p>
+                Detalla cómo cambia la taza entre un filtrado V60 o Chemex, una Prensa Francesa para compartir o una
+                infusión fría de 16 horas.
+              </p>
+            </article>
+            <article class="c-philo-item">
+              <span class="c-mono c-philo-item__idx">03</span>
+              <h3>Consulta sin pedidos ficticios</h3>
+              <p>
+                La selección de barra calcula un subtotal orientativo en USD y arma una consulta demostrativa hacia
+                WhatsApp sin simular pagos ni inventario real.
+              </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="c-section c-section--craft" id="metodos">
-        <div class="container c-craft-grid">
-          <div class="c-craft__media">
-            <picture>
-              <source srcset="./images/metodos.webp" type="image/webp" />
-              <img
-                src="./images/metodos.jpg"
-                width="1200"
-                height="900"
-                loading="lazy"
-                decoding="async"
-                alt="Extracción artesanal de café en método Chemex y V60 sobre barra de madera con molino de especialidad"
-              />
-            </picture>
-          </div>
-          <div>
-            <span class="c-eyebrow">Barismo de especialidad</span>
-            <h2 class="c-title">Cada molienda y temperatura explicada con claridad</h2>
-            <p class="c-craft__copy">
-              Un espacio editorial dedicado a la barra ayuda a diferenciar una cafetería de autor:
-              destaca tus métodos filtrados, moliendas disponibles para casa y maridajes con
-              repostería artesanal.
-            </p>
-            <ul class="c-craft__list">
-              <li>Extracciones en V60, Chemex y Prensa Francesa preparadas al momento.</li>
-              <li>Presentación de granos en bolsa de 250 g listos para llevar o moler.</li>
-              <li>Pedido previo sin filas mediante resumen directo por WhatsApp.</li>
-            </ul>
-            <a href="#carta" class="c-btn c-btn--espresso">Ir a la carta en USD</a>
-          </div>
-        </div>
-      </section>
-
+      <!-- 3. CARTA Y ESPECIALIDADES (FILTROS + LISTA DE AUTOR + BANDEJA DE CONSULTA) -->
       <section class="c-section c-section--soft" id="carta">
         <div class="container">
-          <span class="c-eyebrow">Carta digital en USD</span>
-          <h2 class="c-title">Bebidas calientes, frías y repostería</h2>
+          <div class="c-carta-head">
+            <div>
+              <p class="c-eyebrow">Carta digital referencial en USD</p>
+              <h2 class="c-title">Bebidas calientes, filtrados, fríos y repostería</h2>
+            </div>
+            <p class="c-carta-note">
+              Precios referenciales de demostración en dólares estadounidenses (USD). Agrega artículos o pulsa
+              «Consultar» para incluirlos en tu resumen de WhatsApp.
+            </p>
+          </div>
 
           <div class="c-tabs" role="group" aria-label="Categorías de cafetería">
-            <button type="button" class="c-tab is-active" data-cafe-filter="Todos">Todos</button>
-            <button type="button" class="c-tab" data-cafe-filter="Cafés de origen">Cafés de origen</button>
-            <button type="button" class="c-tab" data-cafe-filter="Métodos">Métodos</button>
-            <button type="button" class="c-tab" data-cafe-filter="Bebidas frías">Bebidas frías</button>
-            <button type="button" class="c-tab" data-cafe-filter="Repostería">Repostería</button>
+            <button type="button" class="c-tab is-active" data-cafe-filter="Todos" aria-pressed="true">Todos</button>
+            <button type="button" class="c-tab" data-cafe-filter="Cafés de origen" aria-pressed="false">
+              Cafés de origen
+            </button>
+            <button type="button" class="c-tab" data-cafe-filter="Métodos" aria-pressed="false">Métodos</button>
+            <button type="button" class="c-tab" data-cafe-filter="Bebidas frías" aria-pressed="false">
+              Bebidas frías
+            </button>
+            <button type="button" class="c-tab" data-cafe-filter="Repostería" aria-pressed="false">Repostería</button>
           </div>
 
           <div class="c-menu-layout">
             <div class="c-menu-grid" id="c-menu-grid"></div>
 
-            <aside class="c-tray" aria-label="Bandeja demostrativa">
-              <span class="c-eyebrow" style="color: var(--c-caramel-light);">Pedido demostrativo</span>
-              <h3 style="font-family: var(--c-font-display); margin: 0 0 0.35rem;">Tu selección de barra</h3>
-              <p style="font-size: 0.82rem; opacity: 0.82; margin: 0;">
-                Ejemplo interactivo sin cobros reales; prepara el resumen hacia WhatsApp.
+            <aside class="c-tray" aria-label="Bandeja de consulta demostrativa">
+              <p class="c-eyebrow c-eyebrow--tray">Consulta demostrativa</p>
+              <h3 class="c-tray__title">Tu selección de barra</h3>
+              <p class="c-tray__sub">
+                Prepara una consulta hacia WhatsApp de AV·STUDIO. No confirma pedidos, cobros ni disponibilidad real.
               </p>
+
+              <p class="c-tray__origin-tag" id="c-tray-origin"></p>
+
               <ul class="c-tray__list" id="c-tray-list"></ul>
-              <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 1rem;">
-                <span>Total estimado</span>
-                <span id="c-tray-total" style="font-family: var(--c-font-mono);">$0.00 USD</span>
+
+              <div class="c-tray__total-row">
+                <span>Subtotal referencial</span>
+                <span id="c-tray-total" class="c-mono">$0.00 USD</span>
               </div>
-              <a
-                id="c-tray-wa"
-                href="https://wa.me/593979290747"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="c-btn c-btn--caramel"
-                style="width: 100%;"
-              >
-                Consultar por WhatsApp
-              </a>
+
+              <div class="c-tray__actions">
+                <a
+                  id="c-tray-wa"
+                  href="https://wa.me/593979290747"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="c-btn c-btn--caramel c-tray__wa-btn"
+                >
+                  Consultar selección por WhatsApp
+                </a>
+                <button type="button" id="c-tray-clear" class="c-btn c-btn--outline-light c-tray__clear-btn">
+                  Vaciar selección
+                </button>
+              </div>
             </aside>
           </div>
         </div>
       </section>
 
-      <section class="c-section" id="ubicacion">
-        <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; align-items: center;">
-          <div>
-            <span class="c-eyebrow">Ubicación y horarios (Ejemplo)</span>
-            <h2 class="c-title">Barrio El Vado · Cuenca, Ecuador</h2>
-            <p style="color: var(--c-muted); margin: 0;">
-              Lunes a sábado: 07:30 a 20:00 · Domingos: 08:30 a 18:00 (24h).<br />
-              Negocio ficticio de muestra creado por AV·STUDIO.
+      <!-- 4. ORÍGENES Y PERFILES (PERFILES FICTICIOS DE DEMOSTRACIÓN) -->
+      <section class="c-section c-section--stone" id="origen">
+        <div class="container">
+          <div class="c-origins-head">
+            <div>
+              <p class="c-eyebrow">Perfiles ficticios de demostración &middot; Ecuador</p>
+              <h2 class="c-title">Explora los perfiles sensoriales de ejemplo</h2>
+            </div>
+            <p class="c-origins-lead">
+              Los nombres de lotes, altitudes y notas corresponden a perfiles ficticios creados para esta muestra. No
+              constituyen trazabilidad certificada ni acuerdos con productores reales.
             </p>
           </div>
-          <a
-            href="https://wa.me/593979290747"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="c-btn c-btn--espresso"
-          >
-            Solicitar web similar por WhatsApp
-          </a>
+
+          <div class="c-origins-grid">
+            <div class="c-origin-tabs" role="group" aria-label="Seleccionar origen de café de demostración">
+              <button type="button" class="c-origin-tab is-active" data-origin-key="loja" aria-pressed="true">
+                <span class="c-mono c-origin-tab__idx">Perfil 01</span>
+                <strong>Loja &middot; Finca La Cordillera</strong>
+                <span class="c-origin-tab__sub c-mono">1.850 m &middot; Lavado</span>
+              </button>
+              <button type="button" class="c-origin-tab" data-origin-key="azuay" aria-pressed="false">
+                <span class="c-mono c-origin-tab__idx">Perfil 02</span>
+                <strong>Azuay &middot; Valle de Gualaceo</strong>
+                <span class="c-origin-tab__sub c-mono">2.100 m &middot; Honey amarillo</span>
+              </button>
+              <button type="button" class="c-origin-tab" data-origin-key="zamora" aria-pressed="false">
+                <span class="c-mono c-origin-tab__idx">Perfil 03</span>
+                <strong>Zamora Chinchipe &middot; Palanda</strong>
+                <span class="c-origin-tab__sub c-mono">1.700 m &middot; Natural</span>
+              </button>
+            </div>
+
+            <article class="c-origin-panel" aria-live="polite">
+              <p class="c-eyebrow">Ficha de perfil ilustrativo</p>
+              <h3 id="c-origin-title" class="c-origin-panel__title"></h3>
+              <p id="c-origin-process" class="c-origin-panel__process"></p>
+
+              <dl class="c-origin-specs">
+                <div>
+                  <dt>Notas referenciales</dt>
+                  <dd id="c-origin-notes"></dd>
+                </div>
+                <div>
+                  <dt>Sugerencia de extracción</dt>
+                  <dd id="c-origin-rec"></dd>
+                </div>
+              </dl>
+
+              <div class="c-origin-panel__foot">
+                <span class="c-origin-panel__badge-text">Datos ficticios de muestra</span>
+                <a href="#carta" class="c-origin-panel__link">Ver bebidas relacionadas en carta &rarr;</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. MÉTODOS DE PREPARACIÓN (FOTOGRAFÍAS PROPIAS DEDICADAS) -->
+      <section class="c-section" id="metodos">
+        <div class="container">
+          <div class="c-methods-head">
+            <div>
+              <p class="c-eyebrow">Métodos contemplados en la barra</p>
+              <h2 class="c-title">Cada extracción cambia cuerpo, aroma y dulzor</h2>
+            </div>
+            <p class="c-methods-note">
+              Fotografías ilustrativas dedicadas a los métodos descritos en la carta y los perfiles de demostración:
+              filtrados manuales, inmersión en prensa y extracción lenta en frío.
+            </p>
+          </div>
+
+          <div class="c-methods-list">
+            <article class="c-method-card">
+              <figure class="c-method-card__media">
+                <picture>
+                  <source srcset="./images/metodos.webp" type="image/webp" />
+                  <img
+                    src="./images/metodos.jpg"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Vertido con tetera cuello de cisne sobre cono V60 de cerámica y jarra de vidrio"
+                  />
+                </picture>
+              </figure>
+              <div class="c-method-card__body">
+                <span class="c-mono c-method-card__idx">Método 01 &middot; 280 ml en mesa</span>
+                <h3>Filtrado manual V60</h3>
+                <p>
+                  Extracción controlada mediante filtro de papel que entrega una taza limpia y aromática, sugerida para
+                  resaltar matices cítricos y de panela.
+                </p>
+                <button type="button" class="c-method-card__btn" data-jump-category="Métodos">
+                  Ver en carta de Métodos &rarr;
+                </button>
+              </div>
+            </article>
+
+            <article class="c-method-card">
+              <figure class="c-method-card__media">
+                <img
+                  src="./images/chemex-prensa.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Jarra Chemex con collar de madera junto a prensa francesa sobre barra oscura"
+                />
+              </figure>
+              <div class="c-method-card__body">
+                <span class="c-mono c-method-card__idx">Método 02 &middot; 500 ml para compartir</span>
+                <h3>Chemex y Prensa Francesa</h3>
+                <p>
+                  Dos propuestas contrastantes: claridad sedosa en Chemex frente al cuerpo denso e inmersión completa de
+                  la Prensa Francesa pensada para dos tazas.
+                </p>
+                <button type="button" class="c-method-card__btn" data-jump-category="Métodos">
+                  Ver prensa y filtrados &rarr;
+                </button>
+              </div>
+            </article>
+
+            <article class="c-method-card">
+              <figure class="c-method-card__media">
+                <img
+                  src="./images/cold-brew.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Vaso alto de Cold Brew ámbar con hielo cristalino y rodaja de naranja deshidratada"
+                />
+              </figure>
+              <div class="c-method-card__body">
+                <span class="c-mono c-method-card__idx">Método 03 &middot; 16 horas en frío</span>
+                <h3>Cold Brew Naranja &amp; Hielo</h3>
+                <p>
+                  Infusión lenta de dieciséis horas en agua fría para suavizar la amargura natural y servir en vaso alto
+                  con naranja deshidratada.
+                </p>
+                <button type="button" class="c-method-card__btn" data-jump-category="Bebidas frías">
+                  Ver en Bebidas frías &rarr;
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. EXPERIENCIA EN LA CAFETERÍA (AMBIENTE + REPOSTERÍA EN FOTOGRAFÍAS ÚNICAS) -->
+      <section class="c-section c-section--soft" id="experiencia">
+        <div class="container c-exp-grid">
+          <div class="c-exp-lead-col">
+            <p class="c-eyebrow">Experiencia en Barrio El Vado</p>
+            <h2 class="c-title">Un ritmo sereno entre barra de madera y horneado diario</h2>
+            <p class="c-exp-copy">
+              El recorrido combina espacio tranquilo para conversar o trabajar junto a ventanales altos con una vitrina
+              corta de repostería artesanal pensada para acompañar cafés de origen.
+            </p>
+            <ul class="c-exp-notes">
+              <li>
+                <strong>Granos en bolsa de 250 g</strong> listos para llevar enteros o molidos al método de casa.
+              </li>
+              <li>
+                <strong>Maridaje de mañana y tarde</strong> con croissant de mantequilla y almendra o tarta de zanahoria
+                y nuez.
+              </li>
+              <li>
+                <strong>Horarios amplios en 24h</strong> de lunes a sábado desde <span class="c-mono">07:30</span> y
+                domingos desde <span class="c-mono">08:30</span>.
+              </li>
+            </ul>
+          </div>
+
+          <div class="c-exp-visuals">
+            <figure class="c-exp-figure c-exp-figure--wide">
+              <img
+                src="./images/salon-vado.jpg"
+                width="1376"
+                height="768"
+                loading="lazy"
+                decoding="async"
+                alt="Salón luminoso de cafetería en Cuenca con mesas de madera oscura, ventanas altas y paredes cálidas"
+              />
+              <figcaption>
+                <strong>Salón interior</strong> — Mesas de madera y luz natural tranquila en El Vado.
+              </figcaption>
+            </figure>
+
+            <figure class="c-exp-figure">
+              <img
+                src="./images/reposteria.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                alt="Croissant dorado de almendras y porción de tarta de zanahoria con flat white en mesa de lino"
+              />
+              <figcaption>
+                <strong>Vitrina de repostería</strong> — Croissant de almendra (<span class="c-mono">$3.50</span>) y
+                tarta de zanahoria (<span class="c-mono">$4.25</span>).
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. GALERÍA ASIMÉTRICA (ESCENAS DISTINTAS SIN REPETIR PORTADA NI TARJETAS) -->
+      <section class="c-section" id="galeria">
+        <div class="container">
+          <div class="c-gal-head">
+            <div>
+              <p class="c-eyebrow">Cuaderno visual de barra</p>
+              <h2 class="c-title">Detalles de tueste, extracción y servicio</h2>
+            </div>
+            <p class="c-gal-note">
+              Fotografías ilustrativas exclusivas de esta galería. Haz clic en cualquier escena para ampliarla.
+            </p>
+          </div>
+
+          <div class="c-mosaic">
+            <figure class="c-mosaic__tall">
+              <button
+                type="button"
+                class="c-mosaic__trigger"
+                data-lightbox-src="./images/espresso-extraccion.jpg"
+                data-lightbox-alt="Portafiltro desnudo extrayendo espresso con crema dorada sobre taza de gres artesanal"
+                data-lightbox-caption="Extracción directa de espresso doble en taza artesanal de cerámica."
+              >
+                <img
+                  src="./images/espresso-extraccion.jpg"
+                  width="900"
+                  height="1200"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Extracción de espresso doble con crema atigrada cayendo sobre taza de cerámica"
+                />
+              </button>
+              <figcaption>Extracción de espresso doble en portafiltro desnudo</figcaption>
+            </figure>
+
+            <div class="c-mosaic__stack">
+              <figure class="c-mosaic__sub">
+                <button
+                  type="button"
+                  class="c-mosaic__trigger"
+                  data-lightbox-src="./images/granos-tueste.jpg"
+                  data-lightbox-alt="Granos de café tostado de tueste medio en cuenco de barro junto a cuchara dosificadora"
+                  data-lightbox-caption="Granos de tueste medio listos para moler en barra o empacar en bolsa de 250 g."
+                >
+                  <img
+                    src="./images/granos-tueste.jpg"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Granos de café arábigo tostados en cuenco de barro oscuro"
+                  />
+                </button>
+                <figcaption>Tueste medio &middot; grano entero en barra</figcaption>
+              </figure>
+
+              <figure class="c-mosaic__sub">
+                <button
+                  type="button"
+                  class="c-mosaic__trigger"
+                  data-lightbox-src="./images/latte-cacao.jpg"
+                  data-lightbox-alt="Dos tazas de latte artesanal sobre mesa de cedro junto a panela rallada y canela"
+                  data-lightbox-caption="Latte artesanal con sirope casero de panela y leche microespumada."
+                >
+                  <img
+                    src="./images/latte-cacao.jpg"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Tazas de cerámica con arte latte, panela artesanal y rama de canela"
+                  />
+                </button>
+                <figcaption>Servicio en mesa &middot; microespuma y panela casera</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. CONTACTO Y UBICACIÓN -->
+      <section class="c-section c-section--dark" id="ubicacion">
+        <div class="container c-visit-grid">
+          <div>
+            <p class="c-eyebrow">Ubicación, horarios y consultas (Ejemplo)</p>
+            <h2 class="c-title">Barrio El Vado &middot; Cuenca, Ecuador</h2>
+            <p class="c-visit-lead">
+              Origen Cuenca es una cafetería ficticia de muestra creada por AV·STUDIO. Las consultas por WhatsApp
+              conectan directamente con el estudio de diseño web para cotizar un sitio a medida.
+            </p>
+            <dl class="c-visit-facts">
+              <div>
+                <dt>Horario lunes a sábado (24h)</dt>
+                <dd class="c-mono">07:30 – 20:00</dd>
+              </div>
+              <div>
+                <dt>Horario domingos (24h)</dt>
+                <dd class="c-mono">08:30 – 18:00</dd>
+              </div>
+              <div>
+                <dt>Referencia de demostración</dt>
+                <dd>Barrio El Vado, Cuenca, Azuay, Ecuador</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="c-visit-card">
+            <h3>¿Quieres un sitio similar para tu cafetería?</h3>
+            <p>
+              Prepara tu selección de carta arriba o escríbenos directamente para adaptar esta estructura con tu menú,
+              tuestes y ubicación reales.
+            </p>
+            <div class="c-btn-row">
+              <a
+                href="https://wa.me/593979290747"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="c-btn c-btn--caramel"
+              >
+                Solicitar web similar por WhatsApp
+              </a>
+              <a href="#carta" class="c-btn c-btn--outline-light">Ir a la carta</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
+    <dialog id="c-lightbox" class="c-lightbox" aria-labelledby="c-lightbox-caption">
+      <div class="c-lightbox__inner">
+        <button type="button" id="c-lightbox-close" class="c-lightbox__close" aria-label="Cerrar fotografía">
+          Cerrar &times;
+        </button>
+        <img id="c-lightbox-img" src="" alt="" />
+        <p id="c-lightbox-caption" class="c-lightbox__caption"></p>
+      </div>
+    </dialog>
+
     <footer class="c-footer">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+        <div class="c-footer__top">
           <div>
-            <strong style="font-family: var(--c-font-display); font-size: 1.3rem;">ORIGEN CUENCA · Cafetería</strong>
-            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.8;">
-              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
-            </p>
+            <strong class="c-footer__brand">ORIGEN CUENCA &middot; Cafetería</strong>
+            <p class="c-footer__meta">DEMOSTRACIÓN — SITIO WEB DE EJEMPLO &middot; Cuenca, Azuay, Ecuador.</p>
           </div>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+          <nav class="c-footer__links" aria-label="Enlaces del pie de página">
             <a href="#origen">Orígenes</a>
+            <a href="#metodos">Métodos</a>
             <a href="#carta">Carta</a>
-            <a href="../../index.html" style="color: var(--c-caramel-light); font-weight: 600;">Volver a AV·STUDIO</a>
-          </div>
+            <a href="../../index.html" class="c-footer__back">Volver a AV·STUDIO</a>
+          </nav>
         </div>
 
         <div class="c-av-signature">
           <div>
-            <p style="margin: 0 0 0.25rem;">
-              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos sitios web a medida para cafeterías y marcas gastronómicas.
+            <p class="c-av-signature__lead">
+              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos sitios web a medida para cafeterías y
+              marcas gastronómicas.
             </p>
-            <p style="margin: 0; opacity: 0.86;">
-              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
-              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=cafeterias#contacto" class="" style="text-decoration: underline;">
-            Quiero una página para mi cafetería &rarr;
-          </a>
+            <p class="c-av-signature__credit">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> &middot;
+              <a href="mailto:andersonvallejo021@gmail.com">andersonvallejo021@gmail.com</a> &middot;
+              <a href="../../index.html?sector=cafeterias#contacto">Quiero una página para mi cafetería &rarr;</a>
             </p>
           </div>
           <a

@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Merriweather:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -40,13 +40,13 @@
       <div class="container ac-header__inner">
         <a href="#inicio" class="ac-brand">INSTITUTO PAIDEIA</a>
         <nav class="ac-nav" aria-label="Navegación académica">
-          <a class="ac-nav__link" href="#inicio">Inicio</a>
-          <a class="ac-nav__link" href="#programas">Programas</a>
-          <a class="ac-nav__link" href="#aulas">Aulas</a>
-          <a class="ac-nav__link" href="#inscripciones">Inscripciones</a>
+          <a class="ac-nav__link" href="#filosofia">Filosofía</a>
+          <a class="ac-nav__link" href="#programas">Oferta formativa</a>
+          <a class="ac-nav__link" href="#modalidades">Modalidades</a>
+          <a class="ac-nav__link" href="#espacios">Espacios</a>
         </nav>
         <div class="ac-header__actions">
-          <a href="#inscripciones" class="ac-btn ac-btn--blue ac-header__cta">Inscribirme</a>
+          <a href="#inscripciones" class="ac-btn ac-btn--blue ac-header__cta">Solicitar pensum</a>
           <button
             type="button"
             class="ac-mobile-toggle"
@@ -60,54 +60,170 @@
         </div>
       </div>
       <nav class="ac-mobile-drawer" id="ac-mobile-drawer" hidden aria-label="Menú móvil">
-        <a href="#inicio">Inicio</a>
-        <a href="#programas">Programas</a>
-        <a href="#aulas">Aulas</a>
-        <a href="#inscripciones">Inscripciones</a>
-        <a href="../../index.html" class="ac-mobile-drawer__back">
-          &larr; Volver a AV·STUDIO
-        </a>
+        <a href="#filosofia">Filosofía educativa</a>
+        <a href="#programas">Oferta formativa</a>
+        <a href="#modalidades">Modalidades de aprendizaje</a>
+        <a href="#ruta">Ruta de exploración</a>
+        <a href="#espacios">Espacios y experiencia</a>
+        <a href="#faq">Preguntas frecuentes</a>
+        <a href="#inscripciones">Solicitar información</a>
+        <a href="../../index.html" class="ac-mobile-drawer__back">&larr; Volver a AV·STUDIO</a>
       </nav>
     </header>
 
     <main>
+      <!-- 1. PORTADA INSTITUCIONAL -->
       <section class="ac-hero" id="inicio">
-        <div class="container ac-hero__grid">
-          <div>
-            <span class="ac-eyebrow">Formación presencial y en línea · Cuenca, Ecuador</span>
-            <h1 class="ac-title ac-title--hero">
-              Programas estructurados, horarios claros y proceso directo de matrícula.
-            </h1>
-            <p class="ac-hero__lead">
-              Instituto Paideia es una academia ficticia diseñada por AV·STUDIO para demostrar cómo
-              exhibir cursos por área y modalidad, valores en USD y solicitudes de pensum.
-            </p>
-            <div class="ac-btn-row">
-              <a href="#programas" class="ac-btn ac-btn--blue">Explorar cursos</a>
-              <a href="#inscripciones" class="ac-btn ac-btn--mustard">Solicitar información</a>
-            </div>
+        <div class="container">
+          <div class="ac-hero__ledger">
+            <span>Cuenca · Azuay · Ecuador</span>
+            <span>Modalidades: Presencial &amp; En línea</span>
+            <span>Valores referenciales en USD</span>
           </div>
 
-          <div class="ac-hero__media">
+          <div class="ac-hero__broadsheet">
+            <div class="ac-hero__statement">
+              <span class="ac-eyebrow">Centro educativo demostrativo · AV·STUDIO</span>
+              <h1 class="ac-hero__title">
+                Formación práctica, <em>lectura crítica</em> y estudio acompañado.
+              </h1>
+              <p class="ac-hero__lead">
+                Instituto Paideia es una academia ficticia creada por AV·STUDIO para mostrar cómo una
+                institución educativa presenta sus programas por área, modalidades en Cuenca y en línea,
+                aranceles referenciales en USD y consultas directas de pensum.
+              </p>
+              <div class="ac-btn-row">
+                <a href="#programas" class="ac-btn ac-btn--blue">Explorar oferta formativa</a>
+                <a href="#inscripciones" class="ac-btn ac-btn--mustard">Solicitar información</a>
+              </div>
+            </div>
+
+            <aside class="ac-hero__index" aria-label="Índice rápido de áreas formativas">
+              <div class="ac-hero__index-head">
+                <span class="ac-eyebrow">Áreas del catálogo</span>
+                <p>Acceso directo por disciplina</p>
+              </div>
+              <ul class="ac-hero__area-list">
+                <li>
+                  <button type="button" class="ac-area-jump" data-jump-area="Idiomas">
+                    <span class="ac-area-jump__name">01 · Idiomas</span>
+                    <span class="ac-area-jump__meta">Presencial Cuenca</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="ac-area-jump" data-jump-area="Diseño Digital">
+                    <span class="ac-area-jump__name">02 · Diseño Digital</span>
+                    <span class="ac-area-jump__meta">En línea en vivo</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="ac-area-jump" data-jump-area="Finanzas">
+                    <span class="ac-area-jump__name">03 · Finanzas</span>
+                    <span class="ac-area-jump__meta">En línea · 19:00</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="ac-area-jump" data-jump-area="Preuniversitario">
+                    <span class="ac-area-jump__name">04 · Preuniversitario</span>
+                    <span class="ac-area-jump__meta">Presencial Cuenca</span>
+                  </button>
+                </li>
+              </ul>
+            </aside>
+          </div>
+
+          <figure class="ac-hero__frame">
             <picture>
               <source srcset="./images/hero.webp" type="image/webp" />
               <img
                 src="./images/hero.jpg"
-                width="1200"
-                height="900"
+                width="1400"
+                height="788"
                 fetchpriority="high"
                 decoding="async"
-                alt="Aula luminosa de academia contemporánea con mesas de madera clara y estudiantes"
+                referrerpolicy="no-referrer"
+                alt="Escena ilustrativa de sala de estudio luminosa con mesas de madera clara, ventanales altos y estudiantes concentrados"
               />
             </picture>
-          </div>
+            <figcaption class="ac-caption">
+              Lámina 01 · Escena ilustrativa de ambiente de lectura y estudio guiado con luz natural
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <section class="ac-section" id="programas">
+      <!-- 2. FILOSOFÍA EDUCATIVA -->
+      <section class="ac-section ac-section--paper" id="filosofia">
+        <div class="container ac-philosophy">
+          <div class="ac-philosophy__margin">
+            <figure class="ac-philosophy__photo">
+              <img
+                src="./images/filosofia-lectura.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Escena ilustrativa de escritorio de lectura con libro abierto, cuaderno de lino y luz natural de ventana"
+              />
+              <figcaption class="ac-caption">
+                Escena ilustrativa · Mesa de lectura y preparación académica
+              </figcaption>
+            </figure>
+
+            <dl class="ac-principles" aria-label="Principios de aprendizaje de ejemplo">
+              <div class="ac-principles__row">
+                <dt>01 · Comprensión activa</dt>
+                <dd>Práctica constante aplicada a ejercicios reales antes que memorización aislada.</dd>
+              </div>
+              <div class="ac-principles__row">
+                <dt>02 · Grupos reducidos</dt>
+                <dd>Espacios pensados para el diálogo directo, preguntas oportunas y seguimiento cercano.</dd>
+              </div>
+              <div class="ac-principles__row">
+                <dt>03 · Información transparente</dt>
+                <dd>Duración, horarios, modalidad y valores en USD visibles desde el primer vistazo.</dd>
+              </div>
+            </dl>
+          </div>
+
+          <article class="ac-philosophy__essay">
+            <span class="ac-eyebrow">Filosofía educativa</span>
+            <h2 class="ac-title">
+              Aprender con claridad exige <em>orden</em>, buen ritmo y preguntas abiertas.
+            </h2>
+            <p class="ac-dropcap">
+              La experiencia educativa comienza mucho antes de la primera clase: inicia cuando una persona o su
+              familia encuentra programas explicados sin rodeos, comprende qué se estudia en cada semana y
+              sabe si el curso se adapta a sus horarios presenciales en Cuenca o a sesiones sincrónicas en
+              línea.
+            </p>
+            <p class="ac-essay-p">
+              Este prototipo institucional de AV·STUDIO privilegia la legibilidad editorial: combina lectura
+              reposada con herramientas concretas de búsqueda para elegir área de estudio, modalidad y
+              consulta guiada de pensum, sin atribuir acreditaciones ni estadísticas ficticias.
+            </p>
+            <blockquote class="ac-pullquote">
+              “Una institución formativa transmite confianza cuando ordena sus contenidos con precisión,
+              cuida el entorno de estudio y facilita el contacto humano desde el inicio.”
+            </blockquote>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. OFERTA FORMATIVA -->
+      <section class="ac-section ac-section--limestone" id="programas">
         <div class="container">
-          <span class="ac-eyebrow">Oferta educativa en USD</span>
-          <h2 class="ac-title">Cursos y programas de demostración</h2>
+          <div class="ac-section-head">
+            <div>
+              <span class="ac-eyebrow">Oferta formativa demostrativa</span>
+              <h2 class="ac-title">Programas, duración y valores referenciales en USD</h2>
+            </div>
+            <p class="e-section-head__note ac-head-note">
+              Filtra por área de conocimiento y modalidad disponible, revisa contenidos de ejemplo y
+              preselecciona tu consulta.
+            </p>
+          </div>
 
           <div class="ac-toolbar">
             <div class="ac-tabs ac-tabs--inline" role="group" aria-label="Filtrar cursos por área">
@@ -118,9 +234,7 @@
               <button type="button" class="ac-tab" data-acad-area="Preuniversitario">Preuniversitario</button>
             </div>
             <div class="ac-modality-filter">
-              <label for="ac-filter-modality" class="ac-modality-label">
-                Modalidad:
-              </label>
+              <label for="ac-filter-modality" class="ac-modality-label">Modalidad:</label>
               <select id="ac-filter-modality" class="ac-modality-select">
                 <option value="Todas">Todas</option>
                 <option value="Presencial Cuenca">Presencial Cuenca</option>
@@ -133,51 +247,309 @@
         </div>
       </section>
 
-      <section class="ac-section ac-section--campus" id="aulas">
-        <div class="container ac-campus-grid">
-          <div class="ac-campus__media">
-            <picture>
-              <source srcset="./images/aula.webp" type="image/webp" />
-              <img
-                src="./images/aula.jpg"
-                width="1200"
-                height="900"
-                loading="lazy"
-                decoding="async"
-                alt="Sala de seminarios y tutoría académica con estantería de libros, mesas amplias e iluminación natural"
-              />
-            </picture>
-          </div>
-          <div>
-            <span class="ac-eyebrow">Campus &amp; metodología híbrida</span>
-            <h2 class="ac-title">Grupos reducidos en Cuenca y clases en vivo</h2>
-            <p class="ac-campus__copy">
-              Un sitio educativo profesional permite que estudiantes y padres filtren por área de
-              conocimiento, modalidad y costos en USD antes de pedir el pensum académico completo.
+      <!-- 4. MODALIDADES DE APRENDIZAJE -->
+      <section class="ac-section ac-section--sapphire" id="modalidades">
+        <div class="container">
+          <div class="ac-section-head ac-section-head--light">
+            <div>
+              <span class="ac-eyebrow ac-eyebrow--gold">Modalidades disponibles</span>
+              <h2 class="ac-title ac-title--light">Dos formatos claros según tu rutina en Cuenca o a distancia</h2>
+            </div>
+            <p class="ac-head-note ac-head-note--light">
+              Cada programa del catálogo de ejemplo indica explícitamente si se imparte en sede o en vivo por
+              internet.
             </p>
-            <ul class="ac-campus__list">
-              <li>Aulas equipadas para talleres presenciales en Av. Paucarbamba y 12 de Abril.</li>
-              <li>Sesiones sincrónicas en línea con material de respaldo descargable.</li>
-              <li>Solicitud directa de horarios, becas o pensum por WhatsApp.</li>
-            </ul>
-            <a href="#inscripciones" class="ac-btn ac-btn--blue">Pedir pensum por WhatsApp</a>
+          </div>
+
+          <div class="ac-modalities">
+            <article class="ac-modality-panel">
+              <figure class="ac-modality-panel__media">
+                <img
+                  src="./images/modalidad-presencial.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                  alt="Escena ilustrativa de seminario presencial en aula luminosa en Cuenca con cinco participantes alrededor de mesa de madera"
+                />
+              </figure>
+              <div class="ac-modality-panel__body">
+                <span class="ac-eyebrow ac-eyebrow--gold">Modalidad 01 · Presencial Cuenca</span>
+                <h3>Sesiones presenciales en grupos reducidos</h3>
+                <p>
+                  Talleres y seminarios en sede referencial Av. Paucarbamba y 12 de Abril, pensados para
+                  práctica conversacional, resolución en pizarra y acompañamiento cercano en el aula.
+                </p>
+                <ul class="ac-modality-list">
+                  <li>Intercambio directo con docente y compañeros en horario fijo.</li>
+                  <li>Simulacros presenciales y ejercicios impresos en aula.</li>
+                </ul>
+                <button
+                  type="button"
+                  class="ac-btn ac-btn--mustard"
+                  data-apply-modality="Presencial Cuenca"
+                >
+                  Filtrar programas presenciales
+                </button>
+              </div>
+            </article>
+
+            <article class="ac-modality-panel">
+              <figure class="ac-modality-panel__media">
+                <img
+                  src="./images/modalidad-linea.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                  alt="Escena ilustrativa de estudiante en sesión en línea en vivo frente a laptop sobre escritorio ordenado con cuadernos de notas"
+                />
+              </figure>
+              <div class="ac-modality-panel__body">
+                <span class="ac-eyebrow ac-eyebrow--gold">Modalidad 02 · En línea en vivo</span>
+                <h3>Clases sincrónicas y material de respaldo</h3>
+                <p>
+                  Transmisiones en directo en horarios vespertinos o nocturnos (como las 19:00), acompañadas
+                  de guías descargables, plantillas de trabajo y revisión de avances en vivo.
+                </p>
+                <ul class="ac-modality-list">
+                  <li>Participación en tiempo real sin desplazamientos dentro o fuera de Cuenca.</li>
+                  <li>Material digital descargable y entregables prácticos semanales.</li>
+                </ul>
+                <button
+                  type="button"
+                  class="ac-btn ac-btn--mustard"
+                  data-apply-modality="En línea"
+                >
+                  Filtrar programas en línea
+                </button>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="ac-section ac-section--gray" id="inscripciones">
-        <div class="container ac-enroll-grid">
-          <div>
-            <span class="ac-eyebrow">Admisiones e información</span>
-            <h2 class="ac-title">Solicita el pensum o separa un cupo demostrativo</h2>
-            <p class="ac-enroll__copy">
-              <strong>Horarios de atención (24h):</strong> Lunes a viernes 08:30 – 19:00 · Sábados 09:00 – 13:00.<br />
-              <strong>Sede referencial:</strong> Av. Paucarbamba y 12 de Abril, Cuenca, Ecuador.
+      <!-- 5. RUTA DE APRENDIZAJE -->
+      <section class="ac-section ac-section--paper" id="ruta">
+        <div class="container">
+          <div class="ac-section-head">
+            <div>
+              <span class="ac-eyebrow">Ruta de exploración demostrativa</span>
+              <h2 class="ac-title">Del primer interés al pensum en cuatro pasos</h2>
+            </div>
+            <p class="ac-head-note">
+              Recorrido transparente diseñado para que estudiantes o representantes resuelvan dudas antes de
+              escribir.
             </p>
           </div>
 
+          <ol class="ac-route" aria-label="Pasos para explorar programas y solicitar información">
+            <li class="ac-route__step">
+              <span class="ac-route__num">01</span>
+              <h3>Identifica tu área</h3>
+              <p>
+                Explora Idiomas, Diseño Digital, Finanzas o Preuniversitario según tu objetivo formativo
+                actual.
+              </p>
+            </li>
+            <li class="ac-route__step">
+              <span class="ac-route__num">02</span>
+              <h3>Contrasta modalidad y carga horaria</h3>
+              <p>
+                Verifica si prefieres asistir en Cuenca o cursar sesiones en vivo en línea, revisando duración y
+                arancel referencial en USD.
+              </p>
+            </li>
+            <li class="ac-route__step">
+              <span class="ac-route__num">03</span>
+              <h3>Revisa contenidos base</h3>
+              <p>
+                Despliega el temario de muestra dentro de cada programa para conocer los bloques de trabajo de
+                forma anticipada.
+              </p>
+            </li>
+            <li class="ac-route__step">
+              <span class="ac-route__num">04</span>
+              <h3>Solicita información por WhatsApp</h3>
+              <p>
+                Envía el resumen validado sin matrícula automática ni pagos en línea: un canal directo para
+                conversar sobre fechas de inicio.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 6. ESPACIOS Y EXPERIENCIA -->
+      <section class="ac-section ac-section--limestone" id="espacios">
+        <div class="container">
+          <div class="ac-section-head">
+            <div>
+              <span class="ac-eyebrow">Espacios y experiencia · Escenas ilustrativas</span>
+              <h2 class="ac-title">Aulas, bibliotecas y talleres de colaboración</h2>
+            </div>
+            <p class="ac-head-note">
+              Fotografías ilustrativas del entorno académico; haz clic en cualquier escena para verla en
+              detalle.
+            </p>
+          </div>
+
+          <div class="ac-spaces-grid">
+            <button
+              type="button"
+              class="ac-space-tile ac-space-tile--featured"
+              data-space-img="./images/aula.jpg"
+              data-space-title="Biblioteca y mesa de seminario"
+              data-space-caption="Escena ilustrativa · Espacio de lectura compartida con estantería abierta e iluminación natural."
+            >
+              <picture>
+                <source srcset="./images/aula.webp" type="image/webp" />
+                <img
+                  src="./images/aula.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                  alt="Escena ilustrativa de sala de seminarios y biblioteca académica de madera clara con estudiantes trabajando"
+                />
+              </picture>
+              <span class="ac-space-tile__cap">
+                <strong>Escena ilustrativa · 01</strong>
+                <span>Biblioteca y mesa de seminario grupal</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="ac-space-tile ac-space-tile--side"
+              data-space-img="./images/espacio-taller.jpg"
+              data-space-title="Taller visual y laboratorio creativo"
+              data-space-caption="Escena ilustrativa · Mesa de diseño con bocetos de retícula, muestras cromáticas y estación de trabajo."
+            >
+              <img
+                src="./images/espacio-taller.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Escena ilustrativa de taller de diseño visual con retículas en papel, muestras de color y monitor en mesa de madera"
+              />
+              <span class="ac-space-tile__cap">
+                <strong>Escena ilustrativa · 02</strong>
+                <span>Taller de diseño gráfico y proyecto visual</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="ac-space-tile ac-space-tile--wide"
+              data-space-img="./images/espacio-tutoria.jpg"
+              data-space-title="Rincón de lectura silenciosa y tutorías"
+              data-space-caption="Escena ilustrativa · Zona tranquila de estudio individual, estanterías de abedul y lámparas de escritorio."
+            >
+              <img
+                src="./images/espacio-tutoria.jpg"
+                width="1400"
+                height="788"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Escena ilustrativa de biblioteca académica contemporánea con mesas de estudio, estanterías de madera y sillones azul marino"
+              />
+              <span class="ac-space-tile__cap">
+                <strong>Escena ilustrativa · 03</strong>
+                <span>Sala de lectura silenciosa y asesoría personalizada</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. PREGUNTAS FRECUENTES -->
+      <section class="ac-section ac-section--paper" id="faq">
+        <div class="container ac-faq-layout">
+          <div>
+            <span class="ac-eyebrow">Preguntas frecuentes</span>
+            <h2 class="ac-title">Consultas habituales sobre esta demostración</h2>
+            <p class="ac-copy">
+              Respuestas basadas exclusivamente en el alcance informativo de la demostración Instituto Paideia.
+            </p>
+          </div>
+
+          <div class="ac-faq-list">
+            <details class="ac-faq-item" open>
+              <summary>¿Qué modalidades de estudio contempla la oferta de ejemplo?</summary>
+              <p>
+                El catálogo combina programas bajo modalidad <strong>Presencial Cuenca</strong> (en la sede
+                referencial Av. Paucarbamba y 12 de Abril) y programas <strong>En línea</strong> con sesiones
+                sincrónicas en vivo y material descargable.
+              </p>
+            </details>
+
+            <details class="ac-faq-item">
+              <summary>¿Qué áreas y valores referenciales en USD están incluidos?</summary>
+              <p>
+                Se presentan cuatro programas demostrativos en las áreas de Idiomas ($95.00 USD / módulo),
+                Diseño Digital ($120.00 USD), Finanzas ($85.00 USD) y Preuniversitario ($110.00 USD).
+              </p>
+            </details>
+
+            <details class="ac-faq-item">
+              <summary>¿El envío del formulario genera matrícula oficial o cobros en línea?</summary>
+              <p>
+                No. Instituto Paideia es una institución ficticia de demostración en AV·STUDIO. El formulario
+                valida tus datos y prepara un mensaje informativo de prueba dirigido a WhatsApp sin pagos ni
+                matrículas automáticas.
+              </p>
+            </details>
+
+            <details class="ac-faq-item">
+              <summary>¿Qué horarios referenciales de atención muestra la página?</summary>
+              <p>
+                El bloque informativo indica atención de lunes a viernes de 08:30 a 19:00 y sábados de 09:00 a
+                13:00 en la sede referencial de Cuenca, Ecuador.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. CONTACTO Y CONSULTAS -->
+      <section class="ac-section ac-section--limestone" id="inscripciones">
+        <div class="container ac-enroll-grid">
+          <div class="ac-enroll-aside">
+            <span class="ac-eyebrow">Admisiones e información demostrativa</span>
+            <h2 class="ac-title">Solicita el pensum o consulta sobre un programa</h2>
+            <p class="ac-enroll__copy">
+              Completa tus datos referenciales, elige el curso y modalidad preferida para generar el mensaje
+              estructurado hacia Anderson Vallejo — AV·STUDIO.
+            </p>
+
+            <dl class="ac-contact-ledger">
+              <div class="ac-contact-ledger__row">
+                <dt>Horarios referenciales</dt>
+                <dd>Lunes a viernes 08:30 – 19:00 · Sábados 09:00 – 13:00</dd>
+              </div>
+              <div class="ac-contact-ledger__row">
+                <dt>Sede referencial</dt>
+                <dd>Av. Paucarbamba y 12 de Abril, Cuenca, Ecuador</dd>
+              </div>
+              <div class="ac-contact-ledger__row">
+                <dt>Alcance de consulta</dt>
+                <dd>Demostración interactiva · Envío de mensaje de prueba por WhatsApp</dd>
+              </div>
+            </dl>
+          </div>
+
           <form class="ac-form-card ac-form-card--white" id="ac-enroll-form" novalidate>
-            <h3 class="ac-form-card__title">Formulario de admisión</h3>
+            <div class="ac-form-card__head">
+              <h3 class="ac-form-card__title">Formulario de consulta académica</h3>
+              <p class="ac-form-selected" id="ac-selected-note" hidden></p>
+            </div>
             <div class="ac-form-fields">
               <div class="ac-field">
                 <label for="ac-name">Nombre del estudiante *</label>
@@ -210,11 +582,11 @@
                 <span class="ac-err" id="ac-err-modality"></span>
               </div>
             </div>
-            <div style="margin-top: 1rem;">
+            <div class="ac-form-submit">
               <button type="submit" class="ac-btn ac-btn--blue">Preparar solicitud en WhatsApp</button>
             </div>
-            <div id="ac-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: var(--ac-gray); border: 1px solid var(--ac-border); border-radius: 6px;">
-              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+            <div class="ac-prepared" id="ac-prepared" hidden>
+              <p class="ac-prepared__text">
                 <strong>Solicitud demostrativa validada.</strong> Abre el mensaje hacia AV·STUDIO:
               </p>
               <a
@@ -232,32 +604,56 @@
       </section>
     </main>
 
+    <dialog class="ac-lightbox" id="ac-lightbox" aria-labelledby="ac-lightbox-title">
+      <div class="ac-lightbox__panel">
+        <div class="ac-lightbox__bar">
+          <div>
+            <h2 class="ac-lightbox__title" id="ac-lightbox-title">Escena ilustrativa</h2>
+            <p class="ac-lightbox__caption" id="ac-lightbox-caption"></p>
+          </div>
+          <button
+            type="button"
+            class="ac-lightbox__close"
+            id="ac-lightbox-close"
+            aria-label="Cerrar imagen ampliada"
+          >
+            &times;
+          </button>
+        </div>
+        <figure class="ac-lightbox__media">
+          <img id="ac-lightbox-img" src="" alt="" referrerpolicy="no-referrer" />
+        </figure>
+      </div>
+    </dialog>
+
     <footer class="ac-footer">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+        <div class="ac-footer__top">
           <div>
-            <strong style="font-family: var(--ac-font-serif); font-size: 1.2rem;">INSTITUTO PAIDEIA</strong>
-            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; color: #cfdcf0;">
+            <strong class="ac-footer__brand">INSTITUTO PAIDEIA</strong>
+            <p class="ac-footer__meta">
               DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
             </p>
           </div>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+          <div class="ac-footer__links">
+            <a href="#filosofia">Filosofía</a>
             <a href="#programas">Programas</a>
-            <a href="#inscripciones">Inscripciones</a>
-            <a href="../../index.html" style="color: #f6cf79; font-weight: 700;">Volver a AV·STUDIO</a>
+            <a href="#modalidades">Modalidades</a>
+            <a href="#inscripciones">Consultas</a>
+            <a href="../../index.html" class="ac-footer__back">Volver a AV·STUDIO</a>
           </div>
         </div>
 
         <div class="ac-av-signature">
           <div>
-            <p style="margin: 0 0 0.25rem;">
-              <strong>¿Te gustaría una página web como esta?</strong> Creamos sitios claros para academias, colegios y centros de capacitación.
+            <p class="ac-av-signature__lead">
+              <strong>¿Te gustaría una página web como esta?</strong> Creamos sitios claros para academias,
+              institutos, centros de idiomas y escuelas técnicas.
             </p>
-            <p style="margin: 0; color: #dbe5f5;">
+            <p class="ac-av-signature__meta">
               <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
-              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=academia#contacto" class="" style="text-decoration: underline;">
-            Quiero una página para mi academia &rarr;
-          </a>
+              <a href="mailto:andersonvallejo021@gmail.com">andersonvallejo021@gmail.com</a> ·
+              <a href="../../index.html?sector=academia#contacto">Quiero una página para mi academia &rarr;</a>
             </p>
           </div>
           <a

@@ -5,25 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="robots" content="noindex, follow" />
-    <title>Mercado Serrano — Tienda &amp; Diseño Hogar (Demostración) | AV·STUDIO</title>
+    <title>Mercado Serrano — Objetos de Diseño &amp; Hogar (Demostración) | AV·STUDIO</title>
     <meta
       name="description"
-      content="Sitio web demostrativo de tienda y catálogo comercial en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+      content="Sitio web demostrativo de tienda de diseño, cerámica, textiles e iluminación para el hogar en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
     />
-    <meta property="og:title" content="Mercado Serrano — Tienda &amp; Diseño Hogar (Demostración) | AV·STUDIO" />
+    <meta
+      property="og:title"
+      content="Mercado Serrano — Objetos de Diseño &amp; Hogar (Demostración) | AV·STUDIO"
+    />
     <meta
       property="og:description"
-      content="Catálogo online de ejemplo con buscador instantáneo, filtros de categoría y carrito conectado a WhatsApp."
+      content="Tienda boutique curatorial de ejemplo con filtros por categoría, búsqueda en vivo, ficha rápida de producto y selección hacia WhatsApp en USD."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AV·STUDIO" />
     <meta property="og:locale" content="es_EC" />
-    <meta property="og:image" content="../../assets/images/categories/tienda.jpg" />
+    <meta property="og:image" content="./images/hero.jpg" />
     <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -31,82 +34,157 @@
   <body>
     <div class="demo-ribbon">
       <div class="container demo-ribbon__inner">
-        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Comercio ficticio en Cuenca, Ecuador</span>
+        <span>DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Tienda ficticia de objetos y hogar en Cuenca, Ecuador</span>
         <a href="../../index.html" class="demo-ribbon__back">&larr; Volver a AV·STUDIO</a>
       </div>
     </div>
 
     <header class="s-header">
       <div class="container s-header__inner">
-        <a href="#inicio" class="s-brand">MERCADO SERRANO</a>
-        <nav class="s-nav" aria-label="Navegación de tienda">
-          <a class="s-nav__link" href="#inicio">Inicio</a>
+        <a href="#inicio" class="s-brand">Mercado Serrano</a>
+
+        <nav class="s-nav" aria-label="Navegación principal de la tienda">
           <a class="s-nav__link" href="#catalogo">Catálogo</a>
+          <a class="s-nav__link" href="#piezas">Pieza destacada</a>
+          <a class="s-nav__link" href="#materiales">Oficio</a>
+          <a class="s-nav__link" href="#espacio">En el hogar</a>
           <a class="s-nav__link" href="#envios">Envíos</a>
         </nav>
+
         <div class="s-header__actions">
-          <a href="#catalogo" class="s-btn s-btn--black s-header__cta">Ver productos</a>
+          <a href="#s-cart-aside" class="s-btn s-btn--black s-header__cta" id="s-header-cart-link">
+            Selección (<span id="s-header-count" class="tabular-nums">0</span>)
+          </a>
           <button
             type="button"
             class="s-mobile-toggle"
             id="s-mobile-toggle"
             aria-expanded="false"
             aria-controls="s-mobile-drawer"
-            aria-label="Abrir menú"
+            aria-label="Abrir menú de navegación"
           >
             &#9776;
           </button>
         </div>
       </div>
+
       <nav class="s-mobile-drawer" id="s-mobile-drawer" hidden aria-label="Menú móvil">
-        <a href="#inicio">Inicio</a>
+        <a href="#inicio">Portada</a>
         <a href="#catalogo">Catálogo</a>
-        <a href="#envios">Envíos</a>
-        <a href="../../index.html" class="s-mobile-drawer__back">
-          &larr; Volver a AV·STUDIO
-        </a>
+        <a href="#piezas">Pieza destacada</a>
+        <a href="#materiales">Oficio y materiales</a>
+        <a href="#espacio">Selección para el hogar</a>
+        <a href="#envios">Envíos y atención</a>
+        <a href="#s-cart-aside">Ver selección</a>
+        <a href="../../index.html" class="s-mobile-drawer__back">&larr; Volver a AV·STUDIO</a>
       </nav>
     </header>
 
     <main>
-      <section class="s-hero" id="inicio">
-        <div class="container s-hero__grid">
-          <div>
-            <span class="s-eyebrow">Objetos de diseño &amp; hogar · Cuenca, Ecuador</span>
-            <h1 class="s-title s-title--hero">
-              Catálogo curado con buscador instantáneo y carrito por WhatsApp.
+      <!-- 1. PORTADA CURATORIAL ASIMÉTRICA -->
+      <section class="s-hero" id="inicio" aria-labelledby="s-hero-title">
+        <div class="container s-hero__layout">
+          <div class="s-hero__editorial">
+            <p class="s-kicker">Objetos de diseño &amp; hogar · Demostración en Cuenca</p>
+            <h1 class="s-hero__title" id="s-hero-title">
+              Piezas táctiles de barro, lana y roble para habitar espacios serenos.
             </h1>
             <p class="s-hero__lead">
-              Mercado Serrano es una tienda ficticia creada por AV·STUDIO para demostrar cómo tu
-              comercio puede organizar productos por categoría, permitir búsqueda en vivo y armar
-              pedidos en USD sin pagar comisiones de pasarela hasta que tu negocio lo requiera.
+              Mercado Serrano es una tienda curatorial ficticia diseñada por AV·STUDIO. Demuestra
+              cómo exhibir colecciones de hogar con precios transparentes en USD, ficha rápida sin
+              salir del catálogo y lista de pedido asistida por WhatsApp.
             </p>
             <div class="s-btn-row">
               <a href="#catalogo" class="s-btn s-btn--terracotta">Explorar catálogo</a>
-              <a href="#envios" class="s-btn s-btn--outline">Cobertura en Ecuador</a>
+              <a href="#piezas" class="s-btn s-btn--outline">Ver pieza destacada</a>
             </div>
+
+            <dl class="s-hero__categories" aria-label="Categorías curatoriales">
+              <div class="s-hero__cat-item">
+                <dt>01 · Cerámica</dt>
+                <dd>Terracota mate, gres de alta temperatura y piedra clara.</dd>
+              </div>
+              <div class="s-hero__cat-item">
+                <dt>02 · Textiles</dt>
+                <dd>Mantas tejidas en lana andina y lino crudo respirable.</dd>
+              </div>
+              <div class="s-hero__cat-item">
+                <dt>03 · Iluminación</dt>
+                <dd>Lámparas de sobremesa en roble aceitado y pantalla de lino.</dd>
+              </div>
+            </dl>
           </div>
 
-          <div class="s-hero__media">
-            <picture>
-              <source srcset="./images/hero.webp" type="image/webp" />
-              <img
-                src="./images/hero.jpg"
-                width="1200"
-                height="900"
-                fetchpriority="high"
-                decoding="async"
-                alt="Exhibición luminosa de cerámica artesanal, mantas tejidas y lámparas de lino en estantería de roble"
-              />
-            </picture>
+          <div class="s-hero__diptych">
+            <figure class="s-hero__main-frame">
+              <picture>
+                <source srcset="./images/hero.webp" type="image/webp" />
+                <img
+                  src="./images/hero.jpg"
+                  width="1200"
+                  height="900"
+                  fetchpriority="high"
+                  loading="eager"
+                  decoding="async"
+                  alt="Estantería arquitectónica de roble con piezas de terracota, mantas andinas dobladas y lámparas de lino encendidas"
+                />
+              </picture>
+              <figcaption class="s-hero__main-cap">
+                Colección demostrativa — cerámica, textiles y luz cálida en exposición
+              </figcaption>
+            </figure>
+
+            <div class="s-hero__companion">
+              <figure class="s-hero__mini-card">
+                <picture>
+                  <source srcset="./images/lampara.webp" type="image/webp" />
+                  <img
+                    src="./images/lampara.jpg"
+                    width="800"
+                    height="600"
+                    loading="eager"
+                    decoding="async"
+                    alt="Lámpara de mesa en base de roble cilíndrica con pantalla de lino junto a bandeja de piedra"
+                  />
+                </picture>
+                <figcaption>
+                  <span>Lámpara Base Roble &amp; Lino</span>
+                  <strong class="tabular-nums">$68.00 USD</strong>
+                </figcaption>
+              </figure>
+
+              <figure class="s-hero__mini-card">
+                <img
+                  src="./images/tazas-gres.jpg"
+                  width="800"
+                  height="600"
+                  loading="eager"
+                  decoding="async"
+                  alt="Set de dos tazas en gres moteado crema y verde salvia sobre piedra travertino"
+                />
+                <figcaption>
+                  <span>Set de 2 Tazas Gres Esmaltadas</span>
+                  <strong class="tabular-nums">$22.00 USD</strong>
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="s-section s-section--gray" id="catalogo">
+      <!-- 2. CATÁLOGO CON FILTROS, BÚSQUEDA Y SELECCIÓN -->
+      <section class="s-section s-section--stone" id="catalogo" aria-labelledby="s-cat-title">
         <div class="container">
-          <span class="s-eyebrow">Tienda interactiva en USD</span>
-          <h2 class="s-title">Catálogo demostrativo de piezas</h2>
+          <div class="s-section__head">
+            <div>
+              <p class="s-kicker">01 · Tienda interactiva de ejemplo (USD)</p>
+              <h2 class="h-title s-title" id="s-cat-title">Catálogo curado de objetos</h2>
+            </div>
+            <p class="s-section__summary" id="s-catalog-count">
+              Mostrando 6 piezas de ejemplo · Selecciona «Ver ficha» para consultar detalles sin salir
+              del catálogo.
+            </p>
+          </div>
 
           <div class="s-toolbar">
             <div class="s-tabs" role="group" aria-label="Filtrar artículos por categoría">
@@ -115,31 +193,48 @@
               <button type="button" class="s-tab" data-store-filter="Textiles">Textiles</button>
               <button type="button" class="s-tab" data-store-filter="Iluminación">Iluminación</button>
             </div>
-            <label for="s-search" class="sr-only">
-              Buscar producto
-            </label>
-            <input
-              id="s-search"
-              type="search"
-              class="s-search"
-              placeholder="Buscar artículo (ej. manta, lámpara)..."
-            />
+
+            <div class="s-search-wrap">
+              <label for="s-search" class="sr-only">Buscar producto en catálogo</label>
+              <input
+                id="s-search"
+                type="search"
+                class="s-search"
+                placeholder="Buscar pieza (ej. lana, terracota, lámpara)..."
+              />
+            </div>
           </div>
 
           <div class="s-shop-layout">
             <div class="s-products-grid" id="s-products-grid"></div>
 
-            <aside class="s-cart" aria-label="Carrito demostrativo">
-              <span class="s-eyebrow s-eyebrow--light">Carrito demostrativo</span>
-              <h3 class="s-cart__title">Resumen de selección</h3>
-              <p class="s-cart__note">
-                Demostración sin pasarela de pago; prepara tu lista de compra hacia WhatsApp.
-              </p>
-              <ul class="s-cart__list" id="s-cart-list"></ul>
-              <div class="s-cart__subtotal">
-                <span>Subtotal estimado</span>
-                <span id="s-cart-total" class="s-cart__total-val">$0.00 USD</span>
+            <aside class="s-cart" id="s-cart-aside" aria-label="Resumen de selección demostrativa">
+              <div class="s-cart__header">
+                <div>
+                  <p class="s-kicker s-kicker--light">Lista demostrativa</p>
+                  <h3 class="s-cart__title">Tu selección</h3>
+                </div>
+                <button
+                  type="button"
+                  class="s-cart__clear"
+                  id="s-cart-clear"
+                  hidden
+                >
+                  Vaciar
+                </button>
               </div>
+              <p class="s-cart__note">
+                Sin pasarela de pagos ni cobro real; arma una lista en USD y prepárala para enviar
+                por WhatsApp.
+              </p>
+
+              <ul class="s-cart__list" id="s-cart-list"></ul>
+
+              <div class="s-cart__subtotal">
+                <span>Subtotal referencial</span>
+                <span id="s-cart-total" class="s-cart__total-val tabular-nums">$0.00 USD</span>
+              </div>
+
               <a
                 id="s-cart-wa"
                 href="https://wa.me/593979290747"
@@ -147,63 +242,255 @@
                 rel="noopener noreferrer"
                 class="s-btn s-btn--terracotta s-cart__btn"
               >
-                Enviar pedido por WhatsApp
+                Consultar lista por WhatsApp
               </a>
             </aside>
           </div>
         </div>
       </section>
 
-      <section class="s-section" id="envios">
-        <div class="container s-cta-band">
-          <div>
-            <span class="s-eyebrow">Logística de ejemplo</span>
-            <h2 class="s-title">Entregas en Cuenca y envíos nacionales</h2>
-            <p class="s-cta-band__text">
-              Si tu comercio requiere pasarela de pagos en línea, inventario sincronizado o base de
-              datos de clientes, se planifica e integra como extensión backend a medida.
+      <!-- 3. PIEZAS DESTACADAS (EXPERIENCIA DE CONSULTA RÁPIDA EN PÁGINA) -->
+      <section class="s-section" id="piezas" aria-labelledby="s-spotlight-title">
+        <div class="container">
+          <div class="s-section__head">
+            <div>
+              <p class="s-kicker">02 · Consulta rápida en detalle</p>
+              <h2 class="s-title" id="s-spotlight-title">Piezas destacadas de la colección</h2>
+            </div>
+
+            <div class="s-spotlight-tabs" role="tablist" aria-label="Explorar piezas destacadas">
+              <button
+                type="button"
+                class="s-spotlight-tab is-active"
+                role="tab"
+                aria-selected="true"
+                data-spotlight-id="lampara-lino"
+              >
+                Lámpara Roble &amp; Lino
+              </button>
+              <button
+                type="button"
+                class="s-spotlight-tab"
+                role="tab"
+                aria-selected="false"
+                data-spotlight-id="manta-lana"
+              >
+                Manta Lana Andina
+              </button>
+              <button
+                type="button"
+                class="s-spotlight-tab"
+                role="tab"
+                aria-selected="false"
+                data-spotlight-id="bandeja-madera"
+              >
+                Centro Piedra Clara
+              </button>
+            </div>
+          </div>
+
+          <div class="s-spotlight-panel" id="s-spotlight-panel"></div>
+        </div>
+      </section>
+
+      <!-- 4. OFICIO Y MATERIALES -->
+      <section class="s-section s-section--stone" id="materiales" aria-labelledby="s-craft-title">
+        <div class="container s-craft-grid">
+          <figure class="s-craft__figure">
+            <div class="s-craft__frame">
+              <img
+                src="./images/oficio-materiales.jpg"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                alt="Muestra curada de materiales naturales: arcilla terracota sin esmaltar, madeja de lana cruda, tejido de lino y bloque de roble sobre travertino"
+              />
+            </div>
+            <figcaption class="s-caption">
+              Estudio de materias primas: barro rojo, lana andina sin teñir, lino lavado y roble
+              cepillado.
+            </figcaption>
+          </figure>
+
+          <div class="s-craft__content">
+            <p class="s-kicker">03 · Diseño y materia</p>
+            <h2 class="s-title" id="s-craft-title">Oficio, texturas y permanencia</h2>
+            <p class="s-body-lead">
+              Cada pieza de esta demostración prioriza superficies honestas que envejecen con
+              nobleza: acabados minerales porosos, tramas tejidas visibles y maderas tratadas sin
+              laca plástica.
+            </p>
+
+            <dl class="s-materials-list">
+              <div class="s-materials-list__row">
+                <dt>Arcilla y gres</dt>
+                <dd>
+                  Piezas torneadas de pared firme con tonos cálidos de terracota y esmaltes sobrios
+                  para uso diario en mesa.
+                </dd>
+              </div>
+              <div class="s-materials-list__row">
+                <dt>Lana y lino</dt>
+                <dd>
+                  Textiles respirables y mantas de abrigo liviano en paletas neutras fáciles de
+                  combinar en sala o dormitorio.
+                </dd>
+              </div>
+              <div class="s-materials-list__row">
+                <dt>Roble y piedra</dt>
+                <dd>
+                  Bases torneadas en madera sólida y contenedores bajos en travertino claro con peso
+                  estable y veta natural.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. SELECCIÓN PARA EL HOGAR -->
+      <section class="s-section s-section--obsidian" id="espacio" aria-labelledby="s-home-title">
+        <div class="container">
+          <div class="s-section__head">
+            <div>
+              <p class="s-kicker s-kicker--light">04 · Integración en espacio real</p>
+              <h2 class="s-title s-title--light" id="s-home-title">Selección para el hogar</h2>
+            </div>
+            <p class="s-home__intro">
+              Cómo dialogan juntas la iluminación cálida, los textiles andinos y la cerámica sobre
+              superficies neutras. Agrega cualquier objeto de la escena directamente a tu selección.
             </p>
           </div>
-          <a
-            href="https://wa.me/593979290747"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="s-btn s-btn--black"
-          >
-            Cotizar tienda online
-          </a>
+
+          <figure class="s-home-stage">
+            <div class="s-home-stage__frame">
+              <img
+                src="./images/espacio-hogar.jpg"
+                width="1600"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                alt="Sala contemporánea iluminada por lámpara de roble y lino, con manta andina doblada sobre sillón, jarrón terracota y centro de mesa en piedra clara"
+              />
+            </div>
+          </figure>
+
+          <div class="s-scene-items" id="s-scene-items"></div>
+        </div>
+      </section>
+
+      <!-- 6. ENVÍOS Y ATENCIÓN (CONDICIONES DEMOSTRATIVAS) -->
+      <section class="s-section" id="envios" aria-labelledby="s-ship-title">
+        <div class="container s-ship-grid">
+          <div>
+            <p class="s-kicker">05 · Cobertura y atención demostrativa</p>
+            <h2 class="s-title" id="s-ship-title">Envíos y consulta directa de ejemplo</h2>
+            <p class="s-body-lead">
+              Esta sección ejemplifica cómo presentar condiciones transparentes de entrega, tiempos
+              estimados y atención personalizada antes de activar un cobro en línea.
+            </p>
+            <p class="s-body-copy">
+              Al tratarse de una demostración de AV·STUDIO, los precios en USD, inventario y
+              modalidades de despacho sirven como muestra visual para tiendas y talleres que deseen
+              lanzar su propio catálogo digital.
+            </p>
+          </div>
+
+          <div class="s-ship-conditions">
+            <article class="s-ship-card">
+              <h3>Entrega urbana referencial</h3>
+              <p>
+                Coordinación directa en Cuenca mediante mensajería o retiro acordado una vez
+                confirmada la lista por WhatsApp.
+              </p>
+            </article>
+            <article class="s-ship-card">
+              <h3>Despachos nacionales de ejemplo</h3>
+              <p>
+                Posibilidad de ilustrar tarifas por ciudad o embalaje reforzado para cerámica e
+                iluminación en todo el Ecuador.
+              </p>
+            </article>
+            <article class="s-ship-card">
+              <h3>Demostración sin pagos activos</h3>
+              <p>
+                No procesa tarjetas ni genera órdenes reales; si tu negocio requiere pasarela de
+                pagos e inventario sincronizado, se integra a medida.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. CONTACTO -->
+      <section class="s-section s-section--stone" id="contacto" aria-labelledby="s-contact-title">
+        <div class="container s-cta-band">
+          <div>
+            <p class="s-kicker">06 · Solución web comercial AV·STUDIO</p>
+            <h2 class="s-title" id="s-contact-title">
+              ¿Necesitas una tienda curada como esta para tu marca?
+            </h2>
+            <p class="s-cta-band__text">
+              Desarrollamos catálogos rápidos con filtros reales, fichas expandibles, montos en USD
+              y conexión directa a WhatsApp o futuras pasarelas de pago.
+            </p>
+          </div>
+
+          <div class="s-btn-row">
+            <a href="../../index.html?sector=tienda#contacto" class="s-btn s-btn--terracotta">
+              Solicitar cotización en AV·STUDIO
+            </a>
+            <a
+              href="https://wa.me/593979290747"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="s-btn s-btn--black"
+            >
+              Conversar por WhatsApp
+            </a>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="s-footer">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+        <div class="s-footer__top">
           <div>
-            <strong style="font-size: 1.15rem;">MERCADO SERRANO · Tienda de Diseño</strong>
-            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.82;">
+            <strong class="s-footer__brand">Mercado Serrano · Tienda de Diseño</strong>
+            <p class="s-footer__sub">
               DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
             </p>
           </div>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+
+          <div class="s-footer__links">
             <a href="#catalogo">Catálogo</a>
+            <a href="#piezas">Pieza destacada</a>
+            <a href="#materiales">Oficio</a>
+            <a href="#espacio">En el hogar</a>
             <a href="#envios">Envíos</a>
-            <a href="../../index.html" style="color: var(--s-terracotta-light); font-weight: 700;">Volver a AV·STUDIO</a>
+            <a href="../../index.html" class="s-footer__back">Volver a AV·STUDIO</a>
           </div>
         </div>
 
         <div class="s-av-signature">
           <div>
-            <p style="margin: 0 0 0.25rem;">
-              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos catálogos y tiendas digitales para comercios en Ecuador.
+            <p class="s-av-signature__title">
+              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos catálogos y tiendas
+              digitales para comercios y marcas en Ecuador.
             </p>
-            <p style="margin: 0; opacity: 0.88;">
-              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
-              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=tienda#contacto" class="" style="text-decoration: underline;">
-            Quiero una página para mi tienda &rarr;
-          </a>
+            <p class="s-av-signature__meta">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong>
+              <span aria-hidden="true">·</span>
+              <a href="mailto:andersonvallejo021@gmail.com">andersonvallejo021@gmail.com</a>
+              <span aria-hidden="true">·</span>
+              <a href="../../index.html?sector=tienda#contacto">
+                Quiero una página para mi tienda &rarr;
+              </a>
             </p>
           </div>
+
           <a
             href="https://wa.me/593979290747"
             target="_blank"
@@ -215,6 +502,45 @@
         </div>
       </div>
     </footer>
+
+    <!-- FICHA RÁPIDA DE PRODUCTO (SIN ABANDONAR EL CATÁLOGO) -->
+    <dialog class="s-modal" id="s-quickview" aria-labelledby="s-qv-title">
+      <div class="s-modal__inner">
+        <button
+          type="button"
+          class="s-modal__close"
+          id="s-qv-close"
+          aria-label="Cerrar ficha del producto"
+        >
+          &times;
+        </button>
+
+        <div class="s-modal__grid">
+          <div class="s-modal__media" id="s-qv-media"></div>
+          <div class="s-modal__info">
+            <p class="s-kicker" id="s-qv-cat"></p>
+            <h3 class="s-modal__title" id="s-qv-title"></h3>
+            <p class="s-modal__price tabular-nums" id="s-qv-price"></p>
+            <p class="s-modal__desc" id="s-qv-desc"></p>
+
+            <dl class="s-modal__specs" id="s-qv-specs"></dl>
+
+            <p class="s-modal__demo-note">
+              Pieza demostrativa de ejemplo en USD · Sin cobro automático en línea.
+            </p>
+
+            <div class="s-modal__actions">
+              <button type="button" class="s-btn s-btn--terracotta" id="s-qv-add">
+                + Agregar a selección
+              </button>
+              <button type="button" class="s-btn s-btn--outline" id="s-qv-dismiss">
+                Seguir explorando
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
 
     <script type="module" src="./js/app.js"></script>
   </body>

@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="robots" content="noindex, follow" />
-    <title>Trigal Dorado — Panadería &amp; Pastelería (Demostración) | AV·STUDIO</title>
+    <title>Trigal Dorado — Panadería &amp; Pastelería Artesanal (Demostración) | AV·STUDIO</title>
     <meta
       name="description"
-      content="Sitio web demostrativo de panadería y pastelería artesanal en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+      content="Sitio web demostrativo de panadería y pastelería artesanal contemporánea en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
     />
     <meta property="og:title" content="Trigal Dorado — Panadería &amp; Pastelería (Demostración) | AV·STUDIO" />
     <meta
       property="og:description"
-      content="Obrador artesanal ficticio en Cuenca con vitrina por categorías en USD y cotizador de tortas por encargo."
+      content="Obrador artesanal ficticio en Puertas del Sol, Cuenca con vitrina por categorías en USD y cotizador demostrativo de tortas por encargo."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AV·STUDIO" />
     <meta property="og:locale" content="es_EC" />
-    <meta property="og:image" content="../../assets/images/categories/pasteleria.jpg" />
+    <meta property="og:image" content="./images/hero.jpg" />
     <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -39,12 +39,16 @@
     <header class="t-header">
       <div class="container t-header__inner">
         <a href="#inicio" class="t-brand">Trigal Dorado</a>
+
         <nav class="t-nav" aria-label="Navegación de la pastelería">
-          <a class="t-nav__link" href="#inicio">Inicio</a>
+          <a class="t-nav__link" href="#filosofia">Obrador</a>
           <a class="t-nav__link" href="#vitrina">Vitrina</a>
-          <a class="t-nav__link" href="#obrador">Obrador</a>
-          <a class="t-nav__link" href="#encargos">Pedidos especiales</a>
+          <a class="t-nav__link" href="#obrador">Especialidades</a>
+          <a class="t-nav__link" href="#ingredientes">Ingredientes</a>
+          <a class="t-nav__link" href="#galeria">Galería</a>
+          <a class="t-nav__link" href="#encargos">Encargos</a>
         </nav>
+
         <div class="t-header__actions">
           <a href="#encargos" class="t-btn t-btn--choco t-header__cta">Cotizar torta</a>
           <button
@@ -59,60 +63,153 @@
           </button>
         </div>
       </div>
+
       <nav class="t-mobile-drawer" id="t-mobile-drawer" hidden aria-label="Menú móvil">
         <a href="#inicio">Inicio</a>
+        <a href="#filosofia">Obrador</a>
         <a href="#vitrina">Vitrina</a>
-        <a href="#obrador">Obrador</a>
-        <a href="#encargos">Pedidos especiales</a>
-        <a href="../../index.html" class="t-mobile-drawer__back">
-          &larr; Volver a AV·STUDIO
-        </a>
+        <a href="#obrador">Especialidades</a>
+        <a href="#ingredientes">Ingredientes</a>
+        <a href="#galeria">Galería</a>
+        <a href="#encargos">Encargos</a>
+        <a href="../../index.html" class="t-mobile-drawer__back">&larr; Volver a AV·STUDIO</a>
       </nav>
     </header>
 
     <main>
+      <!-- 1. PORTADA GASTRONÓMICA -->
       <section class="t-hero" id="inicio">
-        <div class="container t-hero__grid">
-          <div>
-            <span class="t-eyebrow">Obrador artesanal · Sector Puertas del Sol, Cuenca</span>
-            <h1 class="t-title">Pan de masa madre y pastelería fina horneada cada mañana.</h1>
-            <p class="t-hero__lead">
-              Trigal Dorado es una pastelería ficticia de demostración creada por AV·STUDIO para
-              mostrar cómo tu negocio puede exhibir vitrina en USD, postres de temporada y cotizar
-              tortas personalizadas sin depender de mensajes desordenados.
-            </p>
-            <div class="t-btn-row">
-              <a href="#vitrina" class="t-btn t-btn--choco">Explorar vitrina en USD</a>
-              <a href="#encargos" class="t-btn t-btn--rose">Cotizar torta por encargo</a>
+        <div class="container">
+          <div class="t-hero__masthead">
+            <div class="t-hero__headline-col">
+              <span class="t-eyebrow">Obrador artesanal · Puertas del Sol, Cuenca</span>
+              <h1 class="t-hero__title">
+                Pan de masa madre y pastelería fina horneada cada <em>mañana</em>.
+              </h1>
+            </div>
+
+            <div class="t-hero__intro-col">
+              <p class="t-hero__lead">
+                Trigal Dorado es un obrador ficticio creado por AV·STUDIO para mostrar cómo una
+                panadería y pastelería de autor presenta su vitrina diaria en USD, ediciones de
+                temporada y cotizaciones por encargo sin fricciones.
+              </p>
+              <div class="t-btn-row">
+                <a href="#vitrina" class="t-btn t-btn--choco">Explorar vitrina en USD</a>
+                <a href="#encargos" class="t-btn t-btn--rose">Cotizar torta por encargo</a>
+              </div>
             </div>
           </div>
 
-          <div class="t-hero__media">
-            <picture>
-              <source srcset="./images/hero.webp" type="image/webp" />
-              <img
-                src="./images/hero.jpg"
-                width="1200"
-                height="900"
-                fetchpriority="high"
-                decoding="async"
-                alt="Mostrador de pastelería artesanal con croissants, pan de masa madre y torta de cacao con frutos rojos"
-              />
-            </picture>
+          <figure class="t-hero__plate">
+            <div class="t-hero__plate-frame">
+              <picture>
+                <source srcset="./images/hero.webp" type="image/webp" />
+                <img
+                  src="./images/hero.jpg"
+                  width="1200"
+                  height="900"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                  alt="Mostrador matutino de Trigal Dorado con croissants dorados, hogaza de masa madre y torta de cacao con frutos rojos sobre mármol"
+                />
+              </picture>
+            </div>
+            <figcaption class="t-hero__ledger" aria-label="Índice rápido de vitrina">
+              <button type="button" class="t-ledger-item" data-jump-cat="Panadería">
+                <span class="t-ledger-item__num">01</span>
+                <span class="t-ledger-item__text">Panadería &amp; Laminados</span>
+              </button>
+              <button type="button" class="t-ledger-item" data-jump-cat="Pasteles enteros">
+                <span class="t-ledger-item__num">02</span>
+                <span class="t-ledger-item__text">Pasteles enteros</span>
+              </button>
+              <button type="button" class="t-ledger-item" data-jump-cat="Postres individuales">
+                <span class="t-ledger-item__num">03</span>
+                <span class="t-ledger-item__text">Postres individuales</span>
+              </button>
+              <button type="button" class="t-ledger-item" data-jump-cat="Temporada">
+                <span class="t-ledger-item__num">04</span>
+                <span class="t-ledger-item__text">Ediciones de temporada</span>
+              </button>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 2. FILOSOFÍA DEL OBRADOR -->
+      <section class="t-section t-section--ivory" id="filosofia">
+        <div class="container">
+          <div class="t-filosofia__head">
+            <div>
+              <span class="t-eyebrow">Filosofía del obrador</span>
+              <h2 class="t-title">Harina, mantequilla y tiempo: la vitrina sin atajos.</h2>
+            </div>
+            <p class="t-copy">
+              Cada pieza responde a un balance simple de materia prima reconocible y cocciones
+              cuidadas. Este sitio ejemplifica cómo organizar un catálogo de vitrina diaria junto con
+              encargos programados con precios referenciales en dólares estadounidenses.
+            </p>
+          </div>
+
+          <div class="t-pillars">
+            <article class="t-pillar">
+              <span class="t-pillar__index">01 · Fermentación y miga</span>
+              <h3 class="t-pillar__title">Masas reposadas de 24 horas</h3>
+              <p class="t-pillar__copy">
+                Hogazas de corteza crujiente y miga abierta presentadas con peso real en gramos y
+                valor referencial claro.
+              </p>
+            </article>
+
+            <article class="t-pillar">
+              <span class="t-pillar__index">02 · Laminado y horneado</span>
+              <h3 class="t-pillar__title">Capas finas de mantequilla</h3>
+              <p class="t-pillar__copy">
+                Croissants, tartaletas sablé y hojaldres caramelizados mostrados con fotografía
+                protagonista antes que cajas de texto repetitivas.
+              </p>
+            </article>
+
+            <article class="t-pillar">
+              <span class="t-pillar__index">03 · Encargos transparentes</span>
+              <h3 class="t-pillar__title">Porciones y sabores a medida</h3>
+              <p class="t-pillar__copy">
+                Opciones claras para 12, 20 o 35 porciones con consulta demostrativa directa hacia
+                WhatsApp, sin pasarelas forzadas.
+              </p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="t-section t-section--white" id="vitrina">
+      <!-- 3. VITRINA DE PRODUCTOS -->
+      <section class="t-section t-section--flour" id="vitrina">
         <div class="container">
-          <span class="t-eyebrow">Catálogo demostrativo</span>
-          <h2 class="t-title">Vitrina de panadería y pastelería</h2>
+          <div class="t-section-head">
+            <div>
+              <span class="t-eyebrow">Catálogo demostrativo en USD</span>
+              <h2 class="t-title">Vitrina de panadería y pastelería</h2>
+              <p class="t-copy">
+                Precios y formatos de ejemplo. Abre la ficha rápida para consultar ingredientes y
+                porciones, o traslada cualquier pieza al formulario de encargo.
+              </p>
+            </div>
+            <p class="t-count" id="t-catalog-count" aria-live="polite">
+              6 productos en vitrina
+            </p>
+          </div>
 
           <div class="t-tabs" role="group" aria-label="Filtrar vitrina de pastelería">
             <button type="button" class="t-tab is-active" data-bakery-filter="Todos">Todos</button>
             <button type="button" class="t-tab" data-bakery-filter="Panadería">Panadería</button>
-            <button type="button" class="t-tab" data-bakery-filter="Pasteles enteros">Pasteles enteros</button>
-            <button type="button" class="t-tab" data-bakery-filter="Postres individuales">Postres individuales</button>
+            <button type="button" class="t-tab" data-bakery-filter="Pasteles enteros">
+              Pasteles enteros
+            </button>
+            <button type="button" class="t-tab" data-bakery-filter="Postres individuales">
+              Postres individuales
+            </button>
             <button type="button" class="t-tab" data-bakery-filter="Temporada">Temporada</button>
           </div>
 
@@ -120,68 +217,356 @@
         </div>
       </section>
 
-      <section class="t-section t-section--spotlight" id="obrador">
+      <!-- 4. ESPECIALIDADES DESTACADAS -->
+      <section class="t-section t-section--cacao" id="obrador">
         <div class="container t-spotlight-grid">
-          <div class="t-spotlight__media">
+          <figure class="t-spotlight__media">
             <picture>
               <source srcset="./images/vitrina.webp" type="image/webp" />
               <img
                 src="./images/vitrina.jpg"
                 width="1200"
                 height="900"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
-                alt="Vitrina luminosa de pastelería artesanal con tartaletas de frutos rojos, milhojas y panes recién horneados"
+                alt="Vitrina luminosa de Trigal Dorado con campanas de vidrio, tartaletas de frutos rojos, milhojas y tortas artesanales"
               />
             </picture>
-          </div>
-          <div>
-            <span class="t-eyebrow">Horneado diario &amp; entregas</span>
-            <h2 class="t-title">Vitrina de temporada y mesa dulce para eventos</h2>
-            <p class="t-spotlight__copy">
-              Presenta tus ediciones limitadas de fin de semana, cajas degustación o pasteles
-              bajo pedido con fotografía real del producto y tiempos claros de anticipación.
+            <figcaption class="t-caption t-caption--light">
+              Vitrina matutina · Exhibición diaria y pedidos programados de ejemplo
+            </figcaption>
+          </figure>
+
+          <div class="t-spotlight__panel">
+            <span class="t-eyebrow t-eyebrow--gold">Especialidades destacadas</span>
+            <h2 class="t-title t-title--light">Piezas insignia del mostrador</h2>
+            <p class="t-copy t-copy--light">
+              Explora nuestras tres preparaciones protagonistas y revisa su ficha técnica de ejemplo
+              antes de cotizar un tamaño o sabor similar.
             </p>
-            <ul class="t-spotlight__list">
-              <li>Fermentación lenta en masa madre y cacao ecuatoriano de aroma fino.</li>
-              <li>Porciones transparentes en USD para celebraciones de 12, 20 o 35 personas.</li>
-              <li>Reserva directa por fecha sin intermediarios ni comisiones externas.</li>
-            </ul>
-            <a href="#encargos" class="t-btn t-btn--choco">Configurar pedido especial</a>
+
+            <div class="t-spotlight-tabs" role="tablist" aria-label="Seleccionar especialidad destacada">
+              <button
+                type="button"
+                class="t-spotlight-tab is-active"
+                role="tab"
+                aria-selected="true"
+                data-spotlight-id="torta-frutos-rojos"
+              >
+                Cacao &amp; Frutos
+              </button>
+              <button
+                type="button"
+                class="t-spotlight-tab"
+                role="tab"
+                aria-selected="false"
+                data-spotlight-id="torta-tres-leches"
+              >
+                Maracuyá
+              </button>
+              <button
+                type="button"
+                class="t-spotlight-tab"
+                role="tab"
+                aria-selected="false"
+                data-spotlight-id="pan-masa-madre"
+              >
+                Masa Madre
+              </button>
+            </div>
+
+            <div class="t-spotlight-card" id="t-spotlight-card" aria-live="polite">
+              <div class="t-spotlight-card__top">
+                <span class="t-spotlight-card__cat" id="t-sp-cat">Pasteles enteros</span>
+                <span class="t-spotlight-card__price" id="t-sp-price">$28.00 USD (ref.)</span>
+              </div>
+              <h3 class="t-spotlight-card__title" id="t-sp-title">
+                Torta Cacao &amp; Frutos Rojos (12 porciones)
+              </h3>
+              <p class="t-spotlight-card__desc" id="t-sp-desc">
+                Bizcocho húmedo de cacao ecuatoriano, crema diplomática de vainilla y moras frescas.
+              </p>
+              <dl class="t-spotlight-specs">
+                <div>
+                  <dt>Formato de ejemplo</dt>
+                  <dd id="t-sp-yield">12 porciones estándar · Altura media</dd>
+                </div>
+                <div>
+                  <dt>Anticipación sugerida</dt>
+                  <dd id="t-sp-lead">48 horas referenciales</dd>
+                </div>
+              </dl>
+              <div class="t-btn-row">
+                <button type="button" class="t-btn t-btn--rose" id="t-sp-quote-btn">
+                  Cotizar especialidad
+                </button>
+                <button type="button" class="t-btn t-btn--outline-light" id="t-sp-quick-btn">
+                  Abrir ficha rápida
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="t-section" id="encargos">
+      <!-- 5. EL OFICIO Y LOS INGREDIENTES -->
+      <section class="t-section t-section--ivory" id="ingredientes">
+        <div class="container t-craft-grid">
+          <div class="t-craft__content">
+            <span class="t-eyebrow">Materia prima y oficio</span>
+            <h2 class="t-title">Texturas que definen el carácter del horno</h2>
+            <p class="t-copy">
+              La textura de cada bizcocho, tartaleta y hogaza nace del trato directo de cuatro
+              elementos esenciales sobre el mesón de trabajo.
+            </p>
+
+            <div class="t-ingredients-list">
+              <article class="t-ing-row">
+                <h3 class="t-ing-row__name">Harina y fermento natural</h3>
+                <p class="t-ing-row__text">
+                  Hidratación paciente y reposos largos para desarrollar cortezas doradas y migas
+                  tiernas sin aditivos decorativos.
+                </p>
+              </article>
+              <article class="t-ing-row">
+                <h3 class="t-ing-row__name">Mantequilla de laminado y crema</h3>
+                <p class="t-ing-row__text">
+                  Pliegues definidos para hojaldres crujientes y cremas ligeras de punto estable.
+                </p>
+              </article>
+              <article class="t-ing-row">
+                <h3 class="t-ing-row__name">Cacao de aroma y fruta ácida</h3>
+                <p class="t-ing-row__text">
+                  Notas tostadas profundas equilibradas con maracuyá, limón sutil, moras y
+                  frambuesas frescas.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <figure class="t-craft__media">
+            <img
+              src="./images/obrador-ingredientes.jpg"
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              alt="Mesa de trabajo artesanal con harina molida a piedra, mantequilla fresca, cacao troceado, azúcar de caña y cesta de lino"
+            />
+            <figcaption class="t-caption">
+              Mesa de preparación · Harina, mantequilla, cacao en grano y fermento de obrador
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 6. ENCARGOS Y OCASIONES -->
+      <section class="t-section t-section--kraft" id="encargos-ocasiones">
+        <div class="container t-occasions-grid">
+          <figure class="t-occasions__media">
+            <img
+              src="./images/mesa-dulce-encargos.jpg"
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              alt="Mesa dulce de celebración artesanal sobre mantel de lino con torta de pisos, tartaletas y cajas kraft con cordel"
+            />
+            <figcaption class="t-caption">
+              Montaje ilustrativo para celebraciones · Presentación de ejemplo
+            </figcaption>
+          </figure>
+
+          <div>
+            <span class="t-eyebrow">Encargos y ocasiones</span>
+            <h2 class="t-title">Cumpleaños, mesas dulces y celebraciones íntimas</h2>
+            <p class="t-copy">
+              Elige una escala tentativa de porciones para trasladarla al cotizador demostrativo. No
+              se realizan cobros ni bloqueos automáticos de inventario en esta vista de ejemplo.
+            </p>
+
+            <div class="t-tiers">
+              <article class="t-tier">
+                <div>
+                  <h3 class="t-tier__title">Reunión íntima · 12 porciones</h3>
+                  <p class="t-tier__desc">
+                    Torta mediana de un nivel o caja combinada de postres individuales.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="t-btn t-btn--outline"
+                  data-select-portions="12 porciones"
+                >
+                  Usar formato
+                </button>
+              </article>
+
+              <article class="t-tier">
+                <div>
+                  <h3 class="t-tier__title">Celebración familiar · 20 porciones</h3>
+                  <p class="t-tier__desc">
+                    Sabor a elección con dedicatoria breve o cobertura de frutos de temporada.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="t-btn t-btn--outline"
+                  data-select-portions="20 porciones"
+                >
+                  Usar formato
+                </button>
+              </article>
+
+              <article class="t-tier">
+                <div>
+                  <h3 class="t-tier__title">Mesa dulce &amp; evento · 35 porciones</h3>
+                  <p class="t-tier__desc">
+                    Pastel principal más surtido demostrativo de tartaletas y milhojas por caja.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="t-btn t-btn--outline"
+                  data-select-portions="35 porciones"
+                >
+                  Usar formato
+                </button>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. GALERÍA GASTRONÓMICA -->
+      <section class="t-section t-section--flour" id="galeria">
+        <div class="container">
+          <div class="t-section-head">
+            <div>
+              <span class="t-eyebrow">Fotografía de detalle</span>
+              <h2 class="t-title">Galería del obrador</h2>
+              <p class="t-copy">
+                Escenas únicas de cocción, alveolado de hojaldre, atemperado de chocolate y empaque
+                en papel kraft.
+              </p>
+            </div>
+          </div>
+
+          <div class="t-gallery-mosaic">
+            <figure class="t-gallery-item t-gallery-item--wide">
+              <div class="t-gallery-item__frame">
+                <img
+                  src="./images/galeria-horno-corteza.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Panes rústicos y baguettes doradas enfriando en rejilla metálica junto al horno de piedra"
+                />
+              </div>
+              <figcaption class="t-caption">
+                01 · Salida del horno · Cortezas doradas en enfriamiento sobre rejilla
+              </figcaption>
+            </figure>
+
+            <figure class="t-gallery-item t-gallery-item--tall">
+              <div class="t-gallery-item__frame">
+                <img
+                  src="./images/galeria-hojaldre-corte.jpg"
+                  width="900"
+                  height="1200"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Corte transversal de croissant artesanal mostrando alveolado laminado ligero sobre plato de gres"
+                />
+              </div>
+              <figcaption class="t-caption">
+                02 · Alveolado de mantequilla y corte crujiente
+              </figcaption>
+            </figure>
+
+            <figure class="t-gallery-item t-gallery-item--sq">
+              <div class="t-gallery-item__frame">
+                <img
+                  src="./images/galeria-chocolate-cacao.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Rizos de chocolate oscuro atemperado junto a mazorcas de cacao y cacao en polvo sobre mesa de madera"
+                />
+              </div>
+              <figcaption class="t-caption">
+                03 · Atemperado de cacao oscuro para coberturas y ganaches
+              </figcaption>
+            </figure>
+
+            <figure class="t-gallery-item t-gallery-item--panoramic">
+              <div class="t-gallery-item__frame">
+                <img
+                  src="./images/galeria-empaque-papel.jpg"
+                  width="1600"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Estación de empaque con cajas kraft sin blanquear, papel encerado y cordel de algodón sobre mostrador de roble"
+                />
+              </div>
+              <figcaption class="t-caption">
+                04 · Empaque de mostrador · Cajas kraft, papel encerado y cordel natural
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. CONTACTO Y CONSULTAS -->
+      <section class="t-section t-section--ivory" id="encargos">
         <div class="container t-order-grid">
           <div>
             <span class="t-eyebrow">Pedidos personalizados</span>
-            <h2 class="t-title">Cotiza tu torta o mesa dulce de ejemplo.</h2>
-            <p class="t-order__copy">
-              Este formulario valida sabor, porciones y fecha de entrega para generar un mensaje
-              claro dirigido al WhatsApp de Anderson Vallejo (AV·STUDIO).
+            <h2 class="t-title">Cotiza tu torta o mesa dulce de ejemplo</h2>
+            <p class="t-copy">
+              Este formulario valida sabor, porciones y fecha requerida para preparar una consulta
+              ordenada hacia WhatsApp de Anderson Vallejo (AV·STUDIO). Ninguna solicitud genera
+              cobros ni reservas confirmadas reales.
             </p>
-            <p class="t-order__note">
-              <strong>Horarios de ejemplo:</strong> Lunes a sábado 07:30 – 19:30 · Domingos 08:00 – 14:00 (24h).<br />
-              <strong>Referencia:</strong> Sector Puertas del Sol, Cuenca, Ecuador.
-            </p>
+
+            <dl class="t-meta-list">
+              <div>
+                <dt>Horario referencial (24h)</dt>
+                <dd>Lunes a sábado 07:30 – 19:30 · Domingos 08:00 – 14:00</dd>
+              </div>
+              <div>
+                <dt>Ubicación de ejemplo</dt>
+                <dd>Sector Puertas del Sol, Cuenca, Azuay, Ecuador</dd>
+              </div>
+              <div>
+                <dt>Canal conectado</dt>
+                <dd>WhatsApp directo de Anderson Vallejo — AV·STUDIO</dd>
+              </div>
+            </dl>
           </div>
 
           <form class="t-form-card" id="t-order-form" novalidate>
-            <h3 class="t-form-card__title">
-              Cotización demostrativa por encargo
-            </h3>
+            <div class="t-form-card__head">
+              <h3 class="t-form-card__title">Cotización demostrativa por encargo</h3>
+              <span class="t-form-card__tag">Sitio de ejemplo</span>
+            </div>
+
             <div class="t-form-fields">
               <div class="t-field">
                 <label for="t-name">Tu nombre *</label>
-                <input id="t-name" type="text" placeholder="Ej. Sofía Ordóñez" />
-                <span class="t-err" id="t-err-name"></span>
+                <input id="t-name" type="text" placeholder="Ej. Sofía Ordóñez" autocomplete="name" />
+                <span class="t-err" id="t-err-name" aria-live="polite"></span>
               </div>
+
               <div class="t-field">
                 <label for="t-phone">WhatsApp *</label>
-                <input id="t-phone" type="tel" placeholder="+593 9..." />
-                <span class="t-err" id="t-err-phone"></span>
+                <input id="t-phone" type="tel" placeholder="+593 9..." autocomplete="tel" />
+                <span class="t-err" id="t-err-phone" aria-live="polite"></span>
               </div>
+
               <div class="t-field">
                 <label for="t-flavor">Sabor base *</label>
                 <select id="t-flavor">
@@ -191,8 +576,9 @@
                   <option value="Vainilla y amapola">Vainilla y amapola</option>
                   <option value="Zanahoria, nuez y queso">Zanahoria, nuez y queso</option>
                 </select>
-                <span class="t-err" id="t-err-flavor"></span>
+                <span class="t-err" id="t-err-flavor" aria-live="polite"></span>
               </div>
+
               <div class="t-field">
                 <label for="t-portions">Porciones *</label>
                 <select id="t-portions">
@@ -201,24 +587,29 @@
                   <option value="20 porciones">20 porciones</option>
                   <option value="35 porciones">35 porciones</option>
                 </select>
-                <span class="t-err" id="t-err-portions"></span>
+                <span class="t-err" id="t-err-portions" aria-live="polite"></span>
               </div>
+
               <div class="t-field">
                 <label for="t-date">Fecha requerida *</label>
                 <input id="t-date" type="date" />
-                <span class="t-err" id="t-err-date"></span>
+                <span class="t-err" id="t-err-date" aria-live="polite"></span>
               </div>
+
               <div class="t-field">
                 <label for="t-notes">Dedicatoria o nota (opcional)</label>
                 <input id="t-notes" type="text" placeholder="Ej. Sin nueces, tono pastel" />
               </div>
             </div>
-            <div style="margin-top: 1rem;">
+
+            <div class="t-form-actions">
               <button type="submit" class="t-btn t-btn--choco">Preparar cotización en WhatsApp</button>
             </div>
+
             <div class="t-prepared" id="t-prepared" hidden>
-              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
-                <strong>Cotización demostrativa lista.</strong> Abre el mensaje preparado hacia AV·STUDIO:
+              <p class="t-prepared__copy">
+                <strong>Cotización demostrativa lista.</strong> Abre el mensaje preparado hacia
+                AV·STUDIO:
               </p>
               <a
                 id="t-prepared-wa"
@@ -235,32 +626,77 @@
       </section>
     </main>
 
+    <!-- MODAL FICHA RÁPIDA DE PRODUCTO -->
+    <dialog class="t-dialog" id="t-quickview" aria-labelledby="t-qv-title">
+      <div class="t-dialog__shell">
+        <button type="button" class="t-dialog__close" id="t-qv-close" aria-label="Cerrar ficha">
+          &times;
+        </button>
+        <div class="t-dialog__media">
+          <img id="t-qv-img" src="./images/pan-masa-madre.jpg" width="800" height="600" alt="" />
+        </div>
+        <div class="t-dialog__body">
+          <span class="t-eyebrow" id="t-qv-cat">Panadería</span>
+          <h3 class="t-dialog__title" id="t-qv-title">Producto</h3>
+          <p class="t-dialog__price" id="t-qv-price">$0.00 USD (referencial)</p>
+          <p class="t-dialog__desc" id="t-qv-desc"></p>
+
+          <dl class="t-dialog__specs">
+            <div>
+              <dt>Ingredientes principales</dt>
+              <dd id="t-qv-ingredients"></dd>
+            </div>
+            <div>
+              <dt>Formato referencial</dt>
+              <dd id="t-qv-format"></dd>
+            </div>
+            <div>
+              <dt>Nota de demostración</dt>
+              <dd>Producto ilustrativo sin compra en línea ni stock en vivo.</dd>
+            </div>
+          </dl>
+
+          <div class="t-btn-row">
+            <button type="button" class="t-btn t-btn--choco" id="t-qv-action">
+              Pasar a cotización
+            </button>
+            <button type="button" class="t-btn t-btn--outline" id="t-qv-dismiss">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
     <footer class="t-footer">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+        <div class="t-footer__top">
           <div>
-            <strong style="font-family: var(--t-font-display); font-size: 1.4rem;">Trigal Dorado · Pastelería</strong>
-            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.82;">
-              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            <strong class="t-footer__brand">Trigal Dorado · Pastelería</strong>
+            <p class="t-footer__note">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Puertas del Sol, Cuenca, Azuay, Ecuador.
             </p>
           </div>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+          <nav class="t-footer__links" aria-label="Enlaces del pie">
+            <a href="#filosofia">Obrador</a>
             <a href="#vitrina">Vitrina</a>
+            <a href="#obrador">Especialidades</a>
+            <a href="#galeria">Galería</a>
             <a href="#encargos">Pedidos especiales</a>
-            <a href="../../index.html" style="color: #f4c6bf; font-weight: 600;">Volver a AV·STUDIO</a>
-          </div>
+            <a href="../../index.html" class="t-footer__back">Volver a AV·STUDIO</a>
+          </nav>
         </div>
 
         <div class="t-av-signature">
           <div>
-            <p style="margin: 0 0 0.25rem;">
-              <strong>¿Te gustaría una página web como esta?</strong> Creamos sitios web personalizados para panaderías y pastelerías.
+            <p class="t-av-signature__title">
+              <strong>¿Te gustaría una página web como esta?</strong> Creamos sitios web personalizados
+              para panaderías y pastelerías.
             </p>
-            <p style="margin: 0; opacity: 0.88;">
+            <p class="t-av-signature__meta">
               <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
-              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=pasteleria#contacto" class="" style="text-decoration: underline;">
-            Quiero una página para mi pastelería &rarr;
-          </a>
+              <a href="mailto:andersonvallejo021@gmail.com">andersonvallejo021@gmail.com</a> ·
+              <a href="../../index.html?sector=pasteleria#contacto">
+                Quiero una página para mi pastelería &rarr;
+              </a>
             </p>
           </div>
           <a

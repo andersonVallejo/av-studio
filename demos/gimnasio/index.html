@@ -13,17 +13,17 @@
     <meta property="og:title" content="Pulso 360 — Gimnasio &amp; Entrenamiento (Demostración) | AV·STUDIO" />
     <meta
       property="og:description"
-      content="Club deportivo ficticio en Cuenca con programas por disciplina, membresías transparentes en USD y clase de prueba."
+      content="Club deportivo ficticio en Cuenca con zonas especializadas, horarios en 24h, planes referenciales en USD y consulta demostrativa."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AV·STUDIO" />
     <meta property="og:locale" content="es_EC" />
-    <meta property="og:image" content="../../assets/images/categories/gimnasio.jpg" />
+    <meta property="og:image" content="./images/hero.jpg" />
     <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -39,15 +39,16 @@
     <header class="g-header">
       <div class="container g-header__inner">
         <a href="#inicio" class="g-brand">PULSO <span class="g-brand__accent">360</span></a>
+
         <nav class="g-nav" aria-label="Navegación del gimnasio">
-          <a class="g-nav__link" href="#inicio">Inicio</a>
-          <a class="g-nav__link" href="#programas">Programas</a>
-          <a class="g-nav__link" href="#instalaciones">Instalaciones</a>
-          <a class="g-nav__link" href="#planes">Planes en USD</a>
-          <a class="g-nav__link" href="#prueba">Clase de prueba</a>
+          <a class="g-nav__link" href="#zonas">Zonas</a>
+          <a class="g-nav__link" href="#planes">Planes</a>
+          <a class="g-nav__link" href="#programas">Horarios</a>
+          <a class="g-nav__link" href="#prueba">Prueba</a>
         </nav>
+
         <div class="g-header__actions">
-          <a href="#prueba" class="g-btn g-btn--orange g-header__cta">Pase de prueba</a>
+          <a href="#prueba" class="g-btn g-btn--orange g-header__cta">Clase de prueba</a>
           <button
             type="button"
             class="g-mobile-toggle"
@@ -60,39 +61,24 @@
           </button>
         </div>
       </div>
+
       <nav class="g-mobile-drawer" id="g-mobile-drawer" hidden aria-label="Menú móvil">
-        <a href="#inicio">Inicio</a>
-        <a href="#programas">Programas</a>
-        <a href="#instalaciones">Instalaciones</a>
+        <a href="#filosofia">Filosofía de entrenamiento</a>
+        <a href="#zonas">Zonas de entrenamiento</a>
         <a href="#planes">Planes en USD</a>
+        <a href="#programas">Horarios y disciplinas</a>
+        <a href="#experiencia">Experiencia de entrenamiento</a>
+        <a href="#galeria">Galería</a>
         <a href="#prueba">Clase de prueba</a>
-        <a href="../../index.html" class="g-mobile-drawer__back">
-          &larr; Volver a AV·STUDIO
-        </a>
+        <a href="../../index.html" class="g-mobile-drawer__back">&larr; Volver a AV·STUDIO</a>
       </nav>
     </header>
 
     <main>
       <section class="g-hero" id="inicio">
-        <div class="container g-hero__grid">
-          <div>
-            <span class="g-eyebrow">Entrenamiento funcional &amp; fuerza · Cuenca, Ecuador</span>
-            <h1 class="g-title g-title--hero">
-              Entrena con técnica, horarios claros y planes sin cargos ocultos.
-            </h1>
-            <p class="g-hero__lead">
-              Pulso 360 es un gimnasio ficticio diseñado por AV·STUDIO para mostrar cómo un centro
-              deportivo presenta disciplinas, horarios en 24h, tarifas transparentes en USD y
-              registro para clases de prueba.
-            </p>
-            <div class="g-btn-row">
-              <a href="#prueba" class="g-btn g-btn--orange">Solicitar clase de prueba</a>
-              <a href="#planes" class="g-btn g-btn--outline">Ver planes en USD</a>
-            </div>
-          </div>
-
-          <div class="g-hero__media">
-            <picture>
+        <div class="container">
+          <div class="g-hero__stage">
+            <picture class="g-hero__bg">
               <source srcset="./images/hero.webp" type="image/webp" />
               <img
                 src="./images/hero.jpg"
@@ -100,85 +86,450 @@
                 height="900"
                 fetchpriority="high"
                 decoding="async"
-                alt="Centro de entrenamiento moderno con racks de fuerza, piso de caucho negro e iluminación naranja"
+                referrerpolicy="no-referrer"
+                alt="Centro de entrenamiento Pulso 360 con racks de fuerza, pesas calibradas y luz lineal naranja"
               />
             </picture>
+
+            <div class="g-hero__scrim" aria-hidden="true"></div>
+
+            <div class="g-hero__content">
+              <span class="g-eyebrow g-eyebrow--hero">
+                Entrenamiento funcional &amp; fuerza · Cuenca, Ecuador
+              </span>
+              <h1 class="g-hero__title">
+                Entrena con técnica, horarios claros y planes sin cargos ocultos.
+              </h1>
+              <p class="g-hero__lead">
+                Pulso 360 es un gimnasio ficticio diseñado por AV·STUDIO para presentar zonas de
+                práctica, horarios en formato 24h, tarifas referenciales en USD y registro demostrativo
+                para clase de prueba.
+              </p>
+              <div class="g-btn-row">
+                <a href="#prueba" class="g-btn g-btn--orange">Solicitar clase de prueba</a>
+                <a href="#planes" class="g-btn g-btn--outline-dark">Ver planes en USD</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="g-hero__ticker" aria-label="Resumen referencial del club">
+            <div class="g-ticker-item">
+              <span class="g-ticker-item__label">Lunes a viernes</span>
+              <strong class="g-ticker-item__val">05:30 – 21:30 h</strong>
+            </div>
+            <div class="g-ticker-item">
+              <span class="g-ticker-item__label">Sábados</span>
+              <strong class="g-ticker-item__val">07:00 – 15:00 h</strong>
+            </div>
+            <div class="g-ticker-item">
+              <span class="g-ticker-item__label">Referencia mensual</span>
+              <strong class="g-ticker-item__val">$38.00 USD</strong>
+            </div>
+            <div class="g-ticker-item">
+              <span class="g-ticker-item__label">Sector Cuenca</span>
+              <strong class="g-ticker-item__val">Av. Ordóñez Lasso</strong>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="g-section g-section--gray" id="programas">
+      <section class="g-section g-section--white" id="filosofia">
+        <div class="container g-filosofia-grid">
+          <div class="g-filosofia-lead">
+            <span class="g-eyebrow">01 · Filosofía de entrenamiento</span>
+            <h2 class="g-title g-title--manifesto">
+              Constancia técnica antes que promesas vacías.
+            </h2>
+            <p class="g-prose">
+              Un centro deportivo sólido comunica orden y realismo desde la primera pantalla: qué áreas
+              físicas ofrece, a qué hora abren sus bloques y cuál es el costo claro en dólares
+              estadounidenses antes de coordinar una primera visita.
+            </p>
+          </div>
+
+          <div class="g-principles">
+            <article class="g-principle">
+              <span class="g-principle__num">01</span>
+              <div>
+                <h3 class="g-principle__title">Técnica y progresión estructurada</h3>
+                <p class="g-principle__text">
+                  Organización de sesiones por objetivo funcional —fuerza libre, acondicionamiento
+                  metabólico y movilidad articular— sin exageraciones comerciales.
+                </p>
+              </div>
+            </article>
+            <article class="g-principle">
+              <span class="g-principle__num">02</span>
+              <div>
+                <h3 class="g-principle__title">Horarios en formato 24 horas</h3>
+                <p class="g-principle__text">
+                  Franjas matutinas, de mediodía y nocturnas visibles de antemano para planificar la
+                  rutina sin llamadas interminables.
+                </p>
+              </div>
+            </article>
+            <article class="g-principle">
+              <span class="g-principle__num">03</span>
+              <div>
+                <h3 class="g-principle__title">Tarifas visibles desde el inicio</h3>
+                <p class="g-principle__text">
+                  Planes referenciales mensuales, trimestrales y anuales en USD presentados sin cargos
+                  sorpresivos ni contratos confusos.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="g-section g-section--obsidian" id="zonas">
         <div class="container">
-          <span class="g-eyebrow">Horarios y disciplinas (Ejemplo 24h)</span>
-          <h2 class="g-title">Programas de entrenamiento</h2>
-
-          <div class="g-tabs" role="group" aria-label="Filtrar disciplinas">
-            <button type="button" class="g-tab is-active" data-gym-filter="Todos">Todos</button>
-            <button type="button" class="g-tab" data-gym-filter="Fuerza">Fuerza</button>
-            <button type="button" class="g-tab" data-gym-filter="Acondicionamiento">Acondicionamiento</button>
-            <button type="button" class="g-tab" data-gym-filter="Movilidad">Movilidad</button>
+          <div class="g-section-head g-section-head--dark">
+            <div>
+              <span class="g-eyebrow g-eyebrow--bright">02 · Zonas de entrenamiento</span>
+              <h2 class="g-title g-title--light">Espacios dedicados por disciplina</h2>
+            </div>
+            <p class="g-section-head__note g-section-head__note--dark">
+              Explora las tres zonas principales que contempla esta demostración del club deportivo.
+            </p>
           </div>
 
-          <div class="g-grid" id="g-programs-grid"></div>
+          <div class="g-zones-layout">
+            <div class="g-zones-controls">
+              <div class="g-zone-selector" role="group" aria-label="Zonas del gimnasio">
+                <button
+                  type="button"
+                  class="g-zone-tab is-active"
+                  data-gym-zone="fuerza"
+                  aria-pressed="true"
+                >
+                  <span class="g-zone-tab__idx">01</span>
+                  <span>Fuerza libre</span>
+                </button>
+                <button
+                  type="button"
+                  class="g-zone-tab"
+                  data-gym-zone="cardio"
+                  aria-pressed="false"
+                >
+                  <span class="g-zone-tab__idx">02</span>
+                  <span>Cardio y pista</span>
+                </button>
+                <button
+                  type="button"
+                  class="g-zone-tab"
+                  data-gym-zone="movilidad"
+                  aria-pressed="false"
+                >
+                  <span class="g-zone-tab__idx">03</span>
+                  <span>Movilidad</span>
+                </button>
+              </div>
+
+              <div class="g-zone-panel" aria-live="polite">
+                <div class="g-zone-panel__kicker" id="g-zone-kicker">Zona 01 · Peso libre y técnica</div>
+                <h3 class="g-zone-panel__title" id="g-zone-title">Fuerza &amp; Barra Olímpica</h3>
+                <p class="g-zone-panel__desc" id="g-zone-desc">
+                  Racks de potencia con plataformas amortiguadas, barras olímpicas calibradas y discos
+                  bumper para trabajo técnico de sentadilla, peso muerto y empuje.
+                </p>
+                <ul class="g-zone-panel__list" id="g-zone-specs">
+                  <li>Jaulas de potencia, plataformas de goma de alto impacto y espejos de postura.</li>
+                  <li>Juego completo de barras estándar, discos codificados y mancuernas hexagonales.</li>
+                  <li>Enlace directo con sesiones de Fuerza Funcional &amp; Barra Olímpica.</li>
+                </ul>
+                <button
+                  type="button"
+                  class="g-btn g-btn--orange"
+                  id="g-zone-jump"
+                  data-target-discipline="Fuerza"
+                >
+                  Ver horario de esta disciplina
+                </button>
+              </div>
+
+              <div class="g-zone-thumbs" aria-label="Vista rápida de zonas">
+                <button
+                  type="button"
+                  class="g-zone-thumb is-active"
+                  data-gym-zone-thumb="fuerza"
+                  aria-label="Seleccionar zona de fuerza"
+                >
+                  <img
+                    src="./images/zona-fuerza.jpg"
+                    width="400"
+                    height="300"
+                    decoding="async"
+                    referrerpolicy="no-referrer"
+                    alt="Racks negros con barras olímpicas y discos de peso en zona de fuerza"
+                  />
+                  <span>01 · Fuerza</span>
+                </button>
+                <button
+                  type="button"
+                  class="g-zone-thumb"
+                  data-gym-zone-thumb="cardio"
+                  aria-label="Seleccionar zona de acondicionamiento y pista"
+                >
+                  <img
+                    src="./images/zona-cardio.jpg"
+                    width="400"
+                    height="300"
+                    decoding="async"
+                    referrerpolicy="no-referrer"
+                    alt="Ergómetros de remo, bicicleta de aire y pista de césped sintético"
+                  />
+                  <span>02 · Cardio</span>
+                </button>
+                <button
+                  type="button"
+                  class="g-zone-thumb"
+                  data-gym-zone-thumb="movilidad"
+                  aria-label="Seleccionar zona de movilidad y recuperación"
+                >
+                  <img
+                    src="./images/zona-movilidad.jpg"
+                    width="400"
+                    height="300"
+                    decoding="async"
+                    referrerpolicy="no-referrer"
+                    alt="Estudio luminoso de madera con colchonetas, rodillos y barras suecas de movilidad"
+                  />
+                  <span>03 · Movilidad</span>
+                </button>
+              </div>
+            </div>
+
+            <figure class="g-zone-stage">
+              <img
+                id="g-zone-img"
+                src="./images/zona-fuerza.jpg"
+                width="1200"
+                height="900"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Zona de fuerza de Pulso 360 con racks, plataformas y discos olímpicos"
+              />
+              <figcaption class="g-zone-stage__caption" id="g-zone-caption">
+                Zona 01 · Área de fuerza libre y racks de potencia
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
-      <section class="g-section g-section--studio" id="instalaciones">
-        <div class="container g-studio-grid">
-          <div class="g-studio__media">
-            <picture>
-              <source srcset="./images/estudio.webp" type="image/webp" />
+      <section class="g-section g-section--chalk" id="planes">
+        <div class="container">
+          <div class="g-section-head">
+            <div>
+              <span class="g-eyebrow">03 · Planes y membresías</span>
+              <h2 class="g-title">Tarifas referenciales en USD</h2>
+            </div>
+            <p class="g-section-head__note">
+              Precios demostrativos por vigencia sin pagos en línea ni cobros automáticos. Al elegir un
+              plan se carga directamente en el formulario final.
+            </p>
+          </div>
+
+          <div class="g-plans-grid" id="g-plans-grid"></div>
+        </div>
+      </section>
+
+      <section class="g-section g-section--white" id="programas">
+        <div class="container">
+          <div class="g-section-head">
+            <div>
+              <span class="g-eyebrow">04 · Horarios y disciplinas (Ejemplo 24h)</span>
+              <h2 class="g-title">Bloques de entrenamiento por objetivo</h2>
+            </div>
+            <p class="g-section-head__note">
+              Horarios demostrativos en formato 24h. No muestra cupos en tiempo real ni asigna
+              instructores reales.
+            </p>
+          </div>
+
+          <div class="g-schedule-toolbar">
+            <div class="g-tabs" role="group" aria-label="Filtrar disciplinas">
+              <button type="button" class="g-tab is-active" data-gym-filter="Todos">Todos (3)</button>
+              <button type="button" class="g-tab" data-gym-filter="Fuerza">Fuerza</button>
+              <button type="button" class="g-tab" data-gym-filter="Acondicionamiento">
+                Acondicionamiento
+              </button>
+              <button type="button" class="g-tab" data-gym-filter="Movilidad">Movilidad</button>
+            </div>
+
+            <div class="g-hours-bar">
+              <span><strong>Mañana</strong> 06:30 – 09:00</span>
+              <span><strong>Mediodía</strong> 12:00 – 14:00</span>
+              <span><strong>Noche</strong> 18:00 – 20:30</span>
+            </div>
+          </div>
+
+          <div class="g-programs-grid" id="g-programs-grid"></div>
+        </div>
+      </section>
+
+      <section class="g-section g-section--stone" id="experiencia">
+        <div class="container g-exp-grid">
+          <figure class="g-exp-media">
+            <img
+              src="./images/experiencia-funcional.jpg"
+              width="1200"
+              height="900"
+              decoding="async"
+              referrerpolicy="no-referrer"
+              alt="Persona entrenando empuje de trineo con discos sobre pista funcional verde bajo iluminación lineal"
+            />
+          </figure>
+
+          <div class="g-exp-body">
+            <span class="g-eyebrow">05 · Experiencia de entrenamiento</span>
+            <h2 class="g-title">Ritmo semanal equilibrado sin improvisar</h2>
+            <p class="g-prose">
+              Más allá de las máquinas aisladas, el recorrido combina sesiones guiadas de fuerza básica,
+              circuitos de 45 minutos sobre pista funcional y bloques dedicados a estabilidad lumbar y
+              movilidad articular.
+            </p>
+
+            <div class="g-exp-items">
+              <div class="g-exp-item">
+                <span class="g-exp-item__tag">Fuerza</span>
+                <p class="g-exp-item__text">
+                  Sentadilla, peso muerto y empuje con cargas graduales en plataforma.
+                </p>
+              </div>
+              <div class="g-exp-item">
+                <span class="g-exp-item__tag">Acondicionamiento</span>
+                <p class="g-exp-item__text">
+                  Intervalos en remo, bicicleta de aire, trineo sobre césped y kettlebells.
+                </p>
+              </div>
+              <div class="g-exp-item">
+                <span class="g-exp-item__tag">Movilidad</span>
+                <p class="g-exp-item__text">
+                  Estabilidad de zona media y rango articular para acompañar el resto de la semana.
+                </p>
+              </div>
+            </div>
+
+            <a href="#prueba" class="g-btn g-btn--dark">Solicitar pase de prueba demostrativo</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="g-section g-section--white" id="galeria">
+        <div class="container">
+          <div class="g-section-head">
+            <div>
+              <span class="g-eyebrow">06 · Galería del club</span>
+              <h2 class="g-title">Equipamiento, luz natural y espacios reales de ejemplo</h2>
+            </div>
+            <p class="g-section-head__note">
+              Fotografías exclusivas de ambientes y material deportivo. Haz clic sobre cualquier imagen
+              para ampliarla.
+            </p>
+          </div>
+
+          <div class="g-gallery-mosaic">
+            <button
+              type="button"
+              class="g-gallery-tile g-gallery-tile--tall"
+              data-gym-lightbox-src="./images/estudio.jpg"
+              data-gym-lightbox-title="Estudio funcional de luz natural"
+              data-gym-lightbox-caption="Plataforma de levantamiento olímpico, anillas gimnásticas, kettlebells y ventanales con luz diurna."
+            >
               <img
                 src="./images/estudio.jpg"
                 width="1200"
                 height="900"
-                loading="lazy"
                 decoding="async"
-                alt="Estudio de entrenamiento funcional con pesas rusas, pistas de césped y zona de movilidad"
+                referrerpolicy="no-referrer"
+                alt="Estudio de entrenamiento funcional con luz natural, plataforma de peso muerto, anillas y pesas rusas"
               />
-            </picture>
-          </div>
-          <div>
-            <span class="g-eyebrow">Equipamiento &amp; zonas de práctica</span>
-            <h2 class="g-title">Espacios organizados por objetivo y horario</h2>
-            <p class="g-studio__copy">
-              Un gimnasio moderno convierte más visitantes en socios cuando muestra con claridad
-              sus zonas de fuerza, pistas funcionales y franjas de menor afluencia antes de la
-              primera clase de prueba.
-            </p>
-            <ul class="g-studio__list">
-              <li>Zona de fuerza libre, pista metabólica y estudio guiado de movilidad.</li>
-              <li>Horarios visibles en formato 24h desde las 05:30 hasta las 21:30.</li>
-              <li>Precios en USD sin letras pequeñas ni matrícula sorpresiva.</li>
-            </ul>
-            <a href="#prueba" class="g-btn g-btn--orange">Apartar clase de prueba</a>
+              <span class="g-gallery-overlay">
+                <span class="g-gallery-overlay__tag">01 · Estudio funcional</span>
+                <span class="g-gallery-overlay__title">Luz natural, anillas y plataforma</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="g-gallery-tile"
+              data-gym-lightbox-src="./images/galeria-mancuernas.jpg"
+              data-gym-lightbox-title="Rack ordenado de mancuernas hexagonales"
+              data-gym-lightbox-caption="Área de peso libre sobre piso de caucho absorbente e iluminación perimetral cálida."
+            >
+              <img
+                src="./images/galeria-mancuernas.jpg"
+                width="1200"
+                height="900"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Racks ordenados con mancuernas hexagonales negras sobre piso de caucho deportivo"
+              />
+              <span class="g-gallery-overlay">
+                <span class="g-gallery-overlay__tag">02 · Peso libre</span>
+                <span class="g-gallery-overlay__title">Mancuernas hexagonales y bancos</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="g-gallery-tile"
+              data-gym-lightbox-src="./images/galeria-kettlebells.jpg"
+              data-gym-lightbox-title="Kettlebells y cajones pliométricos"
+              data-gym-lightbox-caption="Material metálico calibrado desde 12 kg a 32 kg y cajones de madera para circuitos metabólicos."
+            >
+              <img
+                src="./images/galeria-kettlebells.jpg"
+                width="1200"
+                height="900"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                alt="Fila ordenada de kettlebells de hierro fundido de 12 a 32 kilos junto a cajones de madera"
+              />
+              <span class="g-gallery-overlay">
+                <span class="g-gallery-overlay__tag">03 · Material funcional</span>
+                <span class="g-gallery-overlay__title">Kettlebells y cajones de salto</span>
+              </span>
+            </button>
           </div>
         </div>
       </section>
 
-      <section class="g-section g-section--light" id="planes">
-        <div class="container">
-          <span class="g-eyebrow">Membresías transparentes</span>
-          <h2 class="g-title">Planes de referencia en USD</h2>
-          <div class="g-grid" id="g-plans-grid"></div>
-        </div>
-      </section>
-
-      <section class="g-section" id="prueba">
+      <section class="g-section g-section--obsidian" id="prueba">
         <div class="container g-booking-grid">
-          <div>
-            <span class="g-eyebrow">Primera visita</span>
-            <h2 class="g-title">Registra tu clase de prueba demostrativa</h2>
+          <div class="g-booking-info">
+            <span class="g-eyebrow g-eyebrow--bright">07 · Contacto e información</span>
+            <h2 class="g-title g-title--light">Registra tu clase de prueba demostrativa</h2>
             <p class="g-booking__copy">
-              <strong>Horario del club (24h):</strong> Lunes a viernes 05:30 – 21:30 · Sábados 07:00 – 15:00.<br />
-              <strong>Referencia:</strong> Sector Av. Ordóñez Lasso, Cuenca, Ecuador.
+              Completa tus datos de ejemplo, elige el plan o pase de prueba de tu interés y prepara el
+              mensaje directo hacia el WhatsApp de <strong>AV·STUDIO</strong>.
             </p>
+
+            <dl class="g-booking-facts">
+              <div class="g-booking-fact">
+                <dt>Horario del club (24h)</dt>
+                <dd>Lunes a viernes 05:30 – 21:30 · Sábados 07:00 – 15:00</dd>
+              </div>
+              <div class="g-booking-fact">
+                <dt>Ubicación referencial</dt>
+                <dd>Sector Av. Ordóñez Lasso · Cuenca, Azuay, Ecuador</dd>
+              </div>
+              <div class="g-booking-fact">
+                <dt>Alcance demostrativo</dt>
+                <dd>
+                  No realiza cobros, pagos con tarjeta ni afiliaciones automáticas; solo genera el
+                  mensaje demostrativo de consulta.
+                </dd>
+              </div>
+            </dl>
           </div>
 
           <form class="g-form-card" id="g-trial-form" novalidate>
-            <h3 style="font-family: var(--g-font-display); font-size: 1.45rem; margin: 0 0 1rem;">
-              Solicitud de clase de prueba
-            </h3>
+            <h3 class="g-form-card__title">Solicitud de clase de prueba</h3>
+            <p class="g-selected-plan" id="g-selected-plan" hidden></p>
+
             <div class="g-form-fields">
               <div class="g-field">
                 <label for="g-name">Nombre completo *</label>
@@ -197,7 +548,9 @@
                   <option value="Clase de prueba gratuita">Clase de prueba gratuita</option>
                   <option value="Plan Mensual Libre ($38.00 USD)">Plan Mensual Libre ($38.00 USD)</option>
                   <option value="Plan Trimestral ($99.00 USD)">Plan Trimestral ($99.00 USD)</option>
-                  <option value="Plan Anual Constancia ($340.00 USD)">Plan Anual Constancia ($340.00 USD)</option>
+                  <option value="Plan Anual Constancia ($340.00 USD)">
+                    Plan Anual Constancia ($340.00 USD)
+                  </option>
                 </select>
                 <span class="g-err" id="g-err-plan"></span>
               </div>
@@ -212,13 +565,16 @@
                 <span class="g-err" id="g-err-timeSlot"></span>
               </div>
             </div>
-            <div style="margin-top: 1rem;">
+
+            <div class="g-form-submit">
               <button type="submit" class="g-btn g-btn--orange">Preparar solicitud en WhatsApp</button>
             </div>
-            <div id="g-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: var(--g-black); border: 1px solid rgba(251,146,60,0.4); border-radius: 6px;">
-              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
+
+            <div id="g-prepared" class="g-prepared" hidden>
+              <p class="g-prepared__title">
                 <strong>Solicitud lista.</strong> Abre el mensaje hacia AV·STUDIO:
               </p>
+              <p class="g-prepared__summary" id="g-prepared-summary"></p>
               <a
                 id="g-prepared-wa"
                 href="https://wa.me/593979290747"
@@ -236,30 +592,37 @@
 
     <footer class="g-footer">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+        <div class="g-footer__top">
           <div>
-            <strong style="font-family: var(--g-font-display); font-size: 1.35rem;">PULSO 360 · Gimnasio</strong>
-            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; color: var(--g-muted-dark);">
-              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            <strong class="g-footer__brand">PULSO 360 · Gimnasio</strong>
+            <p class="g-footer__sub">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Av. Ordóñez Lasso, Cuenca, Azuay, Ecuador.
             </p>
           </div>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
-            <a href="#programas">Programas</a>
+          <nav class="g-footer__links" aria-label="Enlaces del pie de página">
+            <a href="#zonas">Zonas</a>
             <a href="#planes">Planes</a>
-            <a href="../../index.html" style="color: var(--g-orange-bright); font-weight: 700;">Volver a AV·STUDIO</a>
-          </div>
+            <a href="#programas">Horarios</a>
+            <a href="#prueba">Prueba</a>
+            <a href="../../index.html" class="g-footer__back">Volver a AV·STUDIO</a>
+          </nav>
         </div>
 
         <div class="g-av-signature">
           <div>
-            <p style="margin: 0 0 0.25rem;">
-              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos sitios dinámicos para gimnasios, boxes y centros deportivos.
+            <p class="g-av-signature__title">
+              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos sitios dinámicos para
+              gimnasios, boxes y centros deportivos.
             </p>
-            <p style="margin: 0; color: var(--g-muted-dark);">
+            <p class="g-av-signature__meta">
               <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
-              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=gimnasio#contacto" class="" style="text-decoration: underline;">
-            Quiero una página para mi gimnasio &rarr;
-          </a>
+              <a href="mailto:andersonvallejo021@gmail.com" class="g-av-signature__link">
+                andersonvallejo021@gmail.com
+              </a>
+              ·
+              <a href="../../index.html?sector=gimnasio#contacto" class="g-av-signature__link">
+                Quiero una página para mi gimnasio &rarr;
+              </a>
             </p>
           </div>
           <a
@@ -273,6 +636,26 @@
         </div>
       </div>
     </footer>
+
+    <dialog class="g-lightbox" id="g-lightbox" aria-labelledby="g-lightbox-title">
+      <div class="g-lightbox__shell">
+        <div class="g-lightbox__head">
+          <h3 class="g-lightbox__title" id="g-lightbox-title">Galería Pulso 360</h3>
+          <button
+            type="button"
+            class="g-lightbox__close"
+            id="g-lightbox-close"
+            aria-label="Cerrar galería ampliada"
+          >
+            Cerrar &times;
+          </button>
+        </div>
+        <div class="g-lightbox__media">
+          <img id="g-lightbox-img" src="" alt="" referrerpolicy="no-referrer" />
+        </div>
+        <p class="g-lightbox__caption" id="g-lightbox-caption"></p>
+      </div>
+    </dialog>
 
     <script type="module" src="./js/app.js"></script>
   </body>

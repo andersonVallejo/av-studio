@@ -345,6 +345,29 @@ export function shouldEnableCinematicMotion(env = {}) {
 }
 
 /**
+ * Determines whether the decorative hero video should attempt to load and autoplay.
+ * Respects reduced motion, data-saver preferences, slow networks, and source presence.
+ * @param {{ prefersReducedMotion?: boolean, saveData?: boolean, effectiveType?: string, hasVideoSrc?: boolean }} env
+ * @returns {boolean}
+ */
+export function shouldEnableHeroVideo(env = {}) {
+  if (!env.hasVideoSrc) return false;
+  return shouldEnableCinematicMotion(env);
+}
+
+/**
+ * Validates that a preflight HEAD/GET response actually points to a video MIME type
+ * rather than an HTML SPA fallback route.
+ * @param {{ ok?: boolean, contentType?: string | null }} responseInfo
+ * @returns {boolean}
+ */
+export function isValidHeroVideoResponse(responseInfo = {}) {
+  if (!responseInfo.ok) return false;
+  const mime = typeof responseInfo.contentType === 'string' ? responseInfo.contentType.trim().toLowerCase() : '';
+  return mime.startsWith('video/');
+}
+
+/**
  * Computes clamped vertical parallax offset (in px) for the hero section on scroll.
  * @param {{ rectTop: number, rectBottom: number, viewportHeight: number, heroHeight: number, maxShift?: number }} params
  * @returns {{ active: boolean, offsetY: number }}
@@ -421,3 +444,59 @@ export const BRAND_IDENTITY = Object.freeze({
     { role: 'Elementos de navegación', spec: 'Plus Jakarta Sans · Peso 500 · 0.9rem' },
   ]),
 });
+
+/**
+ * Current AV·STUDIO production stack organized by accurate technical role.
+ * Excludes future/pending backend architecture not yet enabled publicly.
+ */
+export const TECHNOLOGY_STACK_GROUPS = Object.freeze([
+  Object.freeze({
+    id: 'desarrollo-web',
+    index: '01',
+    title: 'Desarrollo web',
+    role: 'Lenguajes y estándares base',
+    summary: 'Estructura semántica, presentación visual e interactividad tipada en el navegador.',
+    items: Object.freeze([
+      { name: 'HTML5', detail: 'Marcado semántico y accesibilidad' },
+      { name: 'CSS3', detail: 'Composición visual y diseño responsive' },
+      { name: 'JavaScript', detail: 'Lógica e interactividad en cliente' },
+      { name: 'TypeScript', detail: 'Tipado estático sobre JavaScript' },
+    ]),
+  }),
+  Object.freeze({
+    id: 'interfaces-frontend',
+    index: '02',
+    title: 'Interfaces y herramientas frontend',
+    role: 'Biblioteca UI, estilos y compilación',
+    summary: 'Arquitectura modular para interfaces dinámicas cuando el proyecto lo amerita.',
+    items: Object.freeze([
+      { name: 'React', detail: 'Biblioteca para interfaces por componentes' },
+      { name: 'Tailwind CSS', detail: 'Sistema utilitario de estilos consistentes' },
+      { name: 'Vite', detail: 'Entorno de compilación y empaquetado web' },
+    ]),
+  }),
+  Object.freeze({
+    id: 'entorno-flujo',
+    index: '03',
+    title: 'Entorno y flujo de desarrollo',
+    role: 'Ejecución, paquetes y control de código',
+    summary: 'Herramientas de ingeniería para mantener cada entrega ordenada y verificable.',
+    items: Object.freeze([
+      { name: 'Node.js', detail: 'Entorno de ejecución para compilación y pruebas' },
+      { name: 'npm', detail: 'Gestión de dependencias y scripts' },
+      { name: 'Git', detail: 'Control de versiones del proyecto' },
+      { name: 'GitHub', detail: 'Respaldo y trazabilidad del código' },
+    ]),
+  }),
+  Object.freeze({
+    id: 'infraestructura-despliegue',
+    index: '04',
+    title: 'Infraestructura y despliegue',
+    role: 'Publicación y entrega en red',
+    summary: 'Despliegue ágil y distribución optimizada para tiempos de carga consistentes.',
+    items: Object.freeze([
+      { name: 'Cloudflare', detail: 'Entrega perimetral, caché y protección DNS' },
+    ]),
+  }),
+]);
+

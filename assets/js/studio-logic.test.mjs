@@ -14,8 +14,11 @@ import {
   buildMailtoUrl,
   filterSectors,
   shouldEnableCinematicMotion,
+  shouldEnableHeroVideo,
+  isValidHeroVideoResponse,
   computeHeroParallax,
   computeHeroDepthShift,
+  TECHNOLOGY_STACK_GROUPS,
 } from './studio-logic.js';
 import {
   INDEXABLE_PATHS,
@@ -238,5 +241,60 @@ test('seo-utils validates real domains, excludes noindex demos from sitemap.xml,
   assert.match(robotsWithDomain, /Sitemap: https:\/\/ejemplo-real\.ec\/sitemap\.xml/);
 });
 
+test('shouldEnableHeroVideo and isValidHeroVideoResponse respect motion, network, source presence, and MIME type', () => {
+  assert.equal(
+    shouldEnableHeroVideo({ prefersReducedMotion: false, saveData: false, effectiveType: '4g', hasVideoSrc: true }),
+    true
+  );
+  assert.equal(
+    shouldEnableHeroVideo({ prefersReducedMotion: false, saveData: false, effectiveType: '4g', hasVideoSrc: false }),
+    false
+  );
+  assert.equal(
+    shouldEnableHeroVideo({ prefersReducedMotion: true, saveData: false, effectiveType: '4g', hasVideoSrc: true }),
+    false
+  );
+  assert.equal(
+    shouldEnableHeroVideo({ prefersReducedMotion: false, saveData: true, effectiveType: '4g', hasVideoSrc: true }),
+    false
+  );
+  assert.equal(
+    shouldEnableHeroVideo({ prefersReducedMotion: false, saveData: false, effectiveType: '2g', hasVideoSrc: true }),
+    false
+  );
 
+  assert.equal(isValidHeroVideoResponse({ ok: true, contentType: 'video/mp4' }), true);
+  assert.equal(isValidHeroVideoResponse({ ok: true, contentType: 'video/mp4; codecs="avc1.42E01E"' }), true);
+  assert.equal(isValidHeroVideoResponse({ ok: true, contentType: 'text/html; charset=utf-8' }), false);
+  assert.equal(isValidHeroVideoResponse({ ok: false, contentType: 'video/mp4' }), false);
+});
 
+test('TECHNOLOGY_STACK_GROUPS organizes current stack into 4 accurate categories without React/Vite language errors or unimplemented backend claims', () => {
+  assert.equal(TECHNOLOGY_STACK_GROUPS.length, 4);
+  const flatItems = TECHNOLOGY_STACK_GROUPS.flatMap((group) => group.items);
+  const itemNames = flatItems.map((item) => item.name);
+
+  assert.deepEqual(itemNames, [
+    'HTML5',
+    'CSS3',
+    'JavaScript',
+    'TypeScript',
+    'React',
+    'Tailwind CSS',
+    'Vite',
+    'Node.js',
+    'npm',
+    'Git',
+    'GitHub',
+    'Cloudflare',
+  ]);
+
+  const reactItem = flatItems.find((item) => item.name === 'React');
+  const viteItem = flatItems.find((item) => item.name === 'Vite');
+  assert.ok(reactItem && /biblioteca/i.test(reactItem.detail));
+  assert.doesNotMatch(reactItem.detail, /lenguaje/i);
+  assert.ok(viteItem && !/lenguaje/i.test(viteItem.detail));
+
+  const serialized = JSON.stringify(TECHNOLOGY_STACK_GROUPS);
+  assert.doesNotMatch(serialized, /supabase|postgresql/i);
+});

@@ -1,5 +1,5 @@
 /**
- * ORIGEN CUENCA Cafetería (Demostración) — DOM & Interactions
+ * ORIGEN CUENCA Cafetería de Especialidad (Demostración) — DOM & Interactions
  */
 
 import {
@@ -16,7 +16,7 @@ let tray = [];
 
 function renderOrigin(key) {
   const data = COFFEE_ORIGINS[key] || COFFEE_ORIGINS.loja;
-  activeOrigin = key;
+  activeOrigin = key in COFFEE_ORIGINS ? key : 'loja';
 
   const titleEl = document.getElementById('c-origin-title');
   const processEl = document.getElementById('c-origin-process');
@@ -29,12 +29,29 @@ function renderOrigin(key) {
   if (recEl) recEl.textContent = data.recommended;
 
   document.querySelectorAll('[data-origin-key]').forEach((btn) => {
-    const selected = btn.getAttribute('data-origin-key') === key;
+    const selected = btn.getAttribute('data-origin-key') === activeOrigin;
     btn.classList.toggle('is-active', selected);
     btn.setAttribute('aria-pressed', String(selected));
   });
 
   renderTray();
+}
+
+function addToTray(item) {
+  const existing = tray.find((t) => t.id === item.id);
+  if (existing) existing.qty += 1;
+  else tray.push({ id: item.id, name: item.name, price: item.price, qty: 1 });
+  renderTray();
+}
+
+function setActiveCategory(category) {
+  activeCategory = category || 'Todos';
+  document.querySelectorAll('[data-cafe-filter]').forEach((btn) => {
+    const selected = btn.getAttribute('data-cafe-filter') === activeCategory;
+    btn.classList.toggle('is-active', selected);
+    btn.setAttribute('aria-pressed', String(selected));
+  });
+  renderMenu();
 }
 
 function renderMenu() {
@@ -48,41 +65,54 @@ function renderMenu() {
     const card = document.createElement('article');
     card.className = 'c-item-card';
 
+    const info = document.createElement('div');
+
+    const cat = document.createElement('p');
+    cat.className = 'c-item-card__meta';
+    cat.textContent = item.category;
+
     const head = document.createElement('div');
     head.className = 'c-item-card__head';
 
     const title = document.createElement('h3');
-    title.style.margin = '0';
-    title.style.fontSize = '1.05rem';
+    title.className = 'c-item-card__title';
     title.textContent = item.name;
 
     const price = document.createElement('span');
     price.className = 'c-item-card__price';
-    price.textContent = `$${item.price.toFixed(2)}`;
+    price.textContent = `$${item.price.toFixed(2)} USD`;
 
     head.append(title, price);
 
     const desc = document.createElement('p');
-    desc.style.margin = '0.35rem 0 0';
-    desc.style.fontSize = '0.88rem';
-    desc.style.color = 'var(--c-muted)';
+    desc.className = 'c-item-card__desc';
     desc.textContent = item.description;
+
+    info.append(cat, head, desc);
+
+    const actions = document.createElement('div');
+    actions.className = 'c-item-card__actions';
 
     const addBtn = document.createElement('button');
     addBtn.type = 'button';
-    addBtn.className = 'c-btn c-btn--outline';
-    addBtn.textContent = '+ Agregar a bandeja';
-    addBtn.addEventListener('click', () => {
-      const existing = tray.find((t) => t.id === item.id);
-      if (existing) existing.qty += 1;
-      else tray.push({ id: item.id, name: item.name, price: item.price, qty: 1 });
-      renderTray();
+    addBtn.className = 'c-btn c-btn--outline c-item-card__add';
+    addBtn.textContent = '+ Agregar';
+    addBtn.addEventListener('click', () => addToTray(item));
+
+    const consultBtn = document.createElement('button');
+    consultBtn.type = 'button';
+    consultBtn.className = 'c-btn c-btn--espresso c-item-card__consult';
+    consultBtn.textContent = 'Consultar';
+    consultBtn.addEventListener('click', () => {
+      if (!tray.some((t) => t.id === item.id)) addToTray(item);
+      const trayAside = document.querySelector('.c-tray');
+      const waBtn = document.getElementById('c-tray-wa');
+      if (trayAside) trayAside.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      if (waBtn) window.setTimeout(() => waBtn.focus({ preventScroll: true }), 180);
     });
 
-    const top = document.createElement('div');
-    top.append(head, desc);
-
-    card.append(top, addBtn);
+    actions.append(addBtn, consultBtn);
+    card.append(info, actions);
     grid.appendChild(card);
   });
 }
@@ -91,15 +121,22 @@ function renderTray() {
   const listEl = document.getElementById('c-tray-list');
   const totalEl = document.getElementById('c-tray-total');
   const waLink = document.getElementById('c-tray-wa');
+  const originEl = document.getElementById('c-tray-origin');
+  const clearBtn = document.getElementById('c-tray-clear');
   if (!listEl || !totalEl) return;
+
+  const currentOrigin = COFFEE_ORIGINS[activeOrigin] || COFFEE_ORIGINS.loja;
+  if (originEl) {
+    originEl.textContent = `Origen explorado: ${currentOrigin.name}`;
+  }
 
   listEl.innerHTML = '';
   if (tray.length === 0) {
     const empty = document.createElement('li');
-    empty.style.fontSize = '0.84rem';
-    empty.style.opacity = '0.78';
-    empty.textContent = 'Agrega bebidas o repostería para probar la lista demostrativa.';
+    empty.className = 'c-tray__empty';
+    empty.textContent = 'Agrega bebidas o repostería de la carta para generar un resumen demostrativo en USD.';
     listEl.appendChild(empty);
+    if (clearBtn) clearBtn.setAttribute('hidden', '');
   } else {
     tray.forEach((item) => {
       const li = document.createElement('li');
@@ -111,6 +148,7 @@ function renderTray() {
       const rmBtn = document.createElement('button');
       rmBtn.type = 'button';
       rmBtn.className = 'c-tray__remove';
+      rmBtn.setAttribute('aria-label', `Quitar ${item.name} de la selección`);
       rmBtn.textContent = 'Quitar';
       rmBtn.addEventListener('click', () => {
         tray = tray.filter((t) => t.id !== item.id);
@@ -120,12 +158,49 @@ function renderTray() {
       li.append(text, rmBtn);
       listEl.appendChild(li);
     });
+    if (clearBtn) clearBtn.removeAttribute('hidden');
   }
 
   totalEl.textContent = `$${calculateCafeTotal(tray).toFixed(2)} USD`;
   if (waLink) {
     waLink.setAttribute('href', buildCafeWhatsAppUrl(tray, activeOrigin));
   }
+}
+
+function initLightbox() {
+  const dialog = document.getElementById('c-lightbox');
+  const imgEl = document.getElementById('c-lightbox-img');
+  const captionEl = document.getElementById('c-lightbox-caption');
+  const closeBtn = document.getElementById('c-lightbox-close');
+
+  if (!dialog || !imgEl || !captionEl) return;
+
+  document.querySelectorAll('[data-lightbox-src]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const src = trigger.getAttribute('data-lightbox-src') || '';
+      const alt = trigger.getAttribute('data-lightbox-alt') || '';
+      const caption = trigger.getAttribute('data-lightbox-caption') || '';
+      imgEl.setAttribute('src', src);
+      imgEl.setAttribute('alt', alt);
+      captionEl.textContent = caption;
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else dialog.setAttribute('open', '');
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      if (typeof dialog.close === 'function') dialog.close();
+      else dialog.removeAttribute('open');
+    });
+  }
+
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) {
+      if (typeof dialog.close === 'function') dialog.close();
+      else dialog.removeAttribute('open');
+    }
+  });
 }
 
 function initMobileDrawer() {
@@ -154,16 +229,28 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.querySelectorAll('[data-cafe-filter]').forEach((btn) => {
+    btn.addEventListener('click', () => setActiveCategory(btn.getAttribute('data-cafe-filter') || 'Todos'));
+  });
+
+  document.querySelectorAll('[data-jump-category]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      activeCategory = btn.getAttribute('data-cafe-filter') || 'Todos';
-      document.querySelectorAll('[data-cafe-filter]').forEach((item) => {
-        item.classList.toggle('is-active', item === btn);
-      });
-      renderMenu();
+      const category = btn.getAttribute('data-jump-category') || 'Todos';
+      setActiveCategory(category);
+      const cartaSection = document.getElementById('carta');
+      if (cartaSection) cartaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
+  const clearBtn = document.getElementById('c-tray-clear');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      tray = [];
+      renderTray();
+    });
+  }
+
   renderOrigin('loja');
   renderMenu();
+  initLightbox();
   initMobileDrawer();
 });

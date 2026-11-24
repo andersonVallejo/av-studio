@@ -2,24 +2,10 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig, type Plugin} from 'vite';
+import {buildSecurityHeaders, generateCspNonce} from './assets/js/csp-utils.mjs';
 import {buildRobotsTxt, buildSitemapXml, normalizeSiteUrl} from './assets/js/seo-utils.mjs';
 
-const SECURITY_HEADERS = {
-  'X-Content-Type-Options': 'nosniff',
-  'Referrer-Policy': 'strict-origin-when-cross-origin',
-  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
-  'Content-Security-Policy': [
-    "default-src 'self'",
-    "script-src 'self'",
-    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-    "font-src 'self' https://fonts.gstatic.com",
-    "img-src 'self' data:",
-    "connect-src 'self'",
-    "object-src 'none'",
-    "base-uri 'self'",
-    "form-action 'self'",
-  ].join('; '),
-};
+const PRODUCTION_SECURITY_HEADERS = buildSecurityHeaders({isDev: false});
 
 function createOptionalSeoPlugin(): Plugin {
   const siteUrl = normalizeSiteUrl(process.env.SITE_URL || '');
@@ -29,6 +15,9 @@ function createOptionalSeoPlugin(): Plugin {
       if (!siteUrl) return html;
       const filename = path.basename(ctx.filename || '');
       const dirName = path.basename(path.dirname(ctx.filename || ''));
+      if (filename === 'admin.html' || filename === 'portal.html') {
+        return html;
+      }
       if (dirName !== 'applet' && filename !== 'index.html' && filename !== 'politica-privacidad.html') {
         return html;
       }
@@ -58,14 +47,23 @@ function createOptionalSeoPlugin(): Plugin {
   };
 }
 
-export default defineConfig(() => {
+export default defineConfig(({command, isPreview}) => {
+  const isDevServer = command === 'serve' && !isPreview;
+  const devCspNonce = isDevServer ? generateCspNonce() : '';
+  const devSecurityHeaders = isDevServer
+    ? buildSecurityHeaders({isDev: true, nonce: devCspNonce})
+    : PRODUCTION_SECURITY_HEADERS;
+
   return {
     plugins: [react(), tailwindcss(), createOptionalSeoPlugin()],
+    ...(isDevServer ? {html: {cspNonce: devCspNonce}} : {}),
     build: {
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, 'index.html'),
           privacidad: path.resolve(__dirname, 'politica-privacidad.html'),
+          admin: path.resolve(__dirname, 'admin.html'),
+          portal: path.resolve(__dirname, 'portal.html'),
           restaurante: path.resolve(__dirname, 'demos/restaurante/index.html'),
           pizzeria: path.resolve(__dirname, 'demos/pizzeria/index.html'),
           cafeteria: path.resolve(__dirname, 'demos/cafeteria/index.html'),
@@ -85,13 +83,24 @@ export default defineConfig(() => {
         },
       },
     },
+    optimizeDeps: {
+      include: [
+        'react',
+        'react-dom',
+        'react-dom/client',
+        'react/jsx-runtime',
+        'react/jsx-dev-runtime',
+        'lucide-react',
+      ],
+    },
     resolve: {
+      dedupe: ['react', 'react-dom'],
       alias: {
         '@': path.resolve(__dirname, '.'),
       },
     },
     server: {
-      headers: SECURITY_HEADERS,
+      headers: devSecurityHeaders,
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modify—file watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
@@ -99,7 +108,7 @@ export default defineConfig(() => {
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
     preview: {
-      headers: SECURITY_HEADERS,
+      headers: PRODUCTION_SECURITY_HEADERS,
     },
   };
 });

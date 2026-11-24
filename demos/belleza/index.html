@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="robots" content="noindex, follow" />
-    <title>Atelier Rosa — Salón de Belleza &amp; Estética (Demostración) | AV·STUDIO</title>
+    <title>Atelier Rosa — Estudio de Belleza &amp; Estética (Demostración) | AV·STUDIO</title>
     <meta
       name="description"
-      content="Sitio web demostrativo de salón de belleza y estética en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
+      content="Sitio web demostrativo de estudio de belleza y estética contemporánea en Cuenca, Ecuador. Diseñado por Anderson Vallejo — AV·STUDIO."
     />
-    <meta property="og:title" content="Atelier Rosa — Salón de Belleza &amp; Estética (Demostración) | AV·STUDIO" />
+    <meta property="og:title" content="Atelier Rosa — Estudio de Belleza &amp; Estética (Demostración) | AV·STUDIO" />
     <meta
       property="og:description"
-      content="Estudio ficticio de estética facial, capilar y manicure en El Ejido, Cuenca con reserva por horario."
+      content="Estudio ficticio de cuidado facial, diseño capilar, manicure spa y maquillaje en El Ejido, Cuenca con solicitud de turno demostrativa."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AV·STUDIO" />
     <meta property="og:locale" content="es_EC" />
-    <meta property="og:image" content="../../assets/images/categories/belleza.jpg" />
+    <meta property="og:image" content="./images/hero.jpg" />
     <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -38,15 +38,22 @@
 
     <header class="r-header">
       <div class="container r-header__inner">
-        <a href="#inicio" class="r-brand">ATELIER ROSA</a>
-        <nav class="r-nav" aria-label="Navegación del salón">
+        <a href="#inicio" class="r-brand">
+          <span class="r-brand__word">ATELIER ROSA</span>
+          <span class="r-brand__loc">Cuenca</span>
+        </a>
+
+        <nav class="r-nav" aria-label="Navegación principal del estudio">
           <a class="r-nav__link" href="#inicio">Inicio</a>
+          <a class="r-nav__link" href="#filosofia">Filosofía</a>
           <a class="r-nav__link" href="#tratamientos">Tratamientos</a>
-          <a class="r-nav__link" href="#ambiente">Cabinas</a>
+          <a class="r-nav__link" href="#experiencias">Experiencias</a>
+          <a class="r-nav__link" href="#galeria">Galería</a>
           <a class="r-nav__link" href="#reservas">Reservas</a>
         </nav>
+
         <div class="r-header__actions">
-          <a href="#reservas" class="r-btn r-btn--rose r-header__cta">Reservar cita</a>
+          <a href="#reservas" class="r-btn r-btn--rose r-header__cta">Solicitar turno</a>
           <button
             type="button"
             class="r-mobile-toggle"
@@ -59,59 +66,155 @@
           </button>
         </div>
       </div>
+
       <nav class="r-mobile-drawer" id="r-mobile-drawer" hidden aria-label="Menú móvil">
         <a href="#inicio">Inicio</a>
+        <a href="#filosofia">Filosofía</a>
         <a href="#tratamientos">Tratamientos</a>
-        <a href="#ambiente">Cabinas</a>
+        <a href="#experiencias">Experiencias</a>
+        <a href="#galeria">Galería</a>
         <a href="#reservas">Reservas</a>
-        <a href="../../index.html" class="r-mobile-drawer__back">
-          &larr; Volver a AV·STUDIO
-        </a>
+        <a href="../../index.html" class="r-mobile-drawer__back">&larr; Volver a AV·STUDIO</a>
       </nav>
     </header>
 
     <main>
+      <!-- 1. PORTADA EDITORIAL -->
       <section class="r-hero" id="inicio">
-        <div class="container r-hero__grid">
-          <div>
-            <span class="r-eyebrow">Estética integral &amp; cabello · Sector El Ejido, Cuenca</span>
-            <h1 class="r-title">Cuidado estético en calma, tonos cálidos y atención personalizada.</h1>
-            <p class="r-hero__lead">
-              Atelier Rosa es un salón ficticio de demostración creado por AV·STUDIO para ilustrar
-              cómo exhibir tratamientos faciales, capilares y spa de uñas en USD con reserva directa.
-            </p>
-            <div class="r-btn-row">
-              <a href="#tratamientos" class="r-btn r-btn--rose">Explorar tratamientos</a>
-              <a href="#reservas" class="r-btn r-btn--outline">Solicitar cita de ejemplo</a>
+        <div class="container">
+          <div class="r-hero__spread">
+            <div class="r-hero__editorial">
+              <span class="r-eyebrow">Estética integral &amp; cuidado personal · Sector El Ejido, Cuenca</span>
+              <h1 class="r-hero__title">
+                Cuidado estético en <em>calma</em>, luz cálida y ritmo propio.
+              </h1>
+              <p class="r-hero__lead">
+                Atelier Rosa es un estudio ficticio diseñado por AV·STUDIO para mostrar cómo una marca
+                de belleza y estética contemporánea presenta sus rituales faciales, capilares y spa de
+                manos con tarifas en USD y agenda directa en formato 24h.
+              </p>
+              <div class="r-btn-row">
+                <a href="#tratamientos" class="r-btn r-btn--rose">Explorar tratamientos</a>
+                <a href="#reservas" class="r-btn r-btn--outline">Solicitar turno de ejemplo</a>
+              </div>
             </div>
+
+            <figure class="r-hero__arch-frame">
+              <div class="r-hero__arch-mask">
+                <picture>
+                  <source srcset="./images/hero.webp" type="image/webp" />
+                  <img
+                    src="./images/hero.jpg"
+                    width="1200"
+                    height="900"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                    alt="Interior minimalista de estudio de belleza en tonos lino cálido con espejo arqueado de latón y frascos botánicos"
+                  />
+                </picture>
+              </div>
+              <figcaption class="r-hero__caption">
+                <span>01 · Estudio principal</span>
+                <span>Luz natural · El Ejido</span>
+              </figcaption>
+            </figure>
           </div>
 
-          <div class="r-hero__media">
-            <picture>
-              <source srcset="./images/hero.webp" type="image/webp" />
-              <img
-                src="./images/hero.jpg"
-                width="1200"
-                height="900"
-                fetchpriority="high"
-                decoding="async"
-                alt="Estudio de estética minimalista en tonos nude con espejo arqueado de latón y sillón de lino"
-              />
-            </picture>
+          <div class="r-hero__index" aria-label="Resumen referencial del estudio">
+            <div class="r-index-item">
+              <span class="r-index-item__label">Áreas de cuidado</span>
+              <span class="r-index-item__value">Facial · Capilar · Manicure &amp; Spa · Maquillaje</span>
+            </div>
+            <div class="r-index-item">
+              <span class="r-index-item__label">Tarifas referenciales</span>
+              <span class="r-index-item__value r-mono">$18.00 – $68.00 USD</span>
+            </div>
+            <div class="r-index-item">
+              <span class="r-index-item__label">Atención demostrativa</span>
+              <span class="r-index-item__value r-mono">Mar a Sáb · 09:00 – 19:00 (24h)</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="r-section r-section--white" id="tratamientos">
+      <!-- 2. FILOSOFÍA DEL ESTUDIO -->
+      <section class="r-section r-section--ivory" id="filosofia">
+        <div class="container r-filosofia-grid">
+          <figure class="r-filosofia__figure">
+            <img
+              src="./images/texturas-botanicas.jpg"
+              width="1200"
+              height="900"
+              loading="eager"
+              decoding="async"
+              alt="Composición editorial de crema hidratante botánica, gotas de aceite de rosa mosqueta y espátula de latón sobre piedra travertino"
+            />
+            <figcaption class="r-caption">
+              Emulsiones suaves, texturas minerales y preparación cuidada previa a cada sesión.
+            </figcaption>
+          </figure>
+
+          <div class="r-filosofia__content">
+            <span class="r-eyebrow">Filosofía del estudio</span>
+            <h2 class="r-title">Menos prisa, mayor precisión en cada sesión.</h2>
+            <p class="r-copy">
+              En lugar de saturar la agenda o abrumar con promociones agresivas, el sitio organiza cada
+              tratamiento como una pausa privada: tiempos reales de cabina, tarifas transparentes en USD
+              y una estética serena coherente con el espacio físico.
+            </p>
+
+            <dl class="r-principles">
+              <div class="r-principle">
+                <dt>Protocolos visibles</dt>
+                <dd>
+                  Descripción directa de lo que incluye cada tratamiento —desde higiene enzimática hasta
+                  sellado nutritivo— antes de iniciar la consulta.
+                </dd>
+              </div>
+              <div class="r-principle">
+                <dt>Duración y valor claros</dt>
+                <dd>
+                  Cada servicio declara su tiempo aproximado en minutos y su tarifa referencial en dólares
+                  estadounidenses.
+                </dd>
+              </div>
+              <div class="r-principle">
+                <dt>Cita tentativa sin fricción</dt>
+                <dd>
+                  Solicitud demostrativa en formato 24h sin pasarelas forzadas, conectada de forma directa
+                  con el canal de atención por WhatsApp.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SERVICIOS Y TRATAMIENTOS -->
+      <section class="r-section r-section--linen" id="tratamientos">
         <div class="container">
-          <span class="r-eyebrow">Carta de servicios en USD</span>
-          <h2 class="r-title">Tratamientos y cuidados</h2>
+          <div class="r-section-head">
+            <div>
+              <span class="r-eyebrow">Carta de servicios en USD</span>
+              <h2 class="r-title">Tratamientos y cuidados</h2>
+              <p class="r-copy">
+                Valores y duraciones referenciales de demostración. Selecciona cualquier servicio para
+                trasladarlo automáticamente al formulario de turno.
+              </p>
+            </div>
+            <p class="r-count" id="r-service-count" aria-live="polite">
+              6 tratamientos disponibles
+            </p>
+          </div>
 
           <div class="r-tabs" role="group" aria-label="Filtrar servicios estéticos">
             <button type="button" class="r-tab is-active" data-beauty-filter="Todos">Todos</button>
             <button type="button" class="r-tab" data-beauty-filter="Facial">Facial</button>
             <button type="button" class="r-tab" data-beauty-filter="Capilar">Capilar</button>
-            <button type="button" class="r-tab" data-beauty-filter="Manicure & Spa">Manicure &amp; Spa</button>
+            <button type="button" class="r-tab" data-beauty-filter="Manicure & Spa">
+              Manicure &amp; Spa
+            </button>
             <button type="button" class="r-tab" data-beauty-filter="Maquillaje">Maquillaje</button>
           </div>
 
@@ -119,86 +222,352 @@
         </div>
       </section>
 
-      <section class="r-section r-section--ambiente" id="ambiente">
-        <div class="container r-ambiente-grid">
-          <div class="r-ambiente__media">
-            <picture>
-              <source srcset="./images/cabina.webp" type="image/webp" />
-              <img
-                src="./images/cabina.jpg"
-                width="1200"
-                height="900"
-                loading="lazy"
-                decoding="async"
-                alt="Cabina privada de estética y spa facial con luz suave, linos neutros y mesa de tratamiento"
-              />
-            </picture>
+      <!-- 4. EXPERIENCIAS DE BELLEZA -->
+      <section class="r-section r-section--plum" id="experiencias">
+        <div class="container">
+          <div class="r-section-head r-section-head--light">
+            <div>
+              <span class="r-eyebrow r-eyebrow--champagne">Cuatro áreas especializadas</span>
+              <h2 class="r-title r-title--light">Experiencias de belleza</h2>
+              <p class="r-copy r-copy--light">
+                Cada rincón del estudio responde a un ritmo distinto: cabina silenciosa de piel, estación
+                luminosa de cabello, mesa de spa para manos y tocador de maquillaje.
+              </p>
+            </div>
           </div>
-          <div>
-            <span class="r-eyebrow">Experiencia del espacio</span>
-            <h2 class="r-title">Cabinas privadas pensadas para desconectar</h2>
-            <p class="r-ambiente__copy">
-              Mostrar la atmósfera real de tus cabinas de cuidado facial, estación de colorimetría
-              y zona de manicure eleva la confianza de quien agenda su primera visita.
-            </p>
-            <ul class="r-ambiente__list">
-              <li>Protocolos de higiene y productos cosméticos detallados en cada servicio.</li>
-              <li>Duración aproximada y tarifa transparente en USD antes de agendar.</li>
-              <li>Confirmación por horario de 24h directamente a tu WhatsApp.</li>
-            </ul>
-            <a href="#reservas" class="r-btn r-btn--rose">Elegir tratamiento y horario</a>
+
+          <div class="r-exp-grid">
+            <article class="r-exp-card">
+              <div class="r-exp-card__media">
+                <img
+                  src="./images/facial-ritual.jpg"
+                  width="1200"
+                  height="900"
+                  loading="eager"
+                  decoding="async"
+                  alt="Ritual facial botánico con gotero ámbar, gua sha de cuarzo rosa y toallas de lino sobre piedra natural"
+                />
+              </div>
+              <div class="r-exp-card__body">
+                <span class="r-exp-card__kicker">01 · Facial</span>
+                <h3 class="r-exp-card__title">Piel en equilibrio &amp; cabina privada</h3>
+                <p class="r-exp-card__desc">
+                  Higienización enzimática, masaje de drenaje suave y mascarillas calmantes diseñadas para
+                  devolver confort e hidratación profunda sin irritación.
+                </p>
+                <button
+                  type="button"
+                  class="r-exp-card__action"
+                  data-jump-filter="Facial"
+                >
+                  Explorar tratamientos faciales &rarr;
+                </button>
+              </div>
+            </article>
+
+            <article class="r-exp-card">
+              <div class="r-exp-card__media">
+                <img
+                  src="./images/estacion-capilar.jpg"
+                  width="1200"
+                  height="900"
+                  loading="eager"
+                  decoding="async"
+                  alt="Estación minimalista de diseño capilar con espejo ovalado de latón, peines de madera y aceites en frasco ámbar"
+                />
+              </div>
+              <div class="r-exp-card__body">
+                <span class="r-exp-card__kicker">02 · Capilar</span>
+                <h3 class="r-exp-card__title">Diseño capilar &amp; brillo natural</h3>
+                <p class="r-exp-card__desc">
+                  Diagnóstico previo de la fibra, cortes adaptados a la caída real del cabello y rituales
+                  de iluminación suave con sellado nutritivo.
+                </p>
+                <button
+                  type="button"
+                  class="r-exp-card__action"
+                  data-jump-filter="Capilar"
+                >
+                  Explorar servicios capilares &rarr;
+                </button>
+              </div>
+            </article>
+
+            <article class="r-exp-card">
+              <div class="r-exp-card__media">
+                <img
+                  src="./images/manicure-spa.jpg"
+                  width="1200"
+                  height="900"
+                  loading="eager"
+                  decoding="async"
+                  alt="Mesa tranquila de manicure spa en travertino con bálsamo cerámico, gotero de cutícula y eucalipto fresco"
+                />
+              </div>
+              <div class="r-exp-card__body">
+                <span class="r-exp-card__kicker">03 · Manicure &amp; Spa</span>
+                <h3 class="r-exp-card__title">Cuidado de manos &amp; pedicure</h3>
+                <p class="r-exp-card__desc">
+                  Instrumental esterilizado, exfoliación con manteca de karité, esmaltado semipermanente de
+                  tonos sobrios y descanso para manos y pies.
+                </p>
+                <button
+                  type="button"
+                  class="r-exp-card__action"
+                  data-jump-filter="Manicure & Spa"
+                >
+                  Explorar manicure y spa &rarr;
+                </button>
+              </div>
+            </article>
+
+            <article class="r-exp-card">
+              <div class="r-exp-card__media">
+                <img
+                  src="./images/tocador-maquillaje.jpg"
+                  width="1200"
+                  height="900"
+                  loading="eager"
+                  decoding="async"
+                  alt="Tocador sereno de maquillaje con brochas naturales en vaso cerámico y paleta neutra de tonos tierra y palo rosa"
+                />
+              </div>
+              <div class="r-exp-card__body">
+                <span class="r-exp-card__kicker">04 · Maquillaje</span>
+                <h3 class="r-exp-card__title">Piel luminosa para eventos</h3>
+                <p class="r-exp-card__desc">
+                  Preparación hidratante previa y acabado satinado de larga duración pensado para celebraciones
+                  de día o noche con luz natural o artificial.
+                </p>
+                <button
+                  type="button"
+                  class="r-exp-card__action"
+                  data-jump-filter="Maquillaje"
+                >
+                  Explorar maquillaje social &rarr;
+                </button>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="r-section" id="reservas">
+      <!-- 5. GALERÍA EDITORIAL -->
+      <section class="r-section r-section--ivory" id="galeria">
+        <div class="container">
+          <div class="r-section-head">
+            <div>
+              <span class="r-eyebrow">Atmósfera &amp; detalles</span>
+              <h2 class="r-title">Galería editorial del espacio</h2>
+              <p class="r-copy">
+                Recorrido fotográfico por los materiales, la iluminación y las zonas tranquilas que
+                definen la identidad visual de Atelier Rosa.
+              </p>
+            </div>
+          </div>
+
+          <div class="r-gallery-mosaic">
+            <figure class="r-gallery-item r-gallery-item--wide">
+              <div class="r-gallery-item__frame">
+                <picture>
+                  <source srcset="./images/cabina.webp" type="image/webp" />
+                  <img
+                    src="./images/cabina.jpg"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Cabina privada de estética facial con estantería de roble, toallas enrolladas y cama de lino junto a cortinas claras"
+                  />
+                </picture>
+              </div>
+              <figcaption class="r-caption">
+                01 · Cabina privada de tratamientos faciales · Luz regulable y linos neutros
+              </figcaption>
+            </figure>
+
+            <figure class="r-gallery-item r-gallery-item--tall">
+              <div class="r-gallery-item__frame">
+                <img
+                  src="./images/detalles-botanicos.jpg"
+                  width="900"
+                  height="1200"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Repisa de roble con toallas de algodón orgánico enrolladas, frascos esmerilados y ramo seco de manzanilla y eucalipto"
+                />
+              </div>
+              <figcaption class="r-caption">
+                02 · Textiles de algodón y botánica seca de preparación
+              </figcaption>
+            </figure>
+
+            <figure class="r-gallery-item r-gallery-item--sq">
+              <div class="r-gallery-item__frame">
+                <img
+                  src="./images/lounge-espera.jpg"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Sala de espera serena con sillón bouclé crema, mesa de travertino y taza de cerámica con infusión tibia"
+                />
+              </div>
+              <figcaption class="r-caption">
+                03 · Antesala de llegada e infusión herbal previa al turno
+              </figcaption>
+            </figure>
+
+            <figure class="r-gallery-item r-gallery-item--panoramic">
+              <div class="r-gallery-item__frame">
+                <img
+                  src="./images/luz-arquitectonica.jpg"
+                  width="1600"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Pasillo arquitectónico con cortinas translúcidas de lino iluminadas por sol de tarde, plinto travertino y arco cálido"
+                />
+              </div>
+              <figcaption class="r-caption">
+                04 · Umbral arquitectónico · Cortinas de lino y piedra travertino al caer la tarde
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. EXPERIENCIA Y ATENCIÓN -->
+      <section class="r-section r-section--nude" id="atencion">
+        <div class="container">
+          <div class="r-section-head">
+            <div>
+              <span class="r-eyebrow">Cómo funciona esta demostración</span>
+              <h2 class="r-title">Experiencia y atención al cliente</h2>
+            </div>
+          </div>
+
+          <div class="r-steps-grid">
+            <article class="r-step">
+              <span class="r-step__num">01</span>
+              <h3 class="r-step__title">Selección transparente</h3>
+              <p class="r-step__copy">
+                Filtra por Facial, Capilar, Manicure &amp; Spa o Maquillaje para revisar tiempos en minutos
+                y tarifas de ejemplo en USD antes de escribir.
+              </p>
+            </article>
+
+            <article class="r-step">
+              <span class="r-step__num">02</span>
+              <h3 class="r-step__title">Fecha y franja horaria 24h</h3>
+              <p class="r-step__copy">
+                Eliges un día tentativo y un bloque horario de ejemplo en formato 24h (09:30, 11:30, 15:00
+                o 17:30) sin formularios extensos ni pagos previos.
+              </p>
+            </article>
+
+            <article class="r-step">
+              <span class="r-step__num">03</span>
+              <h3 class="r-step__title">Mensaje preparado en WhatsApp</h3>
+              <p class="r-step__copy">
+                Al enviar, los campos se validan en pantalla y generan un enlace prellenado hacia AV·STUDIO
+                para mostrar el flujo real de solicitud de cita.
+              </p>
+            </article>
+          </div>
+
+          <p class="r-transparency-note">
+            <strong>Nota demostrativa:</strong> Atelier Rosa es una marca ficticia creada por AV·STUDIO.
+            Los horarios, precios en USD y ubicaciones son ilustrativos y no representan reservas reales ni
+            agendas confirmadas.
+          </p>
+        </div>
+      </section>
+
+      <!-- 7. CONTACTO Y SOLICITUD DE CITA -->
+      <section class="r-section r-section--ivory" id="reservas">
         <div class="container r-booking-grid">
-          <div>
+          <div class="r-booking-info">
             <span class="r-eyebrow">Agenda y atención</span>
-            <h2 class="r-title">Reserva tu turno demostrativo</h2>
-            <p class="r-booking__copy">
-              <strong>Horario de ejemplo (24h):</strong> Martes a sábado 09:00 – 19:00.<br />
-              <strong>Ubicación referencial:</strong> Av. Remigio Crespo y Los Fresnos, Cuenca, Ecuador.
+            <h2 class="r-title">Solicitar turno demostrativo</h2>
+            <p class="r-copy">
+              Completa el formulario de ejemplo para probar la validación de datos y visualizar cómo llega
+              una solicitud estética ordenada al WhatsApp del estudio.
             </p>
-            <p class="r-booking__note">
-              Al enviar, se genera un enlace validado hacia WhatsApp de Anderson Vallejo — AV·STUDIO
-              para mostrar el flujo real de solicitud de cita.
-            </p>
+
+            <dl class="r-meta-list">
+              <div>
+                <dt>Horario referencial (24h)</dt>
+                <dd>Martes a sábado · 09:00 – 19:00</dd>
+              </div>
+              <div>
+                <dt>Ubicación de ejemplo</dt>
+                <dd>Av. Remigio Crespo y Los Fresnos · El Ejido, Cuenca, Ecuador</dd>
+              </div>
+              <div>
+                <dt>Canal conectado</dt>
+                <dd>WhatsApp directo de Anderson Vallejo — AV·STUDIO</dd>
+              </div>
+            </dl>
+
+            <div class="r-selected-preview" id="r-selected-preview" hidden>
+              <span class="r-selected-preview__label">Tratamiento preseleccionado</span>
+              <strong class="r-selected-preview__name" id="r-preview-name"></strong>
+              <span class="r-selected-preview__meta" id="r-preview-meta"></span>
+            </div>
           </div>
 
           <form class="r-form-card" id="r-booking-form" novalidate>
-            <h3 class="r-form-card__title">
-              Solicitud de cita estética
-            </h3>
+            <div class="r-form-card__head">
+              <h3 class="r-form-card__title">Solicitud de cita estética</h3>
+              <span class="r-form-card__badge">Ejemplo interactivo</span>
+            </div>
+
             <div class="r-form-fields">
               <div class="r-field">
                 <label for="r-name">Nombre completo *</label>
-                <input id="r-name" type="text" placeholder="Ej. Daniela Vega" />
-                <span class="r-err" id="r-err-name"></span>
+                <input id="r-name" type="text" placeholder="Ej. Daniela Vega" autocomplete="name" />
+                <span class="r-err" id="r-err-name" aria-live="polite"></span>
               </div>
+
               <div class="r-field">
                 <label for="r-phone">WhatsApp *</label>
-                <input id="r-phone" type="tel" placeholder="+593 9..." />
-                <span class="r-err" id="r-err-phone"></span>
+                <input id="r-phone" type="tel" placeholder="+593 9..." autocomplete="tel" />
+                <span class="r-err" id="r-err-phone" aria-live="polite"></span>
               </div>
+
               <div class="r-field r-field--full">
                 <label for="r-service">Tratamiento deseado *</label>
                 <select id="r-service">
                   <option value="">Selecciona un servicio</option>
-                  <option value="Limpieza Facial & Hidratación Profunda">Limpieza Facial &amp; Hidratación Profunda</option>
-                  <option value="Iluminación & Hidratación Capilar">Iluminación &amp; Hidratación Capilar</option>
-                  <option value="Corte de Diseño & Brushing">Corte de Diseño &amp; Brushing</option>
-                  <option value="Manicure Semipermanente & Spa de Manos">Manicure Semipermanente &amp; Spa de Manos</option>
-                  <option value="Pedicure Clínico-Estético">Pedicure Clínico-Estético</option>
-                  <option value="Maquillaje Social & Preparación de Piel">Maquillaje Social &amp; Preparación de Piel</option>
+                  <option value="Limpieza Facial & Hidratación Profunda">
+                    Limpieza Facial &amp; Hidratación Profunda (60 min · $35.00 USD)
+                  </option>
+                  <option value="Iluminación & Hidratación Capilar">
+                    Iluminación &amp; Hidratación Capilar (120 min · $68.00 USD)
+                  </option>
+                  <option value="Corte de Diseño & Brushing">
+                    Corte de Diseño &amp; Brushing (50 min · $22.00 USD)
+                  </option>
+                  <option value="Manicure Semipermanente & Spa de Manos">
+                    Manicure Semipermanente &amp; Spa de Manos (55 min · $18.00 USD)
+                  </option>
+                  <option value="Pedicure Clínico-Estético">
+                    Pedicure Clínico-Estético (60 min · $24.00 USD)
+                  </option>
+                  <option value="Maquillaje Social & Preparación de Piel">
+                    Maquillaje Social &amp; Preparación de Piel (65 min · $42.00 USD)
+                  </option>
                 </select>
-                <span class="r-err" id="r-err-service"></span>
+                <span class="r-err" id="r-err-service" aria-live="polite"></span>
               </div>
+
               <div class="r-field">
                 <label for="r-date">Fecha preferida *</label>
                 <input id="r-date" type="date" />
-                <span class="r-err" id="r-err-date"></span>
+                <span class="r-err" id="r-err-date" aria-live="polite"></span>
               </div>
+
               <div class="r-field">
                 <label for="r-time">Horario (24h) *</label>
                 <select id="r-time">
@@ -208,15 +577,17 @@
                   <option value="15:00">15:00</option>
                   <option value="17:30">17:30</option>
                 </select>
-                <span class="r-err" id="r-err-time"></span>
+                <span class="r-err" id="r-err-time" aria-live="polite"></span>
               </div>
             </div>
-            <div style="margin-top: 1rem;">
+
+            <div class="r-form-actions">
               <button type="submit" class="r-btn r-btn--rose">Preparar reserva en WhatsApp</button>
             </div>
-            <div id="r-prepared" hidden style="margin-top: 1.15rem; padding: 1rem; background: var(--r-nude); border: 1px solid var(--r-border); border-radius: 6px;">
-              <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
-                <strong>Turno demostrativo listo.</strong> Abre el mensaje hacia AV·STUDIO:
+
+            <div id="r-prepared" class="r-prepared" hidden>
+              <p class="r-prepared__copy">
+                <strong>Turno demostrativo listo.</strong> Abre el mensaje prellenado hacia AV·STUDIO:
               </p>
               <a
                 id="r-prepared-wa"
@@ -235,30 +606,35 @@
 
     <footer class="r-footer">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+        <div class="r-footer__top">
           <div>
-            <strong style="font-family: var(--r-font-display); font-size: 1.4rem;">ATELIER ROSA</strong>
-            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; opacity: 0.82;">
-              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
+            <strong class="r-footer__brand">ATELIER ROSA</strong>
+            <p class="r-footer__note">
+              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Av. Remigio Crespo, Cuenca, Azuay, Ecuador.
             </p>
           </div>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+          <nav class="r-footer__links" aria-label="Enlaces del pie">
+            <a href="#filosofia">Filosofía</a>
             <a href="#tratamientos">Tratamientos</a>
+            <a href="#experiencias">Experiencias</a>
+            <a href="#galeria">Galería</a>
             <a href="#reservas">Reservas</a>
-            <a href="../../index.html" style="color: var(--r-champagne); font-weight: 700;">Volver a AV·STUDIO</a>
-          </div>
+            <a href="../../index.html" class="r-footer__back">Volver a AV·STUDIO</a>
+          </nav>
         </div>
 
         <div class="r-av-signature">
           <div>
-            <p style="margin: 0 0 0.25rem;">
-              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos sitios elegantes para salones, spas y estudios de estética.
+            <p class="r-av-signature__title">
+              <strong>¿Te gustaría una página web como esta?</strong> Diseñamos sitios editoriales para
+              salones de belleza, spas y estudios de estética.
             </p>
-            <p style="margin: 0; opacity: 0.88;">
+            <p class="r-av-signature__meta">
               <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
-              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=belleza#contacto" class="" style="text-decoration: underline;">
-            Quiero una página para mi salón de belleza &rarr;
-          </a>
+              <a href="mailto:andersonvallejo021@gmail.com">andersonvallejo021@gmail.com</a> ·
+              <a href="../../index.html?sector=belleza#contacto">
+                Quiero una página para mi salón de belleza &rarr;
+              </a>
             </p>
           </div>
           <a

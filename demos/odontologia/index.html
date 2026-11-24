@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -39,234 +39,469 @@
     <header class="o-header">
       <div class="container o-header__inner">
         <a href="#inicio" class="o-brand">ALBA DENTAL</a>
+
         <nav class="o-nav" aria-label="Navegación clínica">
-          <a href="#inicio">Inicio</a>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#especialidades">Especialidades</a>
+          <a href="#nosotros">Filosofía</a>
           <a href="#tratamientos">Tratamientos</a>
-          <a href="#equipo">Equipo</a>
-          <a href="#instalaciones">Instalaciones</a>
-          <a href="#cita">Solicitar cita</a>
-          <a href="#ubicacion">Ubicación</a>
+          <a href="#especialidades">Especialidades</a>
+          <a href="#instalaciones">Espacios</a>
+          <a href="#preguntas">Preguntas</a>
         </nav>
-        <div style="display: flex; align-items: center; gap: 0.75rem;">
-          <a href="#cita" class="o-btn o-btn--deep o-header__cta">Solicitar cita</a>
+
+        <div class="o-header__actions">
+          <a href="#cita" class="o-btn o-btn--deep o-header__cta">Solicitar información</a>
           <button
             type="button"
             class="o-mobile-btn"
             id="o-mobile-btn"
             aria-expanded="false"
             aria-controls="o-mobile-drawer"
-            aria-label="Abrir menú"
+            aria-label="Abrir menú de navegación"
           >
-            &#9776;
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+            </svg>
           </button>
         </div>
       </div>
+
       <nav class="o-mobile-drawer" id="o-mobile-drawer" hidden aria-label="Menú móvil">
         <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#especialidades">Especialidades</a>
+        <a href="#nosotros">Filosofía de atención</a>
         <a href="#tratamientos">Tratamientos</a>
-        <a href="#equipo">Equipo</a>
-        <a href="#instalaciones">Instalaciones</a>
-        <a href="#cita">Solicitar cita</a>
-        <a href="#ubicacion">Ubicación</a>
-        <a href="../../index.html" style="color: var(--o-deep); font-weight: 700;">&larr; Volver a AV·STUDIO</a>
+        <a href="#especialidades">Especialidades y directorio</a>
+        <a href="#experiencia">Experiencia del paciente</a>
+        <a href="#instalaciones">Espacios y equipamiento</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+        <a href="#cita">Solicitar información</a>
+        <a href="../../index.html" class="o-drawer-back">&larr; Volver a AV·STUDIO</a>
       </nav>
     </header>
 
     <main>
+      <!-- 1. PORTADA EDITORIAL (COMPOSICIÓN ASIMÉTRICA 62 / 38) -->
       <section class="o-hero" id="inicio">
-        <div class="container o-hero__grid">
-          <div>
-            <span class="o-eyebrow">Clínica Odontológica de Ejemplo · Av. Solano, Cuenca</span>
+        <div class="container o-hero__shell">
+          <figure class="o-hero__visual">
+            <img
+              src="./images/cabina-mineral.jpg"
+              alt="Gabinete odontológico luminoso con sillón verde salvia, gabinetes de travertino y cortinas traslúcidas"
+              width="1376"
+              height="768"
+              fetchpriority="high"
+              decoding="async"
+            />
+            <figcaption class="o-hero__caption">
+              <span>Ambiente mineral ilustrativo de consulta</span>
+              <span class="o-num">Av. Solano / El Ejido &middot; Cuenca</span>
+            </figcaption>
+          </figure>
+
+          <div class="o-hero__editorial">
+            <p class="o-eyebrow">Clínica odontológica de ejemplo &middot; Cuenca</p>
             <h1 class="o-hero__title">Odontología serena, clara y centrada en el paciente.</h1>
-            <p style="color: var(--o-muted); max-width: 46ch; margin-bottom: 1.5rem;">
-              Alba Dental es una clínica ficticia creada como demostración por AV·STUDIO. Muestra
-              cómo una clínica dental puede explicar sus especialidades, presentar su equipo y
-              ordenar solicitudes de cita sin tecnicismos confusos.
+            <p class="o-hero__copy">
+              Alba Dental es una clínica ficticia diseñada por AV·STUDIO para ilustrar cómo un consultorio dental
+              presenta sus áreas de atención, tiempos orientativos y solicitud responsable de valoración sin tecnicismos
+              confusos.
             </p>
+
+            <dl class="o-hero__facts">
+              <div>
+                <dt>Horario referencial (24h)</dt>
+                <dd class="o-num">Lun–Vie 08:30–18:30 &middot; Sáb 09:00–13:00</dd>
+              </div>
+              <div>
+                <dt>Enfoque demostrativo</dt>
+                <dd>Cuatro áreas conservadoras sin reservas médicas reales</dd>
+              </div>
+            </dl>
+
             <div class="o-hero__actions">
-              <a href="#cita" class="o-btn o-btn--deep">Solicitar valoración de ejemplo</a>
+              <a href="#cita" class="o-btn o-btn--deep">Solicitar valoración</a>
               <a href="#tratamientos" class="o-btn o-btn--outline">Ver tratamientos</a>
             </div>
           </div>
-          <div class="o-hero__img">
-            <picture>
-              <source srcset="./images/recepcion-clinica.webp" type="image/webp" />
-              <img
-                src="./images/recepcion-clinica.jpg"
-                alt="Recepción luminosa de clínica odontológica moderna en blanco y verde salvia"
-                width="1200"
-                height="900"
-                fetchpriority="high"
-                decoding="async"
-              />
-            </picture>
-          </div>
         </div>
       </section>
 
+      <!-- 2. FILOSOFÍA DE ATENCIÓN -->
       <section class="o-section" id="nosotros">
         <div class="container">
-          <span class="o-eyebrow">Nosotros</span>
-          <h2 class="o-title">Atención transparente desde la primera consulta.</h2>
-          <p style="max-width: 68ch; color: var(--o-muted);">
-            Un sitio web odontológico efectivo debe transmitir tranquilidad, orden y claridad. Este
-            ejemplo organiza la información clínica sin promesas exageradas, priorizando la
-            comprensión del paciente y la facilidad para agendar una cita en Cuenca, Ecuador.
-          </p>
-        </div>
-      </section>
-
-      <section class="o-section o-section--gray" id="especialidades">
-        <div class="container">
-          <span class="o-eyebrow">Especialidades</span>
-          <h2 class="o-title">Áreas de atención odontológica</h2>
-          <div class="o-spec-grid">
-            <article class="o-spec-card">
-              <h3>Odontología General</h3>
-              <p>Prevención, diagnóstico clínico, profilaxis y restauraciones conservadoras.</p>
-            </article>
-            <article class="o-spec-card">
-              <h3>Ortodoncia</h3>
-              <p>Corrección progresiva de alineación dental y mordida funcional.</p>
-            </article>
-            <article class="o-spec-card">
-              <h3>Rehabilitación Oral</h3>
-              <p>Soluciones protésicas diseñadas para devolver comodidad al masticar.</p>
-            </article>
-            <article class="o-spec-card">
-              <h3>Estética Dental</h3>
-              <p>Aclaramiento dental supervisado y armonización conservadora de sonrisa.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="o-section" id="tratamientos">
-        <div class="container">
-          <span class="o-eyebrow">Detalle por área</span>
-          <h2 class="o-title">Explora nuestros tratamientos de ejemplo</h2>
-          <div class="o-treat-layout">
-            <div class="o-treat-tabs" role="group" aria-label="Seleccionar tratamiento">
-              <button type="button" class="o-treat-tab is-active" data-treat-key="general" aria-pressed="true">
-                Odontología General y Preventiva
-              </button>
-              <button type="button" class="o-treat-tab" data-treat-key="ortodoncia" aria-pressed="false">
-                Ortodoncia y Alineación Dental
-              </button>
-              <button type="button" class="o-treat-tab" data-treat-key="rehabilitacion" aria-pressed="false">
-                Rehabilitación Oral
-              </button>
-              <button type="button" class="o-treat-tab" data-treat-key="estetica" aria-pressed="false">
-                Estética Dental Conservadora
-              </button>
-            </div>
-            <div class="o-treat-panel" aria-live="polite">
-              <h3 id="o-treat-title" style="color: var(--o-deep); margin-top: 0; font-size: 1.4rem;"></h3>
-              <p id="o-treat-duration" style="font-size: 0.875rem; font-weight: 600; color: var(--o-sage-mid);"></p>
-              <p id="o-treat-summary" style="color: var(--o-muted);"></p>
-              <ul id="o-treat-steps" style="list-style: none; padding: 0; margin: 1rem 0 0;"></ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="o-section o-section--sage" id="equipo">
-        <div class="container">
-          <span class="o-eyebrow">Equipo profesional (Contenido demostrativo)</span>
-          <h2 class="o-title">Perfiles ficticios de ejemplo</h2>
-          <p style="max-width: 62ch; color: var(--o-ink);">
-            Los siguientes nombres son estrictamente ficticios y sirven únicamente para ilustrar
-            cómo se presenta el equipo clínico en una web real.
-          </p>
-          <div class="o-team-grid">
-            <article class="o-team-card">
-              <strong>Dra. Valeria Cárdenas (Ejemplo)</strong>
-              <p style="color: var(--o-sage-mid); font-size: 0.85rem; margin: 0.25rem 0 0.6rem;">
-                Área demostrativa: Odontología General
-              </p>
-              <p style="font-size: 0.9rem; color: var(--o-muted); margin: 0;">
-                Espacio destinado a presentar la trayectoria real y enfoque de atención del profesional.
-              </p>
-            </article>
-            <article class="o-team-card">
-              <strong>Dr. Mateo Villavicencio (Ejemplo)</strong>
-              <p style="color: var(--o-sage-mid); font-size: 0.85rem; margin: 0.25rem 0 0.6rem;">
-                Área demostrativa: Ortodoncia
-              </p>
-              <p style="font-size: 0.9rem; color: var(--o-muted); margin: 0;">
-                Espacio configurable con fotografía real del especialista y horarios de consulta.
-              </p>
-            </article>
-            <article class="o-team-card">
-              <strong>Dra. Camila Ortega (Ejemplo)</strong>
-              <p style="color: var(--o-sage-mid); font-size: 0.85rem; margin: 0.25rem 0 0.6rem;">
-                Área demostrativa: Rehabilitación Oral
-              </p>
-              <p style="font-size: 0.9rem; color: var(--o-muted); margin: 0;">
-                Espacio adaptable para detallar idiomas de atención o áreas de consulta.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="o-section" id="instalaciones">
-        <div class="container o-facility">
-          <picture>
-            <source srcset="./images/consultorio.webp" type="image/webp" />
-            <img
-              src="./images/consultorio.jpg"
-              alt="Sala de atención odontológica iluminada con luz natural y sillón en tono salvia"
-              width="1200"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-          <div>
-            <span class="o-eyebrow">Instalaciones</span>
-            <h2 class="o-title">Espacios pensados para tu tranquilidad.</h2>
-            <p style="color: var(--o-muted);">
-              Mostrar fotografías reales de los consultorios y recepción reduce la ansiedad del
-              paciente antes de su primera visita y mejora la confianza en el equipo clínico.
+          <div class="o-philosophy-top">
+            <p class="o-eyebrow">Filosofía de atención</p>
+            <h2 class="o-title">Atención transparente desde la primera consulta.</h2>
+            <p class="o-philosophy-lead">
+              Un sitio web odontológico efectivo debe transmitir tranquilidad, orden y claridad. Este ejemplo organiza la
+              información clínica sin promesas exageradas, priorizando la comprensión del paciente antes de visitar el
+              consultorio en Cuenca.
             </p>
           </div>
+
+          <div class="o-philosophy-pillars">
+            <article class="o-philosophy-pillar">
+              <span class="o-num o-pillar-index">01</span>
+              <h3>Lenguaje claro sin tecnicismos</h3>
+              <p>
+                Cada área describe en términos comprensibles el propósito de la consulta preventiva, correctiva o
+                restauradora.
+              </p>
+            </article>
+            <article class="o-philosophy-pillar">
+              <span class="o-num o-pillar-index">02</span>
+              <h3>Tiempos orientativos por etapas</h3>
+              <p>
+                Se detallan duraciones estimadas de valoración y pasos habituales para que el visitante asista informado.
+              </p>
+            </article>
+            <article class="o-philosophy-pillar">
+              <span class="o-num o-pillar-index">03</span>
+              <h3>Cuidado conservador sin promesas</h3>
+              <p>
+                No se publican garantías clínicas ni resultados estéticos predeterminados; toda evaluación real requiere
+                examen presencial.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="o-section o-section--gray" id="cita">
+      <!-- 3. TRATAMIENTOS ODONTOLÓGICOS (SELECTOR HORIZONTAL SUPERIOR + FICHA ASIMÉTRICA) -->
+      <section class="o-section o-section--travertine" id="tratamientos">
+        <div class="container">
+          <div class="o-section-head">
+            <p class="o-eyebrow">Detalle interactivo por tratamiento</p>
+            <h2 class="o-title">Explora nuestros tratamientos de ejemplo</h2>
+            <p class="o-section-sub">
+              Selecciona una ficha para revisar su duración referencial, enfoque clínico ilustrativo y etapas habituales,
+              con acceso directo a solicitar información.
+            </p>
+          </div>
+
+          <div class="o-treat-tabs" role="group" aria-label="Seleccionar tratamiento">
+            <button type="button" class="o-treat-tab is-active" data-treat-key="general" aria-pressed="true">
+              <span class="o-num o-treat-tab__num">01</span>
+              <span>Odontología General y Preventiva</span>
+            </button>
+            <button type="button" class="o-treat-tab" data-treat-key="ortodoncia" aria-pressed="false">
+              <span class="o-num o-treat-tab__num">02</span>
+              <span>Ortodoncia y Alineación Dental</span>
+            </button>
+            <button type="button" class="o-treat-tab" data-treat-key="rehabilitacion" aria-pressed="false">
+              <span class="o-num o-treat-tab__num">03</span>
+              <span>Rehabilitación Oral</span>
+            </button>
+            <button type="button" class="o-treat-tab" data-treat-key="estetica" aria-pressed="false">
+              <span class="o-num o-treat-tab__num">04</span>
+              <span>Estética Dental Conservadora</span>
+            </button>
+          </div>
+
+          <article class="o-treat-panel" aria-live="polite">
+            <div class="o-treat-panel__overview">
+              <p id="o-treat-duration" class="o-treat-panel__duration o-num"></p>
+              <h3 id="o-treat-title" class="o-treat-panel__title"></h3>
+              <p id="o-treat-summary" class="o-treat-panel__summary"></p>
+              <div class="o-treat-panel__cta">
+                <button type="button" class="o-btn o-btn--deep" id="o-treat-prefill">
+                  Consultar sobre este tratamiento
+                </button>
+              </div>
+            </div>
+
+            <div class="o-treat-panel__steps-box">
+              <p class="o-treat-panel__steps-label">Secuencia informativa referencial</p>
+              <ul id="o-treat-steps" class="o-treat-steps"></ul>
+              <p class="o-treat-panel__disclaimer">
+                Referencia informativa de ejemplo; los tiempos y planes definitivos se determinan en consulta real.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 4. ESPECIALIDADES Y DIRECTORIO INSTITUCIONAL (SIN ODONTÓLOGOS FICTICIOS NI CREDENCIALES INVENTADAS) -->
+      <section class="o-section" id="especialidades">
+        <div class="container">
+          <div class="o-spec-header">
+            <div>
+              <p class="o-eyebrow">Áreas de atención &amp; estructura clínica</p>
+              <h2 class="o-title">Especialidades odontológicas del modelo</h2>
+            </div>
+            <p class="o-spec-note">
+              Cada especialidad enlaza directamente con su ficha de tratamiento. En una implementación real, este bloque
+              alberga la trayectoria verificable de los profesionales titulares sin perfiles ni matrículas ficticias.
+            </p>
+          </div>
+
+          <div class="o-spec-list">
+            <article class="o-spec-row">
+              <span class="o-num o-spec-row__idx">Área 01</span>
+              <div class="o-spec-row__main">
+                <h3>Odontología General</h3>
+                <p>Prevención, diagnóstico clínico, profilaxis y restauraciones conservadoras.</p>
+              </div>
+              <div class="o-spec-row__slot">
+                Bloque reservado para presentar al odontólogo general titular, idiomas y horarios.
+              </div>
+              <button type="button" class="o-spec-row__btn" data-select-treat="general">Ver detalle &rarr;</button>
+            </article>
+
+            <article class="o-spec-row">
+              <span class="o-num o-spec-row__idx">Área 02</span>
+              <div class="o-spec-row__main">
+                <h3>Ortodoncia</h3>
+                <p>Corrección progresiva de alineación dental y mordida funcional.</p>
+              </div>
+              <div class="o-spec-row__slot">
+                Espacio configurable para especialista en ortodoncia, registro habilitante y controles.
+              </div>
+              <button type="button" class="o-spec-row__btn" data-select-treat="ortodoncia">Ver detalle &rarr;</button>
+            </article>
+
+            <article class="o-spec-row">
+              <span class="o-num o-spec-row__idx">Área 03</span>
+              <div class="o-spec-row__main">
+                <h3>Rehabilitación Oral</h3>
+                <p>Soluciones protésicas diseñadas para devolver comodidad al masticar.</p>
+              </div>
+              <div class="o-spec-row__slot">
+                Bloque adaptable para detallar enfoque protésico, etapas y seguimiento en Cuenca.
+              </div>
+              <button type="button" class="o-spec-row__btn" data-select-treat="rehabilitacion">Ver detalle &rarr;</button>
+            </article>
+
+            <article class="o-spec-row" id="equipo">
+              <span class="o-num o-spec-row__idx">Área 04</span>
+              <div class="o-spec-row__main">
+                <h3>Estética Dental</h3>
+                <p>Aclaramiento dental supervisado y armonización conservadora de sonrisa.</p>
+              </div>
+              <div class="o-spec-row__slot">
+                Espacio institucional para profesional responsable e indicaciones de cuidado posterior.
+              </div>
+              <button type="button" class="o-spec-row__btn" data-select-treat="estetica">Ver detalle &rarr;</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. EXPERIENCIA DEL PACIENTE -->
+      <section class="o-section o-section--sage" id="experiencia">
+        <div class="container o-exp-layout">
+          <div class="o-exp-intro">
+            <p class="o-eyebrow">Experiencia informativa del paciente</p>
+            <h2 class="o-title">Cómo se organiza el contacto demostrativo</h2>
+            <p class="o-exp-disclaimer">
+              Este recorrido explica la experiencia de consulta previa: no realiza diagnóstico en línea, no almacena
+              historias clínicas ni confirma turnos reales en agenda médica.
+            </p>
+          </div>
+
+          <ol class="o-exp-steps">
+            <li class="o-exp-step">
+              <span class="o-num">01 &middot; Conocer tratamientos</span>
+              <h3>Revisión de especialidades</h3>
+              <p>
+                Explora las áreas preventivas, ortodónticas, protésicas o conservadoras para identificar el motivo general
+                de interés.
+              </p>
+            </li>
+            <li class="o-exp-step">
+              <span class="o-num">02 &middot; Consultar características</span>
+              <h3>Duración estimada y pautas</h3>
+              <p>
+                Revisa la duración orientativa de la primera valoración y los pasos habituales de atención descritos en
+                cada ficha.
+              </p>
+            </li>
+            <li class="o-exp-step">
+              <span class="o-num">03 &middot; Preparar mensaje</h3>
+              <h3>Solicitud demostrativa hacia WhatsApp</h3>
+              <p>
+                Completa los datos básicos en horario 24h para validar y generar el mensaje de prueba hacia AV·STUDIO.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 6. ESPACIOS Y EQUIPAMIENTO -->
+      <section class="o-section" id="instalaciones">
+        <div class="container">
+          <div class="o-spaces-head">
+            <div>
+              <p class="o-eyebrow">Espacios y arquitectura clínica</p>
+              <h2 class="o-title">Ambientes luminosos y materiales minerales</h2>
+            </div>
+            <p class="o-spaces-note">
+              Fotografías ilustrativas de ambientes odontológicos; no representan instalaciones ni equipamiento real
+              verificado de la marca ficticia.
+            </p>
+          </div>
+
+          <div class="o-spaces-grid">
+            <figure class="o-space-card">
+              <button
+                type="button"
+                class="o-space-trigger"
+                data-lightbox-src="./images/recepcion-alba.jpg"
+                data-lightbox-alt="Recepción clínica en verde salvia acanalado, mostrador de piedra travertino y banca natural"
+                data-lightbox-caption="Lámina 01 — Recepción tranquila con tonos salvia, piedra travertino y luz natural."
+              >
+                <img
+                  src="./images/recepcion-alba.jpg"
+                  alt="Recepción minimalista en tono salvia acanalado con piedra travertino y cortinas claras"
+                  width="1200"
+                  height="900"
+                  decoding="async"
+                />
+              </button>
+              <figcaption>
+                <strong>Recepción serena</strong> — Materiales cálidos, ingreso amplio y ambiente sin aglomeraciones.
+              </figcaption>
+            </figure>
+
+            <figure class="o-space-card">
+              <button
+                type="button"
+                class="o-space-trigger"
+                data-lightbox-src="./images/consultorio.jpg"
+                data-lightbox-alt="Sala odontológica moderna con ventanal esmerilado y sillón clínico en tono salvia"
+                data-lightbox-caption="Lámina 02 — Sala de atención con vidrio esmerilado para iluminación y privacidad."
+              >
+                <img
+                  src="./images/consultorio.jpg"
+                  alt="Sala de atención odontológica iluminada con luz natural y sillón en tono salvia"
+                  width="1200"
+                  height="900"
+                  decoding="async"
+                />
+              </button>
+              <figcaption>
+                <strong>Consultorio clínico</strong> — Luz natural difusa, orden funcional y estética calmada.
+              </figcaption>
+            </figure>
+
+            <figure class="o-space-card">
+              <button
+                type="button"
+                class="o-space-trigger"
+                data-lightbox-src="./images/materiales.jpg"
+                data-lightbox-alt="Bandeja de piedra clara con espejo clínico metálico y vaso cerámico sobre lino verde salvia"
+                data-lightbox-caption="Lámina 03 — Detalle de materiales minerales, acero clínico y textiles naturales."
+              >
+                <img
+                  src="./images/materiales.jpg"
+                  alt="Detalle de instrumental de diagnóstico sobre bandeja mineral y lino salvia"
+                  width="1200"
+                  height="900"
+                  decoding="async"
+                />
+              </button>
+              <figcaption>
+                <strong>Detalle y precisión</strong> — Superficies limpias y cuidado estético en cada elemento.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. PREGUNTAS FRECUENTES -->
+      <section class="o-section o-section--travertine" id="preguntas">
+        <div class="container o-faq-layout">
+          <div>
+            <p class="o-eyebrow">Información útil</p>
+            <h2 class="o-title">Preguntas frecuentes del ejemplo</h2>
+            <p class="o-faq-intro">
+              Aclaraciones basadas exclusivamente en los datos informativos de esta demostración comercial.
+            </p>
+          </div>
+
+          <div class="o-faq-list">
+            <details class="o-faq-item" open>
+              <summary>¿Qué áreas odontológicas se presentan en Alba Dental?</summary>
+              <p>
+                La demostración organiza cuatro áreas referenciales: Odontología General y Preventiva, Ortodoncia y
+                Alineación Dental, Rehabilitación Oral y Estética Dental Conservadora.
+              </p>
+            </details>
+
+            <details class="o-faq-item">
+              <summary>¿Cuáles son la ubicación y los horarios de ejemplo en Cuenca?</summary>
+              <p>
+                Se utiliza como referencia el sector Av. Solano / El Ejido en Cuenca, Azuay, con horario demostrativo en
+                formato 24h de lunes a viernes de <span class="o-num">08:30 a 18:30</span> y sábados de
+                <span class="o-num">09:00 a 13:00</span>.
+              </p>
+            </details>
+
+            <details class="o-faq-item">
+              <summary>¿Qué duraciones orientativas se muestran por valoración?</summary>
+              <p>
+                Odontología General indica entre 30 y 45 minutos por consulta; Ortodoncia señala una valoración inicial
+                de 40 minutos; Estética Dental Conservadora de 45 a 60 minutos por sesión; y Rehabilitación Oral según
+                plan diagnóstico presencial.
+              </p>
+            </details>
+
+            <details class="o-faq-item">
+              <summary>¿Este sitio confirma citas reales o realiza evaluación médica en línea?</summary>
+              <p>
+                No. Alba Dental es un sitio demostrativo de AV·STUDIO: no guarda información médica sensible, no ofrece
+                teleodontología ni agenda turnos reales; solo valida el formulario para preparar un mensaje de prueba
+                hacia WhatsApp.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. CONTACTO Y FORMULARIO DEMOSTRATIVO -->
+      <section class="o-section" id="cita">
         <div class="container o-appt-grid">
           <div id="ubicacion">
-            <span class="o-eyebrow">Solicitar cita &amp; Ubicación</span>
-            <h2 class="o-title">Agenda tu valoración en Cuenca.</h2>
-            <p style="color: var(--o-muted);">
-              <strong>Referencia de ubicación:</strong> Sector Av. Solano / El Ejido, Cuenca, Azuay, Ecuador.<br />
-              <strong>Horarios de ejemplo:</strong> Lunes a viernes 08:30 – 18:30 · Sábados 09:00 – 13:00 (24h).
+            <p class="o-eyebrow">Solicitar valoración &amp; ubicación</p>
+            <h2 class="o-title">Agenda tu consulta demostrativa en Cuenca.</h2>
+            <p class="o-appt-intro">
+              Selecciona la especialidad deseada y una franja horaria en formato 24h para validar los campos y generar el
+              mensaje demostrativo hacia WhatsApp de AV·STUDIO.
             </p>
-            <p style="font-size: 0.875rem; color: var(--o-muted);">
-              En esta demostración el formulario prepara un mensaje validado hacia WhatsApp sin
-              almacenar datos médicos ni confirmar citas reales.
-            </p>
+
+            <dl class="o-appt-facts">
+              <div>
+                <dt>Referencia en Cuenca</dt>
+                <dd>Sector Av. Solano / El Ejido, Cuenca, Azuay, Ecuador</dd>
+              </div>
+              <div>
+                <dt>Horarios de ejemplo (24h)</dt>
+                <dd class="o-num">Lun–Vie 08:30–18:30 &middot; Sáb 09:00–13:00</dd>
+              </div>
+              <div>
+                <dt>Privacidad en la demo</dt>
+                <dd>No ingreses datos clínicos ni diagnósticos personales; no se almacena ningún historial médico.</dd>
+              </div>
+            </dl>
           </div>
 
           <div class="o-form-box">
-            <h3 style="margin: 0 0 1rem; color: var(--o-deep);">Formulario de solicitud de cita</h3>
+            <h3 class="o-form-box__title">Formulario de solicitud de cita</h3>
+            <p class="o-form-box__sub">Los campos con * validan el resumen demostrativo.</p>
+
             <form id="o-appt-form" novalidate>
               <div class="o-form-fields">
                 <div class="o-field">
                   <label for="o-name">Nombre del paciente *</label>
-                  <input id="o-name" type="text" placeholder="Ej. Lucía Paredes" />
-                  <span class="o-err" id="o-err-name"></span>
+                  <input id="o-name" type="text" placeholder="Ej. Lucía Paredes" autocomplete="name" />
+                  <span class="o-err" id="o-err-name" aria-live="polite"></span>
                 </div>
+
                 <div class="o-field">
                   <label for="o-phone">WhatsApp o teléfono *</label>
-                  <input id="o-phone" type="tel" placeholder="+593 9..." />
-                  <span class="o-err" id="o-err-phone"></span>
+                  <input id="o-phone" type="tel" placeholder="+593 9..." autocomplete="tel" />
+                  <span class="o-err" id="o-err-phone" aria-live="polite"></span>
                 </div>
+
                 <div class="o-field">
                   <label for="o-specialty">Especialidad *</label>
                   <select id="o-specialty">
@@ -276,13 +511,15 @@
                     <option value="Rehabilitación Oral">Rehabilitación Oral</option>
                     <option value="Estética Dental">Estética Dental</option>
                   </select>
-                  <span class="o-err" id="o-err-specialty"></span>
+                  <span class="o-err" id="o-err-specialty" aria-live="polite"></span>
                 </div>
+
                 <div class="o-field">
                   <label for="o-date">Fecha preferida *</label>
                   <input id="o-date" type="date" />
-                  <span class="o-err" id="o-err-date"></span>
+                  <span class="o-err" id="o-err-date" aria-live="polite"></span>
                 </div>
+
                 <div class="o-field">
                   <label for="o-time">Horario (24h) *</label>
                   <select id="o-time">
@@ -292,19 +529,24 @@
                     <option value="15:00">15:00</option>
                     <option value="17:00">17:00</option>
                   </select>
-                  <span class="o-err" id="o-err-time"></span>
+                  <span class="o-err" id="o-err-time" aria-live="polite"></span>
                 </div>
+
                 <div class="o-field">
-                  <label for="o-notes">Motivo breve (opcional)</label>
-                  <input id="o-notes" type="text" placeholder="Ej. Limpieza de control" />
+                  <label for="o-notes">Consulta general (opcional)</label>
+                  <input id="o-notes" type="text" placeholder="Ej. Consulta general preventiva" />
+                  <span class="o-err" aria-hidden="true"></span>
                 </div>
               </div>
-              <div style="margin-top: 1.25rem;">
+
+              <div class="o-form-actions">
                 <button type="submit" class="o-btn o-btn--deep">Preparar solicitud por WhatsApp</button>
               </div>
-              <div id="o-prepared" hidden style="margin-top: 1.25rem; padding: 1rem; background: var(--o-white); border: 1px solid var(--o-border); border-radius: 6px;">
-                <p style="margin: 0 0 0.65rem; font-size: 0.9rem;">
-                  <strong>Solicitud demostrativa validada.</strong> Enlace listo hacia WhatsApp de AV·STUDIO:
+
+              <div id="o-prepared" class="o-prepared" hidden>
+                <p class="o-prepared__text">
+                  <strong>Solicitud demostrativa validada.</strong> Enlace listo hacia WhatsApp de AV·STUDIO (no agenda
+                  una cita real):
                 </p>
                 <a
                   id="o-prepared-wa"
@@ -322,41 +564,48 @@
       </section>
     </main>
 
+    <dialog id="o-lightbox" class="o-lightbox" aria-labelledby="o-lightbox-caption">
+      <div class="o-lightbox__inner">
+        <button type="button" id="o-lightbox-close" class="o-lightbox__close" aria-label="Cerrar imagen">
+          Cerrar &times;
+        </button>
+        <img id="o-lightbox-img" src="" alt="" />
+        <p id="o-lightbox-caption" class="o-lightbox__caption"></p>
+      </div>
+    </dialog>
+
     <footer class="o-footer">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+        <div class="o-footer__top">
           <div>
-            <strong class="o-brand" style="color: var(--o-white);">ALBA DENTAL</strong>
-            <p style="margin: 0.35rem 0 0; font-size: 0.85rem; color: #CBE4D5;">
-              DEMOSTRACIÓN — SITIO WEB DE EJEMPLO · Cuenca, Azuay, Ecuador.
-            </p>
+            <strong class="o-footer__brand">ALBA DENTAL</strong>
+            <p class="o-footer__meta">DEMOSTRACIÓN — SITIO WEB DE EJEMPLO &middot; Cuenca, Azuay, Ecuador.</p>
           </div>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
-            <a href="#especialidades">Especialidades</a>
+          <nav class="o-footer__links" aria-label="Enlaces del pie de página">
             <a href="#tratamientos">Tratamientos</a>
-            <a href="#cita">Citas</a>
-            <a href="../../index.html" style="color: #CBE4D5; font-weight: 700;">Volver a AV·STUDIO</a>
-          </div>
+            <a href="#especialidades">Especialidades</a>
+            <a href="#cita">Solicitar cita</a>
+            <a href="../../index.html" class="o-footer__back">Volver a AV·STUDIO</a>
+          </nav>
         </div>
 
         <div class="o-av-signature">
           <div>
-            <p style="margin: 0 0 0.25rem;">
-              <strong>¿Te gustaría una página web como esta?</strong> Creamos experiencias digitales personalizadas para negocios y profesionales.
+            <p class="o-av-signature__lead">
+              <strong>¿Te gustaría una página web como esta?</strong> Creamos experiencias digitales personalizadas para
+              negocios y profesionales.
             </p>
-            <p style="margin: 0; color: #CBE4D5;">
-              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> ·
-              <a href="mailto:andersonvallejo021@gmail.com" style="text-decoration: underline;">andersonvallejo021@gmail.com</a> · <a href="../../index.html?sector=odontologia#contacto" class="" style="text-decoration: underline;">
-            Quiero una página para mi clínica dental &rarr;
-          </a>
+            <p class="o-av-signature__credit">
+              <strong>Diseño y desarrollo web por Anderson Vallejo — AV·STUDIO.</strong> &middot;
+              <a href="mailto:andersonvallejo021@gmail.com">andersonvallejo021@gmail.com</a> &middot;
+              <a href="../../index.html?sector=odontologia#contacto">Quiero una página para mi clínica dental &rarr;</a>
             </p>
           </div>
           <a
             href="https://wa.me/593979290747"
             target="_blank"
             rel="noopener noreferrer"
-            class="o-btn o-btn--outline"
-            style="color: var(--o-white); border-color: rgba(255,255,255,0.45);"
+            class="o-btn o-btn--outline-light"
           >
             Solicitar sitio personalizado
           </a>

@@ -4,32 +4,47 @@
    ========================================================================== */
 
 :root {
-  /* Official AV Studio Palette */
+  /* Official AV Studio Editorial Palette & Harmonized Chromatic System */
+  --color-marfil: #F3F0E9;
+  --color-arena: #EAE3D7;
+  --color-piedra: #D9D1C5;
+  --color-carbon: #242522;
+  --color-carbon-soft: #2D2E2A;
+  --color-petroleo: #355650;
+  --color-petroleo-deep: #1F3531;
+  --color-cobre: #B28A62;
+  --color-cobre-text: #7A5835;
+
+  /* Semantic Aliases */
   --color-charcoal: #171717;
-  --color-ivory: #F3F0E9;
+  --color-ivory: var(--color-marfil);
   --color-ivory-soft: #FAF8F4;
-  --color-ivory-deep: #E8E3D8;
+  --color-ivory-deep: #EFE9DF;
   --color-stone: #B8B5AE;
-  --color-dark-gray: #30302E;
-  --color-muted: #5C5B57;
+  --color-dark-gray: #3B3B37;
+  --color-muted: #5C5B55;
   --color-terracotta: #C96F4A;
+  --color-terracotta-light: #DF8D6B;
   --color-terracotta-text: #9E4A28;
-  --color-terracotta-deep: #A64E2B;
+  --color-terracotta-deep: #9E4A28;
   --color-white: #FFFFFF;
 
-  /* Semantic Surfaces & Hairlines (Dark Editorial + Warm Minimalism) */
-  --surface-canvas: var(--color-ivory);
-  --surface-ivory-warm: #EAE4D8;
+  /* Semantic Surfaces & Hairlines */
+  --surface-canvas: var(--color-marfil);
+  --surface-arena: var(--color-arena);
+  --surface-piedra: var(--color-piedra);
+  --surface-ivory-warm: var(--color-arena);
   --surface-elevated: var(--color-ivory-soft);
   --surface-card: var(--color-ivory-soft);
-  --surface-dark-primary: var(--color-charcoal);
-  --surface-dark-editorial: #21211F;
-  --surface-dark-card: #2A2A27;
+  --surface-dark-primary: var(--color-carbon);
+  --surface-dark-editorial: var(--color-petroleo);
+  --surface-dark-card: var(--color-carbon-soft);
   --surface-ink: var(--color-charcoal);
-  --border-hairline: rgba(23, 23, 23, 0.13);
-  --border-hairline-strong: rgba(23, 23, 23, 0.26);
+  --border-hairline: rgba(23, 23, 23, 0.11);
+  --border-hairline-strong: rgba(23, 23, 23, 0.22);
+  --border-bronze-hairline: rgba(178, 138, 98, 0.38);
   --border-dark-hairline: rgba(243, 240, 233, 0.14);
-  --border-dark-strong: rgba(243, 240, 233, 0.26);
+  --border-dark-strong: rgba(243, 240, 233, 0.3);
 
   /* Typography */
   --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -38,7 +53,7 @@
 
   /* Typographic Role Scale */
   --type-logo-height: 26px;
-  --type-display-hero: clamp(2.65rem, 4.4vw, 4.35rem);
+  --type-display-hero: clamp(2.45rem, 4.1vw, 3.85rem);
   --type-display-section: clamp(2rem, 3.2vw, 3.1rem);
   --type-subtitle: 1.0625rem;
   --type-body: 1rem;
@@ -49,7 +64,7 @@
   /* Spacing & Layout */
   --container-max: 1240px;
   --container-gutter: 2rem;
-  --section-space: 6rem;
+  --section-space: 4.5rem;
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 10px;
@@ -170,6 +185,39 @@ p {
   position: relative;
 }
 
+.section--marfil,
+.section--elevated,
+.section--white {
+  background-color: var(--color-marfil);
+  color: var(--color-charcoal);
+}
+
+.section--marfil-to-arena {
+  background: linear-gradient(180deg, #F3F0E9 0%, #EFE9DF 44%, #EAE3D7 100%);
+  color: var(--color-charcoal);
+}
+
+.section--arena,
+.section--ivory-warm {
+  background-color: var(--color-arena);
+  color: var(--color-charcoal);
+}
+
+.section--arena-to-marfil {
+  background: linear-gradient(180deg, #EAE3D7 0%, #EFE9DF 48%, #F3F0E9 100%);
+  color: var(--color-charcoal);
+}
+
+.section--piedra-gallery {
+  background: linear-gradient(180deg, #EAE3D7 0%, #D9D1C5 14%, #D9D1C5 86%, #ECE6DC 100%);
+  color: var(--color-charcoal);
+}
+
+.section--piedra-process {
+  background: linear-gradient(180deg, #EAE3D7 0%, #D9D1C5 14%, #D9D1C5 86%, #ECE6DC 100%);
+  color: var(--color-charcoal);
+}
+
 .section--dark {
   background-color: var(--surface-dark-primary);
   color: var(--color-ivory);
@@ -184,25 +232,6 @@ p {
   border-bottom: 1px solid var(--border-dark-hairline);
 }
 
-.section--ivory-warm {
-  background-color: var(--surface-ivory-warm);
-  color: var(--color-charcoal);
-  border-top: 1px solid var(--border-hairline);
-  border-bottom: 1px solid var(--border-hairline);
-}
-
-.section--elevated {
-  background-color: var(--surface-canvas);
-  border-top: 1px solid var(--border-hairline);
-  border-bottom: 1px solid var(--border-hairline);
-}
-
-.section--white {
-  background-color: var(--surface-canvas);
-  border-top: 1px solid var(--border-hairline);
-  border-bottom: 1px solid var(--border-hairline);
-}
-
 /* Editorial Typography */
 .eyebrow {
   font-size: 0.8125rem;
@@ -215,7 +244,7 @@ p {
 
 .section--dark .eyebrow,
 .section--dark-editorial .eyebrow {
-  color: var(--color-terracotta);
+  color: var(--color-terracotta-light);
 }
 
 .display-title {
@@ -227,8 +256,8 @@ p {
 }
 
 .hero__title {
-  font-size: clamp(2.65rem, 4.4vw, 4.35rem);
-  max-width: 16ch;
+  font-size: var(--type-display-hero);
+  max-width: 15.5ch;
 }
 
 .section-title {
@@ -257,12 +286,12 @@ p {
 
 .section-head {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 2.5rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 2rem;
   align-items: end;
-  padding-bottom: 2.75rem;
+  padding-bottom: 1.75rem;
   border-bottom: 1px solid var(--border-hairline);
-  margin-bottom: 3.25rem;
+  margin-bottom: 2.25rem;
 }
 
 .section--dark .section-head,
